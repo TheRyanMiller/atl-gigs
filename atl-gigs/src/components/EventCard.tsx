@@ -129,16 +129,16 @@ export default function EventCard({ event, onClick }: EventCardProps) {
         </div>
 
         {/* Action Area */}
-        <div className="flex items-center justify-end gap-3 mt-auto">
+        <div className="flex items-center justify-center sm:justify-end gap-2 mt-auto">
           {/* Share Button */}
           <button
             onClick={handleShare}
-            className="flex items-center justify-center w-11 h-11 rounded-xl transition-all duration-300 bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
+            className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg transition-all duration-300 bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
           >
             {copied ? (
-              <Check size={18} className="text-green-400" />
+              <Check size={16} className="text-green-400" />
             ) : (
-              <Share2 size={18} />
+              <Share2 size={16} />
             )}
           </button>
 
@@ -147,10 +147,10 @@ export default function EventCard({ event, onClick }: EventCardProps) {
             href={ticket_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white shadow-lg shadow-teal-900/20 hover:shadow-teal-900/40 hover:-translate-y-0.5"
+            className="flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white shadow-lg shadow-teal-900/20 hover:shadow-teal-900/40 hover:-translate-y-0.5"
             onClick={(e) => e.stopPropagation()}
           >
-            <Ticket size={16} />
+            <Ticket size={14} className="sm:w-4 sm:h-4" />
             Get Tickets
           </a>
         </div>
