@@ -1,7 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 import { format } from "date-fns";
+import { X, MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays } from "lucide-react";
 import { Event } from "../types";
 
 interface EventModalProps {
@@ -10,21 +10,47 @@ interface EventModalProps {
 }
 
 export default function EventModal({ event, onClose }: EventModalProps) {
+  const [copied, setCopied] = useState(false);
+  
   const {
     venue,
     date,
     doors_time,
     show_time,
     artists,
-    adv_price,
-    dos_price,
     price,
     ticket_url,
     info_url,
     image_url,
+    slug,
   } = event;
+  
+  const handleShare = async () => {
+    const url = `${window.location.origin}?event=${slug}`;
+    
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
 
-  const formattedDate = format(new Date(date), "EEEE, MMMM d, yyyy");
+  // Parse date as local time (not UTC) by appending T12:00:00
+  const eventDate = new Date(date + "T12:00:00");
+  const formattedDate = format(eventDate, "EEEE, MMMM d, yyyy");
+  const day = eventDate.getDate();
+  const month = format(eventDate, "MMM").toUpperCase();
+
+  const formatTime = (time: string | null) => {
+    if (!time) return null;
+    const [hours, minutes] = time.split(":");
+    const h = parseInt(hours);
+    const ampm = h >= 12 ? "PM" : "AM";
+    const hour12 = h % 12 || 12;
+    return `${hour12.toString().padStart(2, "0")}:${minutes} ${ampm}`;
+  };
 
   return (
     <Transition.Root show={true} as={Fragment}>
@@ -38,11 +64,11 @@ export default function EventModal({ event, onClose }: EventModalProps) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-90 dark:bg-zinc-900 dark:bg-opacity-95 transition-opacity" />
+          <div className="fixed inset-0 bg-neutral-950/90 backdrop-blur-sm transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center">
+          <div className="flex min-h-full items-start sm:items-center justify-center p-4 pt-16 sm:pt-4 text-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -52,95 +78,121 @@ export default function EventModal({ event, onClose }: EventModalProps) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-gray-50 dark:bg-zinc-800 px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6">
-                <div className="absolute right-0 top-0 hidden pr-4 pt-4 sm:block">
-                  <button
-                    type="button"
-                    className="rounded-md bg-gray-50 dark:bg-zinc-800 text-gray-400 hover:text-gray-500 focus:outline-none"
-                    onClick={onClose}
-                  >
-                    <span className="sr-only">Close</span>
-                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                  </button>
-                </div>
+              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
+                {/* Close button */}
+                <button
+                  type="button"
+                  className="absolute right-4 top-4 z-10 rounded-full bg-neutral-800/80 backdrop-blur-sm p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
+                  onClick={onClose}
+                >
+                  <span className="sr-only">Close</span>
+                  <X size={20} />
+                </button>
 
-                <div className="sm:flex sm:items-start">
-                  {image_url && (
-                    <div className="w-full sm:w-1/3 mb-4 sm:mb-0 sm:mr-4">
+                <div className="sm:flex">
+                  {/* Image */}
+                  <div className="relative w-full sm:w-72 h-48 sm:h-auto shrink-0">
+                    {image_url ? (
                       <img
                         src={image_url}
                         alt={artists[0]?.name || "Event image"}
-                        className="w-full h-auto rounded-lg"
+                        className="w-full h-full object-cover"
                       />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center">
+                        <Ticket size={64} className="text-neutral-700" />
+                      </div>
+                    )}
+                    {/* Date overlay */}
+                    <div className="absolute top-4 left-4 flex flex-col items-center justify-center bg-neutral-950/80 backdrop-blur-md border border-white/10 w-14 h-14 rounded-xl">
+                      <span className="text-[10px] font-bold text-teal-400 uppercase tracking-wider">
+                        {month}
+                      </span>
+                      <span className="text-xl font-bold text-white leading-none">
+                        {day}
+                      </span>
                     </div>
-                  )}
+                  </div>
 
-                  <div className="mt-3 text-center sm:mt-0 sm:text-left w-full">
+                  {/* Content */}
+                  <div className="p-6 flex-1">
                     <Dialog.Title
                       as="h3"
-                      className="text-2xl font-semibold leading-6 text-gray-900 dark:text-zinc-100"
+                      className="text-2xl font-bold text-white mb-1"
                     >
                       {artists[0]?.name}
                     </Dialog.Title>
 
                     {artists.length > 1 && (
-                      <div className="mt-2">
-                        <p className="text-sm text-gray-500 dark:text-zinc-300">
-                          with{" "}
-                          {artists
-                            .slice(1)
-                            .map((a) => a.name)
-                            .join(", ")}
-                        </p>
-                      </div>
+                      <p className="text-neutral-400 text-sm mb-4">
+                        <span className="text-neutral-500">with</span>{" "}
+                        {artists
+                          .slice(1)
+                          .map((a) => a.name)
+                          .join(", ")}
+                      </p>
                     )}
 
-                    <div className="mt-4">
-                      <p className="text-sm text-gray-500 dark:text-zinc-300">
-                        {formattedDate}
-                      </p>
-                      <p className="text-sm text-gray-500 dark:text-zinc-300">
-                        {venue}
-                      </p>
-                      {doors_time && show_time && (
-                        <p className="text-sm text-gray-500 dark:text-zinc-300">
-                          Doors: {doors_time} | Show: {show_time}
-                        </p>
-                      )}
-                    </div>
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center gap-2 text-neutral-300 text-sm">
+                        <MapPin size={14} className="text-teal-500" />
+                        <span>{venue}</span>
+                      </div>
 
-                    <div className="mt-4">
+                      <div className="flex items-center gap-2 text-neutral-300 text-sm">
+                        <CalendarDays size={14} className="text-teal-500" />
+                        <span>{formattedDate}</span>
+                      </div>
+
+                      {doors_time && (
+                        <div className="flex items-center gap-2 text-neutral-300 text-sm">
+                          <Clock size={14} className="text-teal-500" />
+                          <span>
+                            Doors {formatTime(doors_time)}
+                            {show_time && ` · Show ${formatTime(show_time)}`}
+                          </span>
+                        </div>
+                      )}
+
                       {price && (
-                        <p className="text-sm font-medium text-gray-900 dark:text-zinc-100">
-                          Price: {price}
-                        </p>
-                      )}
-                      {adv_price && dos_price && (
-                        <p className="text-sm font-medium text-gray-900 dark:text-zinc-100">
-                          Advance: {adv_price} | Door: {dos_price}
-                        </p>
+                        <div className="flex items-center gap-2 text-neutral-300 text-sm">
+                          <Ticket size={14} className="text-teal-500" />
+                          <span>{price}</span>
+                        </div>
                       )}
                     </div>
 
-                    <div className="mt-6 flex gap-4">
+                    <div className="flex flex-wrap gap-3">
                       <a
                         href={ticket_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex w-fit px-4 py-1.5 bg-purple-700 text-white rounded-md hover:bg-purple-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 text-base font-semibold"
+                        className="flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white shadow-lg shadow-teal-900/20 hover:shadow-teal-900/40 transition-all"
                       >
-                        Buy Tickets
+                        <Ticket size={16} />
+                        Get Tickets
                       </a>
                       {info_url && (
                         <a
                           href={info_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex w-fit px-4 py-1.5 bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 rounded-md border border-gray-300 dark:border-zinc-700 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-zinc-700 hover:bg-gray-50 dark:hover:bg-zinc-700 transition-colors duration-200"
+                          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white border border-neutral-700 transition-all"
                         >
+                          <ExternalLink size={16} />
                           More Info
                         </a>
                       )}
+                      <button
+                        onClick={handleShare}
+                        className="flex items-center justify-center w-11 h-11 rounded-xl transition-all bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
+                      >
+                        {copied ? (
+                          <Check size={18} className="text-green-400" />
+                        ) : (
+                          <Share2 size={18} />
+                        )}
+                      </button>
                     </div>
                   </div>
                 </div>

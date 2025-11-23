@@ -29,6 +29,27 @@ REQUIRED_FIELDS = ["venue", "date", "artists", "ticket_url"]
 # Utility Functions
 # ----------------------------------------------------------------------
 
+def generate_slug(event):
+    """
+    Generate a unique slug for an event based on date, venue, and artist.
+    Format: YYYY-MM-DD-venue-name-artist-name
+    """
+    date = event.get("date", "")
+    venue = event.get("venue", "")
+    artist = event.get("artists", [{}])[0].get("name", "unknown")
+    
+    # Slugify: lowercase, replace spaces with hyphens, remove special chars
+    def slugify(text):
+        text = text.lower().strip()
+        text = re.sub(r'[^\w\s-]', '', text)  # Remove special chars except hyphens
+        text = re.sub(r'[\s_]+', '-', text)   # Replace spaces/underscores with hyphens
+        text = re.sub(r'-+', '-', text)       # Remove duplicate hyphens
+        return text.strip('-')
+    
+    slug_parts = [date, slugify(venue), slugify(artist)]
+    return "-".join(filter(None, slug_parts))
+
+
 def normalize_time(time_str):
     """
     Normalize time strings to consistent HH:MM 24-hour format.
@@ -430,9 +451,23 @@ def main():
         
         venue_statuses[venue_name] = venue_status
     
-    # Normalize prices and validate events
+    # Normalize prices, generate slugs, and validate events
     print("\nProcessing events...")
     all_events = [normalize_price(e) for e in all_events]
+    
+    # Generate slugs for each event, ensuring uniqueness
+    slug_counts = {}
+    for event in all_events:
+        base_slug = generate_slug(event)
+        
+        # Handle duplicate slugs by appending a counter
+        if base_slug in slug_counts:
+            slug_counts[base_slug] += 1
+            event["slug"] = f"{base_slug}-{slug_counts[base_slug]}"
+        else:
+            slug_counts[base_slug] = 0
+            event["slug"] = base_slug
+    
     valid_events = [e for e in all_events if validate_event(e)]
     invalid_count = len(all_events) - len(valid_events)
     

@@ -6,16 +6,9 @@ html,
 body {
   min-height: 100vh;
   width: 100vw;
-  background-color: theme("colors.gray.50");
+  background-color: #0a0a0a; /* neutral-950 - true black */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@media (prefers-color-scheme: dark) {
-  html,
-  body {
-    background-color: #18181b; /* zinc-900 */
-  }
 }
 
 /* Smooth scrolling */
@@ -23,21 +16,28 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Better focus styles */
-*:focus-visible {
-  outline: 2px solid theme("colors.purple.500");
-  outline-offset: 2px;
-}
-
-/* Subtle selection color */
+/* Selection color */
 ::selection {
-  background-color: theme("colors.purple.200");
-  color: theme("colors.purple.900");
+  background-color: rgba(20, 184, 166, 0.3);
+  color: rgb(204, 251, 241);
 }
 
-@media (prefers-color-scheme: dark) {
-  ::selection {
-    background-color: theme("colors.purple.800");
-    color: theme("colors.purple.100");
-  }
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom date input styling for dark mode */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.8;
 }

@@ -1,19 +1,35 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useSearchParams } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
 import Home from "./pages/Home";
-import Status from "./pages/Status";
-import EventModal from "./components/EventModal";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
+import EventModal from "./components/EventModal";
 import ScrapeStatusModal from "./components/ScrapeStatusModal";
 import { Event, ScrapeStatus } from "./types";
 
-function App() {
+function AppContent() {
   const [events, setEvents] = useState<Event[]>([]);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const [lastScrape, setLastScrape] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
   const [scrapeStatus, setScrapeStatus] = useState<ScrapeStatus | null>(null);
   const [showStatusModal, setShowStatusModal] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Handle event selection with URL update
+  const handleEventSelect = useCallback((event: Event | null) => {
+    setSelectedEvent(event);
+    if (event) {
+      setSearchParams({ event: event.slug });
+    } else {
+      setSearchParams({});
+    }
+  }, [setSearchParams]);
+
+  // Handle modal close
+  const handleModalClose = useCallback(() => {
+    setSelectedEvent(null);
+    setSearchParams({});
+  }, [setSearchParams]);
 
   useEffect(() => {
     // Fetch events
@@ -29,8 +45,16 @@ function App() {
           throw new Error("Data is not an array!");
         }
         setEvents(data);
-        setLastScrape(new Date().toISOString());
         setError(null);
+
+        // Check for event slug in URL and open modal
+        const eventSlug = searchParams.get("event");
+        if (eventSlug) {
+          const event = data.find((e: Event) => e.slug === eventSlug);
+          if (event) {
+            setSelectedEvent(event);
+          }
+        }
       })
       .catch((error) => {
         console.error("Error fetching events:", error);
@@ -54,50 +78,61 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="min-h-screen w-full bg-gray-50 text-gray-900 dark:bg-zinc-900 dark:text-zinc-100 pb-12">
+    <div className="min-h-screen bg-neutral-950 text-neutral-200 font-sans selection:bg-teal-500/30 selection:text-teal-200">
+      {/* Background Decor */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-teal-900/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-cyan-900/10 rounded-full blur-[120px]" />
+      </div>
+
+      <Header
+        status={scrapeStatus}
+        onStatusClick={() => setShowStatusModal(true)}
+      />
+
+      {/* Main Content */}
+      <main className="relative z-10 max-w-5xl mx-auto px-4 py-8 sm:py-12">
         {error && (
           <div
-            className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+            className="bg-red-900/20 border border-red-500/30 text-red-400 px-4 py-3 rounded-xl mb-6"
             role="alert"
           >
-            <strong className="font-bold">Error!</strong>
-            <span className="block sm:inline"> {error}</span>
+            <strong className="font-bold">Error: </strong>
+            <span>{error}</span>
           </div>
         )}
 
         <Routes>
           <Route
             path="/"
-            element={<Home events={events} onEventClick={setSelectedEvent} />}
-          />
-          <Route
-            path="/status"
-            element={
-              <Status lastScrape={lastScrape} eventCount={events.length} />
-            }
+            element={<Home events={events} onEventClick={handleEventSelect} />}
           />
         </Routes>
 
-        {selectedEvent && (
-          <EventModal
-            event={selectedEvent}
-            onClose={() => setSelectedEvent(null)}
-          />
-        )}
+        <Footer />
+      </main>
 
-        {showStatusModal && scrapeStatus && (
-          <ScrapeStatusModal
-            status={scrapeStatus}
-            onClose={() => setShowStatusModal(false)}
-          />
-        )}
-
-        <Footer
-          status={scrapeStatus}
-          onStatusClick={() => setShowStatusModal(true)}
+      {selectedEvent && (
+        <EventModal
+          event={selectedEvent}
+          onClose={handleModalClose}
         />
-      </div>
+      )}
+
+      {showStatusModal && scrapeStatus && (
+        <ScrapeStatusModal
+          status={scrapeStatus}
+          onClose={() => setShowStatusModal(false)}
+        />
+      )}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

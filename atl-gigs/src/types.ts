@@ -4,6 +4,7 @@ export interface Artist {
 }
 
 export interface Event {
+  slug: string;
   venue: string;
   date: string;
   doors_time: string | null;
