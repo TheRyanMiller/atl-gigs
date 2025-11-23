@@ -258,6 +258,7 @@ export default function FilterBar({
                       value={startDate}
                       min={today}
                       onChange={(e) => setStartDate(e.target.value)}
+                      style={{ colorScheme: 'dark' }}
                       className="w-full px-3 py-2 border border-neutral-700 rounded-lg bg-neutral-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
                     />
                   </div>
@@ -270,6 +271,7 @@ export default function FilterBar({
                       value={endDate}
                       min={startDate || today}
                       onChange={(e) => setEndDate(e.target.value)}
+                      style={{ colorScheme: 'dark' }}
                       className="w-full px-3 py-2 border border-neutral-700 rounded-lg bg-neutral-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
                     />
                   </div>
@@ -351,7 +353,8 @@ export default function FilterBar({
                     value={startDate}
                     min={today}
                     onChange={(e) => setStartDate(e.target.value)}
-                    className="w-full px-3 py-2 border border-neutral-700 rounded-lg bg-neutral-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    style={{ colorScheme: 'dark' }}
+                    className="w-full px-3 py-2 border border-neutral-700 rounded-lg bg-neutral-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 appearance-none"
                   />
                 </div>
                 <div>
@@ -363,7 +366,8 @@ export default function FilterBar({
                     value={endDate}
                     min={startDate || today}
                     onChange={(e) => setEndDate(e.target.value)}
-                    className="w-full px-3 py-2 border border-neutral-700 rounded-lg bg-neutral-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    style={{ colorScheme: 'dark' }}
+                    className="w-full px-3 py-2 border border-neutral-700 rounded-lg bg-neutral-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 appearance-none"
                   />
                 </div>
                 {hasDateFilter && (
