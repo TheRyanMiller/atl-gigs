@@ -210,21 +210,22 @@ export default function FilterBar({
               onClear={clearVenueFilter}
             />
             {venueDropdownOpen && (
-              <div className="absolute mt-2 w-64 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 max-h-60 overflow-auto">
-                <div className="p-2">
+              <div className="absolute mt-2 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-2">
+                <div className="flex flex-wrap gap-1.5">
                   {venues.map((venue) => (
-                    <label
+                    <button
                       key={venue}
-                      className="flex items-center py-2 px-3 cursor-pointer text-neutral-300 hover:bg-neutral-800 rounded-lg transition-colors duration-150"
+                      onClick={() => onVenueToggle(venue)}
+                      className={`
+                        px-2 py-1 rounded-md text-xs font-medium transition-all
+                        ${selectedVenues.includes(venue)
+                          ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
+                          : "bg-neutral-800 text-neutral-400 border border-neutral-700 hover:bg-neutral-700 hover:text-white"
+                        }
+                      `}
                     >
-                      <input
-                        type="checkbox"
-                        checked={selectedVenues.includes(venue)}
-                        onChange={() => onVenueToggle(venue)}
-                        className="mr-3 w-4 h-4 accent-teal-600 rounded"
-                      />
-                      <span className="text-sm">{venue}</span>
-                    </label>
+                      {venue}
+                    </button>
                   ))}
                 </div>
               </div>
@@ -288,8 +289,8 @@ export default function FilterBar({
         </div>
       </div>
 
-      {/* Mobile Filter Scroll */}
-      <div className="flex md:hidden gap-3 overflow-x-auto pb-2 scrollbar-hide">
+      {/* Mobile Filter Pills */}
+      <div className="flex md:hidden gap-3 pb-2">
         <div className="relative" ref={mobileVenueDropdownRef}>
           <FilterPill
             label={getVenueLabel()}
@@ -301,23 +302,25 @@ export default function FilterBar({
               setVenueDropdownOpen((open) => !open);
               setDateDropdownOpen(false);
             }}
+            onClear={clearVenueFilter}
           />
           {venueDropdownOpen && (
-            <div className="absolute mt-2 w-64 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 max-h-60 overflow-auto">
-              <div className="p-2">
+            <div className="absolute mt-2 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-2 left-0 right-0 mx-auto w-[calc(100vw-2rem)] max-w-xs">
+              <div className="flex flex-wrap gap-1.5">
                 {venues.map((venue) => (
-                  <label
+                  <button
                     key={venue}
-                    className="flex items-center py-2 px-3 cursor-pointer text-neutral-300 hover:bg-neutral-800 rounded-lg transition-colors duration-150"
+                    onClick={() => onVenueToggle(venue)}
+                    className={`
+                      px-2 py-1 rounded-md text-xs font-medium transition-all
+                      ${selectedVenues.includes(venue)
+                        ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
+                        : "bg-neutral-800 text-neutral-400 border border-neutral-700 hover:bg-neutral-700 hover:text-white"
+                      }
+                    `}
                   >
-                    <input
-                      type="checkbox"
-                      checked={selectedVenues.includes(venue)}
-                      onChange={() => onVenueToggle(venue)}
-                      className="mr-3 w-4 h-4 accent-teal-600 rounded"
-                    />
-                    <span className="text-sm">{venue}</span>
-                  </label>
+                    {venue}
+                  </button>
                 ))}
               </div>
             </div>
@@ -334,9 +337,10 @@ export default function FilterBar({
               setDateDropdownOpen((open) => !open);
               setVenueDropdownOpen(false);
             }}
+            onClear={clearDateFilter}
           />
           {dateDropdownOpen && (
-            <div className="absolute mt-2 w-64 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-4">
+            <div className="absolute mt-2 right-0 w-64 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-4">
               <div className="space-y-3">
                 <div>
                   <label className="block text-xs font-medium text-neutral-500 mb-1">
