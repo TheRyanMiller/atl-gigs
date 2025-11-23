@@ -11,13 +11,13 @@ export default function Header({ status, onStatusClick }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-neutral-950/80 backdrop-blur-xl">
-      <div className="max-w-5xl mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 h-14 sm:h-20 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 group cursor-pointer">
-          <div className="w-10 h-10 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-900/20 group-hover:scale-105 transition-transform">
-            <Music size={20} className="text-white" />
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-teal-900/20 group-hover:scale-105 transition-transform">
+            <Music size={16} className="sm:w-5 sm:h-5 text-white" />
           </div>
-          <span className="text-xl font-bold text-white tracking-tight leading-none group-hover:text-teal-300 transition-colors">
+          <span className="text-lg sm:text-xl font-bold text-white tracking-tight leading-none group-hover:text-teal-300 transition-colors">
             ATL<span className="text-teal-500">Gigs</span>
           </span>
         </div>
@@ -52,7 +52,7 @@ export default function Header({ status, onStatusClick }: HeaderProps) {
         </nav>
 
         {/* Mobile Icons */}
-        <div className="flex md:hidden items-center gap-4">
+        <div className="flex md:hidden items-center gap-3">
           <button
             onClick={onStatusClick}
             className="flex items-center gap-1.5 text-neutral-400 hover:text-white"
@@ -67,9 +67,9 @@ export default function Header({ status, onStatusClick }: HeaderProps) {
             href="https://github.com/TheRyanMiller/atl-gigs"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-neutral-400 hover:text-white"
+            className="text-neutral-400 hover:text-white"
           >
-            <Github size={20} />
+            <Github size={18} />
           </a>
         </div>
       </div>

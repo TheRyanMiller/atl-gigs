@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route, useSearchParams } from "react-r
 import { useState, useEffect, useCallback } from "react";
 import Home from "./pages/Home";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import EventModal from "./components/EventModal";
 import ScrapeStatusModal from "./components/ScrapeStatusModal";
 import { Event, ScrapeStatus } from "./types";
@@ -78,14 +77,14 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-200 font-sans selection:bg-teal-500/30 selection:text-teal-200">
+    <div className="bg-neutral-950 text-neutral-200 font-sans selection:bg-teal-500/30 selection:text-teal-200">
       <Header
         status={scrapeStatus}
         onStatusClick={() => setShowStatusModal(true)}
       />
 
       {/* Main Content */}
-      <main className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
+      <main className="max-w-5xl mx-auto px-4 py-4 sm:py-12 pb-8 sm:pb-12">
         {error && (
           <div
             className="bg-red-900/20 border border-red-500/30 text-red-400 px-4 py-3 rounded-xl mb-6"
@@ -102,8 +101,6 @@ function AppContent() {
             element={<Home events={events} onEventClick={handleEventSelect} />}
           />
         </Routes>
-
-        <Footer />
       </main>
 
       {selectedEvent && (
