@@ -78,11 +78,10 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="min-h-svh bg-neutral-950 text-neutral-200 font-sans selection:bg-teal-500/30 selection:text-teal-200">
+    <div className="relative bg-neutral-950 text-neutral-200 font-sans selection:bg-teal-500/30 selection:text-teal-200">
       {/* Background Decor */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-teal-900/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-cyan-900/10 rounded-full blur-[120px]" />
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-teal-900/20 rounded-full blur-[120px] -translate-x-1/4 -translate-y-1/4" />
       </div>
 
       <Header
