@@ -4,12 +4,19 @@
 
 html,
 body {
-  min-height: 100vh;
+  min-height: 100dvh; /* dynamic viewport height - adjusts for iOS Safari toolbar */
+  min-height: 100vh; /* fallback for older browsers */
   width: 100vw;
   background-color: #0a0a0a; /* neutral-950 - true black */
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@supports (min-height: 100dvh) {
+  html, body {
+    min-height: 100dvh;
+  }
 }
 
 /* Smooth scrolling */
