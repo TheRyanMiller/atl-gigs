@@ -1,0 +1,3550 @@
+[
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917KOMf",
+        "name": "Hippie Sabotage",
+        "slug": "hippie-sabotage",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/103/d5669364-6380-4f1b-9dc1-250fd2a1a103_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvF",
+        "genre": "Dance/Electronic"
+      },
+      {
+        "discovery_id": "K8vZ917qVCV",
+        "name": "Carpetman",
+        "slug": "carpetman",
+        "images": [
+          {
+            "fallback": true,
+            "image_url": "https://s1.ticketm.net/dam/c/4f2/0109888a-61b5-4525-8432-b026ef04f4f2_105631_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAev",
+        "genre": "Pop"
+      }
+    ],
+    "discovery_id": "vvG1zZbNUzQ00a",
+    "event_date": "2025-05-02",
+    "event_date_timestamp_utc": "2025-05-03T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/103/d5669364-6380-4f1b-9dc1-250fd2a1a103_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is an all ages event. Doors 7pm Show 8pm This show has two separate General Admission (GA) areas: The GA Floor (standing room) and the GA balconies (seated, first come first served). GA tickets purchased are for either the floor or balcony. You must remain in the section of your purchased ticket. Row A in balcony sections 201-108 are sold as reserved assigned seating. The remainder of the balconies are general admission.",
+    "name": "Hippie Sabotage: Echoes of Time Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbNUX2VIJ",
+        "name": "Premier Parking - Hippie Sabotage - Not a Concert Ticket",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00623DBE3F4A26"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbNUXz7Iy",
+        "name": "The Room - Hippie Sabotage - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00623DBEE04A39"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbNUWRfIC",
+        "name": "Fast Lane Access - Hippie Sabotage - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00623DBDBD4A0E"
+      }
+    ],
+    "url": "https://concerts.livenation.com/hippie-sabotage-echoes-of-time-tour-atlanta-georgia-05-02-2025/event/0E00623DB86A4909",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917u777",
+        "name": "Devin Townsend",
+        "slug": "devin-townsend",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/596/0bd64b03-293c-4869-aaed-b82140566596_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ917GOVf",
+        "name": "TesseracT",
+        "slug": "tesseract",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/067/43d71121-af67-4463-a2a3-6e179dcb1067_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvt",
+        "genre": "Metal"
+      }
+    ],
+    "discovery_id": "vvG1zZbpYv2Ve-",
+    "event_date": "2025-05-03",
+    "event_date_timestamp_utc": "2025-05-03T23:30:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:30:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/596/0bd64b03-293c-4869-aaed-b82140566596_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Doors at 6:30pm Show at 7:30pm Please be advised our balconies are not ADA accessible. All accommodations are located on the main floor level.",
+    "name": "Devin Townsend's PowerNerd Tour!",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbpYe1779",
+        "name": "Premier Parking - Devin Townsend - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00616C02284117"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbpY7M01_",
+        "name": "The Room - Devin Townsend - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00616C04DE4299"
+      }
+    ],
+    "url": "https://concerts.livenation.com/devin-townsends-powernerd-tour-atlanta-georgia-05-03-2025/event/0E00616C013F40A1",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917qJL7",
+        "name": "Tina Knowles",
+        "slug": "tina-knowles",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/44e/5d81f102-0c56-472c-b523-79ae30b0144e_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAJe",
+        "genre": "Lecture/Seminar"
+      }
+    ],
+    "discovery_id": "vvG1zZbPnsafEw",
+    "event_date": "2025-05-08",
+    "event_date_timestamp_utc": "2025-05-08T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/44e/5d81f102-0c56-472c-b523-79ae30b0144e_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. Moderated by Mr. Tyler Perry. All ages welcome. Box Office Open at 5pm. Doors at 6pm. Show at 7pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Matriarch: An Evening with Tina Knowles, Family, and Friends",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbPnsy7IL",
+        "name": "Premier Parking - Tina Knowles - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00625AB1E44A1F"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbPnwy0tI",
+        "name": "The Room - Tina Knowles - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00625AB2E64A68"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lv",
+        "discovery_id": "vvG1zZbIKz2I28",
+        "name": "Tina Knowles VIP Upgrade Add-On (Event Ticket Sold Separately)",
+        "type": "Special Entry",
+        "url": "http://concerts.livenation.com/event/0E006284F83E83D0"
+      }
+    ],
+    "url": "https://concerts.livenation.com/matriarch-an-evening-with-tina-knowles-atlanta-georgia-05-08-2025/event/0E00625AB12549F2",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9172mh0",
+        "name": "BADBADNOTGOOD",
+        "slug": "badbadnotgood",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/a9b/8550e90c-b150-4a92-ad56-adfed77cfa9b_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvE",
+        "genre": "Jazz"
+      },
+      {
+        "discovery_id": "K8vZ917bdf7",
+        "name": "Baby Rose",
+        "slug": "baby-rose",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/bc0/24c1331a-e1f5-49fd-8f07-56fbbdb70bc0_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAee",
+        "genre": "R&B"
+      }
+    ],
+    "discovery_id": "vvG1zZb0KB7drV",
+    "event_date": "2025-05-09",
+    "event_date_timestamp_utc": "2025-05-10T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/a9b/8550e90c-b150-4a92-ad56-adfed77cfa9b_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "BADBADNOTGOOD - The Mid Spiral Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZb0QBmNCP",
+        "name": "Premier Parking - BADBADNOTGOOD - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006246BABA33A5"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZb0QD9NCy",
+        "name": "The Room - BADBADNOTGOOD - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006246BB5E33B9"
+      }
+    ],
+    "url": "https://concerts.livenation.com/badbadnotgood-the-mid-spiral-tour-atlanta-georgia-05-09-2025/event/0E006244FA1037B4",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917oIn0",
+        "name": "Jacquees",
+        "slug": "jacquees",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/8e2/0215a97f-c398-4552-a703-0de0df94f8e2_1219631_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAee",
+        "genre": "R&B"
+      },
+      {
+        "discovery_id": "K8vZ9173HD0",
+        "name": "Dej Loaf",
+        "slug": "dej-loaf",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/cde/97d19632-b488-47c6-9e03-16bbd86e1cde_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAv1",
+        "genre": "Hip-Hop/Rap"
+      }
+    ],
+    "discovery_id": "vvG1zZbNYGOPrD",
+    "event_date": "2025-05-10",
+    "event_date_timestamp_utc": "2025-05-11T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/8e2/0215a97f-c398-4552-a703-0de0df94f8e2_1219631_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Jacquees & Dej Loaf - F#*K A FRIEND ZONE TOUR",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbNY2mP-7",
+        "name": "Premier Parking - Jacquees & Dej Loaf - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00623C0FBA5844"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbNYCoALz",
+        "name": "The Room - Jacquees & Dej Loaf - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00623C0E4457F8"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbNYCUAOP",
+        "name": "Fast Lane Access - Jacquees & Dej Loaf - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00623C0ED85825"
+      }
+    ],
+    "url": "https://concerts.livenation.com/jacquees-dej-loaf-fk-a-friend-atlanta-georgia-05-10-2025/event/0E00623C0C8257BB",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917bvf7",
+        "name": "Duki",
+        "slug": "duki",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/557/131f90ab-38b2-4743-a159-b14122899557_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAv1",
+        "genre": "Hip-Hop/Rap"
+      }
+    ],
+    "discovery_id": "vvG1zZb4UrSwbM",
+    "event_date": "2025-05-14",
+    "event_date_timestamp_utc": "2025-05-15T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/557/131f90ab-38b2-4743-a159-b14122899557_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "All ages welcome. Doors 7PM Show 8PM The main floor is general admission, standing room only. The balconies are reserved, assigned seating. Our balcony is not ADA accessible. All ADA accommodations are available on the main floor.",
+    "name": "DUKI WORLD TOUR",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZb4UL0eQS",
+        "name": "Premier Parking - Duki - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00615D9F9026B3"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZb4UOU3qY",
+        "name": "The Room - Duki - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00615DA0D92770"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZb4U-Qxre",
+        "name": "Fast Lane Access - DUKI - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00615DA16A2782"
+      }
+    ],
+    "url": "https://concerts.livenation.com/duki-world-tour-atlanta-georgia-05-14-2025/event/0E00615D9ECF2637",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917GIKV",
+        "name": "Tom Papa",
+        "slug": "tom-papa",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/298/e1da6737-7aa4-424d-8fb6-24c0700c8298_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAe1",
+        "genre": "Comedy"
+      }
+    ],
+    "discovery_id": "vvG1zZbpTlPSB-",
+    "event_date": "2025-05-16",
+    "event_date_timestamp_utc": "2025-05-16T23:30:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:30:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/298/e1da6737-7aa4-424d-8fb6-24c0700c8298_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating event. All ages welcome. Doors at 6:30pm Show at 7:30pm Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level.",
+    "name": "Tom Papa: Grateful Bread Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbpTRqdT7",
+        "name": "Premier Parking - Tom Papa - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00616FEF743FC4"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbpTYCfv8",
+        "name": "The Room - Tom Papa - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00616FF0394050"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbpTYw0dn",
+        "name": "Fast Lane Access - Tom Papa - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00616FF0CA40EA"
+      }
+    ],
+    "url": "https://concerts.livenation.com/tom-papa-grateful-bread-tour-atlanta-georgia-05-16-2025/event/0E00616FEB973EA1",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ91714d0",
+        "name": "Marilyn Manson",
+        "slug": "marilyn-manson",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/35d/0f88ee98-922c-4883-a16a-d328c444635d_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvt",
+        "genre": "Metal"
+      }
+    ],
+    "discovery_id": "vvG1zZbxMdjx4Z",
+    "event_date": "2025-05-20",
+    "event_date_timestamp_utc": "2025-05-21T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/35d/0f88ee98-922c-4883-a16a-d328c444635d_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "All ages welcome. Doors 7PM Show 8PM The main floor is general admission, standing room only. The balconies are reserved, assigned seating. Our balcony is not ADA accessible. All ADA accommodations are available on the main floor.",
+    "name": "Marilyn Manson",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbxUlxoNf",
+        "name": "Premier Parking - Marilyn Manson - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00622DAB8918D4"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbxUiev0f",
+        "name": "The Room - Marilyn Manson - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00622DAC081914"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbxMAN34W",
+        "name": "Fast Lane Access - Marilyn Manson - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00622DC58D257D"
+      }
+    ],
+    "url": "https://concerts.livenation.com/marilyn-manson-atlanta-georgia-05-20-2025/event/0E00622DC3722540",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9172GS0",
+        "name": "Durand Bernarr",
+        "slug": "durand-bernarr",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/800/9bd06b4e-9d5d-4827-bf0c-24af8a6af800_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAee",
+        "genre": "R&B"
+      }
+    ],
+    "discovery_id": "vvG1zZb0DA44ht",
+    "event_date": "2025-05-21",
+    "event_date_timestamp_utc": "2025-05-22T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/800/9bd06b4e-9d5d-4827-bf0c-24af8a6af800_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Durand Bernarr Presents: You Gon' Grow, Too! Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZb0Dkk4jY",
+        "name": "Premier Parking - Durand Bernarr - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00624EC6195730"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZb0D6hgrS",
+        "name": "The Room - Durand Bernarr - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00624EC76F57B3"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZb0D6DPLp",
+        "name": "Fast Lane Access - Durand Bernarr - Not A Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00624EC7EE57D6"
+      }
+    ],
+    "url": "https://concerts.livenation.com/durand-bernarr-presents-you-gon-grow-atlanta-georgia-05-21-2025/event/0E00624EC55556E9",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9171IA0",
+        "name": "Dark Star Orchestra",
+        "slug": "dark-star-orchestra",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/8d5/ee5c2283-760d-4183-9bc1-3bd0f79708d5_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZb0wy3KrP",
+    "event_date": "2025-05-30",
+    "event_date_timestamp_utc": "2025-05-30T23:30:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:30:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/8d5/ee5c2283-760d-4183-9bc1-3bd0f79708d5_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 5:30pm. Doors at 6:30pm. Show at 7:30pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "An Evening with Dark Star Orchestra",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZb0wBidLq",
+        "name": "Premier Parking - Dark Star Orchestra - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00624CBAB037DD"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZb0wDqKLy",
+        "name": "The Room - Dark Star Orchestra - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00624CBB7537F9"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZb0wHkSO4",
+        "name": "Fast Lane Access - Dark Star Orchestra - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00624CBC1B3815"
+      }
+    ],
+    "url": "https://concerts.livenation.com/an-evening-with-dark-star-orchestra-atlanta-georgia-05-30-2025/event/0E00624CB94937A5",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917ou80",
+        "name": "Turnover",
+        "slug": "turnover",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/c74/aa5988ab-afd9-4437-836d-eaa1e2493c74_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ91785Cf",
+        "name": "Citizen",
+        "slug": "citizen",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/1e0/9327bf17-0583-4f2e-800b-ad8f030361e0_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ917Ki8f",
+        "name": "Horse Jumper of Love",
+        "slug": "horse-jumper-of-love",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/1e0/20679378-c422-41eb-b878-6dfd8db7d1e0_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvv",
+        "genre": "Alternative"
+      }
+    ],
+    "discovery_id": "vvG1zZbx_LMYgf",
+    "event_date": "2025-05-31",
+    "event_date_timestamp_utc": "2025-05-31T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/c74/aa5988ab-afd9-4437-836d-eaa1e2493c74_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "All ages welcome. Doors 6PM Show 7PM The main floor is general admission, standing room only. The balconies are reserved, assigned seating. Our balconies are not ADA accessible. All ADA accommodations are available on the main floor.",
+    "name": "Turnover - 10 Years of Peripheral Vision",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbx_xk-vp",
+        "name": "Premier Parking - Turnover - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006226621A1056"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbx_xJod1",
+        "name": "The Room - Turnover - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006226629910CA"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbx_-0OX9",
+        "name": "Fast Lane Access - Turnover - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00622661920F97"
+      }
+    ],
+    "url": "https://concerts.livenation.com/turnover-10-years-of-peripheral-vision-atlanta-georgia-05-31-2025/event/0E0062265FDF0D54",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917uqZ7",
+        "name": "Ice Nine Kills",
+        "slug": "ice-nine-kills",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/1ab/8d40be3a-b1c7-43d0-9e96-e844217251ab_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbbi2ygyk",
+    "event_date": "2025-06-04",
+    "event_date_timestamp_utc": "2025-06-04T04:00:01.000000",
+    "event_end_date": "2025-06-05",
+    "event_end_time": "23:59:59",
+    "event_status_code": "onsale",
+    "event_time": "00:00:01",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/1ab/8d40be3a-b1c7-43d0-9e96-e844217251ab_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "All ages welcome. Doors 6PM Show 7PM The main floor is general admission, standing room only. The balconies are reserved, assigned seating. Our balcony is not ADA accessible. All ADA accommodations are available on the main floor.",
+    "name": "Ice Nine Kills: Silver Scream-A-Thon - 2-Day Ticket",
+    "upsell": [],
+    "url": "https://concerts.livenation.com/ice-nine-kills-silver-screamathon-2day-atlanta-georgia-06-04-2025/event/0E00618B0FE75E46",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917uqZ7",
+        "name": "Ice Nine Kills",
+        "slug": "ice-nine-kills",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/1ab/8d40be3a-b1c7-43d0-9e96-e844217251ab_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ917GmdV",
+        "name": "The Word Alive",
+        "slug": "the-word-alive",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/299/615d16ce-32eb-4a5d-9c32-ad35fcc90299_1078281_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ9173cE7",
+        "name": "The Funeral Portrait",
+        "slug": "the-funeral-portrait",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/029/6df274eb-1af6-42f5-970d-1f4d6172b029_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ917qHhV",
+        "name": "Melrose Avenue",
+        "slug": "melrose-avenue",
+        "images": [
+          {
+            "fallback": true,
+            "image_url": "https://s1.ticketm.net/dam/c/fbc/b293c0ad-c904-4215-bc59-8d7f2414dfbc_106141_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbbRzb45-",
+    "event_date": "2025-06-04",
+    "event_date_timestamp_utc": "2025-06-04T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/1ab/8d40be3a-b1c7-43d0-9e96-e844217251ab_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "All ages welcome. Doors 6PM Show 7PM The main floor is general admission, standing room only. The balconies are reserved, assigned seating. Our balcony is not ADA accessible. All ADA accommodations are available on the main floor.",
+    "name": "Ice Nine Kills: Silver Scream-A-Thon",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbbRzWg5y",
+        "name": "Premier Parking - Ice Nine Kills - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00618BF8F752F9"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbbRB3PuC",
+        "name": "The Room - Ice Nine Kills - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00618BFA4A534E"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbbRyV4Gt",
+        "name": "Fast Lane Access - Ice Nine Kills - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00618BF9D15329"
+      }
+    ],
+    "url": "https://concerts.livenation.com/ice-nine-kills-silver-screamathon-atlanta-georgia-06-04-2025/event/0E00618BF86152E1",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917uqZ7",
+        "name": "Ice Nine Kills",
+        "slug": "ice-nine-kills",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/1ab/8d40be3a-b1c7-43d0-9e96-e844217251ab_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ91783f7",
+        "name": "Hail the Sun",
+        "slug": "hail-the-sun",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/2d9/96b2eb70-b495-49a2-b04a-b33efb1942d9_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ917hIXf",
+        "name": "TX2",
+        "slug": "tx2",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/772/8ab9855a-bf9f-401a-bfcc-ab0aa2ebc772_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvv",
+        "genre": "Alternative"
+      },
+      {
+        "discovery_id": "K8vZ917hay7",
+        "name": "Dark Divine",
+        "slug": "dark-divine",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/7e9/ca967c02-ebaa-4d31-9972-7f5f865a57e9_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbbifXpew",
+    "event_date": "2025-06-05",
+    "event_date_timestamp_utc": "2025-06-05T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/1ab/8d40be3a-b1c7-43d0-9e96-e844217251ab_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "All ages welcome. Doors 6PM Show 7PM The main floor is general admission, standing room only. The balconies are reserved, assigned seating. Our balcony is not ADA accessible. All ADA accommodations are available on the main floor.",
+    "name": "Ice Nine Kills: Silver Scream-A-Thon",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbbip8U79",
+        "name": "Premier Parking - Ice Nine Kills - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00618B16436117"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbbipsU7P",
+        "name": "The Room - Ice Nine Kills - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00618B16C76125"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbbi4ckdE",
+        "name": "Fast Lane Access - Ice Nine Kills - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00618B15B460E7"
+      }
+    ],
+    "url": "https://concerts.livenation.com/ice-nine-kills-silver-screamathon-atlanta-georgia-06-05-2025/event/0E00618B14F960B2",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9175Wff",
+        "name": "The Kooks",
+        "slug": "the-kooks",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/bbb/8725b2c2-4109-4127-bbd2-841a6a974bbb_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ917p_F0",
+        "name": "lovelytheband",
+        "slug": "lovelytheband",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/73e/93407d98-5191-4d17-98fc-d9932ed2c73e_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZb0CO9xKN",
+    "event_date": "2025-06-07",
+    "event_date_timestamp_utc": "2025-06-08T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/bbb/8725b2c2-4109-4127-bbd2-841a6a974bbb_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "The Kooks - All Over The World Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZb0CNN3pY",
+        "name": "Premier Parking - The Kooks - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006243A38D25B0"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZb0CxL34U",
+        "name": "The Room - The Kooks - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006243A27D2576"
+      }
+    ],
+    "url": "https://concerts.livenation.com/the-kooks-all-over-the-world-atlanta-georgia-06-07-2025/event/0E006243A05E24E3",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZfZ7teJk",
+        "name": "Ramy Youssef",
+        "slug": "ramy-youssef",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/9ad/2b775c3a-4be3-4367-a4c6-0c72994df9ad_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAe1",
+        "genre": "Comedy"
+      }
+    ],
+    "discovery_id": "vvG1zZbNwMM07i",
+    "event_date": "2025-06-08",
+    "event_date_timestamp_utc": "2025-06-08T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/9ad/2b775c3a-4be3-4367-a4c6-0c72994df9ad_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 5pm. Doors at 6pm. Show at 7pm. This event will be a phone-free experience. Use of cellphones, smart watches, smart accessories, cameras, or recording devices will not be permitted in the performance space. Upon arrival at the venue, all phones, smart watches, and accessories will be secured in Yondr pouches that will be opened at the end of the event. Guests maintain possession of their phones at all times, and can access their phones throughout the event at designated Phone Use Areas in the venue. All phones will be re-secured in Yondr pouches before returning to the event space. Anyone seen using a phone during the performance will be escorted out of the venue. Guests are encouraged to bring a credit card for purchases inside the venue. We appreciate your cooperation in creating a phone-free viewing experience.",
+    "name": "ramy youssef: love beam 7000",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbNwD7V14",
+        "name": "Premier Parking - Ramy Youssef - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00623CBB134295"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbNwzBVAo",
+        "name": "The Room - Ramy Youssef - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00623CB8EB4151"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbNwX60pq",
+        "name": "Fast Lane Access - Ramy Youssef - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00623CBE1E459D"
+      }
+    ],
+    "url": "https://concerts.livenation.com/ramy-youssef-love-beam-7000-atlanta-georgia-06-08-2025/event/0E00623CB7DE412C",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ91759T7",
+        "name": "JET",
+        "slug": "jet",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/734/f24d6fe0-5b7b-4ab3-934d-ce4d7b1ad734_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ917GpH0",
+        "name": "Band of Skulls",
+        "slug": "band-of-skulls",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/943/bd492af2-b700-4f95-b0d7-f7f369259943_1026631_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbxBXCet9",
+    "event_date": "2025-06-09",
+    "event_date_timestamp_utc": "2025-06-10T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/734/f24d6fe0-5b7b-4ab3-934d-ce4d7b1ad734_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "JET US TOUR 2025 with Band Of Skulls",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbxBUk3JN",
+        "name": "Premier Parking - JET - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00622EB61929A3"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbxBg0wPp",
+        "name": "The Room - JET - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00622EB5932956"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbxBUbwJl",
+        "name": "Fast Lane Access - JET - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00622EB66329AB"
+      }
+    ],
+    "url": "https://concerts.livenation.com/jet-us-tour-2025-with-band-atlanta-georgia-06-09-2025/event/0E00622EBE382A57",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917GpcV",
+        "name": "Melendi",
+        "slug": "melendi",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/bd7/718e0f8a-0ce0-4b7e-b5d4-14eafe39fbd7_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAev",
+        "genre": "Pop"
+      }
+    ],
+    "discovery_id": "vvG1zZbNQTJKSs",
+    "event_date": "2025-06-11",
+    "event_date_timestamp_utc": "2025-06-11T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/bd7/718e0f8a-0ce0-4b7e-b5d4-14eafe39fbd7_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 5pm. Doors at 6pm. Show at 7pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "MELENDI - Tour 20 Años",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbNhZzKgz",
+        "name": "Premier Parking - Melendi - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006236C0E13D78"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbNhZrdg9",
+        "name": "The Room - Melendi - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006236C0783D57"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbNhvNNMr",
+        "name": "Fast Lane Access - Melendi - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E006236C18E3DDE"
+      }
+    ],
+    "url": "https://concerts.livenation.com/melendi-tour-20-anos-atlanta-georgia-06-11-2025/event/0E006236BF993CF1",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917orN7",
+        "name": "BANKS",
+        "slug": "banks",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/0b0/c8813cda-6135-4daa-ba07-30f2f94e90b0_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAev",
+        "genre": "Pop"
+      },
+      {
+        "discovery_id": "K8vZ917hjSf",
+        "name": "Absolutely",
+        "slug": "absolutely",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/23f/49df002b-dc80-4eb1-97c1-e2a9d44c023f_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAee",
+        "genre": "R&B"
+      }
+    ],
+    "discovery_id": "vvG1zZbPJzRf7L",
+    "event_date": "2025-06-15",
+    "event_date_timestamp_utc": "2025-06-16T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/0b0/c8813cda-6135-4daa-ba07-30f2f94e90b0_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "BANKS - OFF WITH HER HEAD TOUR 2025",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbPJHPVaO",
+        "name": "Premier Parking - Banks - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006259BC974260"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbPJB20AY",
+        "name": "The Room - BANKS - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006259BA3E4170"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbPJD3VFi",
+        "name": "Fast Lane Access - BANKS - Not A Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E006259BB4B422C"
+      }
+    ],
+    "url": "https://concerts.livenation.com/banks-off-with-her-head-tour-atlanta-georgia-06-15-2025/event/0E006259B8BD411F",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ91728if",
+        "name": "Coco Jones",
+        "slug": "coco-jones",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/297/2fe961ab-abe4-4082-8717-c0395c6c3297_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAee",
+        "genre": "R&B"
+      },
+      {
+        "discovery_id": "K8vZ917j0g7",
+        "name": "Lady London",
+        "slug": "lady-london",
+        "images": [
+          {
+            "fallback": true,
+            "image_url": "https://s1.ticketm.net/dam/c/80b/f3cd8d24-c3ae-4fa0-b4bc-1ba99f9b380b_106091_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAv1",
+        "genre": "Hip-Hop/Rap"
+      },
+      {
+        "discovery_id": "K8vZ917hcDV",
+        "name": "TA Thomas",
+        "slug": "ta-thomas",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/e34/586c523f-c19b-48e2-9abf-1f09d9289e34_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAee",
+        "genre": "R&B"
+      }
+    ],
+    "discovery_id": "vvG1zZbP5erS00",
+    "event_date": "2025-06-21",
+    "event_date_timestamp_utc": "2025-06-22T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/297/2fe961ab-abe4-4082-8717-c0395c6c3297_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Coco Jones: Why Not More? Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbP57qNlW",
+        "name": "Premier Parking - Coco Jones - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006252C4763AFD"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbP5dQKt2",
+        "name": "The Room - Coco Jones - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006252C3693A4F"
+      }
+    ],
+    "url": "https://concerts.livenation.com/coco-jones-why-not-more-tour-atlanta-georgia-06-21-2025/event/0E006252C27B3924",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9171iM7",
+        "name": "Yonder Mountain String Band",
+        "slug": "yonder-mountain-string-band",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/796/1fa9cc8a-1241-43d8-9f8e-d6a8189e5796_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ91792mV",
+        "name": "Daniel Donato",
+        "slug": "daniel-donato",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/8e4/d554c869-559e-4fb4-84fd-fd30ab9948e4_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvd",
+        "genre": "Blues"
+      },
+      {
+        "discovery_id": "K8vZ9175KDV",
+        "name": "Railroad Earth",
+        "slug": "railroad-earth",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/c69/2e7542a5-6245-4df6-8e17-55c7e0cadc69_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZb0DSik2-",
+    "event_date": "2025-07-10",
+    "event_date_timestamp_utc": "2025-07-10T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/796/1fa9cc8a-1241-43d8-9f8e-d6a8189e5796_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 5:00pm. Doors at 6:00pm. Show at 7:00pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Yonder Mountain String Band, Daniel Donato  & Railroad Earth",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZb0DVaJ2T",
+        "name": "Premier Parking - Yonder Mountain String Back - 100 Luckie St.",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00624EF42663FF"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZb0DgUUoL",
+        "name": "The Room - Yonder Mountain String Band - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00624EF5DB645F"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZb0DURk3u",
+        "name": "Fast Lane Access - Yonder Mountain String Band - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00624EF6BC648D"
+      }
+    ],
+    "url": "https://concerts.livenation.com/yonder-mountain-string-band-daniel-donato-atlanta-georgia-07-10-2025/event/0E00624EF3B063E1",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917bGS0",
+        "name": "flipturn",
+        "slug": "flipturn",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/5dd/e0d3b0cb-71ac-4d55-ab80-2786b5bce5dd_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvv",
+        "genre": "Alternative"
+      },
+      {
+        "discovery_id": "K8vZ917_Wv0",
+        "name": "joe p",
+        "slug": "joe-p",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/0d0/91790c8f-7ce9-40bd-9967-9d3cdac050d0_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvv",
+        "genre": "Alternative"
+      }
+    ],
+    "discovery_id": "vvG1zZbIX_Qe4g",
+    "event_date": "2025-07-17",
+    "event_date_timestamp_utc": "2025-07-18T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/5dd/e0d3b0cb-71ac-4d55-ab80-2786b5bce5dd_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is an all ages event. Doors 7pm Show 8pm This show has two separate General Admission (GA) areas: The GA Floor (standing room) and the GA balconies (seated, first come first served). GA tickets purchased are for either the floor or balcony. You must remain in the section of your purchased ticket. Row A in balcony sections 201-108 are sold as reserved assigned seating. The remainder of the balconies are general admission.",
+    "name": "flipturn: The Burnout Days Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbIXQIeOJ",
+        "name": "Premier Parking - flipturn - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00628F9AA02826"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbIXQ2wL_",
+        "name": "The Room - flipturn - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00628F9A3F27D9"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbIX_Be_X",
+        "name": "Fast Lane Access - flipturn - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00628F99E8267E"
+      }
+    ],
+    "url": "https://concerts.livenation.com/flipturn-the-burnout-days-tour-atlanta-georgia-07-17-2025/event/0E00628F99682575",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917j970",
+        "name": "Ty Myers",
+        "slug": "ty-myers",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/098/47c821fc-ab7c-4ac2-bc84-f6528790b098_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAv6",
+        "genre": "Country"
+      },
+      {
+        "discovery_id": "K8vZ917jW47",
+        "name": "Hannah McFarland",
+        "slug": "hannah-mcfarland",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/a8b/17f77a25-f304-443c-aeca-a1f73ef27a8b_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAv6",
+        "genre": "Country"
+      }
+    ],
+    "discovery_id": "vvG1zZbxDyhdLF",
+    "event_date": "2025-07-18",
+    "event_date_timestamp_utc": "2025-07-19T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/098/47c821fc-ab7c-4ac2-bc84-f6528790b098_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Ty Myers: The Select Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbxDBedLY",
+        "name": "Premier Parking - Ty Myers - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00622EFA0837F0"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbxWrgZU1",
+        "name": "The Room - Ty Myers - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00622F5ED40D8A"
+      }
+    ],
+    "url": "https://concerts.livenation.com/ty-myers-the-select-tour-atlanta-georgia-07-18-2025/event/0E00622EF96C37C8",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ91716S0",
+        "name": "Dinosaur Jr.",
+        "slug": "dinosaur-jr",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/a58/c2ec437b-a338-4d4b-b835-4a49d2f43a58_1408291_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ9174Dbf",
+        "name": "Snail Mail",
+        "slug": "snail-mail",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/be0/e60e51df-f526-4ced-a42a-44ab234b5be0_1510041_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvv",
+        "genre": "Alternative"
+      },
+      {
+        "discovery_id": "K8vZ9171UD0",
+        "name": "Easy Action",
+        "slug": "easy-action",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/376/45f7cad3-4eed-4d48-ab6d-90081b2cd376_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZb0pS4d-B",
+    "event_date": "2025-07-22",
+    "event_date_timestamp_utc": "2025-07-22T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/a58/c2ec437b-a338-4d4b-b835-4a49d2f43a58_1408291_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 5pm. Doors at 6pm. Show at 7pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Dinosaur Jr. + Snail Mail with special guest Easy Action",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZb09b8045",
+        "name": "Premier Parking - Dinosaur Jr. & Snail Mail - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006245D842454B"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZb0pV1dN8",
+        "name": "The Room - Dinosaur Jr. & Snail Mail - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006245B42838D0"
+      }
+    ],
+    "url": "https://concerts.livenation.com/dinosaur-jr-snail-mail-with-special-atlanta-georgia-07-22-2025/event/0E006245B354387A",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9175zZV",
+        "name": "The Fray",
+        "slug": "the-fray",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/52b/61aad4f3-0f2e-45ce-9b99-185a43da852b_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ917pOR7",
+        "name": "The Strike",
+        "slug": "the-strike",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/b4e/1cbf7d03-2f48-49ed-95b5-3704bbf2fb4e_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAev",
+        "genre": "Pop"
+      }
+    ],
+    "discovery_id": "vvG1zZb0wbtwmz",
+    "event_date": "2025-07-30",
+    "event_date_timestamp_utc": "2025-07-30T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/52b/61aad4f3-0f2e-45ce-9b99-185a43da852b_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 5pm. Doors at 6pm. Show at 7pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "THE FRAY - How To Save A Life: The 20th Anniversary Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZb0wQkxst",
+        "name": "Premier Parking - The Fray - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00624C9A1A2C69"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZb0w_4eYt",
+        "name": "The Room - The Fray - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00624C99542C29"
+      }
+    ],
+    "url": "https://concerts.livenation.com/the-fray-how-to-save-a-atlanta-georgia-07-30-2025/event/0E00624C98A72BB8",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9171yHV",
+        "name": "Ryan Adams",
+        "slug": "ryan-adams",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/9ad/6a05fc89-af98-48e2-9c34-2ef335bad9ad_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbNpN7oUt",
+    "event_date": "2025-07-31",
+    "event_date_timestamp_utc": "2025-08-01T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/9ad/6a05fc89-af98-48e2-9c34-2ef335bad9ad_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Ryan Adams: Heartbreaker '25 World Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbNpNMvz-",
+        "name": "Premier Parking - Ryan Adams - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006235A3DC1E21"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbNpNrsze",
+        "name": "The Room - Ryan Adams - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006235A37B1E02"
+      }
+    ],
+    "url": "https://concerts.livenation.com/ryan-adams-heartbreaker-25-world-tour-atlanta-georgia-07-31-2025/event/0E006235A3111DA9",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917_Wef",
+        "name": "Eslabon Armado",
+        "slug": "eslabon-armado",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/a0d/a98584f9-44cb-439d-8b38-4d32bfa85a0d_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAJ6",
+        "genre": "Latin"
+      }
+    ],
+    "discovery_id": "vvG1zZbJTz60Hb",
+    "event_date": "2025-08-09",
+    "event_date_timestamp_utc": "2025-08-10T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/a0d/a98584f9-44cb-439d-8b38-4d32bfa85a0d_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Eslabon Armado - Vibras De Noche II",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbJTzHfXl",
+        "name": "Premier Parking - Eslabon Armado - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00626FF8F14FAB"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbJTybfTK",
+        "name": "The Room - Eslabon Armado - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00626FF9614FD3"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbJTycfTg",
+        "name": "Fast Lane Access - Eslabon Armado - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00626FF9B54FF5"
+      }
+    ],
+    "url": "https://concerts.livenation.com/eslabon-armado-vibras-de-noche-ii-atlanta-georgia-08-09-2025/event/0E00626FF81E4F18",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917GcuV",
+        "name": "Fitz and The Tantrums",
+        "slug": "fitz-and-the-tantrums",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/6fe/eca2eaf0-c1be-4ae3-8238-7d6432f296fe_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAev",
+        "genre": "Pop"
+      },
+      {
+        "discovery_id": "K8vZ917QSf7",
+        "name": "Gable Price And Friends",
+        "slug": "gable-price-and-friends",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/da4/1f1b69b4-8a83-4165-8a4b-59cbf1e64da4_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvv",
+        "genre": "Alternative"
+      }
+    ],
+    "discovery_id": "vvG1zZbEEJX05r",
+    "event_date": "2025-08-24",
+    "event_date_timestamp_utc": "2025-08-24T23:30:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:30:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/6fe/eca2eaf0-c1be-4ae3-8238-7d6432f296fe_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 5:30pm. Doors at 6:30pm. Show at 7:30pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Fitz and the Tantrums - Man on the Moon Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbEEI1VCZ",
+        "name": "Premier Parking - Fitz and the Tantrums - 100 LUCKIE ST LAZ DECK",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006279E82B4380"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbEEt67CK",
+        "name": "The Room - Fitz and the Tantrums - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006279E91C4393"
+      }
+    ],
+    "url": "https://concerts.livenation.com/fitz-and-the-tantrums-man-on-atlanta-georgia-08-24-2025/event/0E006279E6FA42DE",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9171pYf",
+        "name": "Pulp",
+        "slug": "pulp",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/74a/b4b6016a-a664-4bbf-ada1-18d1e490174a_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbtes3diI",
+    "event_date": "2025-09-04",
+    "event_date_timestamp_utc": "2025-09-05T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/74a/b4b6016a-a664-4bbf-ada1-18d1e490174a_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Pulp - Here Comes More",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbtdfdff0",
+        "name": "Premier Parking - Pulp - 100 LUCKIE ST LAZ DECK",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006290D40D4524"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbtdfdVfn",
+        "name": "The Room - Pulp - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006290D40F452A"
+      }
+    ],
+    "url": "https://concerts.livenation.com/pulp-here-comes-more-atlanta-georgia-09-04-2025/event/0E006290B1483B28",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9175Uu7",
+        "name": "Sparks",
+        "slug": "sparks",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/6e6/ec38aedf-5b14-478e-954b-67b23d90a6e6_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbExEie89",
+    "event_date": "2025-09-05",
+    "event_date_timestamp_utc": "2025-09-06T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/6e6/ec38aedf-5b14-478e-954b-67b23d90a6e6_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "SPARKS - MAD! TOUR",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbExlMwfa",
+        "name": "Premier Parking - SPARKS - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006278ABDF2509"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbExih34d",
+        "name": "The Room - SPARKS - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006278AC6D2543"
+      }
+    ],
+    "url": "https://concerts.livenation.com/sparks-mad-tour-atlanta-georgia-09-05-2025/event/0E006278A7B02417",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917CL3V",
+        "name": "PJ Morton",
+        "slug": "pj-morton",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/ddf/2488a18c-949a-4fb4-b2c6-94f3ae736ddf_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAee",
+        "genre": "R&B"
+      },
+      {
+        "discovery_id": "K8vZ917QLVV",
+        "name": "DJ ArieSpins",
+        "slug": "dj-ariespins",
+        "images": [
+          {
+            "fallback": true,
+            "image_url": "https://s1.ticketm.net/dam/c/df8/81eadad8-4449-412e-a2b1-3d8bbb78edf8_106181_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvF",
+        "genre": "Dance/Electronic"
+      }
+    ],
+    "discovery_id": "vvG1zZbtEyCgxD",
+    "event_date": "2025-09-13",
+    "event_date_timestamp_utc": "2025-09-14T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/ddf/2488a18c-949a-4fb4-b2c6-94f3ae736ddf_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "PJ Morton - Make An Impact: The Sickle Cell Awareness Ediiton",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbtEBmA0F",
+        "name": "Premier Parking - PJ Morton - 100 Luckie St LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006299FAB85908"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbtEDaA0B",
+        "name": "The Room - PJ Morton - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006299FB24593A"
+      }
+    ],
+    "url": "https://concerts.livenation.com/pj-morton-make-an-impact-the-atlanta-georgia-09-13-2025/event/0E006299F93B58BB",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9174n57",
+        "name": "Matt Maltese",
+        "slug": "matt-maltese",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/b85/30216759-f525-4046-8c63-4af3098e1b85_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAev",
+        "genre": "Pop"
+      }
+    ],
+    "discovery_id": "vvG1zZbJmS6xWE",
+    "event_date": "2025-09-17",
+    "event_date_timestamp_utc": "2025-09-18T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/b85/30216759-f525-4046-8c63-4af3098e1b85_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Matt Maltese: Tour For You My Whole Life",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbJmwNxW8",
+        "name": "Premier Parking - Matt Maltese - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00626BB28E2F50"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbJmwjxHS",
+        "name": "The Room - Matt Maltese - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00626BB2722F33"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbJmwl3W_",
+        "name": "Fast Lane Access - MATT MALTESE - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00626BB2AD2F59"
+      }
+    ],
+    "url": "https://concerts.livenation.com/matt-maltese-tour-for-you-my-atlanta-georgia-09-17-2025/event/0E00626BB31E2F67",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917hJwf",
+        "name": "berlioz",
+        "slug": "berlioz",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/1ab/d4c5f944-3fdc-4949-80b3-074fd10081ab_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAvF",
+        "genre": "Dance/Electronic"
+      }
+    ],
+    "discovery_id": "vvG1zZbN91rxw1",
+    "event_date": "2025-09-18",
+    "event_date_timestamp_utc": "2025-09-19T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/1ab/d4c5f944-3fdc-4949-80b3-074fd10081ab_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is an all ages event. Doors 7pm Show 8pm This show has two separate General Admission (GA) areas: The GA Floor (standing room) and the GA balconies (seated, first come first served). GA tickets purchased are for either the floor or balcony. You must remain in the section of your purchased ticket. Row A in balcony sections 201-108 are sold as reserved assigned seating. The remainder of the balconies are general admission.",
+    "name": "berlioz (live)",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbN9uPwUJ",
+        "name": "Premier Parking - berlioz - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006235CD972DA6"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbN95q3wl",
+        "name": "The Room - berlioz - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006235CB752CAB"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbN9G93V1",
+        "name": "Fast Lane Access - Berlioz - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E006235CC5D2D0A"
+      }
+    ],
+    "url": "https://concerts.livenation.com/berlioz-live-atlanta-georgia-09-18-2025/event/0E006235CA7A2C8A",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917pW90",
+        "name": "Shoreline Mafia",
+        "slug": "shoreline-mafia",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/d95/32d2777b-1389-4d5f-b033-9e7a3722ed95_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAv1",
+        "genre": "Hip-Hop/Rap"
+      }
+    ],
+    "discovery_id": "vvG1zZbIBn7eGU",
+    "event_date": "2025-09-24",
+    "event_date_timestamp_utc": "2025-09-25T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/d95/32d2777b-1389-4d5f-b033-9e7a3722ed95_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is an all ages event. Doors 7pm Show 8pm This show has two separate General Admission (GA) areas: The GA Floor (standing room) and the GA balconies (seated, first come first served). GA tickets purchased are for either the floor or balcony. You must remain in the section of your purchased ticket. Row A in balcony sections 201-108 are sold as reserved assigned seating. The remainder of the balconies are general admission.",
+    "name": "Shoreline Mafia - Back In Bidness Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbIBRWefQ",
+        "name": "Premier Parking - Shoreline Mafia - 100 Luckie St. LAZ Deck ",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00628EAFF4251A"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbIBmGeKZ",
+        "name": "The Room - Shoreline Mafia - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00628EAE3024C0"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbIBcqw8H",
+        "name": "Fast Lane Access - Shoreline Mafia - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00628EAD77243C"
+      }
+    ],
+    "url": "https://concerts.livenation.com/shoreline-mafia-back-in-bidness-tour-atlanta-georgia-09-24-2025/event/0E00628EAA102336",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9175lZV",
+        "name": "Jimmy Carr",
+        "slug": "jimmy-carr",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/0b1/497bd6bf-7554-45bd-bc26-7da9f41150b1_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAe1",
+        "genre": "Comedy"
+      }
+    ],
+    "discovery_id": "vvG1zZbpSgxNJJ",
+    "event_date": "2025-09-25",
+    "event_date_timestamp_utc": "2025-09-25T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/0b1/497bd6bf-7554-45bd-bc26-7da9f41150b1_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. Ages 16 and over only. Doors at 6pm Show at 7pm. Please be advised our balconies are not ADA accessible. All accommodations are located on our main floor level.",
+    "name": "Jimmy Carr: Laughs Funny",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbpSMJKtr",
+        "name": "Premier Parking - Jimmy Carr - 100 Luckie St. LAZ DECK",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00616CF7993A5E"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbpSUddEj",
+        "name": "The Room - Jimmy Carr - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00616CF60C39DC"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbpSMHdn4",
+        "name": "Fast Lane Access - Jimmy Carr - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00616CF7F03A95"
+      }
+    ],
+    "url": "https://concerts.livenation.com/jimmy-carr-laughs-funny-atlanta-georgia-09-25-2025/event/0E00616CF58A39A6",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917KWbV",
+        "name": "Maren Morris",
+        "slug": "maren-morris",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/452/51628415-ecc9-44a8-a4e5-645b5aa58452_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAev",
+        "genre": "Pop"
+      },
+      {
+        "discovery_id": "K8vZ917qET7",
+        "name": "Jade LeMac",
+        "slug": "jade-lemac",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/b46/fe9b5066-b063-4826-87bb-98c6a125ab46_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAev",
+        "genre": "Pop"
+      }
+    ],
+    "discovery_id": "vvG1zZbtGap4s1",
+    "event_date": "2025-09-26",
+    "event_date_timestamp_utc": "2025-09-27T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/452/51628415-ecc9-44a8-a4e5-645b5aa58452_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Maren Morris: The Dreamsicle Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbtG184w0",
+        "name": "Premier Parking - Maren Morris - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E0062930A415CA4"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbtG5rAVj",
+        "name": "The Room - Maren Morris - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E0062930B785D1C"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbtQ9vwxd",
+        "name": "Fast Lane Access - Maren Morris - Not A Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00629697072883"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAke",
+        "discovery_id": "vvG1zZbtG5gPge",
+        "name": "Coat Check- Maren Morris - Not a Concert Ticket",
+        "type": "Merchandise Voucher",
+        "url": "http://concerts.livenation.com/event/0E0062930BD65D42"
+      }
+    ],
+    "url": "https://concerts.livenation.com/maren-morris-the-dreamsicle-tour-atlanta-georgia-09-26-2025/event/0E00629309595C4A",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917CilV",
+        "name": "Steven Wilson",
+        "slug": "steven-wilson",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/716/30cf2527-54b4-4e0f-9877-492db09c6716_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbNf1JNVk",
+    "event_date": "2025-10-09",
+    "event_date_timestamp_utc": "2025-10-10T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/716/30cf2527-54b4-4e0f-9877-492db09c6716_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Steven Wilson: The Overview Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbNf51KVg",
+        "name": "Premier Parking - Steven Wilson - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E0062350B293D35"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbNf5INgf",
+        "name": "The Room - Steven Wilson - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E0062350BA23D54"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbNfGOKgQ",
+        "name": "Fast Lane Access - Steven Wilson - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E0062350C813D5A"
+      }
+    ],
+    "url": "https://concerts.livenation.com/steven-wilson-the-overview-tour-atlanta-georgia-10-09-2025/event/0E0062350A9A3D06",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917ueX7",
+        "name": "Natalia Lafourcade",
+        "slug": "natalia-lafourcade",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/e07/a7238105-0d61-4307-85d5-0c283ecdbe07_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeF",
+        "genre": "World"
+      }
+    ],
+    "discovery_id": "vvG1zZbNMaiPZK",
+    "event_date": "2025-10-19",
+    "event_date_timestamp_utc": "2025-10-20T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/e07/a7238105-0d61-4307-85d5-0c283ecdbe07_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Natalia Lafourcade - Cancionera Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbNMaiAZ6",
+        "name": "Premier Parking - Natalia Lafourcade - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00623DC9B05007"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbNMaDAZP",
+        "name": "The Room - Natalia Lafourcade - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00623DC9EC5025"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbNM1OPej",
+        "name": "Fast Lane Access - Natalia Lafourcade - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00623DCA82509C"
+      }
+    ],
+    "url": "https://concerts.livenation.com/natalia-lafourcade-cancionera-tour-atlanta-georgia-10-19-2025/event/0E00623DC9B25013",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917ueX7",
+        "name": "Natalia Lafourcade",
+        "slug": "natalia-lafourcade",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/e07/a7238105-0d61-4307-85d5-0c283ecdbe07_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeF",
+        "genre": "World"
+      }
+    ],
+    "discovery_id": "vvG1zZbPml40ln",
+    "event_date": "2025-10-20",
+    "event_date_timestamp_utc": "2025-10-21T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/e07/a7238105-0d61-4307-85d5-0c283ecdbe07_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Natalia Lafourcade - Cancionera Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbPmmCfc_",
+        "name": "Premier Parking - Natalia Lafourcade - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00625BAE394B59"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbPmi8fif",
+        "name": "The Room - Natalia Lafourcade - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00625BAC414B14"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbPmcNfig",
+        "name": "Fast Lane Access - Natalia Lafourcade - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E00625BAD8D4B35"
+      }
+    ],
+    "url": "https://concerts.livenation.com/natalia-lafourcade-cancionera-tour-atlanta-georgia-10-20-2025/event/0E00625BAB564AEA",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917Kmwf",
+        "name": "Lawrence",
+        "slug": "lawrence",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/f52/5f3274be-be3f-4e37-9fc4-55ac9c470f52_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbxLmix00",
+    "event_date": "2025-10-22",
+    "event_date_timestamp_utc": "2025-10-23T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/f52/5f3274be-be3f-4e37-9fc4-55ac9c470f52_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "All ages welcome. Doors 7PM Show 8PM The main floor is general admission, standing room only. The balconies are reserved, assigned seating. Our balcony is not ADA accessible. All ADA accommodations are available on the main floor.",
+    "name": "Lawrence - The Family Business Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbxLRxwP7",
+        "name": "Premier Parking - Lawrence - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006227EF8B2944"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbxLRBxPk",
+        "name": "The Room - Lawrence - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006227EFEA2946"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAke",
+        "discovery_id": "vvG1zZbxLYfwJA",
+        "name": "Coat Check- Lawrence - Not a Concert Ticket",
+        "type": "Merchandise Voucher",
+        "url": "http://concerts.livenation.com/event/0E006227F0532985"
+      }
+    ],
+    "url": "https://concerts.livenation.com/lawrence-the-family-business-tour-atlanta-georgia-10-22-2025/event/0E006227EEB22924",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917C927",
+        "name": "Chris Distefano",
+        "slug": "chris-distefano",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/be8/e5189d29-b6d4-4703-a7df-f9bbb25e7be8_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAe1",
+        "genre": "Comedy"
+      }
+    ],
+    "discovery_id": "vvG1zZb0zaopnh",
+    "event_date": "2025-10-23",
+    "event_date_timestamp_utc": "2025-10-23T23:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "19:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/be8/e5189d29-b6d4-4703-a7df-f9bbb25e7be8_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 5pm. Doors at 6pm. Show at 7pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Chris Distefano",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZb0z12UlH",
+        "name": "Premier Parking - Chris Distefano - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00624E0A3F6AFC"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbE6psNn6",
+        "name": "The Room - Chris Distefano - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006271D6C63A87"
+      }
+    ],
+    "url": "https://concerts.livenation.com/chris-distefano-atlanta-georgia-10-23-2025/event/0E00624E09456A9B",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917_bE0",
+        "name": "Watchhouse",
+        "slug": "watchhouse",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/c4b/f53983ef-1f32-4cc5-91e7-8ae5f23f1c4b_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAva",
+        "genre": "Folk"
+      }
+    ],
+    "discovery_id": "vvG1zZbP9kQFes",
+    "event_date": "2025-11-07",
+    "event_date_timestamp_utc": "2025-11-08T01:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/c4b/f53983ef-1f32-4cc5-91e7-8ae5f23f1c4b_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Watchhouse",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbP96rbdo",
+        "name": "Premier Parking - Watchhouse - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006255C77980D1"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbP96wIdJ",
+        "name": "The Room - Watchhouse - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006255C7CA80E6"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbP9F5FdY",
+        "name": "Fast Lane Access - Watchhouse - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E006255C82C80F0"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAke",
+        "discovery_id": "vvG1zZbP9FEbdW",
+        "name": "Coat Check- Watchhouse - Not a Concert Ticket",
+        "type": "Merchandise Voucher",
+        "url": "http://concerts.livenation.com/event/0E006255C89D80FD"
+      }
+    ],
+    "url": "https://concerts.livenation.com/watchhouse-atlanta-georgia-11-07-2025/event/0E006255C66880B1",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9174Xt0",
+        "name": "Mammoth",
+        "slug": "mammoth",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/8bb/7e085a10-85ac-4f11-8e42-06af4b4378bb_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      },
+      {
+        "discovery_id": "K8vZ917Gcy7",
+        "name": "Myles Kennedy",
+        "slug": "myles-kennedy",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/f64/e8903abf-3066-495b-8b1b-a988d09eef64_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAeA",
+        "genre": "Rock"
+      }
+    ],
+    "discovery_id": "vvG1zZbtIAZPij",
+    "event_date": "2025-11-08",
+    "event_date_timestamp_utc": "2025-11-09T00:30:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "offsale",
+    "event_time": "19:30:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/8bb/7e085a10-85ac-4f11-8e42-06af4b4378bb_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 5:30pm. Doors at 6:30pm. Show at 7:30pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Mammoth - The End Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbtIAU4cj",
+        "name": "Premier Parking - Mammoth - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E00629A05D95B5C"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbtIArAck",
+        "name": "The Room - Mammoth - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E00629A05785B46"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAke",
+        "discovery_id": "vvG1zZbtIkPAmo",
+        "name": "Coat Check- Mammoth - Not a Concert Ticket",
+        "type": "Merchandise Voucher",
+        "url": "http://concerts.livenation.com/event/0E00629A06945B91"
+      }
+    ],
+    "url": "https://concerts.livenation.com/mammoth-the-end-tour-atlanta-georgia-11-08-2025/event/0E00629A05025B1C",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ9174Um0",
+        "name": "I'm With Her",
+        "slug": "i-m-with-her",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/e25/65194fb8-4a32-4934-86a4-a9f4704c0e25_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAva",
+        "genre": "Folk"
+      }
+    ],
+    "discovery_id": "vvG1zZbPSTEUwI",
+    "event_date": "2025-11-15",
+    "event_date_timestamp_utc": "2025-11-16T01:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/e25/65194fb8-4a32-4934-86a4-a9f4704c0e25_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. I'm With Her has partnered with PLUS1 so that $1 per ticket goes to supporting Conscious Alliance?s mission to end hunger nationwide and feed families in need. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "I'm With Her - Wild and Clear and Blue 2025",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbPEtuA8U",
+        "name": "Premier Parking - I'm With Her - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006259E9345436"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbPEEHA2J",
+        "name": "The Room - I'm With Her - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006259E7F053E6"
+      }
+    ],
+    "url": "https://concerts.livenation.com/im-with-her-wild-and-clear-atlanta-georgia-11-15-2025/event/0E00625CFF9F6CA8",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917GQn0",
+        "name": "Sarah Millican",
+        "slug": "sarah-millican",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/56f/fb72cc01-333d-4edf-a6a1-96d9ca29e56f_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAe1",
+        "genre": "Comedy"
+      }
+    ],
+    "discovery_id": "vvG1zZbKEfl4__",
+    "event_date": "2025-11-18",
+    "event_date_timestamp_utc": "2025-11-19T01:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/56f/fb72cc01-333d-4edf-a6a1-96d9ca29e56f_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a fully reserved seating performance. Ages 16 and over only. Please note: Our balconies are not ADA accessible. All accommodations are located on our main floor level. Doors: 7PM Show: 8PM",
+    "name": "SARAH MILLICAN: LATE BLOOMER",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbKEpbgj9",
+        "name": "Premier Parking - Sarah Millican - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006139D6635717"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbKE93gOY",
+        "name": "The Room - Sarah Millican - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006139D74B5830"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbKE9UP-s",
+        "name": "Fast Lane Access - Sarah Millican - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E006139D7DA5871"
+      }
+    ],
+    "url": "https://concerts.livenation.com/sarah-millican-late-bloomer-atlanta-georgia-11-18-2025/event/0E006139D4AD5659",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917fYXf",
+        "name": "Muscadine Bloodline",
+        "slug": "muscadine-bloodline",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/6b3/30575247-9fba-41ad-b082-15d4ad6ac6b3_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAv6",
+        "genre": "Country"
+      }
+    ],
+    "discovery_id": "vvG1zZbJpNWozs",
+    "event_date": "2025-11-22",
+    "event_date_timestamp_utc": "2025-11-23T01:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/6b3/30575247-9fba-41ad-b082-15d4ad6ac6b3_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Muscadine Bloodline: The Coastal Plain Tour",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbJp0tsy-",
+        "name": "Premier Parking - Muscadine Bloodline - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E006265A4A71E61"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbJpPkvyJ",
+        "name": "The Room - Muscadine Bloodline - Not a Concert Ticket*",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E006265A5181E66"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAke",
+        "discovery_id": "vvG1zZbJpPLvHp",
+        "name": "Coat Check- Muscadine Bloodline - Not a Concert Ticket",
+        "type": "Merchandise Voucher",
+        "url": "http://concerts.livenation.com/event/0E006265A57C1F16"
+      }
+    ],
+    "url": "https://concerts.livenation.com/muscadine-bloodline-the-coastal-plain-tour-atlanta-georgia-11-22-2025/event/0E006265A3F51E31",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  },
+  {
+    "artists": [
+      {
+        "discovery_id": "K8vZ917fKM7",
+        "name": "Calum Scott",
+        "slug": "calum-scott",
+        "images": [
+          {
+            "fallback": false,
+            "image_url": "https://s1.ticketm.net/dam/a/044/7fb786a0-98eb-4cd2-8abe-3cdd31469044_RETINA_PORTRAIT_16_9.jpg"
+          }
+        ],
+        "genre_id": "KnvZfZ7vAev",
+        "genre": "Pop"
+      }
+    ],
+    "discovery_id": "vvG1zZbICj4AeI",
+    "event_date": "2026-04-17",
+    "event_date_timestamp_utc": "2026-04-18T00:00:00.000000",
+    "event_end_date": null,
+    "event_end_time": null,
+    "event_status_code": "onsale",
+    "event_time": "20:00:00",
+    "event_timezone": "America/New_York",
+    "images": [
+      {
+        "fallback": false,
+        "image_url": "https://s1.ticketm.net/dam/a/044/7fb786a0-98eb-4cd2-8abe-3cdd31469044_RETINA_PORTRAIT_16_9.jpg"
+      }
+    ],
+    "important_info": "This is a show has a general admission standing room floor with fully reserved assigned seating balconies. All ages welcome. Box Office Open at 6pm. Doors at 7pm. Show at 8pm. Please be aware our balconies are not ADA accessible. All accommodations are located on the main floor level. There is no elevator in the building. Please ask event staff for any ADA assistance upon arrival.",
+    "name": "Calum Scott - The Avenoir Tour 2026",
+    "upsell": [
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFk",
+        "discovery_id": "vvG1zZbICqY4d9",
+        "name": "Premier Parking - Calum Scott - 100 Luckie St. LAZ Deck",
+        "type": "Premier",
+        "url": "http://concerts.livenation.com/event/0E0062839DC150D7"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7v7lF",
+        "discovery_id": "vvG1zZbICrKgdm",
+        "name": "The Room - Calum Scott - Not a Concert Ticket**",
+        "type": "Club Access",
+        "url": "http://concerts.livenation.com/event/0E0062839E4F50EE"
+      },
+      {
+        "classification_id": "KZFzBErXgnZfZ7vAFF",
+        "discovery_id": "vvG1zZbICrRgdW",
+        "name": "Fast Lane Access - Calum Scott - Not a Concert Ticket",
+        "type": "FastLane Access",
+        "url": "http://concerts.livenation.com/event/0E0062839EBF50FD"
+      }
+    ],
+    "url": "https://concerts.livenation.com/calum-scott-the-avenoir-tour-2026-atlanta-georgia-04-17-2026/event/0E0062839C5450A8",
+    "venue": {
+      "name": "Tabernacle",
+      "discovery_id": "KovZpaFEZe",
+      "location": {
+        "address": "152 Luckie Street",
+        "city": "Atlanta",
+        "country": "US",
+        "latitude": 33.758688,
+        "longitude": -84.391449,
+        "state": "GA",
+        "zip_code": "30303"
+      }
+    }
+  }
+]

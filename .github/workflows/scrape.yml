@@ -1,0 +1,47 @@
+name: Scrape Events
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC (1 AM EST / 2 AM EDT)
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Create virtual environment and install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run scraper
+        run: |
+          source venv/bin/activate
+          python scrape.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet atl-gigs/public/events.json atl-gigs/public/scrape-status.json 2>/dev/null || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add atl-gigs/public/events.json atl-gigs/public/scrape-status.json events.json
+          git commit -m "chore: update events data [automated]"
+          git push
