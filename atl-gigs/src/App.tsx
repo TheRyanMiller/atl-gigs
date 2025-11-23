@@ -78,19 +78,14 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="relative bg-neutral-950 text-neutral-200 font-sans selection:bg-teal-500/30 selection:text-teal-200">
-      {/* Background Decor */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-teal-900/20 rounded-full blur-[120px] -translate-x-1/4 -translate-y-1/4" />
-      </div>
-
+    <div className="min-h-screen bg-neutral-950 text-neutral-200 font-sans selection:bg-teal-500/30 selection:text-teal-200">
       <Header
         status={scrapeStatus}
         onStatusClick={() => setShowStatusModal(true)}
       />
 
       {/* Main Content */}
-      <main className="relative z-10 max-w-5xl mx-auto px-4 py-8 sm:py-12">
+      <main className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
         {error && (
           <div
             className="bg-red-900/20 border border-red-500/30 text-red-400 px-4 py-3 rounded-xl mb-6"
