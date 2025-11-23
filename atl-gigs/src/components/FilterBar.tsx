@@ -163,7 +163,7 @@ export default function FilterBar({
     return `${selectedVenues.length} Venues`;
   };
 
-  const hasDateFilter = startDate || endDate;
+  const hasDateFilter = !!(startDate || endDate);
   const hasVenueFilter = selectedVenues.length > 0;
 
   return (
