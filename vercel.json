@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd atl-gigs && npm install && npm run build",
+  "outputDirectory": "atl-gigs/dist",
+  "installCommand": "cd atl-gigs && npm install",
+  "framework": "vite"
+}
