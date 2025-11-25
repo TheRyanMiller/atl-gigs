@@ -9,6 +9,8 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout repository
@@ -32,10 +34,61 @@ jobs:
           source venv/bin/activate
           python scrape.py
 
-      - name: Check for changes
+      - name: Check for changes and detect new events
         id: changes
         run: |
-          git diff --quiet atl-gigs/public/events.json atl-gigs/public/scrape-status.json 2>/dev/null || echo "changed=true" >> $GITHUB_OUTPUT
+          if git diff --quiet atl-gigs/public/events.json 2>/dev/null; then
+            echo "No changes detected"
+            exit 0
+          fi
+          
+          echo "changed=true" >> $GITHUB_OUTPUT
+          
+          # Extract new events by comparing old and new JSON
+          if [ -f atl-gigs/public/events.json ]; then
+            echo "## New Events Detected:" >> $GITHUB_STEP_SUMMARY
+            
+            # Get old events (from git)
+            git show HEAD:atl-gigs/public/events.json > /tmp/old_events.json 2>/dev/null || echo "[]" > /tmp/old_events.json
+            
+            # Compare and find new events (events in new file but not in old)
+            python3 << 'EOF'
+          import json
+          import sys
+          
+          with open('/tmp/old_events.json', 'r') as f:
+              old_events = json.load(f)
+          with open('atl-gigs/public/events.json', 'r') as f:
+              new_events = json.load(f)
+          
+          # Create set of old event signatures (date + venue + first artist)
+          old_signatures = set()
+          for e in old_events:
+              if e.get('artists') and len(e['artists']) > 0:
+                  sig = f"{e['date']}|{e['venue']}|{e['artists'][0]['name']}"
+                  old_signatures.add(sig)
+          
+          # Find truly new events
+          new_event_list = []
+          for e in new_events:
+              if e.get('artists') and len(e['artists']) > 0:
+                  sig = f"{e['date']}|{e['venue']}|{e['artists'][0]['name']}"
+                  if sig not in old_signatures:
+                      new_event_list.append(e)
+          
+          if new_event_list:
+              print(f"Found {len(new_event_list)} new event(s):")
+              for e in new_event_list[:10]:  # Limit to first 10
+                  artist = e['artists'][0]['name']
+                  venue = e['venue']
+                  date = e['date']
+                  print(f"  - {artist} at {venue} on {date}")
+              if len(new_event_list) > 10:
+                  print(f"  ... and {len(new_event_list) - 10} more")
+          else:
+              print("No new events added (only updates to existing events)")
+          EOF
+          fi
 
       - name: Commit and push if changed
         if: steps.changes.outputs.changed == 'true'
