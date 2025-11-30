@@ -32,7 +32,7 @@ function AppContent() {
 
   useEffect(() => {
     // Fetch events
-    fetch("/events.json")
+    fetch("/events/events.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -61,7 +61,7 @@ function AppContent() {
       });
 
     // Fetch scrape status
-    fetch("/scrape-status.json")
+    fetch("/events/scrape-status.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

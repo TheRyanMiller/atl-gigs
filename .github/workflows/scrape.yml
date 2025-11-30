@@ -9,9 +9,7 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,67 +32,25 @@ jobs:
           source venv/bin/activate
           python scrape.py
 
-      - name: Check for changes and detect new events
-        id: changes
+      - name: Show scrape summary
         run: |
-          if git diff --quiet atl-gigs/public/events.json 2>/dev/null; then
-            echo "No changes detected"
-            exit 0
+          echo "## Scrape Results" >> $GITHUB_STEP_SUMMARY
+          if [ -f atl-gigs/public/events/events.json ]; then
+            EVENT_COUNT=$(python3 -c "import json; print(len(json.load(open('atl-gigs/public/events/events.json'))))")
+            echo "- **Upcoming events:** $EVENT_COUNT" >> $GITHUB_STEP_SUMMARY
           fi
-          
-          echo "changed=true" >> $GITHUB_OUTPUT
-          
-          # Extract new events by comparing old and new JSON
-          if [ -f atl-gigs/public/events.json ]; then
-            echo "## New Events Detected:" >> $GITHUB_STEP_SUMMARY
-            
-            # Get old events (from git)
-            git show HEAD:atl-gigs/public/events.json > /tmp/old_events.json 2>/dev/null || echo "[]" > /tmp/old_events.json
-            
-            # Compare and find new events (events in new file but not in old)
-            python3 << 'EOF'
-          import json
-          import sys
-          
-          with open('/tmp/old_events.json', 'r') as f:
-              old_events = json.load(f)
-          with open('atl-gigs/public/events.json', 'r') as f:
-              new_events = json.load(f)
-          
-          # Create set of old event signatures (date + venue + first artist)
-          old_signatures = set()
-          for e in old_events:
-              if e.get('artists') and len(e['artists']) > 0:
-                  sig = f"{e['date']}|{e['venue']}|{e['artists'][0]['name']}"
-                  old_signatures.add(sig)
-          
-          # Find truly new events
-          new_event_list = []
-          for e in new_events:
-              if e.get('artists') and len(e['artists']) > 0:
-                  sig = f"{e['date']}|{e['venue']}|{e['artists'][0]['name']}"
-                  if sig not in old_signatures:
-                      new_event_list.append(e)
-          
-          if new_event_list:
-              print(f"Found {len(new_event_list)} new event(s):")
-              for e in new_event_list[:10]:  # Limit to first 10
-                  artist = e['artists'][0]['name']
-                  venue = e['venue']
-                  date = e['date']
-                  print(f"  - {artist} at {venue} on {date}")
-              if len(new_event_list) > 10:
-                  print(f"  ... and {len(new_event_list) - 10} more")
-          else:
-              print("No new events added (only updates to existing events)")
-          EOF
+          if [ -f atl-gigs/public/events/archive.json ]; then
+            ARCHIVE_COUNT=$(python3 -c "import json; print(len(json.load(open('atl-gigs/public/events/archive.json'))))")
+            echo "- **Archived events:** $ARCHIVE_COUNT" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: Commit and push if changed
-        if: steps.changes.outputs.changed == 'true'
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Deploy to Vercel
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add atl-gigs/public/events.json atl-gigs/public/scrape-status.json atl-gigs/public/og/
-          git commit -m "chore: update events data [automated]"
-          git push
+          cd atl-gigs
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
