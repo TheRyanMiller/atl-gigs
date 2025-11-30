@@ -30,10 +30,20 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Cache artist classifications
+        uses: actions/cache@v4
+        with:
+          path: atl-gigs/public/events/artist-cache.json
+          key: artist-cache-${{ github.run_id }}
+          restore-keys: |
+            artist-cache-
+
       - name: Run scraper
         run: |
           source venv/bin/activate
           python scrape.py
+        env:
+          TM_API_KEY: ${{ secrets.TM_API_KEY }}
 
       - name: Show scrape summary
         run: |

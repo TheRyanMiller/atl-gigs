@@ -19,6 +19,10 @@ import requests, datetime as dt, re, itertools, json, time, os, traceback
 from bs4 import BeautifulSoup
 from datetime import datetime
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # ----------------------------------------------------------------------
 # Configuration
@@ -36,6 +40,76 @@ CATEGORIES = ["concerts", "comedy", "broadway", "sports", "misc"]
 DEFAULT_CATEGORY = "concerts"
 
 REQUIRED_FIELDS = ["venue", "date", "artists", "ticket_url"]
+
+# ----------------------------------------------------------------------
+# Ticketmaster Discovery API Configuration
+# ----------------------------------------------------------------------
+
+TM_API_KEY = os.environ.get("TM_API_KEY")
+TM_BASE_URL = "https://app.ticketmaster.com/discovery/v2"
+
+# Venue IDs discovered from TM API
+TM_VENUES = {
+    # Center Stage Complex
+    "Center Stage": "KovZpZAFF1tA",
+    "The Loft": "KovZpa2qJe",
+    "Vinyl": "KovZpZA1lJ7A",
+    # State Farm Arena
+    "State Farm Arena": "KovZpa2Xke",
+    # The Masquerade (separate IDs per room)
+    "The Masquerade - Heaven": "KovZpa2WHe",
+    "The Masquerade - Hell": "KovZ917AOz0",
+    "The Masquerade - Purgatory": "KovZ917AOzm",
+    "The Masquerade - Altar": "KovZ917AmQG",
+}
+
+# Classification mapping: TM segment/genre -> our category
+TM_CATEGORY_MAP = {
+    # Segment-level (less specific)
+    "Music": "concerts",
+    "Sports": "sports",
+    "Arts & Theatre": "broadway",
+    "Film": "misc",
+    "Miscellaneous": "misc",
+    # Genre-level overrides (more specific - takes precedence)
+    "Comedy": "comedy",
+    "Stand-Up": "comedy",
+    "Theatre": "broadway",
+    "Musical": "broadway",
+    "Basketball": "sports",
+    "Wrestling": "sports",
+    "Hockey": "sports",
+    "Football": "sports",
+}
+
+# Cache for artist classifications (avoid repeated API calls)
+# This cache is persisted to disk to avoid redundant API calls between runs
+_artist_classification_cache = {}
+ARTIST_CACHE_PATH = Path(__file__).parent / "atl-gigs" / "public" / "events" / "artist-cache.json"
+
+def load_artist_cache():
+    """Load artist classification cache from disk."""
+    global _artist_classification_cache
+    try:
+        if ARTIST_CACHE_PATH.exists():
+            with open(ARTIST_CACHE_PATH, "r") as f:
+                _artist_classification_cache = json.load(f)
+                print(f"  Loaded {len(_artist_classification_cache)} cached artist classifications")
+    except Exception as e:
+        print(f"  Warning: Could not load artist cache: {e}")
+        _artist_classification_cache = {}
+
+def save_artist_cache():
+    """Save artist classification cache to disk."""
+    try:
+        ARTIST_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(ARTIST_CACHE_PATH, "w") as f:
+            json.dump(_artist_classification_cache, f, indent=2)
+    except Exception as e:
+        print(f"  Warning: Could not save artist cache: {e}")
+
+# Feature flag to use TM API (can disable for fallback to HTML scrapers)
+USE_TM_API = os.environ.get("USE_TM_API", "true").lower() == "true"
 
 # ----------------------------------------------------------------------
 # Utility Functions
@@ -311,6 +385,269 @@ def archive_past_events(events, existing_archive):
     existing_archive.sort(key=lambda x: x.get("date", ""), reverse=True)
 
     return upcoming, existing_archive, len(newly_archived)
+
+
+# ----------------------------------------------------------------------
+# Ticketmaster API Functions
+# ----------------------------------------------------------------------
+
+def map_tm_classification(classifications):
+    """
+    Map Ticketmaster classification hierarchy to our category.
+    Priority: genre > segment (more specific wins)
+    """
+    if not classifications:
+        return "concerts"
+
+    primary = classifications[0] if classifications else {}
+    segment = primary.get("segment", {}).get("name", "")
+    genre = primary.get("genre", {}).get("name", "")
+
+    # Check genre first (most specific)
+    if genre in TM_CATEGORY_MAP:
+        return TM_CATEGORY_MAP[genre]
+
+    # Check segment
+    if segment in TM_CATEGORY_MAP:
+        return TM_CATEGORY_MAP[segment]
+
+    return "concerts"
+
+
+def get_artist_classification(artist_name):
+    """
+    Look up artist classification from Ticketmaster Attractions API.
+    Results are cached to avoid repeated API calls.
+    Returns category string or None if not found.
+    """
+    if not TM_API_KEY:
+        return None
+
+    # Check cache first
+    cache_key = artist_name.lower().strip()
+    if cache_key in _artist_classification_cache:
+        return _artist_classification_cache[cache_key]
+
+    try:
+        params = {
+            "keyword": artist_name,
+            "countryCode": "US",
+            "size": 1,
+            "apikey": TM_API_KEY,
+        }
+        resp = requests.get(f"{TM_BASE_URL}/attractions.json", params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+
+        attractions = data.get("_embedded", {}).get("attractions", [])
+        if attractions:
+            classifications = attractions[0].get("classifications", [])
+            category = map_tm_classification(classifications)
+            _artist_classification_cache[cache_key] = category
+            # Rate limiting - avoid hitting TM API too fast
+            time.sleep(0.2)
+            return category
+
+    except Exception as e:
+        print(f"      TM artist lookup failed for '{artist_name}': {e}")
+
+    # Cache negative result to avoid retrying
+    _artist_classification_cache[cache_key] = None
+    return None
+
+
+def scrape_tm_venue(venue_id, venue_name, room=None):
+    """
+    Scrape events from a Ticketmaster venue using Discovery API.
+    Returns list of events in our standard format.
+    """
+    if not TM_API_KEY:
+        print(f"    {venue_name}: Skipped (no TM_API_KEY)")
+        return []
+
+    params = {
+        "venueId": venue_id,
+        "countryCode": "US",
+        "sort": "date,asc",
+        "size": 200,
+        "apikey": TM_API_KEY,
+    }
+
+    try:
+        resp = requests.get(f"{TM_BASE_URL}/events.json", params=params, timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as e:
+        print(f"    {venue_name}: ERROR - {e}")
+        return []
+
+    events = []
+    for tm_event in data.get("_embedded", {}).get("events", []):
+        # Parse dates
+        start = tm_event.get("dates", {}).get("start", {})
+        event_date = start.get("localDate")
+        event_time = start.get("localTime")
+
+        if not event_date:
+            continue
+
+        # Get artists from attractions
+        attractions = tm_event.get("_embedded", {}).get("attractions", [])
+        artists = []
+        for attr in attractions:
+            artist = {"name": attr.get("name", "")}
+            # Get genre from attraction classifications
+            if attr.get("classifications"):
+                genre = attr["classifications"][0].get("genre", {}).get("name")
+                if genre:
+                    artist["genre"] = genre
+            artists.append(artist)
+
+        # Fallback to event name if no attractions
+        if not artists:
+            artists = [{"name": tm_event.get("name", "Unknown")}]
+
+        # Get price range
+        price = None
+        price_ranges = tm_event.get("priceRanges", [])
+        if price_ranges:
+            pr = price_ranges[0]
+            min_p, max_p = pr.get("min"), pr.get("max")
+            if min_p and max_p:
+                if min_p == max_p:
+                    price = f"${min_p:.0f}"
+                else:
+                    price = f"${min_p:.0f} - ${max_p:.0f}"
+
+        # Get category from event classifications
+        category = map_tm_classification(tm_event.get("classifications", []))
+
+        # Get image (prefer 16:9 ratio)
+        image_url = None
+        for img in tm_event.get("images", []):
+            if img.get("ratio") == "16_9" and img.get("width", 0) >= 600:
+                image_url = img.get("url")
+                break
+        # Fallback to any image
+        if not image_url and tm_event.get("images"):
+            image_url = tm_event["images"][0].get("url")
+
+        event = {
+            "venue": venue_name,
+            "date": event_date,
+            "doors_time": None,  # TM doesn't provide
+            "show_time": normalize_time(event_time) if event_time else None,
+            "artists": artists,
+            "ticket_url": tm_event.get("url"),
+            "image_url": image_url,
+            "price": price,
+            "category": category,
+        }
+
+        if room:
+            event["room"] = room
+
+        events.append(event)
+
+    return events
+
+
+def scrape_center_stage_tm():
+    """Scrape Center Stage, The Loft, and Vinyl via Ticketmaster API."""
+    all_events = []
+
+    venues = [
+        ("Center Stage", TM_VENUES["Center Stage"]),
+        ("The Loft", TM_VENUES["The Loft"]),
+        ("Vinyl", TM_VENUES["Vinyl"]),
+    ]
+
+    for venue_name, venue_id in venues:
+        events = scrape_tm_venue(venue_id, venue_name)
+        all_events.extend(events)
+
+    print(f"    Center Stage complex (TM): {len(all_events)} events")
+    return all_events
+
+
+def scrape_state_farm_arena_tm():
+    """Scrape State Farm Arena via Ticketmaster API."""
+    events = scrape_tm_venue(TM_VENUES["State Farm Arena"], "State Farm Arena")
+    print(f"    State Farm Arena (TM): {len(events)} events")
+    return events
+
+
+def scrape_masquerade_tm():
+    """Scrape The Masquerade via Ticketmaster API (all rooms)."""
+    all_events = []
+
+    rooms = [
+        ("Heaven", TM_VENUES["The Masquerade - Heaven"]),
+        ("Hell", TM_VENUES["The Masquerade - Hell"]),
+        ("Purgatory", TM_VENUES["The Masquerade - Purgatory"]),
+        ("Altar", TM_VENUES["The Masquerade - Altar"]),
+    ]
+
+    for room_name, venue_id in rooms:
+        events = scrape_tm_venue(venue_id, "The Masquerade", room=room_name)
+        all_events.extend(events)
+
+    print(f"    The Masquerade (TM): {len(all_events)} events")
+    return all_events
+
+
+def enrich_events_with_tm(events):
+    """
+    Enrich events from non-TM venues with artist classifications.
+    Only processes events that don't already have genre data.
+    Uses persistent cache to minimize API calls.
+    """
+    if not TM_API_KEY:
+        return events
+
+    enriched_count = 0
+    api_calls = 0
+    cache_hits = 0
+
+    # Collect unique artists that need lookup
+    artists_to_lookup = set()
+    for event in events:
+        artists = event.get("artists", [])
+        if not artists or artists[0].get("genre"):
+            continue
+        if event.get("category") not in [None, "concerts", DEFAULT_CATEGORY]:
+            continue
+        headliner = artists[0].get("name", "").lower().strip()
+        if headliner and headliner not in _artist_classification_cache:
+            artists_to_lookup.add(headliner)
+
+    # Look up new artists (not in cache)
+    for artist_name in artists_to_lookup:
+        get_artist_classification(artist_name)
+        api_calls += 1
+
+    # Now apply classifications to events
+    for event in events:
+        artists = event.get("artists", [])
+        if not artists or artists[0].get("genre"):
+            continue
+        if event.get("category") not in [None, "concerts", DEFAULT_CATEGORY]:
+            continue
+
+        headliner = artists[0].get("name", "").lower().strip()
+        if headliner in _artist_classification_cache:
+            category = _artist_classification_cache[headliner]
+            if headliner not in artists_to_lookup:
+                cache_hits += 1
+            if category and category != "concerts":
+                event["category"] = category
+                enriched_count += 1
+
+    print(f"  API calls: {api_calls} | Cache hits: {cache_hits} | Total cached: {len(_artist_classification_cache)}")
+    if enriched_count > 0:
+        print(f"  Enriched {enriched_count} events with TM artist data")
+
+    return events
 
 
 # ----------------------------------------------------------------------
@@ -1566,19 +1903,34 @@ def scrape_center_stage():
 # ----------------------------------------------------------------------
 
 # Registry of all scrapers for easy iteration
-SCRAPERS = {
-    "The Earl": scrape_earl,
-    "Tabernacle": scrape_tabernacle,
-    "Terminal West": scrape_terminal_west,
-    "The Eastern": scrape_the_eastern,
-    "Variety Playhouse": scrape_variety_playhouse,
-    "Coca-Cola Roxy": scrape_coca_cola_roxy,
-    "Fox Theatre": scrape_fox_theatre,
-    "State Farm Arena": scrape_state_farm_arena,
-    "Mercedes-Benz Stadium": scrape_mercedes_benz_stadium,
-    "The Masquerade": scrape_masquerade,
-    "Center Stage": scrape_center_stage,
-}
+# When TM API is available, use it for venues that use Ticketmaster ticketing
+# This provides better categorization via TM classifications
+def get_scrapers():
+    """Build scraper registry, using TM API when available."""
+    scrapers = {
+        "The Earl": scrape_earl,
+        "Tabernacle": scrape_tabernacle,
+        "Terminal West": scrape_terminal_west,
+        "The Eastern": scrape_the_eastern,
+        "Variety Playhouse": scrape_variety_playhouse,
+        "Coca-Cola Roxy": scrape_coca_cola_roxy,
+        "Fox Theatre": scrape_fox_theatre,
+        "Mercedes-Benz Stadium": scrape_mercedes_benz_stadium,
+    }
+
+    # Use TM API for venues that use Ticketmaster, if API key is available
+    if USE_TM_API and TM_API_KEY:
+        scrapers["State Farm Arena"] = scrape_state_farm_arena_tm
+        scrapers["The Masquerade"] = scrape_masquerade_tm
+        scrapers["Center Stage"] = scrape_center_stage_tm
+    else:
+        scrapers["State Farm Arena"] = scrape_state_farm_arena
+        scrapers["The Masquerade"] = scrape_masquerade
+        scrapers["Center Stage"] = scrape_center_stage
+
+    return scrapers
+
+SCRAPERS = get_scrapers()
 
 def main():
     all_events = []
@@ -1635,7 +1987,14 @@ def main():
             venue_status["error_trace"] = error_trace
 
         venue_statuses[venue_name] = venue_status
-    
+
+    # Enrich events with TM artist classifications (for non-TM venues)
+    if TM_API_KEY:
+        log("\nEnriching events with Ticketmaster artist data...")
+        load_artist_cache()
+        all_events = enrich_events_with_tm(all_events)
+        save_artist_cache()
+
     # Normalize prices, generate slugs, and validate events
     log("\nProcessing events...")
     all_events = [normalize_price(e) for e in all_events]
