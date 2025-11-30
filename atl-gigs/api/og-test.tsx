@@ -4,7 +4,14 @@ export const config = {
   runtime: "edge",
 };
 
-export default function handler() {
+// Fetch font from Google Fonts
+const fontPromise = fetch(
+  "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjp-Ek-_0ew.woff"
+).then((res) => res.arrayBuffer());
+
+export default async function handler() {
+  const fontData = await fontPromise;
+
   return new ImageResponse(
     (
       <div
@@ -18,6 +25,7 @@ export default function handler() {
           textAlign: "center",
           alignItems: "center",
           justifyContent: "center",
+          fontFamily: "Inter",
         }}
       >
         Hello World
@@ -26,6 +34,14 @@ export default function handler() {
     {
       width: 1200,
       height: 630,
+      fonts: [
+        {
+          name: "Inter",
+          data: fontData,
+          style: "normal",
+          weight: 400,
+        },
+      ],
     }
   );
 }
