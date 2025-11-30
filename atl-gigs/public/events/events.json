@@ -29,6 +29,23 @@
     "slug": "2025-11-30-tabernacle-fit-for-a-king"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-11-30",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "The Outsiders"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=OUT&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/the-outsiders",
+    "image_url": "https://www.foxtheatre.org/assets/img/TheOutsiders_550x550-aeb0773bbd.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2025-11-30-fox-theatre-the-outsiders"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2025-11-30",
     "doors_time": null,
@@ -1971,7 +1988,7 @@
     "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=ELF&linkID=fta&shopperContext=&caller=&appCode=",
     "info_url": "https://www.foxtheatre.org/events/detail/elf",
     "image_url": "https://www.foxtheatre.org/assets/img/Elf_550x550-658eb46298.jpg",
-    "category": "misc",
+    "category": "broadway",
     "price": "See website",
     "slug": "2025-12-16-fox-theatre-elf"
   },
@@ -3090,6 +3107,23 @@
     "slug": "2026-01-03-vinyl-soup"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-01-06",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Hell's Kitchen"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=HEL&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/hells-kitchen",
+    "image_url": "https://www.foxtheatre.org/assets/img/HellsKitchen_550x550-c579b8a9d1.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-01-06-fox-theatre-hells-kitchen"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-01-07",
     "doors_time": null,
@@ -3982,6 +4016,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-24-variety-playhouse-the-sundogs-present-the-tom-petty-show"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-01-24",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Blue Man Group"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BMG&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/blue-man-group-2026",
+    "image_url": "https://www.foxtheatre.org/assets/img/BMG-550-x-550-45d09a2a68.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-01-24-fox-theatre-blue-man-group"
   },
   {
     "venue": "The Masquerade",
@@ -4939,6 +4990,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-06-variety-playhouse-dry-cleaning"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-02-06",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Riverdance"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=RIV&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/riverdance",
+    "image_url": "https://www.foxtheatre.org/assets/img/Riverdance_550x550-24362de122.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-02-06-fox-theatre-riverdance"
   },
   {
     "venue": "The Masquerade",
@@ -8197,6 +8265,23 @@
     "slug": "2026-04-06-state-farm-arena-atlanta-hawks"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-04-07",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "The Sound of Music"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SOU&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/the-sound-of-music",
+    "image_url": "https://www.foxtheatre.org/assets/img/TheSoundofMusic_550x550-b99b1293bc.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-04-07-fox-theatre-the-sound-of-music"
+  },
+  {
     "venue": "The Eastern",
     "date": "2026-04-08",
     "doors_time": "19:00",
@@ -9437,6 +9522,23 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-05-23-coca-cola-roxy-electric-callboy"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-05-26",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Beauty and the Beast"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BEA&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/beauty-and-the-beast",
+    "image_url": "https://www.foxtheatre.org/assets/img/BeautyandtheBeast_550x550-2e2f908675.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-05-26-fox-theatre-beauty-and-the-beast"
   },
   {
     "venue": "Tabernacle",
