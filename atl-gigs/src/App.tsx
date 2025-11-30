@@ -36,7 +36,7 @@ function AppContent() {
     // Fetch events from GitHub raw to avoid stale data after code deploys
     const EVENTS_URL = import.meta.env.DEV
       ? "/events/events.json"
-      : "https://raw.githubusercontent.com/TheRyanMiller/atl-gigs/master/public/events/events.json";
+      : "https://raw.githubusercontent.com/TheRyanMiller/atl-gigs/refs/heads/master/atl-gigs/public/events/events.json";
 
     fetch(EVENTS_URL)
       .then((response) => {
@@ -70,7 +70,7 @@ function AppContent() {
     // Fetch scrape status from GitHub raw
     const STATUS_URL = import.meta.env.DEV
       ? "/events/scrape-status.json"
-      : "https://raw.githubusercontent.com/TheRyanMiller/atl-gigs/master/public/events/scrape-status.json";
+      : "https://raw.githubusercontent.com/TheRyanMiller/atl-gigs/refs/heads/master/atl-gigs/public/events/scrape-status.json";
 
     fetch(STATUS_URL)
       .then((response) => {
