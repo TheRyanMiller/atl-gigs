@@ -1,112 +1,87 @@
-# ATL Music - Atlanta Concert Aggregator
+# ATL Gigs
 
-A lightweight web app that aggregates concert listings from Atlanta's top music venues into a single, searchable interface.
+Atlanta event aggregator for concerts, comedy, broadway, and more.
+
+**Live site**: [atl-gigs.info](https://atl-gigs.info)
+
+## Quick Start
+
+```bash
+# Scraper
+python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+python scrape.py
+
+# Frontend
+cd atl-gigs && npm install && npm run dev
+```
 
 ## Architecture
 
 ```
-┌─────────────────┐      ┌──────────────┐      ┌─────────────────────┐
-│  Venue APIs     │      │  scrape.py   │      │  events.json        │
-│  (5 sources)    │─────▶│  (Python)    │─────▶│  (static JSON)      │
-└─────────────────┘      └──────────────┘      └─────────────────────┘
-                                                         │
-                                               ┌─────────▼─────────┐
-                                               │  React Frontend   │
-                                               │  (Vite + Tailwind)│
-                                               └───────────────────┘
+scrape.py → events.json → React Frontend → Vercel
+              ↓
+         archive.json (past events)
 ```
 
-### Data Flow
-
-1. **Scraping** (`scrape.py`): Python script fetches events from 5 Atlanta venues:
-   - The Earl (HTML scraping via BeautifulSoup)
-   - Tabernacle (Live Nation GraphQL API)
-   - Coca-Cola Roxy (Live Nation GraphQL API)
-   - Terminal West (AEG JSON API)
-   - The Eastern (AEG JSON API)
-
-2. **Processing**: Events are normalized (time formats, price fields) and validated
-
-3. **Storage**: Valid events saved to `atl-gigs/public/events.json`, sorted by date
-
-4. **Frontend**: React app fetches `/events.json` on mount, displays filterable event cards
-
-5. **Automation**: GitHub Actions runs scraper daily at 6 AM UTC, auto-commits changes
-
-### Key Design Decisions
-
-- **No backend server**: Static JSON + static React build = simple deployment
-- **No database**: JSON file is sufficient for ~200-500 events
-- **Client-side filtering**: All filtering/sorting happens in browser
-- **Error resilience**: Individual venue failures don't break the entire scrape
+- **Scraper**: Python script fetches from 5 venues (HTML + API scraping)
+- **Frontend**: React + Vite + Tailwind, client-side filtering
+- **Deployment**: GitHub Actions runs daily, deploys to Vercel
+- **Share links**: `/e/{slug}` routes serve dynamic OG tags for social previews
 
 ## Project Structure
 
 ```
 atl-music/
-├── scrape.py                    # Main scraper (all venues)
-├── requirements.txt             # Python dependencies
-├── events.json                  # Backup of scraped data
-├── sources.md                   # API endpoint documentation
-├── .github/workflows/scrape.yml # Daily automation
-├── atl-gigs/                    # React frontend
-│   ├── public/events.json       # Event data served to frontend
-│   ├── src/
-│   │   ├── components/          # EventCard, EventModal, FilterBar, Navigation
-│   │   ├── pages/               # Home, Status
-│   │   └── types.ts             # TypeScript interfaces
-│   └── package.json
-└── AGENTS.md                    # AI coding agent instructions
+├── scrape.py                     # Main scraper
+├── requirements.txt              # Python deps (requests, beautifulsoup4)
+├── AGENTS.md                     # Instructions for adding new scrapers
+├── .github/workflows/scrape.yml  # Daily automation + Vercel deploy
+└── atl-gigs/                     # React frontend
+    ├── api/og.ts                 # Vercel serverless for OG tags
+    ├── public/events/            # Generated JSON (gitignored)
+    │   ├── events.json           # Upcoming events
+    │   ├── archive.json          # Past events
+    │   └── scrape-status.json    # Scraper health status
+    └── src/
+        ├── components/           # EventCard, EventModal, FilterBar
+        ├── pages/                # Home
+        └── types.ts              # TypeScript interfaces
 ```
 
-## Setup & Commands
-
-### Scraper (Python)
-
-```bash
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run scraper
-python scrape.py
-```
-
-### Frontend (React)
-
-```bash
-cd atl-gigs
-npm install
-npm run dev      # Start dev server (http://localhost:5173)
-npm run build    # Production build
-npm run lint     # Run ESLint
-```
-
-## Data Schema
+## Event Schema
 
 ```typescript
 interface Event {
+  slug: string;                    // URL-safe identifier
   venue: string;
-  date: string;                // "YYYY-MM-DD"
-  doors_time: string | null;   // "HH:MM" (24-hour format)
-  show_time: string | null;    // "HH:MM" (24-hour format)
+  date: string;                    // "YYYY-MM-DD"
+  doors_time: string | null;       // "HH:MM" 24-hour
+  show_time: string | null;
   artists: { name: string; genre?: string }[];
-  price?: string;              // Normalized: "$20 ADV / $25 DOS" or "$25.00 - $45.00"
+  price?: string;
   ticket_url: string;
   info_url?: string;
   image_url?: string;
+  category: "concerts" | "comedy" | "broadway" | "misc";
 }
 ```
 
+## Current Venues
+
+| Venue | Method | Category |
+|-------|--------|----------|
+| The Earl | HTML scraping | concerts |
+| Tabernacle | Live Nation GraphQL | concerts |
+| Coca-Cola Roxy | Live Nation GraphQL | concerts |
+| Terminal West | AEG JSON API | concerts |
+| The Eastern | AEG JSON API | concerts |
+
 ## Automation
 
-The scraper runs automatically via GitHub Actions:
-- **Schedule**: Daily at 6 AM UTC (1 AM EST)
-- **Manual trigger**: Can be run on-demand via GitHub Actions UI
-- **Auto-commit**: Changes to `events.json` are committed automatically
-- **Uses venv**: Creates isolated Python environment with dependencies from `requirements.txt`
+GitHub Actions runs daily at 6 AM UTC:
+1. Scrapes all venues
+2. Archives past events
+3. Deploys to Vercel
 
-To trigger manually: Go to Actions > "Scrape Events" > "Run workflow"
+Manual trigger: Actions → "Scrape Events" → "Run workflow"

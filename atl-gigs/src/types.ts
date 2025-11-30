@@ -3,6 +3,18 @@ export interface Artist {
   genre?: string;
 }
 
+export type EventCategory = "concerts" | "comedy" | "broadway" | "sports" | "misc";
+
+export const CATEGORY_LABELS: Record<EventCategory, string> = {
+  concerts: "Concerts",
+  comedy: "Comedy",
+  broadway: "Broadway",
+  sports: "Sports",
+  misc: "Other",
+};
+
+export const ALL_CATEGORIES: EventCategory[] = ["concerts", "comedy", "broadway", "sports", "misc"];
+
 export interface Event {
   slug: string;
   venue: string;
@@ -16,6 +28,8 @@ export interface Event {
   ticket_url: string;
   info_url?: string;
   image_url?: string;
+  category: EventCategory;
+  room?: string;  // For venues with multiple rooms (e.g., The Masquerade)
 }
 
 export interface VenueStatus {

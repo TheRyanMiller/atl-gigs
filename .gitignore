@@ -18,6 +18,9 @@ __pycache__/
 # Logs
 *.log
 
+# Test data files at root
+/*.json
+
 # Generated data files (created by scraper, deployed by CI)
 # These are gitignored to avoid conflicts between local and CI scraping
 atl-gigs/public/events/

@@ -23,6 +23,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
     info_url,
     image_url,
     slug,
+    room,
   } = event;
   
   const handleShare = async () => {
@@ -58,26 +59,26 @@ export default function EventModal({ event, onClose }: EventModalProps) {
       <Dialog as="div" className="relative z-50" onClose={onClose}>
         <Transition.Child
           as={Fragment}
-          enter="ease-out duration-300"
+          enter="duration-0"
           enterFrom="opacity-0"
           enterTo="opacity-100"
-          leave="ease-in duration-200"
+          leave="duration-0"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-neutral-950/90 backdrop-blur-sm transition-opacity" />
+          <div className="fixed inset-0 bg-neutral-950/90 backdrop-blur-sm" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
           <div className="flex min-h-full items-start sm:items-center justify-center p-4 pt-16 sm:pt-4 text-center">
             <Transition.Child
               as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              enterTo="opacity-100 translate-y-0 sm:scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              enter="duration-0"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="duration-0"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
                 {/* Close button */}
@@ -137,7 +138,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-2 text-neutral-300 text-sm">
                         <MapPin size={14} className="text-teal-500" />
-                        <span>{venue}</span>
+                        <span>{venue}{room && ` · ${room}`}</span>
                       </div>
 
                       <div className="flex items-center gap-2 text-neutral-300 text-sm">
@@ -164,26 +165,6 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                     </div>
 
                     <div className="flex flex-wrap gap-3">
-                      <a
-                        href={ticket_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white shadow-lg shadow-teal-900/20 hover:shadow-teal-900/40 transition-all"
-                      >
-                        <Ticket size={16} />
-                        Get Tickets
-                      </a>
-                      {info_url && (
-                        <a
-                          href={info_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white border border-neutral-700 transition-all"
-                        >
-                          <ExternalLink size={16} />
-                          More Info
-                        </a>
-                      )}
                       <button
                         onClick={handleShare}
                         className="flex items-center justify-center w-11 h-11 rounded-xl transition-all bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
@@ -194,6 +175,26 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                           <Share2 size={18} />
                         )}
                       </button>
+                      <a
+                        href={ticket_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white shadow-lg shadow-teal-900/20 hover:shadow-teal-900/40 transition-all"
+                      >
+                        <Ticket size={16} />
+                        Tickets
+                      </a>
+                      {info_url && (
+                        <a
+                          href={info_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white border border-neutral-700 transition-all"
+                        >
+                          <ExternalLink size={16} />
+                          Info
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

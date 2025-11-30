@@ -1,7 +1,17 @@
 import { useState } from "react";
 import { format } from "date-fns";
 import { MapPin, Clock, Ticket, Share2, Check, CalendarDays } from "lucide-react";
-import { Event } from "../types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGuitar, faFaceLaughSquint, faMasksTheater, faFootball, faStar } from "@fortawesome/free-solid-svg-icons";
+import { Event, CATEGORY_LABELS } from "../types";
+
+const categoryIcons = {
+  concerts: faGuitar,
+  comedy: faFaceLaughSquint,
+  broadway: faMasksTheater,
+  sports: faFootball,
+  misc: faStar,
+};
 
 interface EventCardProps {
   event: Event;
@@ -9,7 +19,7 @@ interface EventCardProps {
 }
 
 export default function EventCard({ event, onClick }: EventCardProps) {
-  const { venue, date, doors_time, artists, price, image_url, ticket_url, slug } = event;
+  const { venue, date, doors_time, artists, price, image_url, ticket_url, slug, category } = event;
   const [copied, setCopied] = useState(false);
   
   // Parse date as local time (not UTC) by appending T12:00:00
@@ -77,6 +87,12 @@ export default function EventCard({ event, onClick }: EventCardProps) {
         <div className="hidden sm:flex absolute top-3 left-3 flex-col items-center justify-center bg-neutral-950/80 backdrop-blur-md border border-white/10 w-14 h-14 rounded-xl shadow-lg z-10">
           <span className="text-[10px] font-bold text-teal-400 uppercase tracking-wider">{month}</span>
           <span className="text-xl font-bold text-white leading-none">{day}</span>
+        </div>
+
+        {/* Category Badge overlay on image */}
+        <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-neutral-950/80 backdrop-blur-md border border-white/10 px-2.5 py-1.5 rounded-lg shadow-lg z-10">
+          <FontAwesomeIcon icon={categoryIcons[category]} className="w-3 h-3 text-teal-400" />
+          <span className="text-[10px] font-bold text-white uppercase tracking-wider">{CATEGORY_LABELS[category]}</span>
         </div>
       </div>
 

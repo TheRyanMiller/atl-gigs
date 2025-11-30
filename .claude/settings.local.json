@@ -6,7 +6,15 @@
       "Bash(python3:*)",
       "Bash(pip install:*)",
       "Bash(python og_generator.py:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:www.foxtheatre.org)",
+      "Bash(source venv/bin/activate)",
+      "Bash(python:*)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:www.statefarmarena.com)",
+      "WebFetch(domain:www.mercedesbenzstadium.com)",
+      "WebFetch(domain:www.axs.com)"
     ],
     "deny": [],
     "ask": []

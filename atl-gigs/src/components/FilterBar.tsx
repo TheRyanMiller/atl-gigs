@@ -1,6 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { format } from "date-fns";
-import { Search, MapPin, Calendar, X, ChevronDown } from "lucide-react";
+import { Search, MapPin, Calendar, X, ChevronDown, Tag } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGuitar, faFaceLaughSquint, faMasksTheater, faFootball, faStar } from "@fortawesome/free-solid-svg-icons";
+import { EventCategory, CATEGORY_LABELS } from "../types";
+
+const categoryIcons = {
+  concerts: faGuitar,
+  comedy: faFaceLaughSquint,
+  broadway: faMasksTheater,
+  sports: faFootball,
+  misc: faStar,
+};
 
 interface DateRange {
   start: string | null;
@@ -11,6 +22,9 @@ interface FilterBarProps {
   venues: string[];
   selectedVenues: string[];
   onVenueToggle: (venue: string) => void;
+  categories: EventCategory[];
+  selectedCategories: EventCategory[];
+  onCategoryToggle: (category: EventCategory) => void;
   onSearchChange: (query: string) => void;
   onDateRangeChange: (range: DateRange) => void;
 }
@@ -21,20 +35,18 @@ const FilterPill = ({
   icon: Icon,
   onClick,
   onClear,
-  minWidth = "w-40",
 }: {
   label: string;
   active?: boolean;
   icon: React.ElementType;
   onClick: (e: React.MouseEvent) => void;
   onClear?: (e: React.MouseEvent) => void;
-  minWidth?: string;
 }) => (
   <button
     onClick={onClick}
     className={`
-      flex items-center justify-between gap-2 px-5 py-4 rounded-2xl text-sm font-medium transition-all
-      border backdrop-blur-sm whitespace-nowrap h-full ${minWidth}
+      flex items-center gap-2 px-3 py-3 rounded-xl text-sm font-medium transition-all
+      border backdrop-blur-sm whitespace-nowrap h-full
       ${
         active
           ? "bg-teal-500/10 border-teal-500/50 text-teal-300"
@@ -42,19 +54,17 @@ const FilterPill = ({
       }
     `}
   >
-    <span className="flex items-center gap-2">
-      <Icon size={16} />
-      {label}
-    </span>
+    <Icon size={14} />
+    <span>{label}</span>
     {active && onClear ? (
       <span
         onClick={onClear}
         className="p-0.5 rounded-full hover:bg-neutral-700 transition-colors"
       >
-        <X size={14} />
+        <X size={12} />
       </span>
     ) : (
-      <ChevronDown size={14} className="opacity-50" />
+      <ChevronDown size={12} className="opacity-50" />
     )}
   </button>
 );
@@ -63,18 +73,24 @@ export default function FilterBar({
   venues,
   selectedVenues,
   onVenueToggle,
+  categories,
+  selectedCategories,
+  onCategoryToggle,
   onSearchChange,
   onDateRangeChange,
 }: FilterBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [venueDropdownOpen, setVenueDropdownOpen] = useState(false);
+  const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
   const [dateDropdownOpen, setDateDropdownOpen] = useState(false);
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
   const venueDropdownRef = useRef<HTMLDivElement>(null);
+  const categoryDropdownRef = useRef<HTMLDivElement>(null);
   const dateDropdownRef = useRef<HTMLDivElement>(null);
   const mobileVenueDropdownRef = useRef<HTMLDivElement>(null);
+  const mobileCategoryDropdownRef = useRef<HTMLDivElement>(null);
   const mobileDateDropdownRef = useRef<HTMLDivElement>(null);
 
   const today = format(new Date(), "yyyy-MM-dd");
@@ -103,15 +119,21 @@ export default function FilterBar({
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as Node;
-      const isInsideVenue = 
-        venueDropdownRef.current?.contains(target) || 
+      const isInsideVenue =
+        venueDropdownRef.current?.contains(target) ||
         mobileVenueDropdownRef.current?.contains(target);
-      const isInsideDate = 
-        dateDropdownRef.current?.contains(target) || 
+      const isInsideCategory =
+        categoryDropdownRef.current?.contains(target) ||
+        mobileCategoryDropdownRef.current?.contains(target);
+      const isInsideDate =
+        dateDropdownRef.current?.contains(target) ||
         mobileDateDropdownRef.current?.contains(target);
-      
+
       if (!isInsideVenue) {
         setVenueDropdownOpen(false);
+      }
+      if (!isInsideCategory) {
+        setCategoryDropdownOpen(false);
       }
       if (!isInsideDate) {
         setDateDropdownOpen(false);
@@ -163,8 +185,22 @@ export default function FilterBar({
     return `${selectedVenues.length} Venues`;
   };
 
+  const getCategoryLabel = () => {
+    if (selectedCategories.length === 0) return "All Categories";
+    if (selectedCategories.length === 1) return CATEGORY_LABELS[selectedCategories[0]];
+    return `${selectedCategories.length} Categories`;
+  };
+
+  const clearCategoryFilter = (e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    selectedCategories.forEach((c) => onCategoryToggle(c));
+  };
+
   const hasDateFilter = !!(startDate || endDate);
   const hasVenueFilter = selectedVenues.length > 0;
+  const hasCategoryFilter = selectedCategories.length > 0;
 
   return (
     <div className="space-y-4">
@@ -195,29 +231,67 @@ export default function FilterBar({
 
         {/* Desktop Filter Pills */}
         <div className="hidden md:flex items-stretch gap-3">
+          {/* Category Filter */}
+          <div className="relative" ref={categoryDropdownRef}>
+            <FilterPill
+              label={getCategoryLabel()}
+              active={hasCategoryFilter}
+              icon={Tag}
+                            onClick={(e) => {
+                e.stopPropagation();
+                setCategoryDropdownOpen((open) => !open);
+                setVenueDropdownOpen(false);
+                setDateDropdownOpen(false);
+              }}
+              onClear={clearCategoryFilter}
+            />
+            {categoryDropdownOpen && (
+              <div className="absolute mt-2 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-2">
+                <div className="flex flex-wrap gap-1.5">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => onCategoryToggle(category)}
+                      className={`
+                        flex items-center gap-1.5 px-2 py-1 rounded-md text-xs font-medium transition-all
+                        ${selectedCategories.includes(category)
+                          ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
+                          : "bg-neutral-800 text-neutral-400 border border-neutral-700 hover:bg-neutral-700 hover:text-white"
+                        }
+                      `}
+                    >
+                      <FontAwesomeIcon icon={categoryIcons[category]} className="w-3 h-3" />
+                      {CATEGORY_LABELS[category]}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Venue Filter */}
           <div className="relative" ref={venueDropdownRef}>
             <FilterPill
               label={getVenueLabel()}
               active={hasVenueFilter}
               icon={MapPin}
-              minWidth="w-44"
-              onClick={(e) => {
+                            onClick={(e) => {
                 e.stopPropagation();
                 setVenueDropdownOpen((open) => !open);
+                setCategoryDropdownOpen(false);
                 setDateDropdownOpen(false);
               }}
               onClear={clearVenueFilter}
             />
             {venueDropdownOpen && (
-              <div className="absolute mt-2 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-2">
-                <div className="flex flex-wrap gap-1.5">
+              <div className="absolute mt-2 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-2 right-0">
+                <div className="flex flex-col gap-1.5">
                   {venues.map((venue) => (
                     <button
                       key={venue}
                       onClick={() => onVenueToggle(venue)}
                       className={`
-                        px-2 py-1 rounded-md text-xs font-medium transition-all
+                        px-2 py-1 rounded-md text-xs font-medium transition-all whitespace-nowrap text-left
                         ${selectedVenues.includes(venue)
                           ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
                           : "bg-neutral-800 text-neutral-400 border border-neutral-700 hover:bg-neutral-700 hover:text-white"
@@ -238,10 +312,10 @@ export default function FilterBar({
               label={getDateLabel()}
               active={hasDateFilter}
               icon={Calendar}
-              minWidth="w-44"
-              onClick={(e) => {
+                            onClick={(e) => {
                 e.stopPropagation();
                 setDateDropdownOpen((open) => !open);
+                setCategoryDropdownOpen(false);
                 setVenueDropdownOpen(false);
               }}
               onClear={clearDateFilter}
@@ -292,22 +366,58 @@ export default function FilterBar({
       </div>
 
       {/* Mobile Filter Pills */}
-      <div className="flex md:hidden gap-3 pb-2">
+      <div className="flex md:hidden gap-3 pb-2 overflow-x-auto">
+        <div className="relative" ref={mobileCategoryDropdownRef}>
+          <FilterPill
+            label={getCategoryLabel()}
+            active={hasCategoryFilter}
+            icon={Tag}
+                        onClick={(e) => {
+              e.stopPropagation();
+              setCategoryDropdownOpen((open) => !open);
+              setVenueDropdownOpen(false);
+              setDateDropdownOpen(false);
+            }}
+            onClear={clearCategoryFilter}
+          />
+          {categoryDropdownOpen && (
+            <div className="absolute mt-2 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-2 left-0 w-[calc(100vw-2rem)] max-w-xs">
+              <div className="flex flex-wrap gap-1.5">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => onCategoryToggle(category)}
+                    className={`
+                      flex items-center gap-1.5 px-2 py-1 rounded-md text-xs font-medium transition-all
+                      ${selectedCategories.includes(category)
+                        ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
+                        : "bg-neutral-800 text-neutral-400 border border-neutral-700 hover:bg-neutral-700 hover:text-white"
+                      }
+                    `}
+                  >
+                    <FontAwesomeIcon icon={categoryIcons[category]} className="w-3 h-3" />
+                    {CATEGORY_LABELS[category]}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
         <div className="relative" ref={mobileVenueDropdownRef}>
           <FilterPill
             label={getVenueLabel()}
             active={hasVenueFilter}
             icon={MapPin}
-            minWidth="w-44"
-            onClick={(e) => {
+                        onClick={(e) => {
               e.stopPropagation();
               setVenueDropdownOpen((open) => !open);
+              setCategoryDropdownOpen(false);
               setDateDropdownOpen(false);
             }}
             onClear={clearVenueFilter}
           />
           {venueDropdownOpen && (
-            <div className="absolute mt-2 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-2 left-0 right-0 mx-auto w-[calc(100vw-2rem)] max-w-xs">
+            <div className="absolute mt-2 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-2 left-0 w-[calc(100vw-2rem)] max-w-xs">
               <div className="flex flex-wrap gap-1.5">
                 {venues.map((venue) => (
                   <button
@@ -333,10 +443,10 @@ export default function FilterBar({
             label={getDateLabel()}
             active={hasDateFilter}
             icon={Calendar}
-            minWidth="w-44"
-            onClick={(e) => {
+                        onClick={(e) => {
               e.stopPropagation();
               setDateDropdownOpen((open) => !open);
+              setCategoryDropdownOpen(false);
               setVenueDropdownOpen(false);
             }}
             onClear={clearDateFilter}
