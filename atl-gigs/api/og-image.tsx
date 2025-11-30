@@ -7,9 +7,9 @@ export const config = {
 export default async function handler(request: Request) {
   const { searchParams } = new URL(request.url);
   const imageUrl = searchParams.get("image");
-  const date = searchParams.get("date"); // YYYY-MM-DD
+  const date = searchParams.get("date");
 
-  // If no image provided, return stylized default/homepage OG image
+  // Default/homepage OG image (no params)
   if (!imageUrl || !date) {
     return new ImageResponse(
       (
@@ -19,110 +19,62 @@ export default async function handler(request: Request) {
             flexDirection: "column",
             width: "100%",
             height: "100%",
-            background: "linear-gradient(135deg, #0a0a0a 0%, #171717 50%, #0a0a0a 100%)",
+            backgroundColor: "#0a0a0a",
             alignItems: "center",
             justifyContent: "center",
-            position: "relative",
           }}
         >
-          {/* Decorative gradient orbs */}
-          <div
-            style={{
-              position: "absolute",
-              top: -100,
-              left: -100,
-              width: 400,
-              height: 400,
-              background: "radial-gradient(circle, rgba(20,184,166,0.15) 0%, transparent 70%)",
-              borderRadius: "50%",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: -100,
-              right: -100,
-              width: 400,
-              height: 400,
-              background: "radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%)",
-              borderRadius: "50%",
-            }}
-          />
-
-          {/* Logo */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 16,
-              marginBottom: 24,
-            }}
-          >
+          <div style={{ display: "flex", alignItems: "center", marginBottom: 24 }}>
             <div
               style={{
                 width: 80,
                 height: 80,
-                background: "linear-gradient(135deg, #0d9488 0%, #06b6d4 100%)",
+                backgroundColor: "#0d9488",
                 borderRadius: 20,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: "0 20px 40px rgba(20,184,166,0.3)",
+                marginRight: 16,
               }}
             >
               <span style={{ fontSize: 40, color: "white" }}>♪</span>
             </div>
-            <span style={{ fontSize: 72, color: "white", fontWeight: 700 }}>
-              ATL
-            </span>
-            <span style={{ fontSize: 72, color: "#14b8a6", fontWeight: 700 }}>
-              Gigs
-            </span>
+            <span style={{ fontSize: 72, color: "white", fontWeight: 700 }}>ATL</span>
+            <span style={{ fontSize: 72, color: "#14b8a6", fontWeight: 700, marginLeft: 12 }}>Gigs</span>
           </div>
-
-          {/* Tagline */}
-          <span
-            style={{
-              fontSize: 28,
-              color: "#a3a3a3",
-              fontWeight: 500,
-            }}
-          >
-            Live Music Events in Atlanta
-          </span>
+          <span style={{ fontSize: 28, color: "#a3a3a3" }}>Live Music Events in Atlanta</span>
         </div>
       ),
       { width: 1200, height: 630 }
     );
   }
 
-  // Parse date
+  // Parse date for event image
   const eventDate = new Date(date + "T12:00:00");
   const day = eventDate.getDate();
-  const month = eventDate
-    .toLocaleDateString("en-US", { month: "short" })
-    .toUpperCase();
+  const month = eventDate.toLocaleDateString("en-US", { month: "short" }).toUpperCase();
 
-  // Fetch the external image and convert to base64 data URL
-  let imageData: string;
+  // Fetch and encode the external image
+  let imageData: string | null = null;
   try {
     const imageResponse = await fetch(imageUrl);
-    if (!imageResponse.ok) {
-      throw new Error(`Failed to fetch image: ${imageResponse.status}`);
+    if (imageResponse.ok) {
+      const arrayBuffer = await imageResponse.arrayBuffer();
+      const bytes = new Uint8Array(arrayBuffer);
+      let binary = "";
+      for (let i = 0; i < bytes.byteLength; i++) {
+        binary += String.fromCharCode(bytes[i]);
+      }
+      const base64 = btoa(binary);
+      const contentType = imageResponse.headers.get("content-type") || "image/jpeg";
+      imageData = `data:${contentType};base64,${base64}`;
     }
-    const arrayBuffer = await imageResponse.arrayBuffer();
-    // Convert ArrayBuffer to base64 using web APIs (edge runtime compatible)
-    const bytes = new Uint8Array(arrayBuffer);
-    let binary = "";
-    for (let i = 0; i < bytes.byteLength; i++) {
-      binary += String.fromCharCode(bytes[i]);
-    }
-    const base64 = btoa(binary);
-    const contentType = imageResponse.headers.get("content-type") || "image/jpeg";
-    imageData = `data:${contentType};base64,${base64}`;
   } catch (error) {
     console.error("Error fetching image:", error);
-    // Return a simple fallback without the background image
+  }
+
+  // Fallback if image fetch failed
+  if (!imageData) {
     return new ImageResponse(
       (
         <div
@@ -135,52 +87,25 @@ export default async function handler(request: Request) {
             justifyContent: "center",
           }}
         >
-          <span style={{ fontSize: 48, color: "white", fontWeight: 700 }}>
-            ATL
-          </span>
-          <span style={{ fontSize: 48, color: "#14b8a6", fontWeight: 700 }}>
-            Gigs
-          </span>
+          <span style={{ fontSize: 48, color: "white", fontWeight: 700 }}>ATL</span>
+          <span style={{ fontSize: 48, color: "#14b8a6", fontWeight: 700, marginLeft: 8 }}>Gigs</span>
         </div>
       ),
       { width: 1200, height: 630 }
     );
   }
 
+  // Event image with overlay
   return new ImageResponse(
     (
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          height: "100%",
-          position: "relative",
-        }}
-      >
-        {/* Background event image */}
+      <div style={{ display: "flex", width: "100%", height: "100%", position: "relative" }}>
         <img
           src={imageData}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-          }}
+          width={1200}
+          height={630}
+          style={{ objectFit: "cover" }}
         />
-
-        {/* Dark gradient overlay for contrast */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background:
-              "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 30%, transparent 60%)",
-          }}
-        />
-
-        {/* Date badge - top left */}
+        {/* Date badge */}
         <div
           style={{
             position: "absolute",
@@ -189,37 +114,15 @@ export default async function handler(request: Request) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
-            background: "rgba(10,10,10,0.85)",
-            borderRadius: 20,
-            padding: "16px 28px",
-            border: "1px solid rgba(255,255,255,0.15)",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+            backgroundColor: "rgba(10,10,10,0.9)",
+            borderRadius: 16,
+            padding: "12px 24px",
           }}
         >
-          <span
-            style={{
-              fontSize: 18,
-              color: "#2dd4bf",
-              fontWeight: 700,
-              letterSpacing: "0.05em",
-            }}
-          >
-            {month}
-          </span>
-          <span
-            style={{
-              fontSize: 48,
-              color: "white",
-              fontWeight: 700,
-              lineHeight: 1,
-            }}
-          >
-            {day}
-          </span>
+          <span style={{ fontSize: 16, color: "#2dd4bf", fontWeight: 700 }}>{month}</span>
+          <span style={{ fontSize: 40, color: "white", fontWeight: 700 }}>{day}</span>
         </div>
-
-        {/* ATL Gigs logo - bottom right */}
+        {/* Logo badge */}
         <div
           style={{
             position: "absolute",
@@ -227,26 +130,16 @@ export default async function handler(request: Request) {
             right: 32,
             display: "flex",
             alignItems: "center",
-            gap: 10,
-            background: "rgba(10,10,10,0.85)",
-            borderRadius: 16,
-            padding: "12px 24px",
-            border: "1px solid rgba(255,255,255,0.15)",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+            backgroundColor: "rgba(10,10,10,0.9)",
+            borderRadius: 12,
+            padding: "8px 16px",
           }}
         >
-          <span style={{ fontSize: 28, color: "white", fontWeight: 700 }}>
-            ATL
-          </span>
-          <span style={{ fontSize: 28, color: "#14b8a6", fontWeight: 700 }}>
-            Gigs
-          </span>
+          <span style={{ fontSize: 24, color: "white", fontWeight: 700 }}>ATL</span>
+          <span style={{ fontSize: 24, color: "#14b8a6", fontWeight: 700, marginLeft: 6 }}>Gigs</span>
         </div>
       </div>
     ),
-    {
-      width: 1200,
-      height: 630,
-    }
+    { width: 1200, height: 630 }
   );
 }
