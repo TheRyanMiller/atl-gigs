@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, useSearchParams } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import Home from "./pages/Home";
+import Favorites from "./pages/Favorites";
 import Header from "./components/Header";
 import EventModal from "./components/EventModal";
 import ScrapeStatusModal from "./components/ScrapeStatusModal";
+import { FavoritesProvider } from "./context/FavoritesContext";
 import { Event, ScrapeStatus } from "./types";
 
 function AppContent() {
@@ -91,6 +93,10 @@ function AppContent() {
             path="/"
             element={<Home events={events} loading={loading} onEventClick={handleEventSelect} />}
           />
+          <Route
+            path="/favorites"
+            element={<Favorites events={events} loading={loading} onEventClick={handleEventSelect} />}
+          />
         </Routes>
       </main>
 
@@ -113,9 +119,11 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <FavoritesProvider>
+      <Router>
+        <AppContent />
+      </Router>
+    </FavoritesProvider>
   );
 }
 

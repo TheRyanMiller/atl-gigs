@@ -76,6 +76,7 @@ TM_CATEGORY_MAP = {
     "Stand-Up": "comedy",
     "Theatre": "broadway",
     "Musical": "broadway",
+    "Miscellaneous Theatre": "misc",  # Catch-all for non-theatrical "Arts & Theatre"
     "Basketball": "sports",
     "Wrestling": "sports",
     "Hockey": "sports",
@@ -600,24 +601,43 @@ def enrich_events_with_tm(events):
     """
     Enrich events from non-TM venues with artist classifications.
     Only processes events that don't already have genre data.
+    Skips events from TM venues (they already have classification from TM Events API).
     Uses persistent cache to minimize API calls.
     """
     if not TM_API_KEY:
         return events
 
+    # Venues that use TM API - don't enrich these, they already have accurate data
+    tm_venue_names = {
+        "Center Stage", "The Loft", "Vinyl",  # Center Stage complex
+        "State Farm Arena",
+        "The Masquerade",
+    }
+
     enriched_count = 0
     api_calls = 0
     cache_hits = 0
 
+    def should_enrich(event):
+        """Check if event should be enriched with TM artist data."""
+        # Skip TM venues - they already have classification from Events API
+        if event.get("venue") in tm_venue_names:
+            return False
+        # Skip if already has genre data
+        artists = event.get("artists", [])
+        if not artists or artists[0].get("genre"):
+            return False
+        # Skip if category was already set to something other than default
+        if event.get("category") not in [None, "concerts", DEFAULT_CATEGORY]:
+            return False
+        return True
+
     # Collect unique artists that need lookup
     artists_to_lookup = set()
     for event in events:
-        artists = event.get("artists", [])
-        if not artists or artists[0].get("genre"):
+        if not should_enrich(event):
             continue
-        if event.get("category") not in [None, "concerts", DEFAULT_CATEGORY]:
-            continue
-        headliner = artists[0].get("name", "").lower().strip()
+        headliner = event.get("artists", [{}])[0].get("name", "").lower().strip()
         if headliner and headliner not in _artist_classification_cache:
             artists_to_lookup.add(headliner)
 
@@ -628,13 +648,10 @@ def enrich_events_with_tm(events):
 
     # Now apply classifications to events
     for event in events:
-        artists = event.get("artists", [])
-        if not artists or artists[0].get("genre"):
-            continue
-        if event.get("category") not in [None, "concerts", DEFAULT_CATEGORY]:
+        if not should_enrich(event):
             continue
 
-        headliner = artists[0].get("name", "").lower().strip()
+        headliner = event.get("artists", [{}])[0].get("name", "").lower().strip()
         if headliner in _artist_classification_cache:
             category = _artist_classification_cache[headliner]
             if headliner not in artists_to_lookup:
