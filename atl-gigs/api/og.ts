@@ -112,8 +112,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const dateShort = formatDateShort(event.date);
     const dateLong = formatDateLong(event.date);
     const categoryDescriptor = CATEGORY_DESCRIPTORS[event.category] || "live";
-    // Use original artist image directly, fallback to default
-    const ogImage = event.image_url || DEFAULT_OG_IMAGE;
+    // Generate dynamic OG image with overlay, fallback to default
+    const ogImage = event.image_url
+      ? `${SITE_URL}/api/og-image?image=${encodeURIComponent(event.image_url)}&date=${event.date}`
+      : DEFAULT_OG_IMAGE;
 
     const title = `${artistName} @ ${venue} · ${dateShort}`;
     const description = `${dateLong} · ${artistName} ${categoryDescriptor} @ ${venue}. Get tickets and event details on ATL Gigs.`;
