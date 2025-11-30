@@ -1,222 +1,6 @@
 [
   {
     "venue": "The Earl",
-    "date": "2025-11-23",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Sun Organ"
-      },
-      {
-        "name": "Max's Fable"
-      },
-      {
-        "name": "The Cleaners"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/sun-organ-the-earl",
-    "info_url": "https://badearl.com/show/sun-organ-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Sun-Organ.jpg",
-    "price": "$15 ADV / $15 DOS",
-    "slug": "2025-11-23-the-earl-sun-organ"
-  },
-  {
-    "venue": "Tabernacle",
-    "date": "2025-11-23",
-    "doors_time": "19:30",
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Lecrae",
-        "genre": "Hip-Hop/Rap"
-      },
-      {
-        "name": "Miles Minnick",
-        "genre": "Hip-Hop/Rap"
-      },
-      {
-        "name": "Gio",
-        "genre": "R&B"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/lecrae-reconstruction-world-tour-atlanta-georgia-11-23-2025/event/0E0062F59FA317DB",
-    "image_url": "https://s1.ticketm.net/dam/a/ebc/e5cbc136-0e98-4e15-a74d-700667f29ebc_RETINA_PORTRAIT_16_9.jpg",
-    "price": "See website",
-    "slug": "2025-11-23-tabernacle-lecrae"
-  },
-  {
-    "venue": "Terminal West",
-    "date": "2025-11-23",
-    "doors_time": "19:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Rome (Formerly of Sublime with Rome)"
-      },
-      {
-        "name": "Florence Cardigan"
-      }
-    ],
-    "ticket_url": "https://www.axs.com/events/1057441/rome-formerly-of-sublime-with-rome-tickets",
-    "image_url": "https://images.discovery-prod.axs.com/2025/07/uploadedimage_68794f2ca38cf.jpg",
-    "price": "See website",
-    "slug": "2025-11-23-terminal-west-rome-formerly-of-sublime-with-rome"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-11-26",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "A Thanksgiving Eve Comedy Show"
-      },
-      {
-        "name": "Hosted by Joe Pettis"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/thanksgiving-eve-comedy-show-the-earl",
-    "info_url": "https://badearl.com/show/thanksgiving-eve-comedy-show-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/EARL-November-27-2024-1.jpg",
-    "price": "$15 ADV / $15 DOS",
-    "slug": "2025-11-26-the-earl-a-thanksgiving-eve-comedy-show"
-  },
-  {
-    "venue": "Terminal West",
-    "date": "2025-11-26",
-    "doors_time": "19:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Sydney Rose: I Know What I Want Tour "
-      },
-      {
-        "name": "Emma Andersen, Noah Levine"
-      }
-    ],
-    "ticket_url": "https://www.axs.com/events/1028499/sydney-rose-i-know-what-i-want-tour-tickets",
-    "image_url": "https://images.discovery-prod.axs.com/2025/06/uploadedimage_6851cc928ccf5.jpg",
-    "price": "See website",
-    "slug": "2025-11-26-terminal-west-sydney-rose-i-know-what-i-want-tour"
-  },
-  {
-    "venue": "Coca-Cola Roxy",
-    "date": "2025-11-26",
-    "doors_time": "20:00",
-    "show_time": null,
-    "artists": [
-      {
-        "name": "KATSEYE",
-        "genre": "Pop"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/katseye-the-beautiful-chaos-tour-atlanta-georgia-11-26-2025/event/0E0062DCC2A065C9",
-    "image_url": "https://s1.ticketm.net/dam/a/7dd/4dc2da2e-9576-4b85-a515-d587fa4c17dd_RETINA_PORTRAIT_16_9.jpg",
-    "price": "See website",
-    "slug": "2025-11-26-coca-cola-roxy-katseye"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-11-28",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Monty Symarip"
-      },
-      {
-        "name": "Diamond Street Players"
-      },
-      {
-        "name": "Bird City Revolutionaries"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/monty-symarip-the-earl-2",
-    "info_url": "https://badearl.com/show/monty-symarip-the-earl-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/IMG_1203.jpeg",
-    "price": "$20 ADV / $25 DOS",
-    "slug": "2025-11-28-the-earl-monty-symarip"
-  },
-  {
-    "venue": "Tabernacle",
-    "date": "2025-11-28",
-    "doors_time": "20:00",
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Black Tiger Sex Machine",
-        "genre": "Dance/Electronic"
-      },
-      {
-        "name": "Canabliss",
-        "genre": "Dance/Electronic"
-      },
-      {
-        "name": "sharlitz web",
-        "genre": "Dance/Electronic"
-      },
-      {
-        "name": "Wodd",
-        "genre": "Dance/Electronic"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/black-tiger-sex-machine-the-btsm-atlanta-georgia-11-28-2025/event/0E006325145C7473",
-    "image_url": "https://s1.ticketm.net/dam/a/694/fa9ccdd2-a16b-4187-8a6c-f1ba6c4a6694_RETINA_PORTRAIT_16_9.jpg",
-    "price": "See website",
-    "slug": "2025-11-28-tabernacle-black-tiger-sex-machine"
-  },
-  {
-    "venue": "Terminal West",
-    "date": "2025-11-28",
-    "doors_time": "19:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "An Evening with Shadowgrass"
-      }
-    ],
-    "ticket_url": "https://www.axs.com/events/1110846/an-evening-with-shadowgrass-tickets",
-    "image_url": "https://images.discovery-prod.axs.com/2025/08/uploadedimage_68a770c24f8e5.jpg",
-    "price": "See website",
-    "slug": "2025-11-28-terminal-west-an-evening-with-shadowgrass"
-  },
-  {
-    "venue": "The Eastern",
-    "date": "2025-11-28",
-    "doors_time": "19:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Futurebirds"
-      },
-      {
-        "name": "Hotel Fiction"
-      }
-    ],
-    "ticket_url": "https://www.axs.com/events/1098023/futurebirds-tickets",
-    "image_url": "https://images.discovery-prod.axs.com/2025/08/uploadedimage_689e1529068ed.jpg",
-    "price": "See website",
-    "slug": "2025-11-28-the-eastern-futurebirds"
-  },
-  {
-    "venue": "Coca-Cola Roxy",
-    "date": "2025-11-28",
-    "doors_time": "20:00",
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Trap Karaoke",
-        "genre": "Hip-Hop/Rap"
-      }
-    ],
-    "ticket_url": "https://trapkaraoke.com/events/800-battery-ave-se-500-atlanta-ga-30339-4/",
-    "image_url": "https://s1.ticketm.net/dam/a/64c/76cc8226-9c36-4d1a-b616-d5acc3fa564c_RETINA_PORTRAIT_16_9.jpg",
-    "price": "See website",
-    "slug": "2025-11-28-coca-cola-roxy-trap-karaoke"
-  },
-  {
-    "venue": "The Earl",
     "date": "2025-11-29",
     "doors_time": "08:00",
     "show_time": "20:30",
@@ -235,7 +19,8 @@
     "info_url": "https://badearl.com/show/rosser-the-earl-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/ROSSER_Photo-3-min.jpg",
     "price": "$15 ADV / $15 DOS",
-    "slug": "2025-11-29-the-earl-rosser"
+    "slug": "2025-11-29-the-earl-rosser",
+    "og_image": "/og/2025-11-29-the-earl-rosser.png"
   },
   {
     "venue": "Tabernacle",
@@ -259,7 +44,8 @@
     "ticket_url": "https://www.ticketmaster.com/allen-stone-and-ripe-the-get-atlanta-georgia-11-29-2025/event/0E0062D3CD3E64CA",
     "image_url": "https://s1.ticketm.net/dam/e/5ab/478a72e5-b580-4c23-a97e-cc4727c3b5ab_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-11-29-tabernacle-allen-stone"
+    "slug": "2025-11-29-tabernacle-allen-stone",
+    "og_image": "/og/2025-11-29-tabernacle-allen-stone.png"
   },
   {
     "venue": "Terminal West",
@@ -277,7 +63,8 @@
     "ticket_url": "https://www.axs.com/events/1018275/american-aquarium-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/06/uploadedimage_68475010a4237.jpg",
     "price": "See website",
-    "slug": "2025-11-29-terminal-west-american-aquarium"
+    "slug": "2025-11-29-terminal-west-american-aquarium",
+    "og_image": "/og/2025-11-29-terminal-west-american-aquarium.png"
   },
   {
     "venue": "The Eastern",
@@ -295,7 +82,8 @@
     "ticket_url": "https://www.axs.com/events/1008262/adventure-club-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/06/uploadedimage_683f254a019df.jpg",
     "price": "See website",
-    "slug": "2025-11-29-the-eastern-adventure-club"
+    "slug": "2025-11-29-the-eastern-adventure-club",
+    "og_image": "/og/2025-11-29-the-eastern-adventure-club.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -311,7 +99,8 @@
     "ticket_url": "https://www.ticketmaster.com/rain-the-rain-tour-still-raining-atlanta-georgia-11-29-2025/event/0E00633293202E60",
     "image_url": "https://s1.ticketm.net/dam/a/5f2/e7c4d80e-038b-4306-bf39-a2376f0f95f2_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-11-29-coca-cola-roxy-rain"
+    "slug": "2025-11-29-coca-cola-roxy-rain",
+    "og_image": "/og/2025-11-29-coca-cola-roxy-rain.png"
   },
   {
     "venue": "Tabernacle",
@@ -339,7 +128,8 @@
     "ticket_url": "https://www.ticketmaster.com/fit-for-a-king-lonely-god-atlanta-georgia-11-30-2025/event/0E0062CAB71D4167",
     "image_url": "https://s1.ticketm.net/dam/a/5fd/6d4df6cf-7ac1-49a8-9b76-2d85d8ca25fd_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-11-30-tabernacle-fit-for-a-king"
+    "slug": "2025-11-30-tabernacle-fit-for-a-king",
+    "og_image": "/og/2025-11-30-tabernacle-fit-for-a-king.png"
   },
   {
     "venue": "The Earl",
@@ -358,7 +148,8 @@
     "info_url": "https://badearl.com/show/ryan-davis-the-earl-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/08/RyanDavis_RollingStone_6_21_25-13-min.jpg",
     "price": "$18 ADV / $18 DOS",
-    "slug": "2025-12-02-the-earl-ryan-davis-the-roadhouse-band"
+    "slug": "2025-12-02-the-earl-ryan-davis-the-roadhouse-band",
+    "og_image": "/og/2025-12-02-the-earl-ryan-davis-the-roadhouse-band.png"
   },
   {
     "venue": "The Earl",
@@ -383,7 +174,8 @@
     "info_url": "https://badearl.com/show/split-diopter-disintegration-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/DisintegrationSlugg2025TOUR-min.jpg",
     "price": "$15 ADV / $15 DOS",
-    "slug": "2025-12-04-the-earl-split-diopter"
+    "slug": "2025-12-04-the-earl-split-diopter",
+    "og_image": "/og/2025-12-04-the-earl-split-diopter.png"
   },
   {
     "venue": "Tabernacle",
@@ -399,7 +191,8 @@
     "ticket_url": "https://www.ticketmaster.com/guns-n-hoses-atlanta-georgia-12-04-2025/event/0E006333998C283A",
     "image_url": "https://s1.ticketm.net/dam/a/35e/7f79d778-2eb9-4d11-810b-e817688f835e_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-04-tabernacle-guns-n-hoses-charity-boxing-event"
+    "slug": "2025-12-04-tabernacle-guns-n-hoses-charity-boxing-event",
+    "og_image": "/og/2025-12-04-tabernacle-guns-n-hoses-charity-boxing-event.png"
   },
   {
     "venue": "The Eastern",
@@ -414,7 +207,8 @@
     "ticket_url": "https://www.axs.com/events/1163313/bailey-zimmerman-hardy-ella-langley-nate-smith-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e564768c4c1.jpg",
     "price": "See website",
-    "slug": "2025-12-04-the-eastern-bailey-zimmerman-hardy-ella-langley-nate-smith"
+    "slug": "2025-12-04-the-eastern-bailey-zimmerman-hardy-ella-langley-nate-smith",
+    "og_image": "/og/2025-12-04-the-eastern-bailey-zimmerman-hardy-ella-langley-nate-smith.png"
   },
   {
     "venue": "The Earl",
@@ -436,7 +230,8 @@
     "info_url": "https://badearl.com/show/nihilist-cheerleader-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/nihilist-cheerleader-1.jpg",
     "price": "$15 ADV / $20 DOS",
-    "slug": "2025-12-05-the-earl-nihilist-cheerleader"
+    "slug": "2025-12-05-the-earl-nihilist-cheerleader",
+    "og_image": "/og/2025-12-05-the-earl-nihilist-cheerleader.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -447,12 +242,21 @@
       {
         "name": "Chris Lake",
         "genre": "Dance/Electronic"
+      },
+      {
+        "name": "NenaHalena",
+        "genre": "Dance/Electronic"
+      },
+      {
+        "name": "Ragie Ban",
+        "genre": "Dance/Electronic"
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/chris-lake-chemistry-album-tour-atlanta-georgia-12-05-2025/event/0E0062E3AF0A5BA6",
     "image_url": "https://s1.ticketm.net/dam/a/191/4e8bfcac-e316-4faf-91ac-e5583738a191_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-05-coca-cola-roxy-chris-lake"
+    "slug": "2025-12-05-coca-cola-roxy-chris-lake",
+    "og_image": "/og/2025-12-05-coca-cola-roxy-chris-lake.png"
   },
   {
     "venue": "The Earl",
@@ -474,7 +278,8 @@
     "info_url": "https://badearl.com/show/mini-trees-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/08/mini-trees-min.jpg",
     "price": "$15 ADV / $20 DOS",
-    "slug": "2025-12-06-the-earl-mini-trees"
+    "slug": "2025-12-06-the-earl-mini-trees",
+    "og_image": "/og/2025-12-06-the-earl-mini-trees.png"
   },
   {
     "venue": "The Earl",
@@ -493,7 +298,8 @@
     "info_url": "https://badearl.com/show/jd-mcpherson-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/01/JD-McPherson-main4-600x800-1.jpg",
     "price": "$25 ADV / $25 DOS",
-    "slug": "2025-12-07-the-earl-jd-mcpherson"
+    "slug": "2025-12-07-the-earl-jd-mcpherson",
+    "og_image": "/og/2025-12-07-the-earl-jd-mcpherson.png"
   },
   {
     "venue": "Terminal West",
@@ -511,7 +317,8 @@
     "ticket_url": "https://www.axs.com/events/1067789/susto-stringband-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/07/uploadedimage_6881510767673.jpg",
     "price": "See website",
-    "slug": "2025-12-07-terminal-west-susto-stringband"
+    "slug": "2025-12-07-terminal-west-susto-stringband",
+    "og_image": "/og/2025-12-07-terminal-west-susto-stringband.png"
   },
   {
     "venue": "The Eastern",
@@ -529,7 +336,8 @@
     "ticket_url": "https://www.axs.com/events/1049069/ok-go-and-the-adjacent-possible-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/07/uploadedimage_686eb199ce8ba.jpg",
     "price": "See website",
-    "slug": "2025-12-07-the-eastern-ok-go-and-the-adjacent-possible-tour"
+    "slug": "2025-12-07-the-eastern-ok-go-and-the-adjacent-possible-tour",
+    "og_image": "/og/2025-12-07-the-eastern-ok-go-and-the-adjacent-possible-tour.png"
   },
   {
     "venue": "The Earl",
@@ -551,7 +359,8 @@
     "info_url": "https://badearl.com/show/kontusion-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/Kontusion-flyer-final-cropped-2.png",
     "price": "$15 ADV / $15 DOS",
-    "slug": "2025-12-09-the-earl-kontusion"
+    "slug": "2025-12-09-the-earl-kontusion",
+    "og_image": "/og/2025-12-09-the-earl-kontusion.png"
   },
   {
     "venue": "The Eastern",
@@ -569,7 +378,8 @@
     "ticket_url": "https://www.axs.com/events/1025315/portugal-the-man-the-denali-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/06/uploadedimage_685058d54e55b.jpg",
     "price": "See website",
-    "slug": "2025-12-09-the-eastern-portugal-the-man-the-denali-tour"
+    "slug": "2025-12-09-the-eastern-portugal-the-man-the-denali-tour",
+    "og_image": "/og/2025-12-09-the-eastern-portugal-the-man-the-denali-tour.png"
   },
   {
     "venue": "The Earl",
@@ -588,7 +398,8 @@
     "info_url": "https://badearl.com/show/lydia-lunch-jt-habersaat-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/lydia-flyer.jpg",
     "price": "$20 ADV / $25 DOS",
-    "slug": "2025-12-10-the-earl-lydia-lunch"
+    "slug": "2025-12-10-the-earl-lydia-lunch",
+    "og_image": "/og/2025-12-10-the-earl-lydia-lunch.png"
   },
   {
     "venue": "Tabernacle",
@@ -604,7 +415,8 @@
     "ticket_url": "https://www.ticketmaster.com/guaco-usa-tour-2025-atlanta-georgia-12-10-2025/event/0E00632DE4005417",
     "image_url": "https://s1.ticketm.net/dam/a/72c/ea4c87ff-8bf0-4e24-947d-f5099f6b472c_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-10-tabernacle-guaco"
+    "slug": "2025-12-10-tabernacle-guaco",
+    "og_image": "/og/2025-12-10-tabernacle-guaco.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -620,7 +432,8 @@
     "ticket_url": "https://www.ticketmaster.com/xavi-xtour-atlanta-georgia-12-10-2025/event/0E006314A94E539D",
     "image_url": "https://s1.ticketm.net/dam/a/c38/b5883574-1f19-43b0-b419-97f682ee8c38_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-10-coca-cola-roxy-xavi"
+    "slug": "2025-12-10-coca-cola-roxy-xavi",
+    "og_image": "/og/2025-12-10-coca-cola-roxy-xavi.png"
   },
   {
     "venue": "The Earl",
@@ -645,7 +458,8 @@
     "info_url": "https://badearl.com/show/tyler-key-the-earl-3/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/Dec11EarlPSpresents.jpg",
     "price": "$15 ADV / $15 DOS",
-    "slug": "2025-12-11-the-earl-tyler-key"
+    "slug": "2025-12-11-the-earl-tyler-key",
+    "og_image": "/og/2025-12-11-the-earl-tyler-key.png"
   },
   {
     "venue": "Tabernacle",
@@ -665,7 +479,8 @@
     "ticket_url": "https://www.ticketmaster.com/raekwon-mobb-deep-30th-anniversary-tour-atlanta-georgia-12-11-2025/event/0E006306A6182422",
     "image_url": "https://s1.ticketm.net/dam/a/1ff/73d1302f-d9ec-4bf1-af72-ba24474a01ff_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-11-tabernacle-raekwon"
+    "slug": "2025-12-11-tabernacle-raekwon",
+    "og_image": "/og/2025-12-11-tabernacle-raekwon.png"
   },
   {
     "venue": "The Eastern",
@@ -680,7 +495,8 @@
     "ticket_url": "https://www.axs.com/events/1130001/glokk40spaz-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68bf0bfeae835.jpg",
     "price": "See website",
-    "slug": "2025-12-11-the-eastern-glokk40spaz"
+    "slug": "2025-12-11-the-eastern-glokk40spaz",
+    "og_image": "/og/2025-12-11-the-eastern-glokk40spaz.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -696,7 +512,8 @@
     "ticket_url": "https://www.ticketmaster.com/teddy-swims-kegsmas-2025-atlanta-georgia-12-11-2025/event/0E00636E32137DC3",
     "image_url": "https://s1.ticketm.net/dam/a/87e/6779f1f2-1911-41b8-aea5-6e8de4c6987e_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-11-coca-cola-roxy-teddy-swims"
+    "slug": "2025-12-11-coca-cola-roxy-teddy-swims",
+    "og_image": "/og/2025-12-11-coca-cola-roxy-teddy-swims.png"
   },
   {
     "venue": "The Earl",
@@ -718,7 +535,8 @@
     "info_url": "https://badearl.com/show/the-casualties-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/09/The-Casualties-Press-Photo-min.jpeg",
     "price": "$20 ADV / $25 DOS",
-    "slug": "2025-12-12-the-earl-the-casualties"
+    "slug": "2025-12-12-the-earl-the-casualties",
+    "og_image": "/og/2025-12-12-the-earl-the-casualties.png"
   },
   {
     "venue": "Terminal West",
@@ -736,7 +554,8 @@
     "ticket_url": "https://www.axs.com/events/1154864/pony-bradshaw-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e02d5a84774.jpg",
     "price": "See website",
-    "slug": "2025-12-12-terminal-west-pony-bradshaw"
+    "slug": "2025-12-12-terminal-west-pony-bradshaw",
+    "og_image": "/og/2025-12-12-terminal-west-pony-bradshaw.png"
   },
   {
     "venue": "The Earl",
@@ -761,7 +580,8 @@
     "info_url": "https://badearl.com/show/primitive-man-the-earl-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/09/primitive-man-min.jpg",
     "price": "$20 ADV / $25 DOS",
-    "slug": "2025-12-13-the-earl-primitive-man"
+    "slug": "2025-12-13-the-earl-primitive-man",
+    "og_image": "/og/2025-12-13-the-earl-primitive-man.png"
   },
   {
     "venue": "Tabernacle",
@@ -781,7 +601,8 @@
     "ticket_url": "https://www.ticketmaster.com/thievery-corporation-north-american-tour-2025-atlanta-georgia-12-13-2025/event/0E00629A22A56308",
     "image_url": "https://s1.ticketm.net/dam/a/373/ff0e983f-3eba-4afa-8f94-76c9cf88f373_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-13-tabernacle-thievery-corporation"
+    "slug": "2025-12-13-tabernacle-thievery-corporation",
+    "og_image": "/og/2025-12-13-tabernacle-thievery-corporation.png"
   },
   {
     "venue": "The Earl",
@@ -800,7 +621,8 @@
     "info_url": "https://badearl.com/show/robert-lester-folsom-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/09/robert-lester-folsom.jpg",
     "price": "$25 ADV / $30 DOS",
-    "slug": "2025-12-14-the-earl-robert-lester-folsom"
+    "slug": "2025-12-14-the-earl-robert-lester-folsom",
+    "og_image": "/og/2025-12-14-the-earl-robert-lester-folsom.png"
   },
   {
     "venue": "Tabernacle",
@@ -816,7 +638,8 @@
     "ticket_url": "https://www.ticketmaster.com/john-mulaney-mister-whatever-atlanta-georgia-12-14-2025/event/0E006339001C7423",
     "image_url": "https://s1.ticketm.net/dam/a/115/ddf4b172-a6a4-4687-8598-c6f56c432115_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-14-tabernacle-john-mulaney"
+    "slug": "2025-12-14-tabernacle-john-mulaney",
+    "og_image": "/og/2025-12-14-tabernacle-john-mulaney.png"
   },
   {
     "venue": "The Eastern",
@@ -834,7 +657,8 @@
     "ticket_url": "https://www.axs.com/events/1157082/robert-earl-keen-presents-the-greatest-christmas-on-earth-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68dd51017c470.jpg",
     "price": "See website",
-    "slug": "2025-12-14-the-eastern-robert-earl-keen-presents-the-greatest-christmas-on-earth"
+    "slug": "2025-12-14-the-eastern-robert-earl-keen-presents-the-greatest-christmas-on-earth",
+    "og_image": "/og/2025-12-14-the-eastern-robert-earl-keen-presents-the-greatest-christmas-on-earth.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -850,7 +674,8 @@
     "ticket_url": "https://www.ticketmaster.com/trey-kennedy-the-relatable-tour-atlanta-georgia-12-14-2025/event/0E00629CC14D45FC",
     "image_url": "https://s1.ticketm.net/dam/a/949/5cde611c-539d-443f-b0c7-bc13bcb06949_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-14-coca-cola-roxy-trey-kennedy"
+    "slug": "2025-12-14-coca-cola-roxy-trey-kennedy",
+    "og_image": "/og/2025-12-14-coca-cola-roxy-trey-kennedy.png"
   },
   {
     "venue": "The Eastern",
@@ -868,7 +693,8 @@
     "ticket_url": "https://www.axs.com/events/1079969/the-front-bottoms-10-years-of-back-on-top-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/08/uploadedimage_68910b8de1c28.jpg",
     "price": "See website",
-    "slug": "2025-12-17-the-eastern-the-front-bottoms-10-years-of-back-on-top"
+    "slug": "2025-12-17-the-eastern-the-front-bottoms-10-years-of-back-on-top",
+    "og_image": "/og/2025-12-17-the-eastern-the-front-bottoms-10-years-of-back-on-top.png"
   },
   {
     "venue": "The Earl",
@@ -887,7 +713,8 @@
     "info_url": "https://badearl.com/show/charlie-brown-the-earl-2025-1/",
     "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
     "price": "$27.50 ADV / $30 DOS",
-    "slug": "2025-12-18-the-earl-tt-mahony-jeffrey-b\u00fctzer"
+    "slug": "2025-12-18-the-earl-tt-mahony-jeffrey-b\u00fctzer",
+    "og_image": "/og/2025-12-18-the-earl-tt-mahony-jeffrey-b\u00fctzer.png"
   },
   {
     "venue": "Terminal West",
@@ -905,7 +732,8 @@
     "ticket_url": "https://www.axs.com/events/1121355/trash-panda-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/08/uploadedimage_68af51c112a1f.jpg",
     "price": "See website",
-    "slug": "2025-12-18-terminal-west-trash-panda"
+    "slug": "2025-12-18-terminal-west-trash-panda",
+    "og_image": "/og/2025-12-18-terminal-west-trash-panda.png"
   },
   {
     "venue": "The Earl",
@@ -918,13 +746,17 @@
       },
       {
         "name": "The Frigidaires"
+      },
+      {
+        "name": "The Home Alones"
       }
     ],
     "ticket_url": "https://badearl.freshtix.com/events/charlie-brown-christmas-the-earl-2025-2",
     "info_url": "https://badearl.com/show/charlie-brown-night-2-the-earl-2025/",
     "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
     "price": "$27.50 ADV / $30 DOS",
-    "slug": "2025-12-19-the-earl-tt-mahony-jeffrey-b\u00fctzer"
+    "slug": "2025-12-19-the-earl-tt-mahony-jeffrey-b\u00fctzer",
+    "og_image": "/og/2025-12-19-the-earl-tt-mahony-jeffrey-b\u00fctzer.png"
   },
   {
     "venue": "Terminal West",
@@ -934,12 +766,16 @@
     "artists": [
       {
         "name": "Penelope Road"
+      },
+      {
+        "name": "Harvey Street"
       }
     ],
     "ticket_url": "https://www.axs.com/events/1165647/penelope-road-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68dea4fb1c77d.jpg",
     "price": "See website",
-    "slug": "2025-12-19-terminal-west-penelope-road"
+    "slug": "2025-12-19-terminal-west-penelope-road",
+    "og_image": "/og/2025-12-19-terminal-west-penelope-road.png"
   },
   {
     "venue": "The Eastern",
@@ -951,13 +787,14 @@
         "name": "B\u00e9la Fleck & The Flecktones"
       },
       {
-        "name": "feat. Victor Wooten, Roy \"Future Man\" Wooten & Howard Levy\nwith special guests Jeff Coffin & Alash"
+        "name": "feat. Victor Wooten & Roy \"Future Man\" Wooten \nwith special guests Jeff Coffin & Alash"
       }
     ],
     "ticket_url": "https://www.axs.com/events/1022153/bela-fleck-the-flecktones-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/07/uploadedimage_688248e925e49.jpg",
     "price": "See website",
-    "slug": "2025-12-19-the-eastern-b\u00e9la-fleck-the-flecktones"
+    "slug": "2025-12-19-the-eastern-b\u00e9la-fleck-the-flecktones",
+    "og_image": "/og/2025-12-19-the-eastern-b\u00e9la-fleck-the-flecktones.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -973,7 +810,8 @@
     "ticket_url": "https://www.ticketmaster.com/jid-god-does-like-ugly-tour-atlanta-georgia-12-19-2025/event/0E006364A678804E",
     "image_url": "https://s1.ticketm.net/dam/a/d5e/3153fb6e-9c03-424a-8be8-3f8e3860fd5e_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-19-coca-cola-roxy-jid"
+    "slug": "2025-12-19-coca-cola-roxy-jid",
+    "og_image": "/og/2025-12-19-coca-cola-roxy-jid.png"
   },
   {
     "venue": "The Earl",
@@ -992,7 +830,8 @@
     "info_url": "https://badearl.com/show/charlie-brown-night-3-the-earl-2025/",
     "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
     "price": "$27.50 ADV / $30 DOS",
-    "slug": "2025-12-20-the-earl-tt-mahony-jeffrey-b\u00fctzer"
+    "slug": "2025-12-20-the-earl-tt-mahony-jeffrey-b\u00fctzer",
+    "og_image": "/og/2025-12-20-the-earl-tt-mahony-jeffrey-b\u00fctzer.png"
   },
   {
     "venue": "Tabernacle",
@@ -1028,7 +867,8 @@
     "ticket_url": "https://www.ticketmaster.com/zaytoven-friends-w-renaissance-orchestra-atlanta-georgia-12-20-2025/event/0E006306B11E2A04",
     "image_url": "https://s1.ticketm.net/dam/c/80b/f3cd8d24-c3ae-4fa0-b4bc-1ba99f9b380b_106091_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-20-tabernacle-zaytoven"
+    "slug": "2025-12-20-tabernacle-zaytoven",
+    "og_image": "/og/2025-12-20-tabernacle-zaytoven.png"
   },
   {
     "venue": "Terminal West",
@@ -1046,7 +886,8 @@
     "ticket_url": "https://www.axs.com/events/1145907/improvement-movement-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68cb04e2508c7.jpg",
     "price": "See website",
-    "slug": "2025-12-20-terminal-west-improvement-movement"
+    "slug": "2025-12-20-terminal-west-improvement-movement",
+    "og_image": "/og/2025-12-20-terminal-west-improvement-movement.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -1062,7 +903,8 @@
     "ticket_url": "https://www.ticketmaster.com/yacht-rock-revue-yacht-rock-holiday-atlanta-georgia-12-20-2025/event/0E00631495A84317",
     "image_url": "https://s1.ticketm.net/dam/a/d82/8c7e1a66-e300-4a0a-8661-831e8474ed82_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-20-coca-cola-roxy-yacht-rock-revue"
+    "slug": "2025-12-20-coca-cola-roxy-yacht-rock-revue",
+    "og_image": "/og/2025-12-20-coca-cola-roxy-yacht-rock-revue.png"
   },
   {
     "venue": "The Earl",
@@ -1081,7 +923,8 @@
     "info_url": "https://badearl.com/show/charlie-brown-night-4-the-earl-2025/",
     "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
     "price": "$27.50 ADV / $30 DOS",
-    "slug": "2025-12-21-the-earl-tt-mahony-jeffrey-b\u00fctzer"
+    "slug": "2025-12-21-the-earl-tt-mahony-jeffrey-b\u00fctzer",
+    "og_image": "/og/2025-12-21-the-earl-tt-mahony-jeffrey-b\u00fctzer.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -1109,7 +952,8 @@
     "ticket_url": "https://www.ticketmaster.com/tape-b-the-soundtrack-to-everything-atlanta-georgia-12-26-2025/event/0E00634FAAC47191",
     "image_url": "https://s1.ticketm.net/dam/a/dd3/291128e5-2440-440b-97dd-dd2fe2e47dd3_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-26-coca-cola-roxy-tape-b"
+    "slug": "2025-12-26-coca-cola-roxy-tape-b",
+    "og_image": "/og/2025-12-26-coca-cola-roxy-tape-b.png"
   },
   {
     "venue": "Tabernacle",
@@ -1125,7 +969,8 @@
     "ticket_url": "https://www.ticketmaster.com/umphreys-mcgee-atlanta-georgia-12-30-2025/event/0E006312CB3C4B33",
     "image_url": "https://s1.ticketm.net/dam/e/9fd/c94cd79e-123b-49fc-a0c3-a7d4fb6d69fd_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-30-tabernacle-umphreys-mcgee"
+    "slug": "2025-12-30-tabernacle-umphreys-mcgee",
+    "og_image": "/og/2025-12-30-tabernacle-umphreys-mcgee.png"
   },
   {
     "venue": "Terminal West",
@@ -1140,7 +985,8 @@
     "ticket_url": "https://www.axs.com/events/1180769/funk-you-late-night-show-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68ee6d1e511be.jpg",
     "price": "See website",
-    "slug": "2025-12-30-terminal-west-funk-you-late-night-show"
+    "slug": "2025-12-30-terminal-west-funk-you-late-night-show",
+    "og_image": "/og/2025-12-30-terminal-west-funk-you-late-night-show.png"
   },
   {
     "venue": "The Eastern",
@@ -1158,7 +1004,8 @@
     "ticket_url": "https://www.axs.com/events/1121385/daily-bread-tickets",
     "image_url": null,
     "price": "See website",
-    "slug": "2025-12-30-the-eastern-daily-bread"
+    "slug": "2025-12-30-the-eastern-daily-bread",
+    "og_image": "/og/2025-12-30-the-eastern-daily-bread.png"
   },
   {
     "venue": "Tabernacle",
@@ -1174,7 +1021,8 @@
     "ticket_url": "https://www.ticketmaster.com/umphreys-mcgee-new-years-eve-2025-atlanta-georgia-12-31-2025/event/0E006312CF664CB2",
     "image_url": "https://s1.ticketm.net/dam/e/ba9/c422865c-ef8a-4e3e-91b3-d1bf4d662ba9_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2025-12-31-tabernacle-umphreys-mcgee"
+    "slug": "2025-12-31-tabernacle-umphreys-mcgee",
+    "og_image": "/og/2025-12-31-tabernacle-umphreys-mcgee.png"
   },
   {
     "venue": "Terminal West",
@@ -1192,7 +1040,8 @@
     "ticket_url": "https://www.axs.com/events/1127211/perpetual-groove-25th-anniversary-kickoff-on-new-years-eve-2025-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68b75a58e374e.jpg",
     "price": "See website",
-    "slug": "2025-12-31-terminal-west-perpetual-groove-25th-anniversary-kickoff-on-new-years-eve-2025"
+    "slug": "2025-12-31-terminal-west-perpetual-groove-25th-anniversary-kickoff-on-new-years-eve-2025",
+    "og_image": "/og/2025-12-31-terminal-west-perpetual-groove-25th-anniversary-kickoff-on-new-years-eve-2025.png"
   },
   {
     "venue": "The Eastern",
@@ -1210,7 +1059,8 @@
     "ticket_url": "https://www.axs.com/events/1130775/daily-bread-tickets",
     "image_url": null,
     "price": "See website",
-    "slug": "2025-12-31-the-eastern-daily-bread"
+    "slug": "2025-12-31-the-eastern-daily-bread",
+    "og_image": "/og/2025-12-31-the-eastern-daily-bread.png"
   },
   {
     "venue": "The Earl",
@@ -1226,7 +1076,8 @@
     "info_url": "https://badearl.com/show/the-last-revel-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/the-last-revel.jpg",
     "price": "$18 ADV / $20 DOS",
-    "slug": "2026-01-11-the-earl-the-last-revel"
+    "slug": "2026-01-11-the-earl-the-last-revel",
+    "og_image": "/og/2026-01-11-the-earl-the-last-revel.png"
   },
   {
     "venue": "The Earl",
@@ -1245,7 +1096,8 @@
     "info_url": "https://badearl.com/show/pissed-jeans-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/09/Pissed-Jeans-Press-Picture.jpg",
     "price": "$15 ADV / $20 DOS",
-    "slug": "2026-01-16-the-earl-pissed-jeans"
+    "slug": "2026-01-16-the-earl-pissed-jeans",
+    "og_image": "/og/2026-01-16-the-earl-pissed-jeans.png"
   },
   {
     "venue": "Terminal West",
@@ -1263,7 +1115,8 @@
     "ticket_url": "https://www.axs.com/events/1010844/ruston-kelly-pale-through-the-window-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/06/uploadedimage_683f45323f5d2.jpg",
     "price": "See website",
-    "slug": "2026-01-16-terminal-west-ruston-kelly-pale-through-the-window-tour"
+    "slug": "2026-01-16-terminal-west-ruston-kelly-pale-through-the-window-tour",
+    "og_image": "/og/2026-01-16-terminal-west-ruston-kelly-pale-through-the-window-tour.png"
   },
   {
     "venue": "Terminal West",
@@ -1278,7 +1131,8 @@
     "ticket_url": "https://www.axs.com/events/1160780/koo-koo-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68dade581ca11.jpg",
     "price": "See website",
-    "slug": "2026-01-17-terminal-west-koo-koo"
+    "slug": "2026-01-17-terminal-west-koo-koo",
+    "og_image": "/og/2026-01-17-terminal-west-koo-koo.png"
   },
   {
     "venue": "Terminal West",
@@ -1296,7 +1150,8 @@
     "ticket_url": "https://www.axs.com/events/1176795/shlump-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e81c96c1786.jpg",
     "price": "See website",
-    "slug": "2026-01-17-terminal-west-shlump"
+    "slug": "2026-01-17-terminal-west-shlump",
+    "og_image": "/og/2026-01-17-terminal-west-shlump.png"
   },
   {
     "venue": "The Earl",
@@ -1312,7 +1167,8 @@
     "info_url": "https://badearl.com/show/modern-nature-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/08/modern-nature.jpg",
     "price": "$18 ADV / $18 DOS",
-    "slug": "2026-01-19-the-earl-modern-nature"
+    "slug": "2026-01-19-the-earl-modern-nature",
+    "og_image": "/og/2026-01-19-the-earl-modern-nature.png"
   },
   {
     "venue": "The Earl",
@@ -1331,7 +1187,31 @@
     "info_url": "https://badearl.com/show/friendship-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/Friendship-band.jpg",
     "price": "$16 ADV / $20 DOS",
-    "slug": "2026-01-20-the-earl-friendship"
+    "slug": "2026-01-20-the-earl-friendship",
+    "og_image": "/og/2026-01-20-the-earl-friendship.png"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-21",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Shiner"
+      },
+      {
+        "name": "Dropsonic"
+      },
+      {
+        "name": "Bursting"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/shiner-the-earl-3",
+    "info_url": "https://badearl.com/show/shiner-the-earl-3/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/Shiner-NEW.jpg",
+    "price": "$18 ADV / $20 DOS",
+    "slug": "2026-01-21-the-earl-shiner",
+    "og_image": "/og/2026-01-21-the-earl-shiner.png"
   },
   {
     "venue": "The Earl",
@@ -1347,7 +1227,8 @@
     "info_url": "https://badearl.com/show/off-with-their-heads-the-earl-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/OWTH-pic.jpg",
     "price": "$20 ADV / $25 DOS",
-    "slug": "2026-01-22-the-earl-off-with-their-heads"
+    "slug": "2026-01-22-the-earl-off-with-their-heads",
+    "og_image": "/og/2026-01-22-the-earl-off-with-their-heads.png"
   },
   {
     "venue": "Terminal West",
@@ -1365,7 +1246,8 @@
     "ticket_url": "https://www.axs.com/events/1180689/54-ultra-live-in-north-america-round-two-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68efb5c2f147f.jpg",
     "price": "See website",
-    "slug": "2026-01-22-terminal-west-54-ultra-live-in-north-america-round-two"
+    "slug": "2026-01-22-terminal-west-54-ultra-live-in-north-america-round-two",
+    "og_image": "/og/2026-01-22-terminal-west-54-ultra-live-in-north-america-round-two.png"
   },
   {
     "venue": "The Earl",
@@ -1381,7 +1263,8 @@
     "info_url": "https://badearl.com/show/sean-rowe-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/Sean-Rowe-main-870x580-1.jpg",
     "price": "$20 ADV / $20 DOS",
-    "slug": "2026-01-23-the-earl-sean-rowe"
+    "slug": "2026-01-23-the-earl-sean-rowe",
+    "og_image": "/og/2026-01-23-the-earl-sean-rowe.png"
   },
   {
     "venue": "Terminal West",
@@ -1396,7 +1279,8 @@
     "ticket_url": "https://www.axs.com/events/1234369/stop-light-observations-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_691cd89880f32.jpg",
     "price": "See website",
-    "slug": "2026-01-23-terminal-west-stop-light-observations"
+    "slug": "2026-01-23-terminal-west-stop-light-observations",
+    "og_image": "/og/2026-01-23-terminal-west-stop-light-observations.png"
   },
   {
     "venue": "The Eastern",
@@ -1414,7 +1298,8 @@
     "ticket_url": "https://www.axs.com/events/1123954/ravenscoon-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/08/uploadedimage_68b09997e7ce2.jpg",
     "price": "See website",
-    "slug": "2026-01-23-the-eastern-ravenscoon"
+    "slug": "2026-01-23-the-eastern-ravenscoon",
+    "og_image": "/og/2026-01-23-the-eastern-ravenscoon.png"
   },
   {
     "venue": "The Earl",
@@ -1436,7 +1321,8 @@
     "info_url": "https://badearl.com/show/vio-lence-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/08/JANAUARY-24-\u2022-THE-EARL-ATLANTA-GA-1.jpg",
     "price": "$25 ADV / $30 DOS",
-    "slug": "2026-01-24-the-earl-vio-lence"
+    "slug": "2026-01-24-the-earl-vio-lence",
+    "og_image": "/og/2026-01-24-the-earl-vio-lence.png"
   },
   {
     "venue": "Tabernacle",
@@ -1456,7 +1342,8 @@
     "ticket_url": "https://www.ticketmaster.com/zoso-the-ultimate-led-zeppelin-experience-atlanta-georgia-01-24-2026/event/0E006332E97C5FFD",
     "image_url": "https://s1.ticketm.net/dam/e/779/19dbf62a-c786-4503-9906-c37dd33e0779_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-01-24-tabernacle-zoso-the-ultimate-led-zeppelin-experience"
+    "slug": "2026-01-24-tabernacle-zoso-the-ultimate-led-zeppelin-experience",
+    "og_image": "/og/2026-01-24-tabernacle-zoso-the-ultimate-led-zeppelin-experience.png"
   },
   {
     "venue": "Terminal West",
@@ -1471,7 +1358,8 @@
     "ticket_url": "https://www.axs.com/events/1212018/bayker-blankenship-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_690d09c2e9a28.jpg",
     "price": "See website",
-    "slug": "2026-01-24-terminal-west-bayker-blankenship"
+    "slug": "2026-01-24-terminal-west-bayker-blankenship",
+    "og_image": "/og/2026-01-24-terminal-west-bayker-blankenship.png"
   },
   {
     "venue": "The Eastern",
@@ -1489,7 +1377,8 @@
     "ticket_url": "https://www.axs.com/events/1123989/ravenscoon-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/08/uploadedimage_68b0b0316f5cf.jpg",
     "price": "See website",
-    "slug": "2026-01-24-the-eastern-ravenscoon"
+    "slug": "2026-01-24-the-eastern-ravenscoon",
+    "og_image": "/og/2026-01-24-the-eastern-ravenscoon.png"
   },
   {
     "venue": "Tabernacle",
@@ -1517,7 +1406,8 @@
     "ticket_url": "https://www.ticketmaster.com/motion-city-soundtrack-and-say-anything-atlanta-georgia-01-27-2026/event/0E00632E208268F3",
     "image_url": "https://s1.ticketm.net/dam/e/80a/50db7c7a-5b8c-4d7b-a9c6-696642bc880a_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-01-27-tabernacle-motion-city-soundtrack-say-anything"
+    "slug": "2026-01-27-tabernacle-motion-city-soundtrack-say-anything",
+    "og_image": "/og/2026-01-27-tabernacle-motion-city-soundtrack-say-anything.png"
   },
   {
     "venue": "Terminal West",
@@ -1532,7 +1422,8 @@
     "ticket_url": "https://www.axs.com/events/1225625/redferrin-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_6913a0d587bd4.jpg",
     "price": "See website",
-    "slug": "2026-01-29-terminal-west-redferrin"
+    "slug": "2026-01-29-terminal-west-redferrin",
+    "og_image": "/og/2026-01-29-terminal-west-redferrin.png"
   },
   {
     "venue": "The Eastern",
@@ -1547,7 +1438,8 @@
     "ticket_url": "https://www.axs.com/events/1195866/the-wood-brothers-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68f957a5b64f7.jpg",
     "price": "See website",
-    "slug": "2026-01-29-the-eastern-the-wood-brothers"
+    "slug": "2026-01-29-the-eastern-the-wood-brothers",
+    "og_image": "/og/2026-01-29-the-eastern-the-wood-brothers.png"
   },
   {
     "venue": "The Earl",
@@ -1569,7 +1461,8 @@
     "info_url": "https://badearl.com/show/god-bullies-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/07/god-bullies-web.jpeg",
     "price": "$20 ADV / $25 DOS",
-    "slug": "2026-01-30-the-earl-god-bullies"
+    "slug": "2026-01-30-the-earl-god-bullies",
+    "og_image": "/og/2026-01-30-the-earl-god-bullies.png"
   },
   {
     "venue": "Tabernacle",
@@ -1601,7 +1494,8 @@
     "ticket_url": "https://www.ticketmaster.com/snow-strippers-moved-from-buckhead-theatre-atlanta-georgia-01-30-2026/event/0E00636BB8FE955E",
     "image_url": "https://s1.ticketm.net/dam/a/390/96cc2d81-838c-4b40-9b6b-dbcd5ae8b390_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-01-30-tabernacle-snow-strippers"
+    "slug": "2026-01-30-tabernacle-snow-strippers",
+    "og_image": "/og/2026-01-30-tabernacle-snow-strippers.png"
   },
   {
     "venue": "Terminal West",
@@ -1619,7 +1513,8 @@
     "ticket_url": "https://www.axs.com/events/1168784/tinzo-jojo-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e15551a816b.jpg",
     "price": "See website",
-    "slug": "2026-01-30-terminal-west-tinzo-jojo"
+    "slug": "2026-01-30-terminal-west-tinzo-jojo",
+    "og_image": "/og/2026-01-30-terminal-west-tinzo-jojo.png"
   },
   {
     "venue": "Tabernacle",
@@ -1635,7 +1530,8 @@
     "ticket_url": "https://www.ticketmaster.com/dr-fresch-presents-the-bass-operation-atlanta-georgia-01-31-2026/event/0E00633DAAB52BE6",
     "image_url": "https://s1.ticketm.net/dam/a/2aa/d4d04317-ecd5-41e3-8bf7-bde899e442aa_1685171_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-01-31-tabernacle-dr-fresch"
+    "slug": "2026-01-31-tabernacle-dr-fresch",
+    "og_image": "/og/2026-01-31-tabernacle-dr-fresch.png"
   },
   {
     "venue": "Terminal West",
@@ -1653,7 +1549,8 @@
     "ticket_url": "https://www.axs.com/events/1223777/eddie-9v-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_69136436a50af.jpg",
     "price": "See website",
-    "slug": "2026-01-31-terminal-west-eddie-9v"
+    "slug": "2026-01-31-terminal-west-eddie-9v",
+    "og_image": "/og/2026-01-31-terminal-west-eddie-9v.png"
   },
   {
     "venue": "Terminal West",
@@ -1671,7 +1568,8 @@
     "ticket_url": "https://www.axs.com/events/1057329/couch-big-talk-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/07/uploadedimage_687a52bc2a23d.jpg",
     "price": "See website",
-    "slug": "2026-02-01-terminal-west-couch-big-talk-tour"
+    "slug": "2026-02-01-terminal-west-couch-big-talk-tour",
+    "og_image": "/og/2026-02-01-terminal-west-couch-big-talk-tour.png"
   },
   {
     "venue": "Terminal West",
@@ -1686,7 +1584,8 @@
     "ticket_url": "https://www.axs.com/events/1154853/drama-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68d2ed0e7bf9a.jpg",
     "price": "See website",
-    "slug": "2026-02-02-terminal-west-drama"
+    "slug": "2026-02-02-terminal-west-drama",
+    "og_image": "/og/2026-02-02-terminal-west-drama.png"
   },
   {
     "venue": "Terminal West",
@@ -1704,7 +1603,8 @@
     "ticket_url": "https://www.axs.com/events/1165465/night-moves-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68dd8f4a3c8a3.jpg",
     "price": "See website",
-    "slug": "2026-02-03-terminal-west-night-moves"
+    "slug": "2026-02-03-terminal-west-night-moves",
+    "og_image": "/og/2026-02-03-terminal-west-night-moves.png"
   },
   {
     "venue": "The Earl",
@@ -1723,7 +1623,8 @@
     "info_url": "https://badearl.com/show/tapers-choice-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/09/tapers-choice-1.jpg",
     "price": "$20 ADV / $25 DOS",
-    "slug": "2026-02-05-the-earl-tapers-choice"
+    "slug": "2026-02-05-the-earl-tapers-choice",
+    "og_image": "/og/2026-02-05-the-earl-tapers-choice.png"
   },
   {
     "venue": "Terminal West",
@@ -1738,7 +1639,8 @@
     "ticket_url": "https://www.axs.com/events/1218475/langhorne-slim-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_690cf08f72285.jpg",
     "price": "See website",
-    "slug": "2026-02-05-terminal-west-langhorne-slim"
+    "slug": "2026-02-05-terminal-west-langhorne-slim",
+    "og_image": "/og/2026-02-05-terminal-west-langhorne-slim.png"
   },
   {
     "venue": "The Earl",
@@ -1760,7 +1662,8 @@
     "info_url": "https://badearl.com/show/matt-pryor-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/Pryor-SaltonSea-MDubin-Full-A7R00329-min.jpg",
     "price": "$19 ADV / $24 DOS",
-    "slug": "2026-02-06-the-earl-matt-pryor"
+    "slug": "2026-02-06-the-earl-matt-pryor",
+    "og_image": "/og/2026-02-06-the-earl-matt-pryor.png"
   },
   {
     "venue": "Tabernacle",
@@ -1780,7 +1683,8 @@
     "ticket_url": "https://www.ticketmaster.com/112-room-112-tour-atlanta-georgia-02-06-2026/event/0E006314CEB36153",
     "image_url": "https://s1.ticketm.net/dam/a/018/369fc50a-d7c5-4235-8d6a-297771066018_1070171_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-02-06-tabernacle-112"
+    "slug": "2026-02-06-tabernacle-112",
+    "og_image": "/og/2026-02-06-tabernacle-112.png"
   },
   {
     "venue": "The Eastern",
@@ -1798,7 +1702,8 @@
     "ticket_url": "https://www.axs.com/events/1210895/elevation-rhythm-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_690a6ab5d0945.jpg",
     "price": "See website",
-    "slug": "2026-02-06-the-eastern-elevation-rhythm"
+    "slug": "2026-02-06-the-eastern-elevation-rhythm",
+    "og_image": "/og/2026-02-06-the-eastern-elevation-rhythm.png"
   },
   {
     "venue": "The Earl",
@@ -1817,7 +1722,8 @@
     "info_url": "https://badearl.com/show/bad-bad-hats-the-earl-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/bad-bad-hats-min.jpeg",
     "price": "$20 ADV / $20 DOS",
-    "slug": "2026-02-07-the-earl-bad-bad-hats"
+    "slug": "2026-02-07-the-earl-bad-bad-hats",
+    "og_image": "/og/2026-02-07-the-earl-bad-bad-hats.png"
   },
   {
     "venue": "Terminal West",
@@ -1832,7 +1738,8 @@
     "ticket_url": "https://www.axs.com/events/1210860/mc-davo-sabino-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_6904cdcd1634c.jpg",
     "price": "See website",
-    "slug": "2026-02-08-terminal-west-mc-davo-sabino"
+    "slug": "2026-02-08-terminal-west-mc-davo-sabino",
+    "og_image": "/og/2026-02-08-terminal-west-mc-davo-sabino.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -1852,7 +1759,8 @@
     "ticket_url": "https://www.ticketmaster.com/miguel-caos-tour-atlanta-georgia-02-10-2026/event/0E006356A24F7688",
     "image_url": "https://s1.ticketm.net/dam/a/898/99d34429-6f05-4ad0-8718-d53d315f2898_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-02-10-coca-cola-roxy-miguel"
+    "slug": "2026-02-10-coca-cola-roxy-miguel",
+    "og_image": "/og/2026-02-10-coca-cola-roxy-miguel.png"
   },
   {
     "venue": "Terminal West",
@@ -1867,7 +1775,8 @@
     "ticket_url": "https://www.axs.com/events/1147058/jonah-kagen-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68cc0fffaf917.jpg",
     "price": "See website",
-    "slug": "2026-02-11-terminal-west-jonah-kagen"
+    "slug": "2026-02-11-terminal-west-jonah-kagen",
+    "og_image": "/og/2026-02-11-terminal-west-jonah-kagen.png"
   },
   {
     "venue": "Terminal West",
@@ -1882,7 +1791,8 @@
     "ticket_url": "https://www.axs.com/events/1210692/railroad-earth-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_6903c703ef34c.jpg",
     "price": "See website",
-    "slug": "2026-02-12-terminal-west-railroad-earth"
+    "slug": "2026-02-12-terminal-west-railroad-earth",
+    "og_image": "/og/2026-02-12-terminal-west-railroad-earth.png"
   },
   {
     "venue": "Tabernacle",
@@ -1902,7 +1812,8 @@
     "ticket_url": "https://www.ticketmaster.com/lauren-spencer-smith-the-art-of-atlanta-georgia-02-13-2026/event/0E0062BE16B86EC7",
     "image_url": "https://s1.ticketm.net/dam/a/1fd/6ec58e06-e186-4a20-bd31-444ff7c541fd_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-02-13-tabernacle-lauren-spencer-smith"
+    "slug": "2026-02-13-tabernacle-lauren-spencer-smith",
+    "og_image": "/og/2026-02-13-tabernacle-lauren-spencer-smith.png"
   },
   {
     "venue": "Terminal West",
@@ -1920,7 +1831,8 @@
     "ticket_url": "https://www.axs.com/events/1224843/clay-street-unit-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_6913731442b03.jpg",
     "price": "See website",
-    "slug": "2026-02-13-terminal-west-clay-street-unit"
+    "slug": "2026-02-13-terminal-west-clay-street-unit",
+    "og_image": "/og/2026-02-13-terminal-west-clay-street-unit.png"
   },
   {
     "venue": "The Eastern",
@@ -1938,7 +1850,8 @@
     "ticket_url": "https://www.axs.com/events/1143654/inzo-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68d6c5b964198.jpg",
     "price": "See website",
-    "slug": "2026-02-13-the-eastern-inzo"
+    "slug": "2026-02-13-the-eastern-inzo",
+    "og_image": "/og/2026-02-13-the-eastern-inzo.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -1954,7 +1867,8 @@
     "ticket_url": "https://www.ticketmaster.com/molotov-30-anniversary-txxxr-atlanta-georgia-02-13-2026/event/0E006342E95E6A1B",
     "image_url": "https://s1.ticketm.net/dam/a/be3/f66e87fb-0ff4-4e50-b849-2f2cf654fbe3_743281_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-02-13-coca-cola-roxy-molotov"
+    "slug": "2026-02-13-coca-cola-roxy-molotov",
+    "og_image": "/og/2026-02-13-coca-cola-roxy-molotov.png"
   },
   {
     "venue": "Tabernacle",
@@ -1974,7 +1888,8 @@
     "ticket_url": "https://www.ticketmaster.com/ian-munsick-eagle-flies-free-tour-atlanta-georgia-02-14-2026/event/0E00633EEC49588A",
     "image_url": "https://s1.ticketm.net/dam/a/98c/970082db-8334-42e0-aa4a-2241ae05f98c_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-02-14-tabernacle-ian-munsick"
+    "slug": "2026-02-14-tabernacle-ian-munsick",
+    "og_image": "/og/2026-02-14-tabernacle-ian-munsick.png"
   },
   {
     "venue": "Terminal West",
@@ -1992,7 +1907,8 @@
     "ticket_url": "https://www.axs.com/events/1158523/say-she-she-cut-rewind-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e3f2aeb560e.jpg",
     "price": "See website",
-    "slug": "2026-02-14-terminal-west-say-she-she-cut-rewind-tour"
+    "slug": "2026-02-14-terminal-west-say-she-she-cut-rewind-tour",
+    "og_image": "/og/2026-02-14-terminal-west-say-she-she-cut-rewind-tour.png"
   },
   {
     "venue": "The Eastern",
@@ -2007,7 +1923,8 @@
     "ticket_url": "https://www.axs.com/events/1146724/joe-russos-almost-dead-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68d16102e3ee8.jpg",
     "price": "See website",
-    "slug": "2026-02-14-the-eastern-joe-russos-almost-dead"
+    "slug": "2026-02-14-the-eastern-joe-russos-almost-dead",
+    "og_image": "/og/2026-02-14-the-eastern-joe-russos-almost-dead.png"
   },
   {
     "venue": "Terminal West",
@@ -2025,7 +1942,8 @@
     "ticket_url": "https://www.axs.com/events/1099644/tyler-braden-devil-and-a-prayer-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/08/uploadedimage_689e5a2ae85c0.jpg",
     "price": "See website",
-    "slug": "2026-02-15-terminal-west-tyler-braden-devil-and-a-prayer-tour"
+    "slug": "2026-02-15-terminal-west-tyler-braden-devil-and-a-prayer-tour",
+    "og_image": "/og/2026-02-15-terminal-west-tyler-braden-devil-and-a-prayer-tour.png"
   },
   {
     "venue": "Tabernacle",
@@ -2053,7 +1971,8 @@
     "ticket_url": "https://www.ticketmaster.com/wooli-presents-synapse-atlanta-georgia-02-17-2026/event/0E00636DD12CB1C2",
     "image_url": "https://s1.ticketm.net/dam/a/201/2609b168-eee8-40d8-8f87-22fc2c763201_1804991_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-02-17-tabernacle-wooli"
+    "slug": "2026-02-17-tabernacle-wooli",
+    "og_image": "/og/2026-02-17-tabernacle-wooli.png"
   },
   {
     "venue": "Terminal West",
@@ -2071,7 +1990,8 @@
     "ticket_url": "https://www.axs.com/events/1147908/clipping-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e02dbabac35.jpg",
     "price": "See website",
-    "slug": "2026-02-19-terminal-west-clipping"
+    "slug": "2026-02-19-terminal-west-clipping",
+    "og_image": "/og/2026-02-19-terminal-west-clipping.png"
   },
   {
     "venue": "The Eastern",
@@ -2086,7 +2006,8 @@
     "ticket_url": "https://www.axs.com/events/1180703/niko-moon-the-american-palm-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68ed67e4b66e9.jpg",
     "price": "See website",
-    "slug": "2026-02-19-the-eastern-niko-moon-the-american-palm-tour"
+    "slug": "2026-02-19-the-eastern-niko-moon-the-american-palm-tour",
+    "og_image": "/og/2026-02-19-the-eastern-niko-moon-the-american-palm-tour.png"
   },
   {
     "venue": "Terminal West",
@@ -2104,7 +2025,8 @@
     "ticket_url": "https://www.axs.com/events/1165997/briscoe-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e5415969e8e.jpg",
     "price": "See website",
-    "slug": "2026-02-20-terminal-west-briscoe"
+    "slug": "2026-02-20-terminal-west-briscoe",
+    "og_image": "/og/2026-02-20-terminal-west-briscoe.png"
   },
   {
     "venue": "The Eastern",
@@ -2122,7 +2044,8 @@
     "ticket_url": "https://www.axs.com/events/1158639/alleycvt-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68d6b54e13c4b.jpg",
     "price": "See website",
-    "slug": "2026-02-20-the-eastern-alleycvt"
+    "slug": "2026-02-20-the-eastern-alleycvt",
+    "og_image": "/og/2026-02-20-the-eastern-alleycvt.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2146,7 +2069,8 @@
     "ticket_url": "https://www.ticketmaster.com/maddox-batson-live-worldwide-tour-atlanta-georgia-02-20-2026/event/0E006365A9077833",
     "image_url": "https://s1.ticketm.net/dam/a/54f/b81a0792-67bd-491d-8804-674ffc61c54f_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-02-20-coca-cola-roxy-maddox-batson"
+    "slug": "2026-02-20-coca-cola-roxy-maddox-batson",
+    "og_image": "/og/2026-02-20-coca-cola-roxy-maddox-batson.png"
   },
   {
     "venue": "The Earl",
@@ -2165,7 +2089,8 @@
     "info_url": "https://badearl.com/show/nuovo-testamento-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/Nuovo-Testamento-min.jpg",
     "price": "$18 ADV / $20 DOS",
-    "slug": "2026-02-21-the-earl-nuovo-testamento"
+    "slug": "2026-02-21-the-earl-nuovo-testamento",
+    "og_image": "/og/2026-02-21-the-earl-nuovo-testamento.png"
   },
   {
     "venue": "Terminal West",
@@ -2180,7 +2105,8 @@
     "ticket_url": "https://www.axs.com/events/1184048/sodown-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68fb8c797dfcf.jpg",
     "price": "See website",
-    "slug": "2026-02-21-terminal-west-sodown"
+    "slug": "2026-02-21-terminal-west-sodown",
+    "og_image": "/og/2026-02-21-terminal-west-sodown.png"
   },
   {
     "venue": "Terminal West",
@@ -2195,7 +2121,8 @@
     "ticket_url": "https://www.axs.com/events/1176886/samm-henshaw-presents-it-could-be-worse-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68ee56acf2429.jpg",
     "price": "See website",
-    "slug": "2026-02-22-terminal-west-samm-henshaw-presents-it-could-be-worse"
+    "slug": "2026-02-22-terminal-west-samm-henshaw-presents-it-could-be-worse",
+    "og_image": "/og/2026-02-22-terminal-west-samm-henshaw-presents-it-could-be-worse.png"
   },
   {
     "venue": "The Earl",
@@ -2217,7 +2144,8 @@
     "info_url": "https://badearl.com/show/spiritual-cramp-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/08/spiritual-cramp.jpg",
     "price": "$20 ADV / $20 DOS",
-    "slug": "2026-02-24-the-earl-spiritual-cramp"
+    "slug": "2026-02-24-the-earl-spiritual-cramp",
+    "og_image": "/og/2026-02-24-the-earl-spiritual-cramp.png"
   },
   {
     "venue": "Tabernacle",
@@ -2233,7 +2161,8 @@
     "ticket_url": "https://www.ticketmaster.com/monaleo-who-did-the-body-tour-atlanta-georgia-02-25-2026/event/0E006351216BA57D",
     "image_url": "https://s1.ticketm.net/dam/a/8ba/1175f923-7c96-40f6-8f86-b97344e2d8ba_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-02-25-tabernacle-monaleo"
+    "slug": "2026-02-25-tabernacle-monaleo",
+    "og_image": "/og/2026-02-25-tabernacle-monaleo.png"
   },
   {
     "venue": "The Eastern",
@@ -2248,7 +2177,8 @@
     "ticket_url": "https://www.axs.com/events/1081585/jesse-welles-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/08/uploadedimage_6893be44798cb.jpg",
     "price": "See website",
-    "slug": "2026-02-25-the-eastern-jesse-welles"
+    "slug": "2026-02-25-the-eastern-jesse-welles",
+    "og_image": "/og/2026-02-25-the-eastern-jesse-welles.png"
   },
   {
     "venue": "Terminal West",
@@ -2263,7 +2193,8 @@
     "ticket_url": "https://www.axs.com/events/1091818/wax-tailor-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/08/uploadedimage_68af47ee558a2.jpg",
     "price": "See website",
-    "slug": "2026-02-26-terminal-west-wax-tailor"
+    "slug": "2026-02-26-terminal-west-wax-tailor",
+    "og_image": "/og/2026-02-26-terminal-west-wax-tailor.png"
   },
   {
     "venue": "Terminal West",
@@ -2281,7 +2212,8 @@
     "ticket_url": "https://www.axs.com/events/1165459/infekt-port-zero-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68dd881b56f5a.jpg",
     "price": "See website",
-    "slug": "2026-02-27-terminal-west-infekt-port-zero-tour"
+    "slug": "2026-02-27-terminal-west-infekt-port-zero-tour",
+    "og_image": "/og/2026-02-27-terminal-west-infekt-port-zero-tour.png"
   },
   {
     "venue": "The Eastern",
@@ -2299,7 +2231,8 @@
     "ticket_url": "https://www.axs.com/events/1198647/sts9-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68fbad4962697.jpg",
     "price": "See website",
-    "slug": "2026-02-27-the-eastern-sts9"
+    "slug": "2026-02-27-the-eastern-sts9",
+    "og_image": "/og/2026-02-27-the-eastern-sts9.png"
   },
   {
     "venue": "The Earl",
@@ -2315,7 +2248,8 @@
     "info_url": "https://badearl.com/show/prison-affair-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/prison-affair.jpeg",
     "price": "$18 ADV / $20 DOS",
-    "slug": "2026-02-28-the-earl-prison-affair"
+    "slug": "2026-02-28-the-earl-prison-affair",
+    "og_image": "/og/2026-02-28-the-earl-prison-affair.png"
   },
   {
     "venue": "Terminal West",
@@ -2333,7 +2267,8 @@
     "ticket_url": "https://www.axs.com/events/1229373/wonkywilla-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_691621239c690.jpg",
     "price": "See website",
-    "slug": "2026-02-28-terminal-west-wonkywilla"
+    "slug": "2026-02-28-terminal-west-wonkywilla",
+    "og_image": "/og/2026-02-28-terminal-west-wonkywilla.png"
   },
   {
     "venue": "The Eastern",
@@ -2351,7 +2286,8 @@
     "ticket_url": "https://www.axs.com/events/1198660/sts9-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68fbcde5e6742.jpg",
     "price": "See website",
-    "slug": "2026-02-28-the-eastern-sts9"
+    "slug": "2026-02-28-the-eastern-sts9",
+    "og_image": "/og/2026-02-28-the-eastern-sts9.png"
   },
   {
     "venue": "Terminal West",
@@ -2366,7 +2302,8 @@
     "ticket_url": "https://www.axs.com/events/1206956/makaya-mccraven-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_690276cb5fc1b.jpg",
     "price": "See website",
-    "slug": "2026-03-03-terminal-west-makaya-mccraven"
+    "slug": "2026-03-03-terminal-west-makaya-mccraven",
+    "og_image": "/og/2026-03-03-terminal-west-makaya-mccraven.png"
   },
   {
     "venue": "The Eastern",
@@ -2381,7 +2318,8 @@
     "ticket_url": "https://www.axs.com/events/1150428/rich-brian-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68d300be88b96.jpg",
     "price": "See website",
-    "slug": "2026-03-04-the-eastern-rich-brian"
+    "slug": "2026-03-04-the-eastern-rich-brian",
+    "og_image": "/og/2026-03-04-the-eastern-rich-brian.png"
   },
   {
     "venue": "Terminal West",
@@ -2396,7 +2334,8 @@
     "ticket_url": "https://www.axs.com/events/1213686/dirtwire-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_690e14164c5c2.jpg",
     "price": "See website",
-    "slug": "2026-03-05-terminal-west-dirtwire"
+    "slug": "2026-03-05-terminal-west-dirtwire",
+    "og_image": "/og/2026-03-05-terminal-west-dirtwire.png"
   },
   {
     "venue": "The Eastern",
@@ -2414,7 +2353,8 @@
     "ticket_url": "https://www.axs.com/events/1168816/trombone-shorty-orleans-avenue-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68f108fd1c7f8.jpg",
     "price": "See website",
-    "slug": "2026-03-06-the-eastern-trombone-shorty-orleans-avenue"
+    "slug": "2026-03-06-the-eastern-trombone-shorty-orleans-avenue",
+    "og_image": "/og/2026-03-06-the-eastern-trombone-shorty-orleans-avenue.png"
   },
   {
     "venue": "Terminal West",
@@ -2429,7 +2369,8 @@
     "ticket_url": "https://www.axs.com/events/1231404/mary-droppinz-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_691b659162d7f.jpg",
     "price": "See website",
-    "slug": "2026-03-07-terminal-west-mary-droppinz"
+    "slug": "2026-03-07-terminal-west-mary-droppinz",
+    "og_image": "/og/2026-03-07-terminal-west-mary-droppinz.png"
   },
   {
     "venue": "The Eastern",
@@ -2444,7 +2385,8 @@
     "ticket_url": "https://www.axs.com/events/1181984/machine-girl-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68eec538ba207.jpg",
     "price": "See website",
-    "slug": "2026-03-07-the-eastern-machine-girl"
+    "slug": "2026-03-07-the-eastern-machine-girl",
+    "og_image": "/og/2026-03-07-the-eastern-machine-girl.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2460,7 +2402,8 @@
     "ticket_url": "https://www.ticketmaster.com/bbno-the-internet-explorer-tour-atlanta-georgia-03-07-2026/event/0E006316C0FE5D60",
     "image_url": "https://s1.ticketm.net/dam/a/3c7/52c91343-d384-4e72-8e6c-22366a3353c7_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-03-07-coca-cola-roxy-bbno"
+    "slug": "2026-03-07-coca-cola-roxy-bbno",
+    "og_image": "/og/2026-03-07-coca-cola-roxy-bbno.png"
   },
   {
     "venue": "The Eastern",
@@ -2475,7 +2418,8 @@
     "ticket_url": "https://www.axs.com/events/1071060/pink-martini-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68bf3aed24d66.jpg",
     "price": "See website",
-    "slug": "2026-03-08-the-eastern-pink-martini"
+    "slug": "2026-03-08-the-eastern-pink-martini",
+    "og_image": "/og/2026-03-08-the-eastern-pink-martini.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2491,7 +2435,8 @@
     "ticket_url": "https://www.ticketmaster.com/bryce-crawford-i-love-jesus-us-atlanta-georgia-03-08-2026/event/0E0063319702283C",
     "image_url": "https://s1.ticketm.net/dam/a/492/fd42db8a-1cb1-4115-91a2-7af6e1c1c492_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-03-08-coca-cola-roxy-bryce-crawford"
+    "slug": "2026-03-08-coca-cola-roxy-bryce-crawford",
+    "og_image": "/og/2026-03-08-coca-cola-roxy-bryce-crawford.png"
   },
   {
     "venue": "Tabernacle",
@@ -2507,7 +2452,8 @@
     "ticket_url": "https://www.ticketmaster.com/blood-orange-essex-honey-tour-atlanta-georgia-03-09-2026/event/0E00634215086FDF",
     "image_url": "https://s1.ticketm.net/dam/a/b65/adbe143d-2953-4ab9-a265-99eb96545b65_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-03-09-tabernacle-blood-orange"
+    "slug": "2026-03-09-tabernacle-blood-orange",
+    "og_image": "/og/2026-03-09-tabernacle-blood-orange.png"
   },
   {
     "venue": "Terminal West",
@@ -2525,7 +2471,8 @@
     "ticket_url": "https://www.axs.com/events/1145112/ratboys-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68c9bbfe21e53.jpg",
     "price": "See website",
-    "slug": "2026-03-11-terminal-west-ratboys"
+    "slug": "2026-03-11-terminal-west-ratboys",
+    "og_image": "/og/2026-03-11-terminal-west-ratboys.png"
   },
   {
     "venue": "The Earl",
@@ -2541,7 +2488,8 @@
     "info_url": "https://badearl.com/show/twen-the-earl-3/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/09/Twen-Approved-Photo-2-min.jpg",
     "price": "$18 ADV / $22 DOS",
-    "slug": "2026-03-12-the-earl-twen"
+    "slug": "2026-03-12-the-earl-twen",
+    "og_image": "/og/2026-03-12-the-earl-twen.png"
   },
   {
     "venue": "The Eastern",
@@ -2556,7 +2504,8 @@
     "ticket_url": "https://www.axs.com/events/1206440/cat-power-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_6902563d62ef3.jpg",
     "price": "See website",
-    "slug": "2026-03-12-the-eastern-cat-power"
+    "slug": "2026-03-12-the-eastern-cat-power",
+    "og_image": "/og/2026-03-12-the-eastern-cat-power.png"
   },
   {
     "venue": "Terminal West",
@@ -2571,7 +2520,8 @@
     "ticket_url": "https://www.axs.com/events/1211849/eggy-something-in-the-air-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_6904fd6122266.jpg",
     "price": "See website",
-    "slug": "2026-03-13-terminal-west-eggy-something-in-the-air-tour"
+    "slug": "2026-03-13-terminal-west-eggy-something-in-the-air-tour",
+    "og_image": "/og/2026-03-13-terminal-west-eggy-something-in-the-air-tour.png"
   },
   {
     "venue": "The Eastern",
@@ -2586,7 +2536,8 @@
     "ticket_url": "https://www.axs.com/events/1029779/levity-presents-lasership-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/06/uploadedimage_68558433cb818.jpg",
     "price": "See website",
-    "slug": "2026-03-13-the-eastern-levity-presents-lasership"
+    "slug": "2026-03-13-the-eastern-levity-presents-lasership",
+    "og_image": "/og/2026-03-13-the-eastern-levity-presents-lasership.png"
   },
   {
     "venue": "The Eastern",
@@ -2601,7 +2552,8 @@
     "ticket_url": "https://www.axs.com/events/1031871/levity-presents-lasership-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/06/uploadedimage_6855b51adf438.jpg",
     "price": "See website",
-    "slug": "2026-03-14-the-eastern-levity-presents-lasership"
+    "slug": "2026-03-14-the-eastern-levity-presents-lasership",
+    "og_image": "/og/2026-03-14-the-eastern-levity-presents-lasership.png"
   },
   {
     "venue": "The Earl",
@@ -2620,7 +2572,8 @@
     "info_url": "https://badearl.com/show/westerman-the-earl-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/09/WESTERMAN_ATHENS_SEP.22_PINELOPI_GERASIMOU-19.jpg",
     "price": "$25 ADV / $27 DOS",
-    "slug": "2026-03-16-the-earl-westerman"
+    "slug": "2026-03-16-the-earl-westerman",
+    "og_image": "/og/2026-03-16-the-earl-westerman.png"
   },
   {
     "venue": "The Earl",
@@ -2636,7 +2589,8 @@
     "info_url": "https://badearl.com/show/skullcrusher-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/skullcrusher.jpg",
     "price": "$20 ADV / $20 DOS",
-    "slug": "2026-03-17-the-earl-skullcrusher"
+    "slug": "2026-03-17-the-earl-skullcrusher",
+    "og_image": "/og/2026-03-17-the-earl-skullcrusher.png"
   },
   {
     "venue": "The Eastern",
@@ -2654,7 +2608,8 @@
     "ticket_url": "https://www.axs.com/events/1188848/rainbow-kitten-surprise-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68f55e228cf73.jpg",
     "price": "See website",
-    "slug": "2026-03-17-the-eastern-rainbow-kitten-surprise"
+    "slug": "2026-03-17-the-eastern-rainbow-kitten-surprise",
+    "og_image": "/og/2026-03-17-the-eastern-rainbow-kitten-surprise.png"
   },
   {
     "venue": "Terminal West",
@@ -2669,7 +2624,8 @@
     "ticket_url": "https://www.axs.com/events/1138034/mind-enterprises-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68c1b5c6d59c6.jpg",
     "price": "See website",
-    "slug": "2026-03-18-terminal-west-mind-enterprises"
+    "slug": "2026-03-18-terminal-west-mind-enterprises",
+    "og_image": "/og/2026-03-18-terminal-west-mind-enterprises.png"
   },
   {
     "venue": "The Eastern",
@@ -2687,7 +2643,8 @@
     "ticket_url": "https://www.axs.com/events/1192921/rainbow-kitten-surprise-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68f809567fbeb.jpg",
     "price": "See website",
-    "slug": "2026-03-18-the-eastern-rainbow-kitten-surprise"
+    "slug": "2026-03-18-the-eastern-rainbow-kitten-surprise",
+    "og_image": "/og/2026-03-18-the-eastern-rainbow-kitten-surprise.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2711,7 +2668,8 @@
     "ticket_url": "https://www.ticketmaster.com/sabaton-legends-on-tour-atlanta-georgia-03-18-2026/event/0E006329A34D31F8",
     "image_url": "https://s1.ticketm.net/dam/a/6af/faa2c053-7247-49f9-9cd2-9dd6512986af_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-03-18-coca-cola-roxy-sabaton"
+    "slug": "2026-03-18-coca-cola-roxy-sabaton",
+    "og_image": "/og/2026-03-18-coca-cola-roxy-sabaton.png"
   },
   {
     "venue": "The Eastern",
@@ -2729,7 +2687,8 @@
     "ticket_url": "https://www.axs.com/events/1146707/level-up-x-zingara-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/09/uploadedimage_68cdc2c14c6a4.jpg",
     "price": "See website",
-    "slug": "2026-03-21-the-eastern-level-up-x-zingara"
+    "slug": "2026-03-21-the-eastern-level-up-x-zingara",
+    "og_image": "/og/2026-03-21-the-eastern-level-up-x-zingara.png"
   },
   {
     "venue": "Terminal West",
@@ -2747,7 +2706,8 @@
     "ticket_url": "https://www.axs.com/events/1215489/benee-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_690a699d79caa.jpg",
     "price": "See website",
-    "slug": "2026-03-24-terminal-west-benee"
+    "slug": "2026-03-24-terminal-west-benee",
+    "og_image": "/og/2026-03-24-terminal-west-benee.png"
   },
   {
     "venue": "Tabernacle",
@@ -2763,7 +2723,8 @@
     "ticket_url": "https://www.ticketmaster.com/kwn-tour-2026-moved-from-center-atlanta-georgia-03-25-2026/event/0E00636CE760BE59",
     "image_url": "https://s1.ticketm.net/dam/a/d26/f846c9f5-c23d-44aa-833c-51b688ce4d26_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-03-25-tabernacle-kwn"
+    "slug": "2026-03-25-tabernacle-kwn",
+    "og_image": "/og/2026-03-25-tabernacle-kwn.png"
   },
   {
     "venue": "Terminal West",
@@ -2781,7 +2742,8 @@
     "ticket_url": "https://www.axs.com/events/1206390/mindchatter-giving-up-on-words-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_690b98c684221.jpg",
     "price": "See website",
-    "slug": "2026-03-25-terminal-west-mindchatter-giving-up-on-words-tour"
+    "slug": "2026-03-25-terminal-west-mindchatter-giving-up-on-words-tour",
+    "og_image": "/og/2026-03-25-terminal-west-mindchatter-giving-up-on-words-tour.png"
   },
   {
     "venue": "The Earl",
@@ -2797,7 +2759,8 @@
     "info_url": "https://badearl.com/show/hudson-freeman-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/hudson-freeman-.jpg",
     "price": "$15 ADV / $18 DOS",
-    "slug": "2026-03-27-the-earl-hudson-freeman"
+    "slug": "2026-03-27-the-earl-hudson-freeman",
+    "og_image": "/og/2026-03-27-the-earl-hudson-freeman.png"
   },
   {
     "venue": "Tabernacle",
@@ -2817,7 +2780,8 @@
     "ticket_url": "https://www.ticketmaster.com/good-dye-young-presents-hayley-williams-atlanta-georgia-03-27-2026/event/0E006367DADDB073",
     "image_url": "https://s1.ticketm.net/dam/a/8e0/a85aee98-50e5-471f-9824-e197069578e0_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-03-27-tabernacle-hayley-williams"
+    "slug": "2026-03-27-tabernacle-hayley-williams",
+    "og_image": "/og/2026-03-27-tabernacle-hayley-williams.png"
   },
   {
     "venue": "The Earl",
@@ -2836,7 +2800,8 @@
     "info_url": "https://badearl.com/show/courtney-marie-andrews-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/CMA-Press-2026.jpg",
     "price": "$25 ADV / $30 DOS",
-    "slug": "2026-03-28-the-earl-courtney-marie-andrews"
+    "slug": "2026-03-28-the-earl-courtney-marie-andrews",
+    "og_image": "/og/2026-03-28-the-earl-courtney-marie-andrews.png"
   },
   {
     "venue": "Tabernacle",
@@ -2856,7 +2821,8 @@
     "ticket_url": "https://www.ticketmaster.com/good-dye-young-presents-hayley-williams-atlanta-georgia-03-28-2026/event/0E006367DBABB0ED",
     "image_url": "https://s1.ticketm.net/dam/a/8e0/a85aee98-50e5-471f-9824-e197069578e0_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-03-28-tabernacle-hayley-williams"
+    "slug": "2026-03-28-tabernacle-hayley-williams",
+    "og_image": "/og/2026-03-28-tabernacle-hayley-williams.png"
   },
   {
     "venue": "Terminal West",
@@ -2871,7 +2837,8 @@
     "ticket_url": "https://www.axs.com/events/1189425/dirty-three-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_6903a5e7e771f.jpg",
     "price": "See website",
-    "slug": "2026-03-28-terminal-west-dirty-three"
+    "slug": "2026-03-28-terminal-west-dirty-three",
+    "og_image": "/og/2026-03-28-terminal-west-dirty-three.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2891,7 +2858,8 @@
     "ticket_url": "https://www.ticketmaster.com/puscifer-atlanta-georgia-03-28-2026/event/0E006351BC2677F5",
     "image_url": "https://s1.ticketm.net/dam/a/34d/10689b7b-b50d-4c90-a4dd-ac528858834d_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-03-28-coca-cola-roxy-puscifer"
+    "slug": "2026-03-28-coca-cola-roxy-puscifer",
+    "og_image": "/og/2026-03-28-coca-cola-roxy-puscifer.png"
   },
   {
     "venue": "Terminal West",
@@ -2909,7 +2877,8 @@
     "ticket_url": "https://www.axs.com/events/1187868/bryant-barnes-presents-solace-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68f691b0a3df9.jpg",
     "price": "See website",
-    "slug": "2026-04-01-terminal-west-bryant-barnes-presents-solace-tour"
+    "slug": "2026-04-01-terminal-west-bryant-barnes-presents-solace-tour",
+    "og_image": "/og/2026-04-01-terminal-west-bryant-barnes-presents-solace-tour.png"
   },
   {
     "venue": "The Earl",
@@ -2928,7 +2897,8 @@
     "info_url": "https://badearl.com/show/the-wedding-present-the-earl-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/Band-Photograph-The-Wedding-Present-25-Line-up-Landscape-by-John-Evans-min.jpg",
     "price": "$28 ADV / $28 DOS",
-    "slug": "2026-04-02-the-earl-the-wedding-present"
+    "slug": "2026-04-02-the-earl-the-wedding-present",
+    "og_image": "/og/2026-04-02-the-earl-the-wedding-present.png"
   },
   {
     "venue": "The Eastern",
@@ -2943,7 +2913,8 @@
     "ticket_url": "https://www.axs.com/events/1225868/william-black-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_691b615ec2288.jpg",
     "price": "See website",
-    "slug": "2026-04-03-the-eastern-william-black"
+    "slug": "2026-04-03-the-eastern-william-black",
+    "og_image": "/og/2026-04-03-the-eastern-william-black.png"
   },
   {
     "venue": "Tabernacle",
@@ -2959,7 +2930,8 @@
     "ticket_url": "https://www.ticketmaster.com/stavros-halkias-the-dreamboat-tour-atlanta-georgia-04-04-2026/event/0E00634D119C8383",
     "image_url": "https://s1.ticketm.net/dam/a/c07/43b9e171-e2b1-4d75-8d99-e3cd022e4c07_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-04-tabernacle-stavros-halkias"
+    "slug": "2026-04-04-tabernacle-stavros-halkias",
+    "og_image": "/og/2026-04-04-tabernacle-stavros-halkias.png"
   },
   {
     "venue": "The Eastern",
@@ -2977,7 +2949,8 @@
     "ticket_url": "https://www.axs.com/events/1168815/the-format-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68ed05ff2e750.jpg",
     "price": "See website",
-    "slug": "2026-04-04-the-eastern-the-format"
+    "slug": "2026-04-04-the-eastern-the-format",
+    "og_image": "/og/2026-04-04-the-eastern-the-format.png"
   },
   {
     "venue": "Tabernacle",
@@ -2997,7 +2970,8 @@
     "ticket_url": "https://www.ticketmaster.com/zara-larsson-midnight-sun-tour-2026-atlanta-georgia-04-05-2026/event/0E00631B7CF52792",
     "image_url": "https://s1.ticketm.net/dam/a/856/8301864e-d867-4f6f-adec-31a76a460856_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-05-tabernacle-zara-larsson"
+    "slug": "2026-04-05-tabernacle-zara-larsson",
+    "og_image": "/og/2026-04-05-tabernacle-zara-larsson.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -3017,7 +2991,8 @@
     "ticket_url": "https://www.ticketmaster.com/bob-moses-cannons-afterglow-tour-atlanta-georgia-04-06-2026/event/0E00635D998F6826",
     "image_url": "https://s1.ticketm.net/dam/a/112/a0b420db-9db8-4486-bf56-7a05dcb5b112_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-06-coca-cola-roxy-bob-moses"
+    "slug": "2026-04-06-coca-cola-roxy-bob-moses",
+    "og_image": "/og/2026-04-06-coca-cola-roxy-bob-moses.png"
   },
   {
     "venue": "The Eastern",
@@ -3032,7 +3007,8 @@
     "ticket_url": "https://www.axs.com/events/1165939/snarky-puppy-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68dfee456230b.jpg",
     "price": "See website",
-    "slug": "2026-04-08-the-eastern-snarky-puppy"
+    "slug": "2026-04-08-the-eastern-snarky-puppy",
+    "og_image": "/og/2026-04-08-the-eastern-snarky-puppy.png"
   },
   {
     "venue": "Tabernacle",
@@ -3056,7 +3032,8 @@
     "ticket_url": "https://www.ticketmaster.com/black-label-society-atlanta-georgia-04-09-2026/event/0E00636724F4E4F0",
     "image_url": "https://s1.ticketm.net/dam/a/741/f8e83fc9-ee76-445f-b652-5b08e19eb741_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-09-tabernacle-black-label-society"
+    "slug": "2026-04-09-tabernacle-black-label-society",
+    "og_image": "/og/2026-04-09-tabernacle-black-label-society.png"
   },
   {
     "venue": "The Earl",
@@ -3072,7 +3049,8 @@
     "info_url": "https://badearl.com/show/redd-kross-the-earl-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/Redd-Kross-Press-Photo-2025-Photo-Credit-Buzz-Osborne.jpg",
     "price": "$25 ADV / $25 DOS",
-    "slug": "2026-04-10-the-earl-redd-kross"
+    "slug": "2026-04-10-the-earl-redd-kross",
+    "og_image": "/og/2026-04-10-the-earl-redd-kross.png"
   },
   {
     "venue": "Tabernacle",
@@ -3092,7 +3070,8 @@
     "ticket_url": "https://www.ticketmaster.com/helloween-40th-anniversary-north-american-tour-atlanta-georgia-04-10-2026/event/0E006358CA4797F9",
     "image_url": "https://s1.ticketm.net/dam/a/9bb/b8ac49f0-e3ec-49f6-9b36-379199de89bb_547351_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-10-tabernacle-helloween"
+    "slug": "2026-04-10-tabernacle-helloween",
+    "og_image": "/og/2026-04-10-tabernacle-helloween.png"
   },
   {
     "venue": "Terminal West",
@@ -3107,7 +3086,8 @@
     "ticket_url": "https://www.axs.com/events/1229687/the-band-of-heathens-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_69162a88edaf4.jpg",
     "price": "See website",
-    "slug": "2026-04-10-terminal-west-the-band-of-heathens"
+    "slug": "2026-04-10-terminal-west-the-band-of-heathens",
+    "og_image": "/og/2026-04-10-terminal-west-the-band-of-heathens.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -3123,7 +3103,8 @@
     "ticket_url": "https://www.ticketmaster.com/mariah-the-scientist-hearts-sold-separately-atlanta-georgia-04-10-2026/event/0E006323FE7169C7",
     "image_url": "https://s1.ticketm.net/dam/a/518/802fe50d-82d1-4b23-a9bb-b8cfd3831518_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-10-coca-cola-roxy-mariah-the-scientist"
+    "slug": "2026-04-10-coca-cola-roxy-mariah-the-scientist",
+    "og_image": "/og/2026-04-10-coca-cola-roxy-mariah-the-scientist.png"
   },
   {
     "venue": "Tabernacle",
@@ -3139,7 +3120,8 @@
     "ticket_url": "https://www.ticketmaster.com/ali-wong-live-atlanta-georgia-04-11-2026/event/0E006347DFC54C77",
     "image_url": "https://s1.ticketm.net/dam/a/253/e03b01e0-2f00-4b0e-be33-7c89a92f3253_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-11-tabernacle-ali-wong"
+    "slug": "2026-04-11-tabernacle-ali-wong",
+    "og_image": "/og/2026-04-11-tabernacle-ali-wong.png"
   },
   {
     "venue": "Tabernacle",
@@ -3155,7 +3137,8 @@
     "ticket_url": "https://www.ticketmaster.com/ali-wong-live-atlanta-georgia-04-11-2026/event/0E0063427D75478F",
     "image_url": "https://s1.ticketm.net/dam/a/253/e03b01e0-2f00-4b0e-be33-7c89a92f3253_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-11-tabernacle-ali-wong"
+    "slug": "2026-04-11-tabernacle-ali-wong-1",
+    "og_image": "/og/2026-04-11-tabernacle-ali-wong-1.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -3171,7 +3154,8 @@
     "ticket_url": "https://www.ticketmaster.com/mariah-the-scientist-hearts-sold-separately-atlanta-georgia-04-11-2026/event/0E006323FE9969EC",
     "image_url": "https://s1.ticketm.net/dam/a/518/802fe50d-82d1-4b23-a9bb-b8cfd3831518_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-11-coca-cola-roxy-mariah-the-scientist"
+    "slug": "2026-04-11-coca-cola-roxy-mariah-the-scientist",
+    "og_image": "/og/2026-04-11-coca-cola-roxy-mariah-the-scientist.png"
   },
   {
     "venue": "Terminal West",
@@ -3189,7 +3173,8 @@
     "ticket_url": "https://www.axs.com/events/1214452/quarters-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_6910ddfca650d.jpg",
     "price": "See website",
-    "slug": "2026-04-13-terminal-west-quarters"
+    "slug": "2026-04-13-terminal-west-quarters",
+    "og_image": "/og/2026-04-13-terminal-west-quarters.png"
   },
   {
     "venue": "Terminal West",
@@ -3204,7 +3189,8 @@
     "ticket_url": "https://www.axs.com/events/1171915/sports-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e562f18464b.jpg",
     "price": "See website",
-    "slug": "2026-04-15-terminal-west-sports"
+    "slug": "2026-04-15-terminal-west-sports",
+    "og_image": "/og/2026-04-15-terminal-west-sports.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -3230,9 +3216,10 @@
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/lamb-of-god-atlanta-georgia-04-15-2026/event/0E00636D0D73DE78",
-    "image_url": "https://s1.ticketm.net/dam/a/2a1/cd701823-d694-4fb0-a91e-8d16c4a102a1_RETINA_PORTRAIT_16_9.jpg",
+    "image_url": "https://s1.ticketm.net/dam/a/1cb/c284c716-6722-40a7-8883-207b391ec1cb_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-15-coca-cola-roxy-lamb-of-god"
+    "slug": "2026-04-15-coca-cola-roxy-lamb-of-god",
+    "og_image": "/og/2026-04-15-coca-cola-roxy-lamb-of-god.png"
   },
   {
     "venue": "The Earl",
@@ -3251,7 +3238,8 @@
     "info_url": "https://badearl.com/show/the-belair-lipbombs-the-earl/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/10/the-belair-lipbombs.jpg",
     "price": "$18 ADV / $20 DOS",
-    "slug": "2026-04-16-the-earl-the-belair-lip-bombs"
+    "slug": "2026-04-16-the-earl-the-belair-lip-bombs",
+    "og_image": "/og/2026-04-16-the-earl-the-belair-lip-bombs.png"
   },
   {
     "venue": "Terminal West",
@@ -3269,7 +3257,8 @@
     "ticket_url": "https://www.axs.com/events/1174919/kishi-bashi-sonderlust-10th-anniversary-tour-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e6b09a8f1ea.jpg",
     "price": "See website",
-    "slug": "2026-04-16-terminal-west-kishi-bashi-sonderlust-10th-anniversary-tour"
+    "slug": "2026-04-16-terminal-west-kishi-bashi-sonderlust-10th-anniversary-tour",
+    "og_image": "/og/2026-04-16-terminal-west-kishi-bashi-sonderlust-10th-anniversary-tour.png"
   },
   {
     "venue": "Tabernacle",
@@ -3285,7 +3274,8 @@
     "ticket_url": "https://www.ticketmaster.com/calum-scott-the-avenoir-tour-2026-atlanta-georgia-04-17-2026/event/0E0062839C5450A8",
     "image_url": "https://s1.ticketm.net/dam/a/044/7fb786a0-98eb-4cd2-8abe-3cdd31469044_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-17-tabernacle-calum-scott"
+    "slug": "2026-04-17-tabernacle-calum-scott",
+    "og_image": "/og/2026-04-17-tabernacle-calum-scott.png"
   },
   {
     "venue": "Terminal West",
@@ -3300,7 +3290,8 @@
     "ticket_url": "https://www.axs.com/events/1057564/eliza-mclamb-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/07/uploadedimage_6877fafbe302a.jpg",
     "price": "See website",
-    "slug": "2026-04-17-terminal-west-eliza-mclamb"
+    "slug": "2026-04-17-terminal-west-eliza-mclamb",
+    "og_image": "/og/2026-04-17-terminal-west-eliza-mclamb.png"
   },
   {
     "venue": "The Eastern",
@@ -3318,7 +3309,8 @@
     "ticket_url": "https://www.axs.com/events/1138022/acid-bath-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68f6aa8a7aca4.jpg",
     "price": "See website",
-    "slug": "2026-04-17-the-eastern-acid-bath"
+    "slug": "2026-04-17-the-eastern-acid-bath",
+    "og_image": "/og/2026-04-17-the-eastern-acid-bath.png"
   },
   {
     "venue": "The Earl",
@@ -3334,7 +3326,8 @@
     "info_url": "https://badearl.com/show/the-thing-the-earl-2-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/11/the-thing-2026-photo.jpeg",
     "price": "$20 ADV / $20 DOS",
-    "slug": "2026-04-18-the-earl-the-thing"
+    "slug": "2026-04-18-the-earl-the-thing",
+    "og_image": "/og/2026-04-18-the-earl-the-thing.png"
   },
   {
     "venue": "Tabernacle",
@@ -3350,7 +3343,8 @@
     "ticket_url": "https://www.ticketmaster.com/natalia-lafourcade-cancionera-tour-atlanta-georgia-04-18-2026/event/0E00623DC9B25013",
     "image_url": "https://s1.ticketm.net/dam/a/e07/a7238105-0d61-4307-85d5-0c283ecdbe07_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-18-tabernacle-natalia-lafourcade"
+    "slug": "2026-04-18-tabernacle-natalia-lafourcade",
+    "og_image": "/og/2026-04-18-tabernacle-natalia-lafourcade.png"
   },
   {
     "venue": "The Eastern",
@@ -3365,7 +3359,8 @@
     "ticket_url": "https://www.axs.com/events/1159635/the-midnight-time-machines-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68dd648a70639.jpg",
     "price": "See website",
-    "slug": "2026-04-18-the-eastern-the-midnight-time-machines"
+    "slug": "2026-04-18-the-eastern-the-midnight-time-machines",
+    "og_image": "/og/2026-04-18-the-eastern-the-midnight-time-machines.png"
   },
   {
     "venue": "Tabernacle",
@@ -3381,7 +3376,8 @@
     "ticket_url": "https://www.ticketmaster.com/natalia-lafourcade-cancionera-tour-atlanta-georgia-04-19-2026/event/0E00625BAB564AEA",
     "image_url": "https://s1.ticketm.net/dam/a/e07/a7238105-0d61-4307-85d5-0c283ecdbe07_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-19-tabernacle-natalia-lafourcade"
+    "slug": "2026-04-19-tabernacle-natalia-lafourcade",
+    "og_image": "/og/2026-04-19-tabernacle-natalia-lafourcade.png"
   },
   {
     "venue": "Tabernacle",
@@ -3397,7 +3393,8 @@
     "ticket_url": "https://www.ticketmaster.com/theresa-caputo-live-the-experience-atlanta-georgia-04-21-2026/event/0E006344E28A72B9",
     "image_url": "https://s1.ticketm.net/dam/a/2dc/c833606f-c9d2-484a-b61d-dfce7bba92dc_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-21-tabernacle-theresa-caputo"
+    "slug": "2026-04-21-tabernacle-theresa-caputo",
+    "og_image": "/og/2026-04-21-tabernacle-theresa-caputo.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -3413,7 +3410,8 @@
     "ticket_url": "https://www.ticketmaster.com/lany-soft-world-tour-atlanta-georgia-04-22-2026/event/0E00634AA0F450B7",
     "image_url": "https://s1.ticketm.net/dam/a/1f2/b3e4faa9-84a5-4d0a-b420-d637804bc1f2_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-22-coca-cola-roxy-lany"
+    "slug": "2026-04-22-coca-cola-roxy-lany",
+    "og_image": "/og/2026-04-22-coca-cola-roxy-lany.png"
   },
   {
     "venue": "The Eastern",
@@ -3431,7 +3429,8 @@
     "ticket_url": "https://www.axs.com/events/1211909/panchiko-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_69135524b5c4a.jpg",
     "price": "See website",
-    "slug": "2026-04-24-the-eastern-panchiko"
+    "slug": "2026-04-24-the-eastern-panchiko",
+    "og_image": "/og/2026-04-24-the-eastern-panchiko.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -3455,7 +3454,8 @@
     "ticket_url": "https://www.ticketmaster.com/alter-bridge-what-lies-within-tour-atlanta-georgia-04-26-2026/event/0E00631C11C56DAF",
     "image_url": "https://s1.ticketm.net/dam/a/19a/5916bf6f-8c45-479b-9492-388ae74ab19a_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-26-coca-cola-roxy-alter-bridge"
+    "slug": "2026-04-26-coca-cola-roxy-alter-bridge",
+    "og_image": "/og/2026-04-26-coca-cola-roxy-alter-bridge.png"
   },
   {
     "venue": "Terminal West",
@@ -3473,7 +3473,8 @@
     "ticket_url": "https://www.axs.com/events/1165155/newdad-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68dec2398a57a.jpg",
     "price": "See website",
-    "slug": "2026-04-27-terminal-west-newdad"
+    "slug": "2026-04-27-terminal-west-newdad",
+    "og_image": "/og/2026-04-27-terminal-west-newdad.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -3497,7 +3498,8 @@
     "ticket_url": "https://www.ticketmaster.com/raye-this-tour-may-contain-new-atlanta-georgia-04-28-2026/event/0E006330BA6E453A",
     "image_url": "https://s1.ticketm.net/dam/a/c78/4efffd75-0b32-44b3-b094-3b4c1ac45c78_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-04-28-coca-cola-roxy-raye"
+    "slug": "2026-04-28-coca-cola-roxy-raye",
+    "og_image": "/og/2026-04-28-coca-cola-roxy-raye.png"
   },
   {
     "venue": "Terminal West",
@@ -3512,7 +3514,8 @@
     "ticket_url": "https://www.axs.com/events/1180694/supertask-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68ed6009301ed.jpg",
     "price": "See website",
-    "slug": "2026-05-01-terminal-west-supertask"
+    "slug": "2026-05-01-terminal-west-supertask",
+    "og_image": "/og/2026-05-01-terminal-west-supertask.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -3528,7 +3531,8 @@
     "ticket_url": "https://www.ticketmaster.com/ashnikko-smoochies-tour-atlanta-georgia-05-02-2026/event/0E006329D9E256A9",
     "image_url": "https://s1.ticketm.net/dam/a/bc5/26b41698-3b6a-4d3d-a179-a289e1340bc5_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-05-02-coca-cola-roxy-ashnikko"
+    "slug": "2026-05-02-coca-cola-roxy-ashnikko",
+    "og_image": "/og/2026-05-02-coca-cola-roxy-ashnikko.png"
   },
   {
     "venue": "The Earl",
@@ -3544,7 +3548,8 @@
     "info_url": "https://badearl.com/show/flyte-the-earl-2/",
     "image_url": "https://badearl.com/wp-content/uploads/2025/04/flyte-min.jpg",
     "price": "$25 ADV / $28 DOS",
-    "slug": "2026-05-04-the-earl-flyte"
+    "slug": "2026-05-04-the-earl-flyte",
+    "og_image": "/og/2026-05-04-the-earl-flyte.png"
   },
   {
     "venue": "The Eastern",
@@ -3562,7 +3567,8 @@
     "ticket_url": "https://www.axs.com/events/1166439/st-paul-the-broken-bones-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68e0082fcc079.jpg",
     "price": "See website",
-    "slug": "2026-05-08-the-eastern-st-paul-the-broken-bones"
+    "slug": "2026-05-08-the-eastern-st-paul-the-broken-bones",
+    "og_image": "/og/2026-05-08-the-eastern-st-paul-the-broken-bones.png"
   },
   {
     "venue": "The Eastern",
@@ -3577,7 +3583,8 @@
     "ticket_url": "https://www.axs.com/events/1206559/moe-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_69037f51d7e7b.jpg",
     "price": "See website",
-    "slug": "2026-05-09-the-eastern-moe"
+    "slug": "2026-05-09-the-eastern-moe",
+    "og_image": "/og/2026-05-09-the-eastern-moe.png"
   },
   {
     "venue": "The Eastern",
@@ -3592,7 +3599,8 @@
     "ticket_url": "https://www.axs.com/events/1026850/mac-demarco-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/06/uploadedimage_685182e6f0913.jpg",
     "price": "See website",
-    "slug": "2026-05-13-the-eastern-mac-demarco"
+    "slug": "2026-05-13-the-eastern-mac-demarco",
+    "og_image": "/og/2026-05-13-the-eastern-mac-demarco.png"
   },
   {
     "venue": "Tabernacle",
@@ -3608,7 +3616,8 @@
     "ticket_url": "https://www.ticketmaster.com/michelle-buteau-the-surviving-and-thriving-atlanta-georgia-05-15-2026/event/0E0062C9EBCB4C8B",
     "image_url": "https://s1.ticketm.net/dam/a/122/f981ddc4-a193-4485-8334-f8fea14f3122_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-05-15-tabernacle-michelle-buteau"
+    "slug": "2026-05-15-tabernacle-michelle-buteau",
+    "og_image": "/og/2026-05-15-tabernacle-michelle-buteau.png"
   },
   {
     "venue": "Tabernacle",
@@ -3624,7 +3633,8 @@
     "ticket_url": "https://www.ticketmaster.com/akaash-singh-generational-triumph-tour-atlanta-georgia-05-16-2026/event/0E00632F9FDC1E91",
     "image_url": "https://s1.ticketm.net/dam/a/da7/275a8a4a-e7d6-4ac2-a027-2f4d1ab55da7_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-05-16-tabernacle-akaash-singh"
+    "slug": "2026-05-16-tabernacle-akaash-singh",
+    "og_image": "/og/2026-05-16-tabernacle-akaash-singh.png"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -3648,7 +3658,8 @@
     "ticket_url": "https://www.ticketmaster.com/electric-callboy-tanzneid-world-tour-atlanta-georgia-05-23-2026/event/0E00634FD8EF8308",
     "image_url": "https://s1.ticketm.net/dam/a/42c/872f8be5-ffb5-4141-842a-c7b415ddc42c_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-05-23-coca-cola-roxy-electric-callboy"
+    "slug": "2026-05-23-coca-cola-roxy-electric-callboy",
+    "og_image": "/og/2026-05-23-coca-cola-roxy-electric-callboy.png"
   },
   {
     "venue": "Tabernacle",
@@ -3664,7 +3675,8 @@
     "ticket_url": "https://www.ticketmaster.com/echo-the-bunnymen-more-songs-to-atlanta-georgia-05-30-2026/event/0E00634D2688887E",
     "image_url": "https://s1.ticketm.net/dam/a/49a/c72c96fb-e264-42c9-bbab-e72593b9949a_RETINA_PORTRAIT_16_9.jpg",
     "price": "See website",
-    "slug": "2026-05-30-tabernacle-echo-the-bunnymen"
+    "slug": "2026-05-30-tabernacle-echo-the-bunnymen",
+    "og_image": "/og/2026-05-30-tabernacle-echo-the-bunnymen.png"
   },
   {
     "venue": "The Eastern",
@@ -3682,6 +3694,7 @@
     "ticket_url": "https://www.axs.com/events/1176888/the-last-dinner-party-tickets",
     "image_url": "https://images.discovery-prod.axs.com/2025/10/uploadedimage_68f0f838b89a4.jpg",
     "price": "See website",
-    "slug": "2026-06-13-the-eastern-the-last-dinner-party"
+    "slug": "2026-06-13-the-eastern-the-last-dinner-party",
+    "og_image": "/og/2026-06-13-the-eastern-the-last-dinner-party.png"
   }
 ]
