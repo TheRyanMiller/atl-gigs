@@ -9,7 +9,7 @@ import { Event, ScrapeStatus } from "./types";
 function AppContent() {
   const [events, setEvents] = useState<Event[]>([]);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
   const [scrapeStatus, setScrapeStatus] = useState<ScrapeStatus | null>(null);
   const [showStatusModal, setShowStatusModal] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -35,21 +35,20 @@ function AppContent() {
     fetch("/events/events.json")
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          // No events file yet - treat as empty
+          return [];
         }
         return response.json();
       })
       .then((data) => {
-        if (!Array.isArray(data)) {
-          throw new Error("Data is not an array!");
-        }
-        setEvents(data);
-        setError(null);
+        const events = Array.isArray(data) ? data : [];
+        setEvents(events);
+        setLoading(false);
 
         // Check for event slug in URL and open modal
         const eventSlug = searchParams.get("event");
         if (eventSlug) {
-          const event = data.find((e: Event) => e.slug === eventSlug);
+          const event = events.find((e: Event) => e.slug === eventSlug);
           if (event) {
             setSelectedEvent(event);
           }
@@ -57,7 +56,9 @@ function AppContent() {
       })
       .catch((error) => {
         console.error("Error fetching events:", error);
-        setError(error.message);
+        // Treat fetch errors as empty events, not a blocking error
+        setEvents([]);
+        setLoading(false);
       });
 
     // Fetch scrape status
@@ -85,20 +86,10 @@ function AppContent() {
 
       {/* Main Content */}
       <main className="max-w-5xl mx-auto px-4 py-4 sm:py-12 pb-8 sm:pb-12">
-        {error && (
-          <div
-            className="bg-red-900/20 border border-red-500/30 text-red-400 px-4 py-3 rounded-xl mb-6"
-            role="alert"
-          >
-            <strong className="font-bold">Error: </strong>
-            <span>{error}</span>
-          </div>
-        )}
-
         <Routes>
           <Route
             path="/"
-            element={<Home events={events} onEventClick={handleEventSelect} />}
+            element={<Home events={events} loading={loading} onEventClick={handleEventSelect} />}
           />
         </Routes>
       </main>

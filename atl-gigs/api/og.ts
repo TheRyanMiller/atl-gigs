@@ -74,6 +74,15 @@ function getHeadliner(artistName: string): string {
   return artistName;
 }
 
+// Category labels for descriptions
+const CATEGORY_DESCRIPTORS: Record<string, string> = {
+  concerts: "live",
+  comedy: "comedy",
+  broadway: "theater",
+  sports: "game",
+  misc: "event",
+};
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const eventSlug = req.query.event as string;
   const userAgent = req.headers["user-agent"] || "";
@@ -102,11 +111,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const venue = event.venue || "Atlanta";
     const dateShort = formatDateShort(event.date);
     const dateLong = formatDateLong(event.date);
+    const categoryDescriptor = CATEGORY_DESCRIPTORS[event.category] || "live";
     // Use original artist image directly, fallback to default
     const ogImage = event.image_url || DEFAULT_OG_IMAGE;
 
     const title = `${artistName} @ ${venue} · ${dateShort}`;
-    const description = `${dateLong} · ${artistName} live @ ${venue}. Get tickets and event details on ATL Gigs.`;
+    const description = `${dateLong} · ${artistName} ${categoryDescriptor} @ ${venue}. Get tickets and event details on ATL Gigs.`;
     const eventUrl = `${SITE_URL}?event=${event.slug}`;
 
     // Return minimal HTML with OG tags for crawlers
