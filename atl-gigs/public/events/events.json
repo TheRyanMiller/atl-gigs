@@ -298,23 +298,6 @@
     "slug": "2025-12-04-variety-playhouse-bonnie-prince-billy"
   },
   {
-    "venue": "Fox Theatre",
-    "date": "2025-12-04",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Lauren Daigle - The Behold Christmas Tour"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=LAU&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/lauren-daigle-2025",
-    "image_url": "https://www.foxtheatre.org/assets/img/Lauren-Daigle-550x550-927f65e30a.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-04-fox-theatre-lauren-daigle-the-behold-christmas-tour"
-  },
-  {
     "venue": "State Farm Arena",
     "date": "2025-12-04",
     "doors_time": null,
@@ -684,23 +667,6 @@
     "slug": "2025-12-06-variety-playhouse-off-book-the-improvised-musical"
   },
   {
-    "venue": "Fox Theatre",
-    "date": "2025-12-06",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Amy Grant, Cece Winans, & Michael W Smith: Christmas Together"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=ACM&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/amy-grant-cece-winans-michael-w-smith",
-    "image_url": "https://www.foxtheatre.org/assets/img/AmyGrant_MichaelSmith_CeceWinans_550x550-c134756da6.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-06-fox-theatre-amy-grant-cece-winans-michael-w-smith-christmas-together"
-  },
-  {
     "venue": "Mercedes-Benz Stadium",
     "date": "2025-12-06",
     "doors_time": null,
@@ -1017,23 +983,6 @@
     "slug": "2025-12-07-vinyl-adam-hawley"
   },
   {
-    "venue": "Fox Theatre",
-    "date": "2025-12-08",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "for King + Country's A Drummer Boy Christmas: The 2025 Live Experience"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=FKC&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/for-king-country-drummer-boy-christmas",
-    "image_url": "https://www.foxtheatre.org/assets/img/For-King-Country-550-x-550-px-8ca26987c3.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-08-fox-theatre-for-king-countrys-a-drummer-boy-christmas-the-2025-live-experience"
-  },
-  {
     "venue": "State Farm Arena",
     "date": "2025-12-08",
     "doors_time": null,
@@ -1217,23 +1166,6 @@
     "slug": "2025-12-10-coca-cola-roxy-xavi"
   },
   {
-    "venue": "Fox Theatre",
-    "date": "2025-12-10",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "MERRY MIGHTY MO and MORE presented by Georgia Natural Gas"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=LCM&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/merry-mighty-mo-2025",
-    "image_url": "https://www.foxtheatre.org/assets/img/MerryMightMo_550x550-88bbb610aa.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-10-fox-theatre-merry-mighty-mo-and-more-presented-by-georgia-natural-gas"
-  },
-  {
     "venue": "The Masquerade",
     "date": "2025-12-10",
     "doors_time": null,
@@ -1368,23 +1300,6 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-11-coca-cola-roxy-teddy-swims"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-11",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "An Intimate Evening with David Foster & Katharine McPhee"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=KAT&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/david-foster-katharine-mcphee",
-    "image_url": "https://www.foxtheatre.org/assets/img/DavidFoster_KatharineMcphee_550x550-696c29fecf.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-11-fox-theatre-an-intimate-evening-with-david-foster-katharine-mcphee"
   },
   {
     "venue": "The Masquerade",
@@ -2748,23 +2663,6 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-21-vinyl-lil-crank"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-23",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "NUTCRACKER! Magical Christmas Ballet"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=NUT&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/nutcracker-magical-christmas-ballet-2025",
-    "image_url": "https://www.foxtheatre.org/assets/img/Nutcracker_550x550-adc61b63a1.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-23-fox-theatre-nutcracker-magical-christmas-ballet"
   },
   {
     "venue": "State Farm Arena",
