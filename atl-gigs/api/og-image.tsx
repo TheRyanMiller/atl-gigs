@@ -29,7 +29,13 @@ export default async function handler(request: Request) {
       throw new Error(`Failed to fetch image: ${imageResponse.status}`);
     }
     const arrayBuffer = await imageResponse.arrayBuffer();
-    const base64 = Buffer.from(arrayBuffer).toString("base64");
+    // Convert ArrayBuffer to base64 using web APIs (edge runtime compatible)
+    const bytes = new Uint8Array(arrayBuffer);
+    let binary = "";
+    for (let i = 0; i < bytes.byteLength; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    const base64 = btoa(binary);
     const contentType = imageResponse.headers.get("content-type") || "image/jpeg";
     imageData = `data:${contentType};base64,${base64}`;
   } catch (error) {
