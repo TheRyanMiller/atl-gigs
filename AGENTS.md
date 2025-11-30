@@ -82,6 +82,9 @@ Before scraping the venue's website, check if tickets are sold through a major t
 # segment=Arts & Theatre, genre=Comedy → comedy
 ```
 
+**Current TM API Integration:**
+This project already uses TM Discovery API for State Farm Arena, The Masquerade, and Center Stage complex. See `TM_VENUES` dict in `scrape.py` for venue IDs. Set `TM_API_KEY` env var to enable.
+
 **When to skip upstream APIs:**
 - Venue uses in-house ticketing (no external platform)
 - API requires paid access or complex auth
@@ -388,6 +391,39 @@ Creates URL-safe identifier from date + venue + artist.
 ### `validate_event(event)`
 Checks that required fields are present.
 
+### `get_artist_classification(artist_name)`
+Looks up artist in Ticketmaster Attractions API to get genre/category. Results are cached to `artist-cache.json` to minimize API calls between runs.
+
+### `enrich_events_with_tm(events)`
+Enriches events from non-TM venues with artist classifications. Only looks up artists not already in cache.
+
+---
+
+## Ticketmaster API Integration
+
+The scraper uses Ticketmaster Discovery API in two ways:
+
+### 1. Primary Source for TM Venues
+For venues that use Ticketmaster ticketing (State Farm Arena, The Masquerade, Center Stage), the TM API is used as the primary event source. This provides:
+- Structured event data with classifications
+- Automatic category mapping (Music → concerts, Comedy → comedy, etc.)
+- Price ranges and high-quality images
+
+### 2. Artist Classification Enrichment
+For events from non-TM venues (The Earl, AEG venues, etc.), the scraper looks up each artist in TM's Attractions API to get their classification. This improves category accuracy for venues that don't provide genre data.
+
+### Caching Strategy
+Artist classifications are cached in `artist-cache.json` to minimize API calls:
+- Cache persists between runs (locally and via GitHub Actions cache)
+- Both positive results (`"concerts"`) and negative results (`null`) are cached
+- Typical daily usage: <20 API calls (only new artists)
+
+### Environment Variables
+| Variable | Description |
+|----------|-------------|
+| `TM_API_KEY` | Ticketmaster Discovery API key (get free at developer.ticketmaster.com) |
+| `USE_TM_API` | Set to `false` to disable TM API and use HTML scrapers instead |
+
 ---
 
 ## Common Issues & Solutions
@@ -622,14 +658,15 @@ Example: `scrapers/fox-theatre.md`
 
 ## Checklist for New Scrapers
 
-- [ ] Identified data source (JSON API, GraphQL, or HTML)
+- [ ] Checked if venue uses Ticketmaster ticketing (if so, prefer TM API)
+- [ ] Identified data source (TM API, JSON API, GraphQL, or HTML)
 - [ ] Scraper function returns list of event dicts
 - [ ] All required fields present: `venue`, `date`, `artists`, `ticket_url`, `category`
 - [ ] Date format is `YYYY-MM-DD`
 - [ ] Times use `normalize_time()` helper
 - [ ] Category is valid: `concerts`, `comedy`, `broadway`, `sports`, or `misc`
 - [ ] Venue categories mapped to our preset list
-- [ ] Scraper registered in `SCRAPERS` dict
+- [ ] Scraper registered in `SCRAPERS` dict (or `get_scrapers()` for TM venues)
 - [ ] Tested with `python scrape.py`
 - [ ] Handles errors gracefully (try/except with logging)
 - [ ] Created `scrapers/{venue}.md` documentation

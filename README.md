@@ -10,11 +10,19 @@ Atlanta event aggregator for concerts, comedy, broadway, and more.
 # Scraper
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
+cp .env.example .env  # Add your TM_API_KEY
 python scrape.py
 
 # Frontend
 cd atl-gigs && npm install && npm run dev
 ```
+
+## Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `TM_API_KEY` | Optional | Ticketmaster Discovery API key for better categorization. Get free key at [developer.ticketmaster.com](https://developer.ticketmaster.com) |
+| `USE_TM_API` | Optional | Set to `false` to disable TM API and use HTML scrapers (default: `true`) |
 
 ## Architecture
 
@@ -24,7 +32,7 @@ scrape.py → events.json → React Frontend → Vercel
          archive.json (past events)
 ```
 
-- **Scraper**: Python script fetches from 5 venues (HTML + API scraping)
+- **Scraper**: Python script fetches from 11 venues (Ticketmaster API + HTML/JSON scraping)
 - **Frontend**: React + Vite + Tailwind, client-side filtering
 - **Deployment**: GitHub Actions runs daily, deploys to Vercel
 - **Share links**: `/e/{slug}` routes serve dynamic OG tags for social previews
@@ -42,7 +50,8 @@ atl-music/
     ├── public/events/            # Generated JSON (gitignored)
     │   ├── events.json           # Upcoming events
     │   ├── archive.json          # Past events
-    │   └── scrape-status.json    # Scraper health status
+    │   ├── scrape-status.json    # Scraper health status
+    │   └── artist-cache.json     # TM artist classification cache
     └── src/
         ├── components/           # EventCard, EventModal, FilterBar
         ├── pages/                # Home
@@ -63,19 +72,26 @@ interface Event {
   ticket_url: string;
   info_url?: string;
   image_url?: string;
-  category: "concerts" | "comedy" | "broadway" | "misc";
+  category: "concerts" | "comedy" | "broadway" | "sports" | "misc";
+  room?: string;                 // For multi-room venues (e.g., Masquerade)
 }
 ```
 
 ## Current Venues
 
-| Venue | Method | Category |
-|-------|--------|----------|
+| Venue | Method | Categories |
+|-------|--------|------------|
 | The Earl | HTML scraping | concerts |
-| Tabernacle | Live Nation GraphQL | concerts |
-| Coca-Cola Roxy | Live Nation GraphQL | concerts |
+| Tabernacle | Live Nation GraphQL | concerts, comedy |
+| Coca-Cola Roxy | Live Nation GraphQL | concerts, comedy |
 | Terminal West | AEG JSON API | concerts |
 | The Eastern | AEG JSON API | concerts |
+| Variety Playhouse | AEG JSON API | concerts |
+| Fox Theatre | HTML scraping | broadway, comedy, concerts |
+| State Farm Arena | Ticketmaster API | concerts, comedy, sports |
+| Mercedes-Benz Stadium | HTML scraping | concerts, sports |
+| The Masquerade | Ticketmaster API | concerts |
+| Center Stage / The Loft / Vinyl | Ticketmaster API | concerts, comedy |
 
 ## Automation
 
