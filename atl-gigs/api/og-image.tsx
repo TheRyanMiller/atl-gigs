@@ -19,7 +19,7 @@ export default async function handler(request: Request) {
             flexDirection: "column",
             width: "100%",
             height: "100%",
-            backgroundColor: "#0a0a0a",
+            background: "#0a0a0a",
             alignItems: "center",
             justifyContent: "center",
           }}
@@ -29,7 +29,7 @@ export default async function handler(request: Request) {
               style={{
                 width: 80,
                 height: 80,
-                backgroundColor: "#0d9488",
+                background: "#0d9488",
                 borderRadius: 20,
                 display: "flex",
                 alignItems: "center",
@@ -37,7 +37,7 @@ export default async function handler(request: Request) {
                 marginRight: 16,
               }}
             >
-              <span style={{ fontSize: 40 }}>🎵</span>
+              <span style={{ fontSize: 48, color: "white" }}>*</span>
             </div>
             <span style={{ fontSize: 72, color: "white", fontWeight: 700 }}>ATL</span>
             <span style={{ fontSize: 72, color: "#14b8a6", fontWeight: 700, marginLeft: 12 }}>Gigs</span>
@@ -82,7 +82,7 @@ export default async function handler(request: Request) {
             display: "flex",
             width: "100%",
             height: "100%",
-            backgroundColor: "#171717",
+            background: "#171717",
             alignItems: "center",
             justifyContent: "center",
           }}
@@ -105,7 +105,6 @@ export default async function handler(request: Request) {
           height={630}
           style={{ objectFit: "cover" }}
         />
-        {/* Date badge */}
         <div
           style={{
             position: "absolute",
@@ -114,7 +113,7 @@ export default async function handler(request: Request) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            backgroundColor: "rgba(10,10,10,0.9)",
+            background: "rgba(10,10,10,0.9)",
             borderRadius: 16,
             padding: "12px 24px",
           }}
@@ -122,7 +121,6 @@ export default async function handler(request: Request) {
           <span style={{ fontSize: 16, color: "#2dd4bf", fontWeight: 700 }}>{month}</span>
           <span style={{ fontSize: 40, color: "white", fontWeight: 700 }}>{day}</span>
         </div>
-        {/* Logo badge */}
         <div
           style={{
             position: "absolute",
@@ -130,7 +128,7 @@ export default async function handler(request: Request) {
             right: 32,
             display: "flex",
             alignItems: "center",
-            backgroundColor: "rgba(10,10,10,0.9)",
+            background: "rgba(10,10,10,0.9)",
             borderRadius: 12,
             padding: "8px 16px",
           }}
