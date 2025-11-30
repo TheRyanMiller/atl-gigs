@@ -1,47 +1,33 @@
+/** @jsxImportSource react */
 import { ImageResponse } from "@vercel/og";
 
 export const config = {
   runtime: "edge",
 };
 
-// Fetch font from Google Fonts
-const fontPromise = fetch(
-  "https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjp-Ek-_0ew.woff"
-).then((res) => res.arrayBuffer());
-
-export default async function handler() {
-  const fontData = await fontPromise;
-
+export default function handler() {
   return new ImageResponse(
     (
       <div
         style={{
-          fontSize: 60,
-          color: "white",
-          background: "black",
+          fontSize: 40,
+          color: "black",
+          background: "white",
           width: "100%",
           height: "100%",
-          display: "flex",
+          padding: "50px 200px",
           textAlign: "center",
-          alignItems: "center",
           justifyContent: "center",
-          fontFamily: "Inter",
+          alignItems: "center",
+          display: "flex",
         }}
       >
-        Hello World
+        Hello Vercel
       </div>
     ),
     {
       width: 1200,
       height: 630,
-      fonts: [
-        {
-          name: "Inter",
-          data: fontData,
-          style: "normal",
-          weight: 400,
-        },
-      ],
     }
   );
 }

@@ -1,3 +1,4 @@
+/** @jsxImportSource react */
 import { ImageResponse } from "@vercel/og";
 
 export const config = {
