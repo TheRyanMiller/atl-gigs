@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { format } from "date-fns";
-import { MapPin, Clock, Ticket, Share2, Check, CalendarDays } from "lucide-react";
+import { MapPin, Clock, Ticket, Share2, Check, CalendarDays, Star } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGuitar, faFaceLaughSquint, faMasksTheater, faFootball, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Event, CATEGORY_LABELS } from "../types";
+import { useFavorites } from "../context/FavoritesContext";
 
 const categoryIcons = {
   concerts: faGuitar,
@@ -21,6 +22,13 @@ interface EventCardProps {
 export default function EventCard({ event, onClick }: EventCardProps) {
   const { venue, date, doors_time, artists, price, image_url, ticket_url, slug, category } = event;
   const [copied, setCopied] = useState(false);
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const favorited = isFavorite(slug);
+
+  const handleFavorite = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    toggleFavorite(slug);
+  };
   
   // Parse date as local time (not UTC) by appending T12:00:00
   const eventDate = new Date(date + "T12:00:00");
@@ -95,6 +103,17 @@ export default function EventCard({ event, onClick }: EventCardProps) {
           <span className="text-[10px] font-bold text-white uppercase tracking-wider">{CATEGORY_LABELS[category]}</span>
         </div>
       </div>
+
+      {/* Favorite Star Button - Top right of card */}
+      <button
+        onClick={handleFavorite}
+        className="absolute top-3 right-3 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-neutral-800/90 backdrop-blur-md border border-neutral-700 transition-all hover:scale-110 hover:bg-neutral-700"
+      >
+        <Star
+          size={18}
+          className={favorited ? "fill-yellow-400 text-yellow-400" : "text-white/60 hover:text-white"}
+        />
+      </button>
 
       {/* Content Section */}
       <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between relative z-[2]">

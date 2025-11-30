@@ -1,8 +1,9 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { format } from "date-fns";
-import { X, MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays } from "lucide-react";
+import { X, MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays, Star } from "lucide-react";
 import { Event } from "../types";
+import { useFavorites } from "../context/FavoritesContext";
 
 interface EventModalProps {
   event: Event;
@@ -11,7 +12,8 @@ interface EventModalProps {
 
 export default function EventModal({ event, onClose }: EventModalProps) {
   const [copied, setCopied] = useState(false);
-  
+  const { isFavorite, toggleFavorite } = useFavorites();
+
   const {
     venue,
     date,
@@ -80,16 +82,31 @@ export default function EventModal({ event, onClose }: EventModalProps) {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
-                {/* Close button */}
-                <button
-                  type="button"
-                  className="absolute right-4 top-4 z-10 rounded-full bg-neutral-800/80 backdrop-blur-sm p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
-                  onClick={onClose}
-                >
-                  <span className="sr-only">Close</span>
-                  <X size={20} />
-                </button>
+              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border-2 border-teal-500/40 text-left shadow-xl shadow-teal-500/10 transition-all sm:my-8 sm:w-full sm:max-w-2xl ring-1 ring-teal-500/20 ring-offset-2 ring-offset-neutral-950">
+                {/* Top action buttons */}
+                <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
+                  {/* Favorite button */}
+                  <button
+                    type="button"
+                    className="rounded-full bg-neutral-800/80 backdrop-blur-sm p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
+                    onClick={() => toggleFavorite(slug)}
+                  >
+                    <span className="sr-only">{isFavorite(slug) ? "Remove from favorites" : "Add to favorites"}</span>
+                    <Star
+                      size={20}
+                      className={isFavorite(slug) ? "fill-yellow-400 text-yellow-400" : ""}
+                    />
+                  </button>
+                  {/* Close button */}
+                  <button
+                    type="button"
+                    className="rounded-full bg-neutral-800/80 backdrop-blur-sm p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
+                    onClick={onClose}
+                  >
+                    <span className="sr-only">Close</span>
+                    <X size={20} />
+                  </button>
+                </div>
 
                 <div className="sm:flex">
                   {/* Image */}
