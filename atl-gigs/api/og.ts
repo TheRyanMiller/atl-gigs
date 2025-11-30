@@ -93,8 +93,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    // Fetch events data from new path
-    const eventsResponse = await fetch(`${SITE_URL}/events/events.json`);
+    // Fetch events data from GitHub raw to avoid stale data after code deploys
+    const eventsResponse = await fetch(
+      "https://raw.githubusercontent.com/TheRyanMiller/atl-gigs/master/public/events/events.json"
+    );
     if (!eventsResponse.ok) {
       return res.redirect(302, `/?event=${eventSlug}`);
     }
