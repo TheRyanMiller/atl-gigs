@@ -6,56 +6,45 @@ export const config = {
 
 export default async function handler() {
   try {
-    const imageResponse = new ImageResponse(
+    const img = new ImageResponse(
       (
         <div
           style={{
-            fontSize: 40,
-            color: "black",
-            background: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             width: "100%",
             height: "100%",
-            padding: "50px 200px",
-            textAlign: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
+            background: "#0b0c10",
+            color: "#e5e7eb",
+            fontSize: 64,
+            fontWeight: 700,
+            letterSpacing: "-0.03em",
           }}
         >
-          Hello Vercel
+          OG baseline
         </div>
       ),
-      {
-        width: 1200,
-        height: 630,
-      }
+      { width: 1200, height: 630 }
     );
 
-    // Debug: get the array buffer to see if there's content
-    const buffer = await imageResponse.arrayBuffer();
+    const buffer = await img.arrayBuffer();
     const size = buffer.byteLength;
 
-    if (size === 0) {
-      return new Response(`DEBUG: ImageResponse created but buffer is empty (0 bytes)`, {
-        status: 500,
-        headers: { "Content-Type": "text/plain" },
-      });
-    }
-
-    // Return a new response with the buffer
     return new Response(buffer, {
-      status: 200,
+      status: size > 0 ? 200 : 500,
       headers: {
-        "Content-Type": "image/png",
-        "Cache-Control": "public, max-age=31536000, immutable",
-        "X-Image-Size": size.toString(),
+        "content-type": "image/png",
+        "cache-control": "public, max-age=300",
+        "x-image-size": size.toString(),
+        "x-og-test": size > 0 ? "ok" : "empty-buffer",
       },
     });
-  } catch (e: unknown) {
-    const error = e as Error;
-    return new Response(`Error: ${error.message}\n${error.stack}`, {
+  } catch (error) {
+    const err = error as Error;
+    return new Response(`Error: ${err.message}\n${err.stack}`, {
       status: 500,
-      headers: { "Content-Type": "text/plain" },
+      headers: { "content-type": "text/plain" },
     });
   }
 }

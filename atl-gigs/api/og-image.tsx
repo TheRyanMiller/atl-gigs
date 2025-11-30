@@ -58,9 +58,13 @@ export default async function handler(request: Request) {
   // Fetch and encode the external image
   let imageData: string | null = null;
   try {
+    const MAX_IMAGE_BYTES = 5 * 1024 * 1024; // 5MB guardrail
     const imageResponse = await fetch(imageUrl);
     if (imageResponse.ok) {
       const arrayBuffer = await imageResponse.arrayBuffer();
+      if (arrayBuffer.byteLength > MAX_IMAGE_BYTES) {
+        throw new Error(`image too large (${arrayBuffer.byteLength} bytes)`);
+      }
       const bytes = new Uint8Array(arrayBuffer);
       let binary = "";
       for (let i = 0; i < bytes.byteLength; i++) {
