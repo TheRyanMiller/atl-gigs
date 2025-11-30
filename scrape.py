@@ -12,6 +12,7 @@ Currently supports:
 - State Farm Arena
 - Mercedes-Benz Stadium
 - The Masquerade (Heaven, Hell, Purgatory, Altar)
+- Center Stage / The Loft / Vinyl
 """
 
 import requests, datetime as dt, re, itertools, json, time, os, traceback
@@ -218,6 +219,7 @@ def detect_category_from_text(text):
         "85 south", "dc young fly", "karlous miller", "chico bean",
         "theo von", "andrew schulz", "tom segura", "bert kreischer",
         "nate bargatze", "sebastian maniscalco", "jim gaffigan",
+        "jessica kirson", "modi",  # Center Stage regulars
     ]
 
     if any(act in text_lower for act in known_comedy_acts):
@@ -509,13 +511,18 @@ query EVENTS_PAGE($offset: Int!, $venue_id: String!) {
 """
 
 def get_category_from_genres(artists):
-    """Determine event category from artist genres."""
-    for artist in artists:
-        genre = (artist.get("genre") or "").lower()
-        if any(kw in genre for kw in ["comedy", "stand-up", "standup", "comedian"]):
-            return "comedy"
-        if any(kw in genre for kw in ["theatre", "theater", "broadway", "musical"]):
-            return "broadway"
+    """Determine event category from headliner's genre (not openers)."""
+    if not artists:
+        return "concerts"
+
+    # Only check headliner (first artist), not openers
+    genre = (artists[0].get("genre") or "").lower()
+
+    if any(kw in genre for kw in ["comedy", "stand-up", "standup", "comedian"]):
+        return "comedy"
+    if any(kw in genre for kw in ["theatre", "theater", "broadway", "musical"]):
+        return "broadway"
+
     return "concerts"  # Default for music venues
 
 def scrape_live_nation_venue(venue_id, venue_name):
@@ -1200,6 +1207,91 @@ def scrape_mercedes_benz_stadium():
             "category": final_category,
         })
 
+    # Parse team sections (Falcons and United "next home game")
+    # Each config: (css_class, title_prefix, logo_pattern)
+    team_configs = [
+        ("falcons", "Atlanta Falcons vs. ", "falcons"),
+        ("united", "Atlanta United vs. ", "AU_Primary"),
+    ]
+
+    for team_class, title_prefix, logo_pattern in team_configs:
+        team_item = soup.select_one(f"div.events_game--item.{team_class}")
+        if not team_item:
+            continue
+
+        # Extract team logo image
+        team_logo = None
+        for img in team_item.select("img"):
+            src = img.get("src", "")
+            if logo_pattern in src:
+                team_logo = src
+                break
+
+        # Extract text content to parse (normalize non-breaking spaces)
+        text_content = team_item.get_text(separator=" | ", strip=True).replace('\xa0', ' ')
+
+        # Parse opponent from text (e.g., "Seattle Seahawks" or "vs. Real Salt Lake")
+        # Format: "NEXT HOME GAME: | Seattle Seahawks | Sunday | Dec 7, 2025 | 1:00 pm"
+        # or: "NEXT HOME MATCH: | Atlanta United vs. Real Salt Lake | Saturday | March 7, 2026 | 7:30 pm"
+        parts = [p.strip().replace('\xa0', ' ') for p in text_content.split("|") if p.strip()]
+
+        # Find opponent name (first part after NEXT HOME GAME/MATCH header)
+        opponent = None
+        for i, part in enumerate(parts):
+            normalized = part.replace('\xa0', ' ').upper()
+            if "NEXT" in normalized and "HOME" in normalized:
+                if i + 1 < len(parts):
+                    opponent = parts[i + 1]
+                    # Clean up "Atlanta United vs. Real Salt Lake" to just "Real Salt Lake"
+                    if "vs." in opponent:
+                        opponent = opponent.split("vs.")[-1].strip()
+                break
+
+        if not opponent:
+            continue
+
+        # Find date (look for pattern like "Dec 7, 2025" or "March 7, 2026")
+        team_date = None
+        team_time = None
+        for part in parts:
+            # Try to parse as date
+            for fmt in ["%B %d, %Y", "%b %d, %Y"]:
+                try:
+                    dt = datetime.strptime(part, fmt)
+                    team_date = dt.strftime("%Y-%m-%d")
+                    break
+                except ValueError:
+                    pass
+            # Parse time (e.g., "1:00 pm")
+            time_match = re.match(r'(\d{1,2}:\d{2})\s*(am|pm)', part, re.IGNORECASE)
+            if time_match:
+                team_time = normalize_time(f"{time_match.group(1)}{time_match.group(2)}")
+
+        if not team_date:
+            continue
+
+        # Skip if already in events list (by date + title)
+        title = f"{title_prefix}{opponent}"
+        event_key = f"{team_date}-{title}"
+        if any(e["date"] == team_date and title in e["artists"][0]["name"] for e in events):
+            continue
+
+        # Get ticket URL
+        ticket_link = team_item.select_one("a[href*='ticketmaster'], a[href*='tickets']")
+        team_ticket_url = ticket_link.get("href") if ticket_link else None
+
+        events.append({
+            "venue": "Mercedes-Benz Stadium",
+            "date": team_date,
+            "doors_time": None,
+            "show_time": team_time,
+            "artists": [{"name": title}],
+            "ticket_url": team_ticket_url,
+            "info_url": None,
+            "image_url": team_logo,
+            "category": "sports",
+        })
+
     print(f"    Mercedes-Benz Stadium: {len(events)} events")
     return events
 
@@ -1356,6 +1448,120 @@ def scrape_masquerade():
     return events
 
 # ----------------------------------------------------------------------
+# Center Stage scraper (includes The Loft and Vinyl)
+# ----------------------------------------------------------------------
+
+CENTER_STAGE_API = "https://www.centerstage-atlanta.com/wp-json/centerstage/v2/events/"
+CENTER_STAGE_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+    "Accept": "application/json",
+}
+
+# Map venue_room.value to display names
+CENTER_STAGE_VENUES = {
+    "center_stage": "Center Stage",
+    "the_loft": "The Loft",
+    "vinyl": "Vinyl",
+}
+
+def scrape_center_stage():
+    """
+    Scrape events from Center Stage, The Loft, and Vinyl.
+    Uses their REST API at /wp-json/centerstage/v2/events/ which returns
+    paginated JSON with 20 events per page.
+
+    Note: Ticketmaster Discovery API would be preferable (has classifications
+    for categories) but requires an API key. This REST API is a good fallback.
+    """
+    events = []
+    page = 1
+    max_pages = 20  # Safety limit
+
+    while page <= max_pages:
+        url = f"{CENTER_STAGE_API}?page={page}"
+        resp = requests.get(url, headers=CENTER_STAGE_HEADERS, timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+
+        # Empty response or error message means no more pages
+        if not data or not isinstance(data, list):
+            break
+
+        # Check for "No Additional Shows" message (API returns this as string)
+        if len(data) == 0:
+            break
+
+        for event in data:
+            # Skip external venues
+            external_venue = event.get("external_venue", "")
+            if external_venue:
+                continue
+
+            # Get venue from venue_room
+            venue_room = event.get("venue_room", {})
+            venue_key = venue_room.get("value", "").lower()
+
+            if venue_key not in CENTER_STAGE_VENUES:
+                continue
+
+            venue_name = CENTER_STAGE_VENUES[venue_key]
+
+            # Parse date (format: YYYYMMDD)
+            date_raw = event.get("event_date", "")
+            if not date_raw or len(date_raw) != 8:
+                continue
+
+            try:
+                event_date = datetime.strptime(date_raw, "%Y%m%d").strftime("%Y-%m-%d")
+            except ValueError:
+                continue
+
+            # Get artist name
+            title = event.get("title", "").strip()
+            if not title:
+                continue
+
+            # Get ticket URL
+            ticket_url = event.get("event_url", "")
+            if not ticket_url:
+                continue
+
+            # Parse times (format: "7:00 pm")
+            doors_time = normalize_time(event.get("door_time"))
+            show_time = normalize_time(event.get("show_time"))
+
+            # Get image URL
+            image_url = event.get("event_image")
+
+            # Get info URL (event detail page)
+            info_url = event.get("permalink")
+
+            # Detect category from title (venue hosts music and comedy)
+            category = detect_category_from_text(title) or "concerts"
+
+            events.append({
+                "venue": venue_name,
+                "date": event_date,
+                "doors_time": doors_time,
+                "show_time": show_time,
+                "artists": [{"name": title}],
+                "ticket_url": ticket_url,
+                "info_url": info_url,
+                "image_url": image_url,
+                "category": category,
+            })
+
+        # If we got fewer than 20 events, we've hit the last page
+        if len(data) < 20:
+            break
+
+        page += 1
+        time.sleep(0.3)  # Rate limiting
+
+    print(f"    Center Stage venues: {len(events)} events")
+    return events
+
+# ----------------------------------------------------------------------
 # Main
 # ----------------------------------------------------------------------
 
@@ -1371,6 +1577,7 @@ SCRAPERS = {
     "State Farm Arena": scrape_state_farm_arena,
     "Mercedes-Benz Stadium": scrape_mercedes_benz_stadium,
     "The Masquerade": scrape_masquerade,
+    "Center Stage": scrape_center_stage,
 }
 
 def main():

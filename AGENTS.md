@@ -50,9 +50,44 @@ Every scraper must return events matching this structure:
 
 ### Step 1: Identify the Data Source
 
-Before writing code, inspect the venue's website to determine the best scraping approach:
+Before writing code, inspect the venue's website to determine the best scraping approach.
 
-#### Option A: JSON API (Preferred)
+**IMPORTANT: Check for upstream ticketing APIs first!**
+
+#### Option A: Upstream Ticketing API (BEST)
+
+Before scraping the venue's website, check if tickets are sold through a major ticketing platform:
+
+1. **Click "Buy Tickets"** on any event and check where it goes
+2. Common platforms with public APIs:
+   - **Ticketmaster** → Discovery API (requires free API key from developer.ticketmaster.com)
+   - **AXS** → Has API endpoints
+   - **Eventbrite** → Public API available
+   - **Live Nation** → GraphQL API (see existing scrapers)
+
+**Why upstream APIs are better:**
+- **Structured data**: Categories/classifications, venues, dates already parsed
+- **System of record**: More complete and up-to-date than venue websites
+- **Stable**: Public APIs have versioning; venue HTML can change anytime
+- **Rich metadata**: Price ranges, seating, accessibility info
+
+**Example - Ticketmaster Discovery API:**
+```python
+# Get venue ID once, then query events
+# GET /discovery/v2/venues.json?keyword=Center Stage&city=Atlanta
+# GET /discovery/v2/events.json?venueId=<id>&countryCode=US&sort=date,asc
+
+# Events include classifications for category mapping:
+# segment=Music → concerts
+# segment=Arts & Theatre, genre=Comedy → comedy
+```
+
+**When to skip upstream APIs:**
+- Venue uses in-house ticketing (no external platform)
+- API requires paid access or complex auth
+- Venue has their own API that's more complete
+
+#### Option B: Venue's JSON API (Preferred)
 1. Open browser DevTools → Network tab
 2. Load the venue's events page
 3. Filter by "XHR" or "Fetch"
@@ -61,9 +96,14 @@ Before writing code, inspect the venue's website to determine the best scraping 
 **Signs of a JSON API:**
 - Response content-type is `application/json`
 - Clean structured data with event arrays
-- Often endpoints like `/api/events`, `/events.json`, or GraphQL
+- Often endpoints like `/api/events`, `/events.json`, `/wp-json/*/events`, or GraphQL
 
-#### Option B: GraphQL API
+**Common WordPress patterns:**
+- `/wp-json/wp/v2/posts?categories=events`
+- `/wp-json/{plugin}/v2/events/` (custom plugin endpoints)
+- Check Network tab for XHR requests when page loads or "Load More" is clicked
+
+#### Option C: GraphQL API
 1. Look for requests to `/graphql` endpoints
 2. Check request payload for `query` field
 3. Copy the query and variables structure
@@ -82,7 +122,7 @@ query EVENTS($venue_id: String!) {
 """
 ```
 
-#### Option C: HTML Scraping (Last Resort)
+#### Option D: HTML Scraping (Last Resort)
 Use only when no API is available. More fragile and slower.
 
 1. Inspect the page HTML structure
@@ -92,6 +132,16 @@ Use only when no API is available. More fragile and slower.
 #### Warning: JSON-LD Structured Data
 
 Some venues include JSON-LD (`<script type="application/ld+json">`) in their HTML. While tempting, **JSON-LD often contains only a subset of events** (e.g., featured or upcoming). Always verify the event count against what's visible on the page. If JSON-LD is incomplete, fall back to HTML scraping or find another API.
+
+#### Warning: Featured vs Full Event Lists
+
+Many venue homepages show only "featured" events in a carousel or hero section. **Always look for:**
+- "View All Events" or "See More Shows" buttons
+- Separate `/events` or `/calendar` pages
+- Network requests triggered by "Load More" buttons
+- Pagination in API responses (check for `page` parameter)
+
+The homepage carousel might show 3 events while the full calendar has 80+.
 
 ---
 

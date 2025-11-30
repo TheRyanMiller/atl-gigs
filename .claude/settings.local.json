@@ -14,7 +14,8 @@
       "Bash(npm install:*)",
       "WebFetch(domain:www.statefarmarena.com)",
       "WebFetch(domain:www.mercedesbenzstadium.com)",
-      "WebFetch(domain:www.axs.com)"
+      "WebFetch(domain:www.axs.com)",
+      "WebFetch(domain:www.centerstage-atlanta.com)"
     ],
     "deny": [],
     "ask": []
