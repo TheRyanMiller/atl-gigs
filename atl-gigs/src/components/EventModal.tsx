@@ -26,8 +26,9 @@ export default function EventModal({ event, onClose }: EventModalProps) {
   } = event;
   
   const handleShare = async () => {
-    const url = `${window.location.origin}?event=${slug}`;
-    
+    // Use /e/slug format for sharing - this route serves OG tags to crawlers
+    const url = `${window.location.origin}/e/${slug}`;
+
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);

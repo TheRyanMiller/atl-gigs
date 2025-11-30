@@ -17,3 +17,7 @@ __pycache__/
 
 # Logs
 *.log
+
+# Worker
+worker/node_modules/
+worker/.wrangler/

@@ -13,6 +13,7 @@ import requests, datetime as dt, re, itertools, json, time, os, traceback
 from bs4 import BeautifulSoup
 from datetime import datetime
 from pathlib import Path
+from og_generator import generate_og_image, generate_default_og_image
 
 # ----------------------------------------------------------------------
 # Configuration
@@ -21,7 +22,6 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).parent
 OUTPUT_PATH = SCRIPT_DIR / "atl-gigs" / "public" / "events.json"
 STATUS_PATH = SCRIPT_DIR / "atl-gigs" / "public" / "scrape-status.json"
-BACKUP_PATH = SCRIPT_DIR / "events.json"  # Also save to root for reference
 
 REQUIRED_FIELDS = ["venue", "date", "artists", "ticket_url"]
 
@@ -476,7 +476,32 @@ def main():
     
     # Sort by date
     valid_events.sort(key=lambda x: x["date"])
-    
+
+    # Generate OG images for events (skips existing images)
+    print("\nGenerating OG images...")
+    og_generated = 0
+    og_skipped = 0
+    og_failed = 0
+    for event in valid_events:
+        slug = event.get("slug", "")
+        og_path = Path("atl-gigs/public/og") / f"{slug}.png"
+        already_exists = og_path.exists()
+
+        result = generate_og_image(event)
+        if result:
+            event["og_image"] = result
+            if already_exists:
+                og_skipped += 1
+            else:
+                og_generated += 1
+        else:
+            og_failed += 1
+
+    print(f"  Generated {og_generated} new OG images, skipped {og_skipped} existing, {og_failed} failed")
+
+    # Generate default OG image for homepage
+    generate_default_og_image()
+
     # Determine overall status
     all_success = all(v["success"] for v in venue_statuses.values())
     any_success = any(v["success"] for v in venue_statuses.values())
@@ -492,11 +517,6 @@ def main():
     with open(OUTPUT_PATH, "w") as f:
         json.dump(valid_events, f, indent=2)
     print(f"Events saved to {OUTPUT_PATH}")
-    
-    # Also save backup to root
-    with open(BACKUP_PATH, "w") as f:
-        json.dump(valid_events, f, indent=2)
-    print(f"Backup saved to {BACKUP_PATH}")
     
     # Save scrape status
     status_data = {

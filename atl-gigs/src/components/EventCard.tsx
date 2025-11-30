@@ -34,8 +34,9 @@ export default function EventCard({ event, onClick }: EventCardProps) {
 
   const handleShare = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    const url = `${window.location.origin}?event=${slug}`;
-    
+    // Use /e/slug format for sharing - this route serves OG tags to crawlers
+    const url = `${window.location.origin}/e/${slug}`;
+
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
