@@ -6,7 +6,7 @@ export const config = {
 
 export default async function handler() {
   try {
-    const response = new ImageResponse(
+    const imageResponse = new ImageResponse(
       (
         <div
           style={{
@@ -30,7 +30,27 @@ export default async function handler() {
         height: 630,
       }
     );
-    return response;
+
+    // Debug: get the array buffer to see if there's content
+    const buffer = await imageResponse.arrayBuffer();
+    const size = buffer.byteLength;
+
+    if (size === 0) {
+      return new Response(`DEBUG: ImageResponse created but buffer is empty (0 bytes)`, {
+        status: 500,
+        headers: { "Content-Type": "text/plain" },
+      });
+    }
+
+    // Return a new response with the buffer
+    return new Response(buffer, {
+      status: 200,
+      headers: {
+        "Content-Type": "image/png",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "X-Image-Size": size.toString(),
+      },
+    });
   } catch (e: unknown) {
     const error = e as Error;
     return new Response(`Error: ${error.message}\n${error.stack}`, {
