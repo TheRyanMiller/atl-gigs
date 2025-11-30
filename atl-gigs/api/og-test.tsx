@@ -1,12 +1,8 @@
-/** @jsxImportSource react */
 import { ImageResponse } from "@vercel/og";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export const config = {
-  runtime: "edge",
-};
-
-export default function handler() {
-  return new ImageResponse(
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  const imageResponse = new ImageResponse(
     (
       <div
         style={{
@@ -30,4 +26,9 @@ export default function handler() {
       height: 630,
     }
   );
+
+  const buffer = await imageResponse.arrayBuffer();
+  res.setHeader("Content-Type", "image/png");
+  res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+  res.send(Buffer.from(buffer));
 }
