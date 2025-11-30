@@ -37,7 +37,7 @@ export default async function handler(request: Request) {
                 marginRight: 16,
               }}
             >
-              <span style={{ fontSize: 40, color: "white" }}>♪</span>
+              <span style={{ fontSize: 40 }}>🎵</span>
             </div>
             <span style={{ fontSize: 72, color: "white", fontWeight: 700 }}>ATL</span>
             <span style={{ fontSize: 72, color: "#14b8a6", fontWeight: 700, marginLeft: 12 }}>Gigs</span>
