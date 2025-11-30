@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Star, ArrowLeft, Loader2 } from "lucide-react";
+import { Star, Loader2 } from "lucide-react";
 import { Event } from "../types";
 import EventCard from "../components/EventCard";
 import { useFavorites } from "../context/FavoritesContext";
@@ -34,27 +34,17 @@ export default function Favorites({ events, loading, onEventClick }: FavoritesPr
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors"
-          >
-            <ArrowLeft size={20} />
-            <span className="text-sm font-medium">Back</span>
-          </Link>
-          <div className="w-px h-6 bg-neutral-800" />
-          <div className="flex items-center gap-2">
-            <Star size={20} className="text-yellow-400 fill-yellow-400" />
-            <h1 className="text-xl font-bold text-white">
-              Your Favorites
-              {favoriteCount > 0 && (
-                <span className="text-neutral-500 font-normal ml-2">
-                  ({favoriteCount})
-                </span>
-              )}
-            </h1>
-          </div>
+      <div className="flex flex-col items-center gap-4">
+        <div className="flex items-center gap-3">
+          <Star size={24} className="text-yellow-400 fill-yellow-400" />
+          <h1 className="text-2xl font-bold text-white">
+            Your Favorites
+            {favoriteCount > 0 && (
+              <span className="text-neutral-500 font-normal ml-2">
+                ({favoriteCount})
+              </span>
+            )}
+          </h1>
         </div>
 
         {favoriteCount > 0 && (

@@ -17,7 +17,9 @@
       "WebFetch(domain:www.axs.com)",
       "WebFetch(domain:www.centerstage-atlanta.com)",
       "WebFetch(domain:developer.ticketmaster.com)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(git -C /Users/wavey/code/atl-music/atl-gigs diff .github/workflows/scrape.yml)",
+      "Bash(git -C /Users/wavey/code/atl-music/atl-gigs status --short)"
     ],
     "deny": [],
     "ask": []
