@@ -6,5 +6,17 @@
     </linearGradient>
   </defs>
   <rect width="32" height="32" rx="8" fill="url(#grad)"/>
-  <text x="16" y="23" font-size="20" text-anchor="middle" fill="white">🎵</text>
+  <!-- Two beamed eighth notes in white -->
+  <g fill="white">
+    <!-- Left stem -->
+    <rect x="9" y="8" width="2" height="14"/>
+    <!-- Right stem -->
+    <rect x="21" y="10" width="2" height="14"/>
+    <!-- Connecting beam -->
+    <polygon points="9,8 23,10 23,13 9,11"/>
+    <!-- Left note head -->
+    <ellipse cx="8" cy="22" rx="4" ry="3"/>
+    <!-- Right note head -->
+    <ellipse cx="20" cy="24" rx="4" ry="3"/>
+  </g>
 </svg>

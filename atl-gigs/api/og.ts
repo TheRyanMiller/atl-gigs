@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const SITE_URL = "https://atl-gigs.info";
+const DEFAULT_OG_IMAGE = `${SITE_URL}/atlgigs.png`;
 
 // User agent patterns for social media crawlers
 const CRAWLER_PATTERNS = [
@@ -70,8 +71,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    // Fetch events data
-    const eventsResponse = await fetch(`${SITE_URL}/events.json`);
+    // Fetch events data from new path
+    const eventsResponse = await fetch(`${SITE_URL}/events/events.json`);
     if (!eventsResponse.ok) {
       return res.redirect(302, `/?event=${eventSlug}`);
     }
@@ -87,9 +88,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const artistName = getHeadliner(event.artists?.[0]?.name || "Event");
     const venue = event.venue || "Atlanta";
     const dateFormatted = formatDate(event.date);
-    const ogImage = event.og_image
-      ? `${SITE_URL}${event.og_image}`
-      : `${SITE_URL}/og/default.png`;
+    // Use original artist image directly, fallback to default
+    const ogImage = event.image_url || DEFAULT_OG_IMAGE;
 
     const title = `${artistName} at ${venue} | ATL Gigs`;
     const description = `${artistName} live at ${venue} on ${dateFormatted}. Get tickets and event details on ATL Gigs.`;

@@ -13,15 +13,16 @@ import requests, datetime as dt, re, itertools, json, time, os, traceback
 from bs4 import BeautifulSoup
 from datetime import datetime
 from pathlib import Path
-from og_generator import generate_og_image, generate_default_og_image
 
 # ----------------------------------------------------------------------
 # Configuration
 # ----------------------------------------------------------------------
 
 SCRIPT_DIR = Path(__file__).parent
-OUTPUT_PATH = SCRIPT_DIR / "atl-gigs" / "public" / "events.json"
-STATUS_PATH = SCRIPT_DIR / "atl-gigs" / "public" / "scrape-status.json"
+EVENTS_DIR = SCRIPT_DIR / "atl-gigs" / "public" / "events"
+OUTPUT_PATH = EVENTS_DIR / "events.json"
+ARCHIVE_PATH = EVENTS_DIR / "archive.json"
+STATUS_PATH = EVENTS_DIR / "scrape-status.json"
 
 REQUIRED_FIELDS = ["venue", "date", "artists", "ticket_url"]
 
@@ -157,6 +158,46 @@ def load_existing_status():
     except Exception:
         pass
     return {"venues": {}}
+
+
+def load_existing_archive():
+    """Load existing archive to preserve historical events."""
+    try:
+        if ARCHIVE_PATH.exists():
+            with open(ARCHIVE_PATH, "r") as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return []
+
+
+def archive_past_events(events, existing_archive):
+    """
+    Separate events into upcoming and past.
+    Past events are merged into archive.
+    Returns (upcoming_events, updated_archive, newly_archived_count)
+    """
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    upcoming = []
+    newly_archived = []
+
+    for event in events:
+        if event.get("date", "") < today:
+            newly_archived.append(event)
+        else:
+            upcoming.append(event)
+
+    # Merge newly archived events with existing archive (avoid duplicates by slug)
+    existing_slugs = {e.get("slug") for e in existing_archive}
+    for event in newly_archived:
+        if event.get("slug") not in existing_slugs:
+            existing_archive.append(event)
+
+    # Sort archive by date (newest first)
+    existing_archive.sort(key=lambda x: x.get("date", ""), reverse=True)
+
+    return upcoming, existing_archive, len(newly_archived)
 
 
 # ----------------------------------------------------------------------
@@ -477,30 +518,13 @@ def main():
     # Sort by date
     valid_events.sort(key=lambda x: x["date"])
 
-    # Generate OG images for events (skips existing images)
-    print("\nGenerating OG images...")
-    og_generated = 0
-    og_skipped = 0
-    og_failed = 0
-    for event in valid_events:
-        slug = event.get("slug", "")
-        og_path = Path("atl-gigs/public/og") / f"{slug}.png"
-        already_exists = og_path.exists()
-
-        result = generate_og_image(event)
-        if result:
-            event["og_image"] = result
-            if already_exists:
-                og_skipped += 1
-            else:
-                og_generated += 1
-        else:
-            og_failed += 1
-
-    print(f"  Generated {og_generated} new OG images, skipped {og_skipped} existing, {og_failed} failed")
-
-    # Generate default OG image for homepage
-    generate_default_og_image()
+    # Load existing archive and separate past events
+    print("\nArchiving past events...")
+    existing_archive = load_existing_archive()
+    valid_events, updated_archive, archived_count = archive_past_events(valid_events, existing_archive)
+    if archived_count > 0:
+        print(f"  Archived {archived_count} past events")
+    print(f"  Archive total: {len(updated_archive)} events")
 
     # Determine overall status
     all_success = all(v["success"] for v in venue_statuses.values())
@@ -512,21 +536,29 @@ def main():
     if failed_venues:
         print(f"Warning: Failed to scrape: {', '.join(failed_venues)}")
 
-    # Save to frontend public directory
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    # Ensure events directory exists
+    EVENTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Save upcoming events
     with open(OUTPUT_PATH, "w") as f:
         json.dump(valid_events, f, indent=2)
     print(f"Events saved to {OUTPUT_PATH}")
-    
+
+    # Save archive
+    with open(ARCHIVE_PATH, "w") as f:
+        json.dump(updated_archive, f, indent=2)
+    print(f"Archive saved to {ARCHIVE_PATH}")
+
     # Save scrape status
     status_data = {
         "last_run": run_timestamp,
         "all_success": all_success,
         "any_success": any_success,
         "total_events": len(valid_events),
+        "archived_events": len(updated_archive),
         "venues": venue_statuses,
     }
-    
+
     with open(STATUS_PATH, "w") as f:
         json.dump(status_data, f, indent=2)
     print(f"Status saved to {STATUS_PATH}")
