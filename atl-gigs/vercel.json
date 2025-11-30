@@ -4,5 +4,13 @@
       "source": "/e/:slug",
       "destination": "/api/og?event=:slug"
     }
-  ]
+  ],
+  "functions": {
+    "api/og-image.tsx": {
+      "runtime": "@vercel/edge"
+    },
+    "api/og-test.tsx": {
+      "runtime": "@vercel/edge"
+    }
+  }
 }
