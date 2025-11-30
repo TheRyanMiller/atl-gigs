@@ -9,7 +9,7 @@ export default async function handler(request: Request) {
   const imageUrl = searchParams.get("image");
   const date = searchParams.get("date"); // YYYY-MM-DD
 
-  // If no image provided, return a simple fallback
+  // If no image or date provided, return error
   if (!imageUrl || !date) {
     return new Response("Missing required parameters", { status: 400 });
   }
@@ -20,6 +20,44 @@ export default async function handler(request: Request) {
   const month = eventDate
     .toLocaleDateString("en-US", { month: "short" })
     .toUpperCase();
+
+  // Fetch the external image and convert to base64 data URL
+  let imageData: string;
+  try {
+    const imageResponse = await fetch(imageUrl);
+    if (!imageResponse.ok) {
+      throw new Error(`Failed to fetch image: ${imageResponse.status}`);
+    }
+    const arrayBuffer = await imageResponse.arrayBuffer();
+    const base64 = Buffer.from(arrayBuffer).toString("base64");
+    const contentType = imageResponse.headers.get("content-type") || "image/jpeg";
+    imageData = `data:${contentType};base64,${base64}`;
+  } catch (error) {
+    console.error("Error fetching image:", error);
+    // Return a simple fallback without the background image
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "#171717",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <span style={{ fontSize: 48, color: "white", fontWeight: 700 }}>
+            ATL
+          </span>
+          <span style={{ fontSize: 48, color: "#14b8a6", fontWeight: 700 }}>
+            Gigs
+          </span>
+        </div>
+      ),
+      { width: 1200, height: 630 }
+    );
+  }
 
   return new ImageResponse(
     (
@@ -33,7 +71,7 @@ export default async function handler(request: Request) {
       >
         {/* Background event image */}
         <img
-          src={imageUrl}
+          src={imageData}
           style={{
             width: "100%",
             height: "100%",
