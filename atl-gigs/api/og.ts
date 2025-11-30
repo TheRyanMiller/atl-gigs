@@ -27,7 +27,7 @@ function isCrawler(userAgent: string | null): boolean {
   return CRAWLER_PATTERNS.some((pattern) => ua.includes(pattern.toLowerCase()));
 }
 
-function formatDate(dateStr: string): string {
+function formatDateLong(dateStr: string): string {
   try {
     const date = new Date(dateStr + "T12:00:00");
     return date.toLocaleDateString("en-US", {
@@ -35,6 +35,19 @@ function formatDate(dateStr: string): string {
       month: "long",
       day: "numeric",
       year: "numeric",
+    });
+  } catch {
+    return dateStr;
+  }
+}
+
+function formatDateShort(dateStr: string): string {
+  try {
+    const date = new Date(dateStr + "T12:00:00");
+    return date.toLocaleDateString("en-US", {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
     });
   } catch {
     return dateStr;
@@ -87,12 +100,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Build event-specific OG data
     const artistName = getHeadliner(event.artists?.[0]?.name || "Event");
     const venue = event.venue || "Atlanta";
-    const dateFormatted = formatDate(event.date);
+    const dateShort = formatDateShort(event.date);
+    const dateLong = formatDateLong(event.date);
     // Use original artist image directly, fallback to default
     const ogImage = event.image_url || DEFAULT_OG_IMAGE;
 
-    const title = `${artistName} at ${venue} | ATL Gigs`;
-    const description = `${artistName} live at ${venue} on ${dateFormatted}. Get tickets and event details on ATL Gigs.`;
+    const title = `${artistName} @ ${venue} · ${dateShort}`;
+    const description = `${dateLong} · ${artistName} live @ ${venue}. Get tickets and event details on ATL Gigs.`;
     const eventUrl = `${SITE_URL}?event=${event.slug}`;
 
     // Return minimal HTML with OG tags for crawlers
