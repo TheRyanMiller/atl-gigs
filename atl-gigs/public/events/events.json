@@ -1,86 +1,5 @@
 [
   {
-    "venue": "Tabernacle",
-    "date": "2025-11-30",
-    "doors_time": "19:00",
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Fit for a King",
-        "genre": "Metal"
-      },
-      {
-        "name": "Make Them Suffer",
-        "genre": "Metal"
-      },
-      {
-        "name": "Spite",
-        "genre": "Metal"
-      },
-      {
-        "name": "156/Silence",
-        "genre": "Metal"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/fit-for-a-king-lonely-god-atlanta-georgia-11-30-2025/event/0E0062CAB71D4167",
-    "image_url": "https://s1.ticketm.net/dam/a/5fd/6d4df6cf-7ac1-49a8-9b76-2d85d8ca25fd_RETINA_PORTRAIT_16_9.jpg",
-    "category": "concerts",
-    "price": "See website",
-    "slug": "2025-11-30-tabernacle-fit-for-a-king"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-11-30",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "The Outsiders"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=OUT&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/the-outsiders",
-    "image_url": "https://www.foxtheatre.org/assets/img/TheOutsiders_550x550-aeb0773bbd.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2025-11-30-fox-theatre-the-outsiders"
-  },
-  {
-    "venue": "State Farm Arena",
-    "date": "2025-11-30",
-    "doors_time": null,
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Christian Nodal",
-        "genre": "World"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/christian-nodal-pal-cora-tour-atlanta-georgia-11-30-2025/event/0E0062AFED0D61FC",
-    "image_url": "https://s1.ticketm.net/dam/a/710/5bb7f86c-9aa0-40f6-939c-3200ff3fb710_TABLET_LANDSCAPE_16_9.jpg",
-    "price": "See website",
-    "category": "concerts",
-    "slug": "2025-11-30-state-farm-arena-christian-nodal"
-  },
-  {
-    "venue": "The Masquerade",
-    "date": "2025-11-30",
-    "doors_time": null,
-    "show_time": "19:00",
-    "artists": [
-      {
-        "name": "Mario",
-        "genre": "R&B"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/mario-presents-the-nothing-but-us-atlanta-georgia-11-30-2025/event/0E006323ECEB67EB",
-    "image_url": "https://s1.ticketm.net/dam/a/c39/91fcfb29-3d67-4fe0-be23-7739adeb2c39_RETINA_PORTRAIT_16_9.jpg",
-    "price": "See website",
-    "category": "concerts",
-    "room": "Heaven",
-    "slug": "2025-11-30-the-masquerade-mario"
-  },
-  {
     "venue": "State Farm Arena",
     "date": "2025-12-01",
     "doors_time": null,
@@ -296,6 +215,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-04-variety-playhouse-bonnie-prince-billy"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2025-12-04",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Lauren Daigle - The Behold Christmas Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=LAU&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/lauren-daigle-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/Lauren-Daigle-550x550-927f65e30a.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-04-fox-theatre-lauren-daigle-the-behold-christmas-tour"
   },
   {
     "venue": "State Farm Arena",
@@ -667,6 +603,23 @@
     "slug": "2025-12-06-variety-playhouse-off-book-the-improvised-musical"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-06",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Amy Grant, Cece Winans, & Michael W Smith: Christmas Together"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=ACM&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/amy-grant-cece-winans-michael-w-smith",
+    "image_url": "https://www.foxtheatre.org/assets/img/AmyGrant_MichaelSmith_CeceWinans_550x550-c134756da6.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-06-fox-theatre-amy-grant-cece-winans-michael-w-smith-christmas-together"
+  },
+  {
     "venue": "Mercedes-Benz Stadium",
     "date": "2025-12-06",
     "doors_time": null,
@@ -983,6 +936,23 @@
     "slug": "2025-12-07-vinyl-adam-hawley"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-08",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "for King + Country's A Drummer Boy Christmas: The 2025 Live Experience"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=FKC&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/for-king-country-drummer-boy-christmas",
+    "image_url": "https://www.foxtheatre.org/assets/img/For-King-Country-550-x-550-px-8ca26987c3.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-08-fox-theatre-for-king-countrys-a-drummer-boy-christmas-the-2025-live-experience"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2025-12-08",
     "doors_time": null,
@@ -1166,6 +1136,23 @@
     "slug": "2025-12-10-coca-cola-roxy-xavi"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-10",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "MERRY MIGHTY MO and MORE presented by Georgia Natural Gas"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=LCM&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/merry-mighty-mo-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/MerryMightMo_550x550-88bbb610aa.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-10-fox-theatre-merry-mighty-mo-and-more-presented-by-georgia-natural-gas"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2025-12-10",
     "doors_time": null,
@@ -1300,6 +1287,23 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-11-coca-cola-roxy-teddy-swims"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2025-12-11",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "An Intimate Evening with David Foster & Katharine McPhee"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=KAT&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/david-foster-katharine-mcphee",
+    "image_url": "https://www.foxtheatre.org/assets/img/DavidFoster_KatharineMcphee_550x550-696c29fecf.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-11-fox-theatre-an-intimate-evening-with-david-foster-katharine-mcphee"
   },
   {
     "venue": "The Masquerade",
@@ -1903,7 +1907,7 @@
     "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=ELF&linkID=fta&shopperContext=&caller=&appCode=",
     "info_url": "https://www.foxtheatre.org/events/detail/elf",
     "image_url": "https://www.foxtheatre.org/assets/img/Elf_550x550-658eb46298.jpg",
-    "category": "broadway",
+    "category": "misc",
     "price": "See website",
     "slug": "2025-12-16-fox-theatre-elf"
   },
@@ -2665,6 +2669,23 @@
     "slug": "2025-12-21-vinyl-lil-crank"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-23",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "NUTCRACKER! Magical Christmas Ballet"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=NUT&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/nutcracker-magical-christmas-ballet-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/Nutcracker_550x550-adc61b63a1.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-23-fox-theatre-nutcracker-magical-christmas-ballet"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2025-12-23",
     "doors_time": null,
@@ -3003,23 +3024,6 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-03-vinyl-soup"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-01-06",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Hell's Kitchen"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=HEL&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/hells-kitchen",
-    "image_url": "https://www.foxtheatre.org/assets/img/HellsKitchen_550x550-c579b8a9d1.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-01-06-fox-theatre-hells-kitchen"
   },
   {
     "venue": "State Farm Arena",
@@ -3914,23 +3918,6 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-24-variety-playhouse-the-sundogs-present-the-tom-petty-show"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-01-24",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Blue Man Group"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BMG&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/blue-man-group-2026",
-    "image_url": "https://www.foxtheatre.org/assets/img/BMG-550-x-550-45d09a2a68.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-01-24-fox-theatre-blue-man-group"
   },
   {
     "venue": "The Masquerade",
@@ -4888,23 +4875,6 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-06-variety-playhouse-dry-cleaning"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-02-06",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Riverdance"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=RIV&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/riverdance",
-    "image_url": "https://www.foxtheatre.org/assets/img/Riverdance_550x550-24362de122.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-02-06-fox-theatre-riverdance"
   },
   {
     "venue": "The Masquerade",
@@ -8163,23 +8133,6 @@
     "slug": "2026-04-06-state-farm-arena-atlanta-hawks"
   },
   {
-    "venue": "Fox Theatre",
-    "date": "2026-04-07",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "The Sound of Music"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SOU&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/the-sound-of-music",
-    "image_url": "https://www.foxtheatre.org/assets/img/TheSoundofMusic_550x550-b99b1293bc.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-04-07-fox-theatre-the-sound-of-music"
-  },
-  {
     "venue": "The Eastern",
     "date": "2026-04-08",
     "doors_time": "19:00",
@@ -9420,23 +9373,6 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-05-23-coca-cola-roxy-electric-callboy"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-05-26",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Beauty and the Beast"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BEA&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/beauty-and-the-beast",
-    "image_url": "https://www.foxtheatre.org/assets/img/BeautyandtheBeast_550x550-2e2f908675.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-05-26-fox-theatre-beauty-and-the-beast"
   },
   {
     "venue": "Tabernacle",
