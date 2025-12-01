@@ -1,13 +1,5 @@
 {
   "framework": "vite",
-  "functions": {
-    "api/og-image.tsx": {
-      "runtime": "edge"
-    },
-    "api/og-test.tsx": {
-      "runtime": "edge"
-    }
-  },
   "rewrites": [
     {
       "source": "/e/:slug",
