@@ -1,6 +1,3 @@
-/** @jsxImportSource react */
-import { ImageResponse } from "@vercel/og";
-
 export const config = {
   runtime: "edge",
 };
@@ -8,141 +5,47 @@ export const config = {
 export default async function handler(request: Request) {
   const { searchParams } = new URL(request.url);
   const imageUrl = searchParams.get("image");
-  const date = searchParams.get("date");
 
-  // Default/homepage OG image (no params)
-  if (!imageUrl || !date) {
-    return new ImageResponse(
-      (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-            height: "100%",
-            background: "#0a0a0a",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", marginBottom: 24 }}>
-            <div
-              style={{
-                width: 80,
-                height: 80,
-                background: "#0d9488",
-                borderRadius: 20,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginRight: 16,
-              }}
-            >
-              <span style={{ fontSize: 48, color: "white" }}>*</span>
-            </div>
-            <span style={{ fontSize: 72, color: "white", fontWeight: 700 }}>ATL</span>
-            <span style={{ fontSize: 72, color: "#14b8a6", fontWeight: 700, marginLeft: 12 }}>Gigs</span>
-          </div>
-          <span style={{ fontSize: 28, color: "#a3a3a3" }}>Live Music Events in Atlanta</span>
-        </div>
-      ),
-      { width: 1200, height: 630 }
-    );
-  }
+  const fallbackUrl = "https://atl-gigs.info/atlgigs.png";
+  const target = imageUrl || fallbackUrl;
 
-  // Parse date for event image
-  const eventDate = new Date(date + "T12:00:00");
-  const day = eventDate.getDate();
-  const month = eventDate.toLocaleDateString("en-US", { month: "short" }).toUpperCase();
-
-  // Fetch and encode the external image
-  let imageData: string | null = null;
   try {
     const MAX_IMAGE_BYTES = 5 * 1024 * 1024; // 5MB guardrail
-    const imageResponse = await fetch(imageUrl);
-    if (imageResponse.ok) {
-      const arrayBuffer = await imageResponse.arrayBuffer();
-      if (arrayBuffer.byteLength > MAX_IMAGE_BYTES) {
-        throw new Error(`image too large (${arrayBuffer.byteLength} bytes)`);
-      }
-      const bytes = new Uint8Array(arrayBuffer);
-      let binary = "";
-      for (let i = 0; i < bytes.byteLength; i++) {
-        binary += String.fromCharCode(bytes[i]);
-      }
-      const base64 = btoa(binary);
-      const contentType = imageResponse.headers.get("content-type") || "image/jpeg";
-      imageData = `data:${contentType};base64,${base64}`;
+    const res = await fetch(target);
+
+    if (!res.ok) {
+      throw new Error(`fetch failed with status ${res.status}`);
     }
+
+    const buffer = await res.arrayBuffer();
+    if (buffer.byteLength === 0) {
+      throw new Error("empty image response");
+    }
+    if (buffer.byteLength > MAX_IMAGE_BYTES) {
+      throw new Error(`image too large (${buffer.byteLength} bytes)`);
+    }
+
+    const contentType = res.headers.get("content-type") || "image/jpeg";
+
+    return new Response(buffer, {
+      status: 200,
+      headers: {
+        "content-type": contentType,
+        "cache-control": "public, max-age=3600",
+        "content-length": buffer.byteLength.toString(),
+      },
+    });
   } catch (error) {
-    console.error("Error fetching image:", error);
+    const message = (error as Error).message;
+    // Final fallback: return a tiny SVG placeholder to avoid empty body
+    const placeholder = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#0b0c10"/><text x="50%" y="50%" fill="#e5e7eb" font-size="48" font-family="Arial" dominant-baseline="middle" text-anchor="middle">ATL Gigs</text></svg>`;
+    return new Response(placeholder, {
+      status: 200,
+      headers: {
+        "content-type": "image/svg+xml",
+        "cache-control": "public, max-age=300",
+        "x-og-fallback": message,
+      },
+    });
   }
-
-  // Fallback if image fetch failed
-  if (!imageData) {
-    return new ImageResponse(
-      (
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            height: "100%",
-            background: "#171717",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <span style={{ fontSize: 48, color: "white", fontWeight: 700 }}>ATL</span>
-          <span style={{ fontSize: 48, color: "#14b8a6", fontWeight: 700, marginLeft: 8 }}>Gigs</span>
-        </div>
-      ),
-      { width: 1200, height: 630 }
-    );
-  }
-
-  // Event image with overlay
-  return new ImageResponse(
-    (
-      <div style={{ display: "flex", width: "100%", height: "100%", position: "relative" }}>
-        <img
-          src={imageData}
-          width={1200}
-          height={630}
-          style={{ objectFit: "cover" }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top: 32,
-            left: 32,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            background: "rgba(10,10,10,0.9)",
-            borderRadius: 16,
-            padding: "12px 24px",
-          }}
-        >
-          <span style={{ fontSize: 16, color: "#2dd4bf", fontWeight: 700 }}>{month}</span>
-          <span style={{ fontSize: 40, color: "white", fontWeight: 700 }}>{day}</span>
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: 32,
-            right: 32,
-            display: "flex",
-            alignItems: "center",
-            background: "rgba(10,10,10,0.9)",
-            borderRadius: 12,
-            padding: "8px 16px",
-          }}
-        >
-          <span style={{ fontSize: 24, color: "white", fontWeight: 700 }}>ATL</span>
-          <span style={{ fontSize: 24, color: "#14b8a6", fontWeight: 700, marginLeft: 6 }}>Gigs</span>
-        </div>
-      </div>
-    ),
-    { width: 1200, height: 630 }
-  );
 }
