@@ -68,7 +68,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-neutral-950/90 backdrop-blur-sm" />
+          <div className="fixed inset-0 bg-neutral-950/95" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -82,13 +82,13 @@ export default function EventModal({ event, onClose }: EventModalProps) {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border-2 border-teal-500/40 text-left shadow-xl shadow-teal-500/10 transition-all sm:my-8 sm:w-full sm:max-w-2xl ring-1 ring-teal-500/20 ring-offset-2 ring-offset-neutral-950">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border-2 border-teal-500/40 text-left shadow-xl sm:my-8 sm:w-full sm:max-w-2xl">
                 {/* Top action buttons */}
                 <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
                   {/* Favorite button */}
                   <button
                     type="button"
-                    className="rounded-full bg-neutral-800/80 backdrop-blur-sm p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
+                    className="rounded-full bg-neutral-800 p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
                     onClick={() => toggleFavorite(slug)}
                   >
                     <span className="sr-only">{isFavorite(slug) ? "Remove from favorites" : "Add to favorites"}</span>
@@ -100,7 +100,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                   {/* Close button */}
                   <button
                     type="button"
-                    className="rounded-full bg-neutral-800/80 backdrop-blur-sm p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
+                    className="rounded-full bg-neutral-800 p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
                     onClick={onClose}
                   >
                     <span className="sr-only">Close</span>
@@ -123,7 +123,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                       </div>
                     )}
                     {/* Date overlay */}
-                    <div className="absolute top-4 left-4 flex flex-col items-center justify-center bg-neutral-950/80 backdrop-blur-md border border-white/10 w-14 h-14 rounded-xl">
+                    <div className="absolute top-4 left-4 flex flex-col items-center justify-center bg-neutral-950 border border-neutral-700 w-14 h-14 rounded-xl">
                       <span className="text-[10px] font-bold text-teal-400 uppercase tracking-wider">
                         {month}
                       </span>
@@ -184,19 +184,19 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                     <div className="flex flex-wrap gap-3">
                       <button
                         onClick={handleShare}
-                        className="flex items-center justify-center w-11 h-11 rounded-xl transition-all bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
+                        className="flex items-center justify-center w-12 h-12 rounded-xl transition-colors bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
                       >
                         {copied ? (
                           <Check size={18} className="text-green-400" />
                         ) : (
-                          <Share2 size={18} />
+                          <Share2 size={18} className="text-teal-400" />
                         )}
                       </button>
                       <a
                         href={ticket_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white shadow-lg shadow-teal-900/20 hover:shadow-teal-900/40 transition-all"
+                        className="flex items-center gap-2 px-6 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white transition-colors"
                       >
                         <Ticket size={16} />
                         Tickets
@@ -206,7 +206,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                           href={info_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white border border-neutral-700 transition-all"
+                          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white border border-neutral-700 transition-colors"
                         >
                           <ExternalLink size={16} />
                           Info

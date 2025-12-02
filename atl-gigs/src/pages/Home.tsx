@@ -120,7 +120,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       />
 
       {/* Events List */}
-      <div className="space-y-4">
+      <div className="space-y-4 max-w-6xl mx-auto">
         {filteredEvents.map((event, index) => (
           <EventCard
             key={`${event.venue}-${event.date}-${index}`}

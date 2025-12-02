@@ -13,11 +13,11 @@ export default function Header({ status, onStatusClick }: HeaderProps) {
   const { favoriteCount } = useFavorites();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-neutral-950/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-neutral-950">
       <div className="max-w-5xl mx-auto px-4 h-14 sm:h-20 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-teal-900/20 group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-lg sm:rounded-xl flex items-center justify-center">
             <Music size={16} className="sm:w-5 sm:h-5 text-white" />
           </div>
           <span className="text-lg sm:text-xl font-bold text-white tracking-tight leading-none group-hover:text-teal-300 transition-colors">

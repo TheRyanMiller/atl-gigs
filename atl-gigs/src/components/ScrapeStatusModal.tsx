@@ -22,7 +22,7 @@ export default function ScrapeStatusModal({
 
   return (
     <div
-      className="fixed inset-0 bg-neutral-950/90 backdrop-blur-sm flex items-start sm:items-center justify-center z-50 p-4 pt-16 sm:pt-4"
+      className="fixed inset-0 bg-neutral-950/95 flex items-start sm:items-center justify-center z-50 p-4 pt-16 sm:pt-4"
       onClick={onClose}
     >
       <div

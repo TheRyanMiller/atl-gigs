@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { format } from "date-fns";
 import { MapPin, Clock, Ticket, Share2, Check, CalendarDays, Star } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +19,7 @@ interface EventCardProps {
   onClick: () => void;
 }
 
-export default function EventCard({ event, onClick }: EventCardProps) {
+function EventCard({ event, onClick }: EventCardProps) {
   const { venue, date, doors_time, artists, price, image_url, ticket_url, slug, category } = event;
   const [copied, setCopied] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
@@ -29,7 +29,7 @@ export default function EventCard({ event, onClick }: EventCardProps) {
     e.stopPropagation();
     toggleFavorite(slug);
   };
-  
+
   // Parse date as local time (not UTC) by appending T12:00:00
   const eventDate = new Date(date + "T12:00:00");
   const day = eventDate.getDate();
@@ -66,24 +66,24 @@ export default function EventCard({ event, onClick }: EventCardProps) {
 
   return (
     <div
-      className="group relative bg-neutral-900/50 hover:bg-neutral-800/80 border border-neutral-800 hover:border-teal-500/30 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_-10px_rgba(20,184,166,0.15)] flex flex-col sm:flex-row cursor-pointer"
+      className="group relative bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-teal-500/30 rounded-2xl overflow-hidden transition-colors duration-200 flex flex-col sm:flex-row sm:items-stretch cursor-pointer"
       onClick={onClick}
     >
       {/* Date Badge - Mobile Only */}
-      <div className="absolute top-3 left-3 sm:hidden z-10 bg-neutral-950/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-2">
+      <div className="absolute top-3 left-3 sm:hidden z-10 bg-neutral-950 border border-neutral-700 px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-2">
         <span className="text-teal-400">{month} {day}</span>
         <span className="w-1 h-1 bg-neutral-600 rounded-full"></span>
         <span className="text-neutral-300">{venue}</span>
       </div>
 
       {/* Image Section */}
-      <div className="relative w-full sm:w-72 h-48 sm:h-auto shrink-0 overflow-hidden">
+      <div className="relative w-full h-32 sm:h-auto sm:min-h-[160px] sm:w-52 sm:self-stretch shrink-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent sm:hidden z-[1]" />
         {image_url ? (
           <img
             src={image_url}
             alt={mainArtist}
-            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out filter brightness-75 group-hover:brightness-100"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-neutral-800 to-neutral-900 flex items-center justify-center">
@@ -92,89 +92,90 @@ export default function EventCard({ event, onClick }: EventCardProps) {
         )}
 
         {/* Desktop Date Box overlay on image */}
-        <div className="hidden sm:flex absolute top-3 left-3 flex-col items-center justify-center bg-neutral-950/80 backdrop-blur-md border border-white/10 w-14 h-14 rounded-xl shadow-lg z-10">
-          <span className="text-[10px] font-bold text-teal-400 uppercase tracking-wider">{month}</span>
-          <span className="text-xl font-bold text-white leading-none">{day}</span>
+        <div className="hidden sm:flex absolute top-3 left-3 flex-col items-center justify-center bg-neutral-950 border border-neutral-700 w-11 h-11 rounded-xl z-10">
+          <span className="text-[9px] font-bold text-teal-400 uppercase tracking-wider">{month}</span>
+          <span className="text-base font-bold text-white leading-none">{day}</span>
         </div>
 
         {/* Category Badge overlay on image */}
-        <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-neutral-950/80 backdrop-blur-md border border-white/10 px-2.5 py-1.5 rounded-lg shadow-lg z-10">
+        <div className="absolute bottom-3 right-3 flex items-center gap-1 bg-neutral-950 border border-neutral-700 px-2 py-1.5 rounded-lg z-10">
           <FontAwesomeIcon icon={categoryIcons[category]} className="w-3 h-3 text-teal-400" />
-          <span className="text-[10px] font-bold text-white uppercase tracking-wider">{CATEGORY_LABELS[category]}</span>
+          <span className="text-[10px] font-bold text-white uppercase tracking-wider leading-none">{CATEGORY_LABELS[category]}</span>
         </div>
       </div>
 
       {/* Favorite Star Button - Top right of card */}
       <button
         onClick={handleFavorite}
-        className="absolute top-3 right-3 z-20 w-9 h-9 flex items-center justify-center rounded-full bg-neutral-800/90 backdrop-blur-md border border-neutral-700 transition-all hover:scale-110 hover:bg-neutral-700"
+        className="absolute top-3 right-4 sm:right-5 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-neutral-800 border border-neutral-700 transition-colors hover:bg-neutral-700"
       >
         <Star
-          size={18}
+          size={16}
           className={favorited ? "fill-yellow-400 text-yellow-400" : "text-white/60 hover:text-white"}
         />
       </button>
 
-      {/* Content Section */}
-      <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between relative z-[2]">
-        {/* Top Info */}
-        <div className="mb-4">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h3 className="text-2xl font-bold text-white group-hover:text-teal-300 transition-colors">
-                {mainArtist}
-              </h3>
+      {/* Content + Actions */}
+      <div className="flex flex-1 flex-col sm:flex-row sm:items-start relative z-[2] p-4 sm:px-5 sm:pt-5 pb-3 sm:pb-3 gap-4 sm:gap-6">
+        {/* Text block */}
+        <div className="flex-1 sm:w-[70%]">
+          <div className="mb-2.5">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors leading-snug">
+                  {mainArtist}
+                </h3>
+              </div>
             </div>
+
+            {supportArtists.length > 0 && (
+              <p className="text-neutral-400 text-sm mt-2 line-clamp-1">
+                <span className="text-neutral-500">with</span> {supportArtists.join(", ")}
+              </p>
+            )}
           </div>
 
-          {supportArtists.length > 0 && (
-            <p className="text-neutral-400 text-sm mt-2 line-clamp-1">
-              <span className="text-neutral-500">with</span> {supportArtists.join(", ")}
-            </p>
-          )}
-        </div>
-
-        {/* Details Stack */}
-        <div className="space-y-2 text-sm text-neutral-300 mb-6">
-          <div className="flex items-center gap-2">
-            <MapPin size={14} className="text-teal-500 shrink-0" />
-            <span className="truncate">{venue}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CalendarDays size={14} className="text-teal-500 shrink-0" />
-            <span>{formattedDate}</span>
-          </div>
-          {doorsFormatted && (
+          <div className="space-y-1.5 text-sm text-neutral-300">
             <div className="flex items-center gap-2">
-              <Clock size={14} className="text-teal-500 shrink-0" />
-              <span>Doors {doorsFormatted}</span>
+              <MapPin size={14} className="text-teal-500 shrink-0" />
+              <span className="truncate">{venue}</span>
             </div>
-          )}
-          {price && (
             <div className="flex items-center gap-2">
-              <Ticket size={14} className="text-teal-500 shrink-0" />
-              <span>
-                {price === "See website" ? (
-                  <span className="text-neutral-500">{price}</span>
-                ) : (
-                  price
-                )}
-              </span>
+              <CalendarDays size={14} className="text-teal-500 shrink-0" />
+              <span>{formattedDate}</span>
             </div>
-          )}
+            {doorsFormatted && (
+              <div className="flex items-center gap-2">
+                <Clock size={14} className="text-teal-500 shrink-0" />
+                <span>Doors {doorsFormatted}</span>
+              </div>
+            )}
+            {price && (
+              <div className="flex items-center gap-2">
+                <Ticket size={14} className="text-teal-500 shrink-0" />
+                <span>
+                  {price === "See website" ? (
+                    <span className="text-neutral-500">{price}</span>
+                  ) : (
+                    price
+                  )}
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Action Area */}
-        <div className="flex items-center justify-center sm:justify-end gap-2 mt-auto">
+        <div className="flex items-center justify-center sm:justify-end gap-2 sm:w-[30%] sm:ml-auto sm:self-stretch sm:flex-row sm:items-center sm:gap-3 sm:mt-auto sm:mb-1">
           {/* Share Button */}
           <button
             onClick={handleShare}
-            className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg transition-all duration-300 bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
+            className="flex items-center justify-center w-10 h-10 shrink-0 rounded-lg transition-colors bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
           >
             {copied ? (
-              <Check size={16} className="text-green-400" />
+              <Check size={14} className="text-green-400" />
             ) : (
-              <Share2 size={16} />
+              <Share2 size={16} className="text-teal-400" />
             )}
           </button>
 
@@ -183,10 +184,10 @@ export default function EventCard({ event, onClick }: EventCardProps) {
             href={ticket_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white shadow-lg shadow-teal-900/20 hover:shadow-teal-900/40 hover:-translate-y-0.5"
+            className="flex items-center gap-1.5 px-4 py-2 shrink-0 rounded-lg font-bold text-sm transition-colors bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white whitespace-nowrap"
             onClick={(e) => e.stopPropagation()}
           >
-            <Ticket size={14} className="sm:w-4 sm:h-4" />
+            <Ticket size={14} />
             Get Tickets
           </a>
         </div>
@@ -194,3 +195,5 @@ export default function EventCard({ event, onClick }: EventCardProps) {
     </div>
   );
 }
+
+export default memo(EventCard);

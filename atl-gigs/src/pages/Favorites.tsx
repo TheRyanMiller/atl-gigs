@@ -82,7 +82,7 @@ export default function Favorites({ events, loading, onEventClick }: FavoritesPr
             </p>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white shadow-lg shadow-teal-900/20 transition-all"
+              className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white transition-colors"
             >
               Browse Events
             </Link>

@@ -45,17 +45,17 @@ const FilterPill = ({
   <button
     onClick={onClick}
     className={`
-      flex items-center gap-2 px-3 py-3 rounded-xl text-sm font-medium transition-all
-      border backdrop-blur-sm whitespace-nowrap h-full
+      flex items-center gap-1 md:gap-1.5 px-2 py-1.5 md:px-3 md:py-3 rounded-lg md:rounded-xl text-sm font-medium transition-colors
+      border whitespace-nowrap h-full
       ${
         active
           ? "bg-teal-500/10 border-teal-500/50 text-teal-300"
-          : "bg-neutral-900/50 border-neutral-800 text-neutral-400 hover:bg-neutral-800 hover:text-white"
+          : "bg-neutral-900 border-neutral-800 text-neutral-400 hover:bg-neutral-800 hover:text-white"
       }
     `}
   >
-    <Icon size={14} />
-    <span>{label}</span>
+    <Icon size={12} className="md:w-3.5 md:h-3.5" />
+    <span className="text-[11px] md:text-sm">{label}</span>
     {active && onClear ? (
       <span
         onClick={onClear}
@@ -224,7 +224,7 @@ export default function FilterBar({
             placeholder="Search artists, venues, etc..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-neutral-900/50 border border-neutral-800 rounded-2xl py-4 pl-12 pr-12 text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent transition-all shadow-sm"
+            className="w-full bg-neutral-900 border border-neutral-800 rounded-2xl py-4 pl-12 pr-12 text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent transition-colors"
           />
           {searchQuery && (
             <button
@@ -268,7 +268,7 @@ export default function FilterBar({
                         onCategoryToggle(category);
                       }}
                       className={`
-                        flex items-center gap-1.5 px-2 py-1 rounded-md text-xs font-medium transition-all select-none
+                        flex items-center gap-1.5 px-2 py-1 rounded-md text-xs font-medium transition-colors select-none
                         ${selectedCategories.includes(category)
                           ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
                           : "bg-neutral-800 text-neutral-400 border border-neutral-700 hover:bg-neutral-700 hover:text-white"
@@ -314,7 +314,7 @@ export default function FilterBar({
                         onVenueToggle(venue);
                       }}
                       className={`
-                        px-2 py-1 rounded-md text-xs font-medium transition-all whitespace-nowrap text-left select-none
+                        px-2 py-1 rounded-md text-xs font-medium transition-colors whitespace-nowrap text-left select-none
                         ${selectedVenues.includes(venue)
                           ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
                           : "bg-neutral-800 text-neutral-400 border border-neutral-700 hover:bg-neutral-700 hover:text-white"
@@ -395,7 +395,7 @@ export default function FilterBar({
       {/* Mobile Filter Pills */}
       <div className="md:hidden space-y-3">
         {/* Filter Buttons Row */}
-        <div className="flex gap-3 pb-2 overflow-x-auto">
+        <div className="flex justify-center gap-2 pb-2">
           <div ref={mobileCategoryDropdownRef}>
             <FilterPill
               label={getCategoryLabel()}
@@ -464,7 +464,7 @@ export default function FilterBar({
                     onCategoryToggle(category);
                   }}
                   className={`
-                    flex items-center gap-1.5 px-2 py-1 rounded-md text-xs font-medium transition-all select-none
+                    flex items-center gap-1.5 px-2 py-1 rounded-md text-xs font-medium transition-colors select-none
                     ${selectedCategories.includes(category)
                       ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
                       : "bg-neutral-800 text-neutral-400 border border-neutral-700 hover:bg-neutral-700 hover:text-white active:bg-neutral-600"
@@ -502,7 +502,7 @@ export default function FilterBar({
                     onVenueToggle(venue);
                   }}
                   className={`
-                    px-2 py-1 rounded-md text-xs font-medium transition-all select-none
+                    px-2 py-1 rounded-md text-xs font-medium transition-colors select-none
                     ${selectedVenues.includes(venue)
                       ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
                       : "bg-neutral-800 text-neutral-400 border border-neutral-700 hover:bg-neutral-700 hover:text-white active:bg-neutral-600"
