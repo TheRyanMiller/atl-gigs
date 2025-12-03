@@ -160,7 +160,9 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   const getItemSize = useCallback(
     (index: number) => {
       const event = filteredEvents[index];
-      return getItemHeight(event, isMobile) + 16; // +16 for gap
+      const baseHeight = getItemHeight(event, isMobile) + 16; // card + gap
+      // Add buffer space above first item so it doesn't touch sticky header
+      return index === 0 ? baseHeight + 12 : baseHeight;
     },
     [filteredEvents, isMobile]
   );
@@ -170,7 +172,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
     ({ index, style }: { index: number; style: React.CSSProperties }) => {
       const event = filteredEvents[index];
       return (
-        <div style={{ ...style, paddingBottom: 16 }}>
+        <div style={{ ...style, paddingTop: index === 0 ? 12 : 0, paddingBottom: 16 }}>
           <EventCard
             key={event.slug}
             event={event}
@@ -201,7 +203,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       </div>
 
       {/* Events List - Virtualized */}
-      <div className="flex-1 pt-3 max-w-6xl mx-auto w-full px-4">
+      <div className="flex-1 max-w-6xl mx-auto w-full px-4">
         {loading && (
           <div className="text-center py-20">
             <Loader2 size={48} className="mx-auto text-teal-500 animate-spin" />

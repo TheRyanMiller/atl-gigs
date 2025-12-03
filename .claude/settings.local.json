@@ -65,12 +65,16 @@
       "Bash(git rebase:*)",
       "Bash(git update-index:*)",
       "mcp__chrome-devtools__performance_stop_trace",
+<<<<<<< Updated upstream
       "mcp__chrome-devtools__performance_analyze_insight",
       "mcp__chrome-devtools__press_key",
       "mcp__chrome-devtools__take_screenshot",
       "Bash(git rm:*)",
       "Bash(GIT_EDITOR=true git rebase:*)",
       "mcp__chrome-devtools__resize_page"
+=======
+      "mcp__chrome-devtools__performance_analyze_insight"
+>>>>>>> Stashed changes
     ],
     "deny": [],
     "ask": []
