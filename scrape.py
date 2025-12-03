@@ -913,23 +913,60 @@ def enrich_events_with_tm(events):
 
 EARL_BASE   = "https://badearl.com/show-calendar/"
 EARL_PAGE_Q = "?sf_paged={}"
+# Updated Dec 2025: Modern Chrome headers to avoid blocking
 EARL_HEADERS = {
-    "User-Agent":      "Mozilla/5.0 (X11; Linux x86_64)",
-    "Accept-Language": "en-US,en;q=0.8",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Sec-CH-UA": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+    "Sec-CH-UA-Mobile": "?0",
+    "Sec-CH-UA-Platform": '"Windows"',
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
 }
 
 def scrape_earl():
     """Scrape events from The Earl's website."""
+    max_retries = 3
+
+    def fetch_with_retry(url):
+        """Fetch URL with retry logic for timeouts and errors."""
+        for attempt in range(max_retries):
+            try:
+                r = requests.get(url, headers=EARL_HEADERS, timeout=30)
+                if r.status_code == 200:
+                    return r.text
+                elif r.status_code >= 500:
+                    # Server error, retry
+                    if attempt < max_retries - 1:
+                        wait = (2 ** attempt) * 2 + random.uniform(1, 3)
+                        time.sleep(wait)
+                        continue
+                return None
+            except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+                if attempt < max_retries - 1:
+                    wait = (2 ** attempt) * 2 + random.uniform(1, 3)
+                    print(f"    The Earl: Retry {attempt + 1}/{max_retries} after {type(e).__name__}...")
+                    time.sleep(wait)
+                else:
+                    raise
+        return None
+
     def pages():
         n = 1
         while True:
             url = EARL_BASE if n == 1 else EARL_BASE + EARL_PAGE_Q.format(n)
-            r = requests.get(url, headers=EARL_HEADERS, timeout=15)
-            if r.status_code != 200 or "No results found." in r.text:
+            text = fetch_with_retry(url)
+            if text is None or "No results found." in text:
                 break
-            yield r.text
+            yield text
             n += 1
-            time.sleep(0.3)  # Rate limiting between pages
+            time.sleep(random.uniform(1.0, 2.0))  # Rate limiting between pages
 
     def parse_page(html):
         soup = BeautifulSoup(html, "html.parser")
