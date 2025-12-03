@@ -69,13 +69,6 @@ function EventCard({ event, onClick }: EventCardProps) {
       className="group relative bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-teal-500/30 rounded-2xl overflow-hidden transition-colors duration-200 flex flex-col sm:flex-row sm:items-stretch cursor-pointer"
       onClick={onClick}
     >
-      {/* Date Badge - Mobile Only */}
-      <div className="absolute top-3 left-3 sm:hidden z-10 bg-neutral-950 border border-neutral-700 px-3 py-1 rounded-full text-xs font-bold text-white flex items-center gap-2">
-        <span className="text-teal-400">{month} {day}</span>
-        <span className="w-1 h-1 bg-neutral-600 rounded-full"></span>
-        <span className="text-neutral-300">{venue}</span>
-      </div>
-
       {/* Image Section */}
       <div className="relative w-full h-32 sm:h-auto sm:min-h-[160px] sm:w-52 sm:self-stretch shrink-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent sm:hidden z-[1]" />
@@ -91,23 +84,23 @@ function EventCard({ event, onClick }: EventCardProps) {
           </div>
         )}
 
-        {/* Desktop Date Box overlay on image */}
-        <div className="hidden sm:flex absolute top-3 left-3 flex-col items-center justify-center bg-neutral-950 border border-neutral-700 w-11 h-11 rounded-xl z-10">
+        {/* Date Box overlay on image */}
+        <div className="flex absolute top-1.5 left-2 sm:top-1.5 sm:left-1.5 flex-col items-center justify-center bg-neutral-950 border border-neutral-700 w-11 h-11 rounded-xl z-10">
           <span className="text-[9px] font-bold text-teal-400 uppercase tracking-wider">{month}</span>
           <span className="text-base font-bold text-white leading-none">{day}</span>
         </div>
 
         {/* Category Badge overlay on image */}
-        <div className="absolute bottom-3 right-3 flex items-center gap-1 bg-neutral-950 border border-neutral-700 px-2 py-1.5 rounded-lg z-10">
+        <div className="absolute bottom-1.5 right-1 sm:bottom-1.5 sm:right-1.5 flex items-center gap-1 bg-neutral-950 border border-neutral-700 px-2 py-1.5 rounded-lg z-10">
           <FontAwesomeIcon icon={categoryIcons[category]} className="w-3 h-3 text-teal-400" />
           <span className="text-[10px] font-bold text-white uppercase tracking-wider leading-none">{CATEGORY_LABELS[category]}</span>
         </div>
       </div>
 
-      {/* Favorite Star Button - Top right of card */}
+      {/* Favorite Star Button - Top right of card (desktop only) */}
       <button
         onClick={handleFavorite}
-        className="absolute top-3 right-4 sm:right-5 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-neutral-800 border border-neutral-700 transition-colors hover:bg-neutral-700"
+        className="hidden sm:flex absolute top-3 right-5 z-20 w-8 h-8 items-center justify-center rounded-full bg-neutral-800 border border-neutral-700 transition-colors hover:bg-neutral-700"
       >
         <Star
           size={16}
@@ -167,6 +160,17 @@ function EventCard({ event, onClick }: EventCardProps) {
 
         {/* Action Area */}
         <div className="flex items-center justify-center sm:justify-end gap-2 sm:w-[30%] sm:ml-auto sm:self-stretch sm:flex-row sm:items-center sm:gap-3 sm:mt-auto sm:mb-1">
+          {/* Favorite Button (mobile only) */}
+          <button
+            onClick={handleFavorite}
+            className="flex sm:hidden items-center justify-center w-10 h-10 shrink-0 rounded-lg transition-colors bg-neutral-800 hover:bg-neutral-700 border border-neutral-700"
+          >
+            <Star
+              size={16}
+              className={favorited ? "fill-yellow-400 text-yellow-400" : "text-white/60"}
+            />
+          </button>
+
           {/* Share Button */}
           <button
             onClick={handleShare}
