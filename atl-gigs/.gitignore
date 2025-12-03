@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 .vercel
 .env*.local
+
+# Generated OG images
+public/og/
