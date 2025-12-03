@@ -1,4 +1,6 @@
-import { useState, useMemo, useCallback, useEffect } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
+import { VariableSizeList as List } from "react-window";
+import AutoSizer from "react-virtualized-auto-sizer";
 import { Music, Loader2 } from "lucide-react";
 import { Event, EventCategory, ALL_CATEGORIES } from "../types";
 import EventCard from "../components/EventCard";
@@ -24,11 +26,31 @@ const getTodayString = () => {
   return eastern; // Returns YYYY-MM-DD format
 };
 
+// Estimate row height based on event content
+const getItemHeight = (event: Event, isMobile: boolean): number => {
+  const baseHeight = isMobile ? 280 : 180;
+  // Add height for support artists (if any)
+  if (event.artists.length > 1) {
+    return baseHeight + (isMobile ? 24 : 20);
+  }
+  return baseHeight;
+};
+
 export default function Home({ events, loading, onEventClick }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedVenues, setSelectedVenues] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<EventCategory[]>([]);
   const [dateRange, setDateRange] = useState<DateRange>({ start: null, end: null });
+  const [isMobile, setIsMobile] = useState(false);
+  const listRef = useRef<List>(null);
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Archive hook for loading past events
   const { archiveEvents, loadMonthsForRange } = useArchive();
@@ -107,6 +129,16 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
     });
   }, [allEvents, searchQuery, selectedCategories, selectedVenues, dateRange]);
 
+  // Reset list scroll when filters change
+  useEffect(() => {
+    listRef.current?.scrollTo(0);
+  }, [searchQuery, selectedCategories, selectedVenues, dateRange]);
+
+  // Reset list cache when filtered events or mobile state changes
+  useEffect(() => {
+    listRef.current?.resetAfterIndex(0);
+  }, [filteredEvents, isMobile]);
+
   const handleSearchChange = useCallback((query: string) => {
     setSearchQuery(query);
   }, []);
@@ -127,30 +159,50 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
     setDateRange(range);
   }, []);
 
-  return (
-    <div className="space-y-6">
-      {/* Search & Filters */}
-      <FilterBar
-        venues={venues}
-        selectedVenues={selectedVenues}
-        onVenueToggle={handleVenueToggle}
-        categories={categories}
-        selectedCategories={selectedCategories}
-        onCategoryToggle={handleCategoryToggle}
-        onSearchChange={handleSearchChange}
-        onDateRangeChange={handleDateRangeChange}
-      />
+  // Get item size for virtualized list
+  const getItemSize = useCallback(
+    (index: number) => {
+      const event = filteredEvents[index];
+      return getItemHeight(event, isMobile) + 16; // +16 for gap
+    },
+    [filteredEvents, isMobile]
+  );
 
-      {/* Events List */}
-      <div className="space-y-4 max-w-6xl mx-auto">
-        {filteredEvents.map((event, index) => (
+  // Row renderer for virtualized list
+  const Row = useCallback(
+    ({ index, style }: { index: number; style: React.CSSProperties }) => {
+      const event = filteredEvents[index];
+      return (
+        <div style={{ ...style, paddingBottom: 16 }}>
           <EventCard
-            key={`${event.venue}-${event.date}-${index}`}
+            key={event.slug}
             event={event}
             onClick={() => onEventClick(event)}
           />
-        ))}
+        </div>
+      );
+    },
+    [filteredEvents, onEventClick]
+  );
 
+  return (
+    <div className="flex flex-col h-[calc(100vh-80px)]">
+      {/* Search & Filters */}
+      <div className="max-w-6xl mx-auto w-full px-4">
+        <FilterBar
+          venues={venues}
+          selectedVenues={selectedVenues}
+          onVenueToggle={handleVenueToggle}
+          categories={categories}
+          selectedCategories={selectedCategories}
+          onCategoryToggle={handleCategoryToggle}
+          onSearchChange={handleSearchChange}
+          onDateRangeChange={handleDateRangeChange}
+        />
+      </div>
+
+      {/* Events List - Virtualized */}
+      <div className="flex-1 mt-6 max-w-6xl mx-auto w-full px-4">
         {loading && (
           <div className="text-center py-20">
             <Loader2 size={48} className="mx-auto text-teal-500 animate-spin" />
@@ -163,6 +215,23 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
             <h3 className="text-xl font-bold text-white">No gigs found</h3>
             <p className="text-neutral-500 mt-2">Try adjusting your search terms</p>
           </div>
+        )}
+
+        {!loading && filteredEvents.length > 0 && (
+          <AutoSizer>
+            {({ height, width }) => (
+              <List
+                ref={listRef}
+                height={height}
+                width={width}
+                itemCount={filteredEvents.length}
+                itemSize={getItemSize}
+                overscanCount={3}
+              >
+                {Row}
+              </List>
+            )}
+          </AutoSizer>
         )}
       </div>
     </div>

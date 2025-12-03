@@ -35,6 +35,17 @@ body {
   display: none;
 }
 
+/* Hide scrollbar on virtualized list */
+[style*="overflow: auto"],
+[style*="overflow:auto"] {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+[style*="overflow: auto"]::-webkit-scrollbar,
+[style*="overflow:auto"]::-webkit-scrollbar {
+  display: none;
+}
+
 /* Custom date input styling for dark mode */
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);

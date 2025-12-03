@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { format } from "date-fns";
-import { X, MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays, Star } from "lucide-react";
+import { MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays, Star } from "lucide-react";
 import { Event } from "../types";
 import { useFavorites } from "../context/FavoritesContext";
 
@@ -83,30 +83,18 @@ export default function EventModal({ event, onClose }: EventModalProps) {
               leaveTo="opacity-0"
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border-2 border-teal-500/40 text-left shadow-xl sm:my-8 sm:w-full sm:max-w-2xl">
-                {/* Top action buttons */}
-                <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
-                  {/* Favorite button */}
-                  <button
-                    type="button"
-                    className="rounded-full bg-neutral-800 p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
-                    onClick={() => toggleFavorite(slug)}
-                  >
-                    <span className="sr-only">{isFavorite(slug) ? "Remove from favorites" : "Add to favorites"}</span>
-                    <Star
-                      size={20}
-                      className={isFavorite(slug) ? "fill-yellow-400 text-yellow-400" : ""}
-                    />
-                  </button>
-                  {/* Close button */}
-                  <button
-                    type="button"
-                    className="rounded-full bg-neutral-800 p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
-                    onClick={onClose}
-                  >
-                    <span className="sr-only">Close</span>
-                    <X size={20} />
-                  </button>
-                </div>
+                {/* Favorite button - top right */}
+                <button
+                  type="button"
+                  className="absolute right-3 top-3 z-10 rounded-full bg-neutral-800 p-2 text-neutral-400 hover:text-white hover:bg-neutral-700 transition-colors"
+                  onClick={() => toggleFavorite(slug)}
+                >
+                  <span className="sr-only">{isFavorite(slug) ? "Remove from favorites" : "Add to favorites"}</span>
+                  <Star
+                    size={20}
+                    className={isFavorite(slug) ? "fill-yellow-400 text-yellow-400" : ""}
+                  />
+                </button>
 
                 <div className="sm:flex">
                   {/* Image */}
@@ -137,7 +125,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                   <div className="p-6 flex-1">
                     <Dialog.Title
                       as="h3"
-                      className="text-2xl font-bold text-white mb-1"
+                      className="text-2xl font-bold text-white mb-1 pr-12"
                     >
                       {artists[0]?.name}
                     </Dialog.Title>
