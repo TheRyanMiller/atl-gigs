@@ -100,43 +100,34 @@ function EventCard({ event, onClick }: EventCardProps) {
           <span className="text-base font-bold text-white leading-none">{day}</span>
         </div>
 
-        {/* NEW Badge overlay on image */}
+        {/* New Badge overlay on image (bottom right) */}
         {isNew && (
-          <div className="absolute top-1.5 right-1 sm:top-1.5 sm:right-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-lg z-10 shadow-lg">
-            NEW
+          <div className="absolute bottom-1.5 right-1 sm:bottom-1.5 sm:right-1.5 bg-teal-400 text-neutral-900 text-[9px] font-bold uppercase tracking-tight px-1.5 py-0.5 rounded z-10 shadow-md shadow-black/50 border border-black/30">
+            Newly Added!
           </div>
         )}
-
-        {/* Category Badge overlay on image */}
-        <div className="absolute bottom-1.5 right-1 sm:bottom-1.5 sm:right-1.5 flex items-center gap-1 bg-neutral-950 border border-neutral-700 px-2 py-1.5 rounded-lg z-10">
-          <FontAwesomeIcon icon={categoryIcons[category]} className="w-3 h-3 text-teal-400" />
-          <span className="text-[10px] font-bold text-white uppercase tracking-wider leading-none">{CATEGORY_LABELS[category]}</span>
-        </div>
       </div>
 
-      {/* Favorite Star Button - Top right of card (desktop only) */}
-      <button
-        onClick={handleFavorite}
-        className="hidden sm:flex absolute top-3 right-5 z-10 w-8 h-8 items-center justify-center rounded-full bg-neutral-800 border border-neutral-700 transition-colors hover:bg-neutral-700"
-      >
-        <Star
-          size={16}
-          className={favorited ? "fill-yellow-400 text-yellow-400" : "text-white/60 hover:text-white"}
-        />
-      </button>
+      {/* Category Badge - Top right of card (desktop only) */}
+      <div className="hidden sm:flex absolute top-3 right-5 z-10 items-center gap-1 bg-neutral-800/90 border border-neutral-700 px-1.5 py-0.5 rounded">
+        <FontAwesomeIcon icon={categoryIcons[category]} className="w-2.5 h-2.5 text-teal-400" />
+        <span className="text-[10px] font-medium text-neutral-400">{CATEGORY_LABELS[category]}</span>
+      </div>
 
       {/* Content + Actions */}
       <div className="flex flex-1 flex-col sm:flex-row sm:items-start relative z-[2] p-4 sm:px-5 sm:pt-5 pb-3 sm:pb-3 gap-4 sm:gap-6">
+        {/* Category Badge - Mobile only, top right of content area */}
+        <div className="flex sm:hidden absolute top-3 right-3 z-10 items-center gap-1 bg-neutral-800/90 border border-neutral-700 px-1.5 py-0.5 rounded">
+          <FontAwesomeIcon icon={categoryIcons[category]} className="w-2.5 h-2.5 text-teal-400" />
+          <span className="text-[10px] font-medium text-neutral-400">{CATEGORY_LABELS[category]}</span>
+        </div>
+
         {/* Text block */}
         <div className="flex-1 sm:w-[70%]">
           <div className="mb-2.5">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3 className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors leading-snug">
-                  {mainArtist}
-                </h3>
-              </div>
-            </div>
+            <h3 className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors leading-snug pr-20 sm:pr-0">
+              {mainArtist}
+            </h3>
 
             {supportArtists.length > 0 && (
               <p className="text-neutral-400 text-sm mt-2 line-clamp-1">
@@ -165,7 +156,7 @@ function EventCard({ event, onClick }: EventCardProps) {
                 <Ticket size={14} className="text-teal-500 shrink-0" />
                 <span>
                   {price === "See website" ? (
-                    <span className="text-neutral-500">{price}</span>
+                    <span className="text-neutral-500">See website for prices</span>
                   ) : (
                     price
                   )}
@@ -177,27 +168,27 @@ function EventCard({ event, onClick }: EventCardProps) {
 
         {/* Action Area */}
         <div className="flex items-center justify-center sm:justify-end gap-2 sm:w-[30%] sm:ml-auto sm:self-stretch sm:flex-row sm:items-center sm:gap-3 sm:mt-auto sm:mb-1">
-          {/* Favorite Button (mobile only) */}
-          <button
-            onClick={handleFavorite}
-            className="flex sm:hidden items-center justify-center w-10 h-10 shrink-0 rounded-lg transition-colors bg-neutral-800 hover:bg-neutral-700 border border-neutral-700"
-          >
-            <Star
-              size={16}
-              className={favorited ? "fill-yellow-400 text-yellow-400" : "text-white/60"}
-            />
-          </button>
-
           {/* Share Button */}
           <button
             onClick={handleShare}
-            className="flex items-center justify-center w-10 h-10 shrink-0 rounded-lg transition-colors bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
+            className="flex items-center justify-center w-10 h-10 shrink-0 rounded-lg transition-colors bg-neutral-800 hover:bg-neutral-700 border border-neutral-700"
           >
             {copied ? (
               <Check size={14} className="text-green-400" />
             ) : (
               <Share2 size={16} className="text-teal-400" />
             )}
+          </button>
+
+          {/* Favorite Button */}
+          <button
+            onClick={handleFavorite}
+            className="flex items-center justify-center w-10 h-10 shrink-0 rounded-lg transition-colors bg-neutral-800 hover:bg-neutral-700 border border-neutral-700"
+          >
+            <Star
+              size={16}
+              className={favorited ? "fill-yellow-400 text-yellow-400" : "text-teal-400"}
+            />
           </button>
 
           {/* Get Tickets Button */}

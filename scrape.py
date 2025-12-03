@@ -15,7 +15,7 @@ Currently supports:
 - Center Stage / The Loft / Vinyl
 """
 
-import requests, datetime as dt, re, itertools, json, time, os, traceback
+import requests, datetime as dt, re, itertools, json, time, os, traceback, random
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -1180,13 +1180,16 @@ FOX_THEATRE_BASE = "https://www.foxtheatre.org"
 # Headers for Fox Theatre AJAX API requests (mimics browser XHR)
 FOX_THEATRE_AJAX_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "*/*",
+    "Accept": "application/json, text/javascript, */*; q=0.01",
     "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
     "X-Requested-With": "XMLHttpRequest",
     "Referer": "https://www.foxtheatre.org/events",
+    "Origin": "https://www.foxtheatre.org",
     "Sec-Fetch-Dest": "empty",
     "Sec-Fetch-Mode": "cors",
     "Sec-Fetch-Site": "same-origin",
+    "Cache-Control": "no-cache",
 }
 
 def parse_fox_date_range(date_text):
@@ -1244,144 +1247,192 @@ def parse_fox_date_range(date_text):
 
     return None, None
 
+
+def init_fox_session(max_retries=3):
+    """
+    Initialize a session with Fox Theatre cookies.
+    Retries cookie acquisition to handle transient failures.
+    """
+    session = requests.Session()
+    session.headers.update(FOX_THEATRE_AJAX_HEADERS)
+
+    for attempt in range(max_retries):
+        try:
+            resp = session.get(f"{FOX_THEATRE_BASE}/events", timeout=15)
+            if resp.status_code == 200:
+                # Successfully got the page, session should have cookies
+                return session
+        except Exception:
+            pass
+
+        if attempt < max_retries - 1:
+            time.sleep(1 + random.uniform(0, 1))
+
+    # Return session anyway - might work without cookies
+    return session
+
+
 def scrape_fox_ajax_all_events():
     """
     Scrape ALL Fox Theatre events using their AJAX pagination API.
     This endpoint returns HTML with the same structure as the main page,
     allowing us to get all events including those behind "Load More" pagination.
     Returns a list of events with fox_category set based on CSS classes.
+
+    Includes retry logic with session refresh to handle ephemeral 406 errors.
     """
     events = []
     seen_urls = set()
     offset = 0
     per_page = 100  # Request many at once to minimize requests
+    max_retries = 3  # Max retries per request
 
-    # Use a session to maintain cookies (helps avoid 406 errors)
-    session = requests.Session()
-    session.headers.update(FOX_THEATRE_AJAX_HEADERS)
-
-    # First visit the main events page to get any required cookies
-    try:
-        session.get(f"{FOX_THEATRE_BASE}/events", timeout=15)
-    except Exception:
-        pass  # Continue even if this fails
+    # Initialize session with cookies
+    session = init_fox_session()
 
     while True:
         ajax_url = f"{FOX_THEATRE_BASE}/events/events_ajax/{offset}?category=0&venue=0&team=0&exclude=&per_page={per_page}&came_from_page=event-list-page"
 
-        try:
-            resp = session.get(ajax_url, timeout=15)
-            resp.raise_for_status()
-
-            # Response is JSON-encoded HTML string
+        # Retry loop with 406-specific recovery
+        resp = None
+        last_error = None
+        for attempt in range(max_retries):
             try:
-                html = json.loads(resp.text)
-            except json.JSONDecodeError:
-                html = resp.text  # Fallback to raw text
+                resp = session.get(ajax_url, timeout=15)
 
-            if not html.strip() or '<div class="eventItem' not in html:
-                break  # No more events
-
-            soup = BeautifulSoup(html, "html.parser")
-            cards = soup.select("div.eventItem")
-
-            if not cards:
-                break
-
-            for card in cards:
-                title_el = card.select_one("h3.title a, h3.title, .title a")
-                if title_el:
-                    title = title_el.get_text(strip=True)
-                else:
-                    link = card.select_one("a[title*='More Info']")
-                    title = link.get("title", "").replace("More Info for ", "") if link else None
-
-                if not title:
-                    continue
-
-                detail_link = card.select_one("h3.title a, a.more, a[href*='/events/detail/']")
-                if not detail_link:
-                    continue
-                detail_url = detail_link.get("href", "")
-                if not detail_url.startswith("http"):
-                    detail_url = FOX_THEATRE_BASE + detail_url
-
-                if detail_url in seen_urls:
-                    continue
-                seen_urls.add(detail_url)
-
-                # Extract date
-                date_div = card.select_one("div.date")
-                if date_div:
-                    month = date_div.select_one(".m-date__month")
-                    day = date_div.select_one(".m-date__day")
-                    year = date_div.select_one(".m-date__year")
-
-                    if month and day and year:
-                        range_end = date_div.select_one(".m-date__rangeLast")
-                        if range_end:
-                            end_month = range_end.select_one(".m-date__month")
-                            end_day = range_end.select_one(".m-date__day")
-                            date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}-{end_month.get_text(strip=True) + ' ' if end_month else ''}{end_day.get_text(strip=True)}{year.get_text(strip=True)}"
-                        else:
-                            date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}{year.get_text(strip=True)}"
+                # Handle 406 specifically - refresh session and retry
+                if resp.status_code == 406:
+                    if attempt < max_retries - 1:
+                        wait = (2 ** attempt) + random.uniform(0, 1)
+                        print(f"    Fox Theatre: 406 error, refreshing session (attempt {attempt + 1}/{max_retries})...")
+                        time.sleep(wait)
+                        session = init_fox_session()
+                        continue
                     else:
-                        date_text = date_div.get_text(strip=True)
+                        raise requests.exceptions.HTTPError(f"406 Client Error after {max_retries} retries")
+
+                resp.raise_for_status()
+                break  # Success
+
+            except requests.exceptions.RequestException as e:
+                last_error = e
+                if attempt < max_retries - 1:
+                    wait = (2 ** attempt) + random.uniform(0, 1)
+                    time.sleep(wait)
+                    # Refresh session on any error
+                    session = init_fox_session()
                 else:
-                    card_text = card.get_text()
-                    date_match = re.search(r'([A-Z][a-z]{2,}\s+\d+(?:-(?:[A-Z][a-z]{2,}\s+)?\d+)?,\s*\d{4})', card_text)
-                    date_text = date_match.group(1) if date_match else None
+                    raise
 
-                if not date_text:
-                    continue
+        if resp is None:
+            raise last_error or Exception("Failed to fetch Fox Theatre events")
 
-                start_date, end_date = parse_fox_date_range(date_text)
-                if not start_date:
-                    continue
+        # Response is JSON-encoded HTML string
+        try:
+            html = json.loads(resp.text)
+        except json.JSONDecodeError:
+            html = resp.text  # Fallback to raw text
 
-                # Extract image
-                img = card.select_one("div.thumb img, .thumb img, img")
-                image_url = None
-                if img:
-                    image_url = img.get("src") or img.get("data-src")
-                    if image_url and not image_url.startswith("http"):
-                        image_url = FOX_THEATRE_BASE + image_url
+        if not html.strip() or '<div class="eventItem' not in html:
+            break  # No more events
 
-                # Extract ticket URL
-                ticket_link = card.select_one("a.tickets, a[href*='evenue.net']")
-                ticket_url = ticket_link.get("href").strip() if ticket_link else detail_url
+        soup = BeautifulSoup(html, "html.parser")
+        cards = soup.select("div.eventItem")
 
-                # Determine category from CSS classes on eventItem
-                card_classes = card.get("class", [])
-                if "broadway" in card_classes:
-                    fox_category = "broadway"
-                elif "comedy" in card_classes:
-                    fox_category = "comedy"
-                elif "concerts" in card_classes:
-                    fox_category = "concerts"
-                else:
-                    fox_category = "misc"
-
-                events.append({
-                    "title": title,
-                    "date": start_date,
-                    "end_date": end_date if end_date != start_date else None,
-                    "info_url": detail_url,
-                    "ticket_url": ticket_url,
-                    "image_url": image_url,
-                    "fox_category": fox_category,
-                })
-
-            # Check if we got fewer than requested - means we're done
-            if len(cards) < per_page:
-                break
-
-            offset += len(cards)
-            time.sleep(0.3)  # Rate limiting between pages
-
-        except Exception as e:
-            print(f"    Fox Theatre AJAX offset {offset}: ERROR - {e}")
+        if not cards:
             break
+
+        for card in cards:
+            title_el = card.select_one("h3.title a, h3.title, .title a")
+            if title_el:
+                title = title_el.get_text(strip=True)
+            else:
+                link = card.select_one("a[title*='More Info']")
+                title = link.get("title", "").replace("More Info for ", "") if link else None
+
+            if not title:
+                continue
+
+            detail_link = card.select_one("h3.title a, a.more, a[href*='/events/detail/']")
+            if not detail_link:
+                continue
+            detail_url = detail_link.get("href", "")
+            if not detail_url.startswith("http"):
+                detail_url = FOX_THEATRE_BASE + detail_url
+
+            if detail_url in seen_urls:
+                continue
+            seen_urls.add(detail_url)
+
+            # Extract date
+            date_div = card.select_one("div.date")
+            if date_div:
+                month = date_div.select_one(".m-date__month")
+                day = date_div.select_one(".m-date__day")
+                year = date_div.select_one(".m-date__year")
+
+                if month and day and year:
+                    range_end = date_div.select_one(".m-date__rangeLast")
+                    if range_end:
+                        end_month = range_end.select_one(".m-date__month")
+                        end_day = range_end.select_one(".m-date__day")
+                        date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}-{end_month.get_text(strip=True) + ' ' if end_month else ''}{end_day.get_text(strip=True)}{year.get_text(strip=True)}"
+                    else:
+                        date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}{year.get_text(strip=True)}"
+                else:
+                    date_text = date_div.get_text(strip=True)
+            else:
+                card_text = card.get_text()
+                date_match = re.search(r'([A-Z][a-z]{2,}\s+\d+(?:-(?:[A-Z][a-z]{2,}\s+)?\d+)?,\s*\d{4})', card_text)
+                date_text = date_match.group(1) if date_match else None
+
+            if not date_text:
+                continue
+
+            start_date, end_date = parse_fox_date_range(date_text)
+            if not start_date:
+                continue
+
+            # Extract image
+            img = card.select_one("div.thumb img, .thumb img, img")
+            image_url = None
+            if img:
+                image_url = img.get("src") or img.get("data-src")
+                if image_url and not image_url.startswith("http"):
+                    image_url = FOX_THEATRE_BASE + image_url
+
+            # Extract ticket URL
+            ticket_link = card.select_one("a.tickets, a[href*='evenue.net']")
+            ticket_url = ticket_link.get("href").strip() if ticket_link else detail_url
+
+            # Determine category from CSS classes on eventItem
+            card_classes = card.get("class", [])
+            if "broadway" in card_classes:
+                fox_category = "broadway"
+            elif "comedy" in card_classes:
+                fox_category = "comedy"
+            elif "concerts" in card_classes:
+                fox_category = "concerts"
+            else:
+                fox_category = "misc"
+
+            events.append({
+                "title": title,
+                "date": start_date,
+                "end_date": end_date if end_date != start_date else None,
+                "info_url": detail_url,
+                "ticket_url": ticket_url,
+                "image_url": image_url,
+                "fox_category": fox_category,
+            })
+
+        # Check if we got fewer than requested - means we're done
+        if len(cards) < per_page:
+            break
+
+        offset += len(cards)
+        # Random delay to avoid rate limiting / bot detection
+        time.sleep(0.5 + random.uniform(0, 1))
 
     return events
 

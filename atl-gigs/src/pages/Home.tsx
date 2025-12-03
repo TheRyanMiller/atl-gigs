@@ -16,31 +16,43 @@ interface DateRange {
   end: string | null;
 }
 
+// Get today's date in YYYY-MM-DD format for comparison (US Eastern timezone)
+const getTodayString = () => {
+  const now = new Date();
+  // Format in Eastern time to get the current date in Atlanta
+  const eastern = now.toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+  return eastern; // Returns YYYY-MM-DD format
+};
+
 export default function Home({ events, loading, onEventClick }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedVenues, setSelectedVenues] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<EventCategory[]>([]);
   const [dateRange, setDateRange] = useState<DateRange>({ start: null, end: null });
-  const [includePast, setIncludePast] = useState(false);
 
   // Archive hook for loading past events
-  const { archiveIndex, archiveEvents, loadAllMonths, loading: archiveLoading } = useArchive();
+  const { archiveEvents, loadMonthsForRange } = useArchive();
 
-  // Load archive events when includePast is enabled
+  // Load archive events when date range includes past dates
   useEffect(() => {
-    if (includePast && archiveIndex && archiveEvents.length === 0) {
-      loadAllMonths();
+    const today = getTodayString();
+    if (dateRange.start && dateRange.start < today) {
+      loadMonthsForRange(dateRange.start, dateRange.end);
     }
-  }, [includePast, archiveIndex, archiveEvents.length, loadAllMonths]);
+  }, [dateRange.start, dateRange.end, loadMonthsForRange]);
 
-  // Combine events with archive when includePast is enabled
+  // Combine events with archive when date range includes past dates
   const allEvents = useMemo(() => {
-    if (!includePast) return events;
+    const today = getTodayString();
+    // Only merge archives if user selected a past start date
+    if (!dateRange.start || dateRange.start >= today) {
+      return events;
+    }
     // Merge and deduplicate by slug
     const slugs = new Set(events.map((e) => e.slug));
     const uniqueArchive = archiveEvents.filter((e) => !slugs.has(e.slug));
     return [...events, ...uniqueArchive];
-  }, [events, archiveEvents, includePast]);
+  }, [events, archiveEvents, dateRange.start]);
 
   // Get unique venues
   const venues = useMemo(() => {
@@ -54,20 +66,21 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
     return ALL_CATEGORIES.filter((cat) => eventCategories.has(cat));
   }, [events]);
 
-  // Get today's date in YYYY-MM-DD format for comparison (US Eastern timezone)
-  const getTodayString = () => {
-    const now = new Date();
-    // Format in Eastern time to get the current date in Atlanta
-    const eastern = now.toLocaleDateString("en-CA", { timeZone: "America/New_York" });
-    return eastern; // Returns YYYY-MM-DD format
-  };
-
   // Filter events based on search, category, venue selection, and date range
   const filteredEvents = useMemo(() => {
     const today = getTodayString();
     return allEvents.filter((event) => {
-      // Filter out past events (before today) unless includePast is enabled
-      if (!includePast && event.date < today) {
+      // Default to today onwards when no start date is set
+      // (Past events require explicit start date selection)
+      if (!dateRange.start && event.date < today) {
+        return false;
+      }
+
+      // Explicit date range filtering
+      if (dateRange.start && event.date < dateRange.start) {
+        return false;
+      }
+      if (dateRange.end && event.date > dateRange.end) {
         return false;
       }
 
@@ -81,17 +94,6 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
         return false;
       }
 
-      // Date range filter
-      if (dateRange.start || dateRange.end) {
-        const eventDate = event.date;
-        if (dateRange.start && eventDate < dateRange.start) {
-          return false;
-        }
-        if (dateRange.end && eventDate > dateRange.end) {
-          return false;
-        }
-      }
-
       // Search filter
       if (searchQuery.length >= 3) {
         const query = searchQuery.toLowerCase();
@@ -103,7 +105,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       }
       return true;
     });
-  }, [allEvents, searchQuery, selectedCategories, selectedVenues, dateRange, includePast]);
+  }, [allEvents, searchQuery, selectedCategories, selectedVenues, dateRange]);
 
   const handleSearchChange = useCallback((query: string) => {
     setSearchQuery(query);
@@ -137,10 +139,6 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
         onCategoryToggle={handleCategoryToggle}
         onSearchChange={handleSearchChange}
         onDateRangeChange={handleDateRangeChange}
-        includePast={includePast}
-        onIncludePastChange={setIncludePast}
-        archiveLoading={archiveLoading}
-        archiveCount={archiveIndex?.total_events}
       />
 
       {/* Events List */}

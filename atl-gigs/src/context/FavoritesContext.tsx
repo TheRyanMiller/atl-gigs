@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback, useMemo, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, useCallback, useMemo, useRef, ReactNode } from "react";
 
 const STORAGE_KEY = "atl-gigs-favorites";
 
@@ -27,13 +27,33 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     return new Set();
   });
 
-  // Sync to localStorage whenever favorites change
+  // Keep a ref to the current favorites for sync access in isFavorite
+  const favoritesRef = useRef(favorites);
+  favoritesRef.current = favorites;
+
+  // Debounce localStorage writes to avoid blocking UI
+  const saveTimeoutRef = useRef<number | null>(null);
+
   useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify([...favorites]));
-    } catch (e) {
-      console.error("Failed to save favorites to localStorage:", e);
+    // Clear any pending save
+    if (saveTimeoutRef.current) {
+      clearTimeout(saveTimeoutRef.current);
     }
+
+    // Schedule async save
+    saveTimeoutRef.current = window.setTimeout(() => {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify([...favorites]));
+      } catch (e) {
+        console.error("Failed to save favorites to localStorage:", e);
+      }
+    }, 100);
+
+    return () => {
+      if (saveTimeoutRef.current) {
+        clearTimeout(saveTimeoutRef.current);
+      }
+    };
   }, [favorites]);
 
   const toggleFavorite = useCallback((slug: string) => {
@@ -48,7 +68,8 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const isFavorite = useCallback((slug: string) => favorites.has(slug), [favorites]);
+  // Stable isFavorite that uses ref - doesn't recreate on favorites change
+  const isFavorite = useCallback((slug: string) => favoritesRef.current.has(slug), []);
 
   const clearFavorites = useCallback(() => {
     setFavorites(new Set());
