@@ -13,7 +13,7 @@ export default function Header({ status, onStatusClick }: HeaderProps) {
   const { favoriteCount } = useFavorites();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-neutral-950">
+    <header className="sticky top-0 z-50 bg-neutral-950">
       <div className="max-w-5xl mx-auto px-4 h-14 sm:h-20 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">

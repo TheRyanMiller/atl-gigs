@@ -76,7 +76,7 @@ function EventCard({ event, onClick }: EventCardProps) {
 
   return (
     <div
-      className="group relative bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-teal-500/30 rounded-2xl overflow-hidden transition-colors duration-200 flex flex-col sm:flex-row sm:items-stretch cursor-pointer"
+      className="group relative bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-teal-500/30 rounded-2xl overflow-hidden transition-colors duration-200 flex flex-col sm:flex-row sm:items-stretch cursor-pointer h-[380px] sm:h-[180px]"
       onClick={onClick}
     >
       {/* Image Section */}
@@ -103,7 +103,7 @@ function EventCard({ event, onClick }: EventCardProps) {
         {/* New Badge overlay on image (bottom right) */}
         {isNew && (
           <div className="absolute bottom-1.5 right-1 sm:bottom-1.5 sm:right-1.5 bg-teal-400 text-neutral-900 text-[9px] font-bold uppercase tracking-tight px-1.5 py-0.5 rounded z-10 shadow-md shadow-black/50 border border-black/30">
-            Newly Added!
+            Just Added!
           </div>
         )}
       </div>

@@ -26,14 +26,11 @@ const getTodayString = () => {
   return eastern; // Returns YYYY-MM-DD format
 };
 
-// Estimate row height based on event content
-const getItemHeight = (event: Event, isMobile: boolean): number => {
-  const baseHeight = isMobile ? 280 : 180;
-  // Add height for support artists (if any)
-  if (event.artists.length > 1) {
-    return baseHeight + (isMobile ? 24 : 20);
-  }
-  return baseHeight;
+// Fixed row heights for consistent spacing
+const getItemHeight = (_event: Event, isMobile: boolean): number => {
+  // Card heights: mobile 380px, desktop 180px
+  // Add gap of 16px between cards
+  return isMobile ? 396 : 196; // card height + 16px gap
 };
 
 export default function Home({ events, loading, onEventClick }: HomeProps) {
@@ -186,23 +183,25 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   );
 
   return (
-    <div className="flex flex-col h-[calc(100vh-80px)]">
-      {/* Search & Filters */}
-      <div className="max-w-6xl mx-auto w-full px-4">
-        <FilterBar
-          venues={venues}
-          selectedVenues={selectedVenues}
-          onVenueToggle={handleVenueToggle}
-          categories={categories}
-          selectedCategories={selectedCategories}
-          onCategoryToggle={handleCategoryToggle}
-          onSearchChange={handleSearchChange}
-          onDateRangeChange={handleDateRangeChange}
-        />
+    <div className="flex flex-col h-[calc(100vh-64px)] sm:h-[calc(100vh-96px)]">
+      {/* Search & Filters - Sticky */}
+      <div className="sticky top-14 sm:top-20 z-40 bg-neutral-950 pb-2 border-b border-white/10">
+        <div className="max-w-6xl mx-auto w-full px-4">
+          <FilterBar
+            venues={venues}
+            selectedVenues={selectedVenues}
+            onVenueToggle={handleVenueToggle}
+            categories={categories}
+            selectedCategories={selectedCategories}
+            onCategoryToggle={handleCategoryToggle}
+            onSearchChange={handleSearchChange}
+            onDateRangeChange={handleDateRangeChange}
+          />
+        </div>
       </div>
 
       {/* Events List - Virtualized */}
-      <div className="flex-1 mt-6 max-w-6xl mx-auto w-full px-4">
+      <div className="flex-1 pt-3 max-w-6xl mx-auto w-full px-4">
         {loading && (
           <div className="text-center py-20">
             <Loader2 size={48} className="mx-auto text-teal-500 animate-spin" />

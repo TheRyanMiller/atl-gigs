@@ -45,7 +45,7 @@ const FilterPill = ({
   <button
     onClick={onClick}
     className={`
-      flex items-center gap-1 md:gap-1.5 px-2 py-1.5 md:px-3 md:py-3 rounded-lg md:rounded-xl text-sm font-medium transition-colors
+      flex items-center gap-1 md:gap-1.5 px-2 py-1.5 md:px-3 md:py-2 rounded-lg md:rounded-xl text-sm font-medium transition-colors
       border whitespace-nowrap h-full
       ${
         active
@@ -229,7 +229,7 @@ export default function FilterBar({
             placeholder="Search artists, venues, etc..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-neutral-900 border border-neutral-800 rounded-2xl py-4 pl-12 pr-12 text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent transition-colors"
+            className="w-full bg-neutral-900 border border-neutral-800 rounded-2xl py-3 md:py-2.5 pl-12 pr-12 text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent transition-colors"
           />
           {searchQuery && (
             <button
