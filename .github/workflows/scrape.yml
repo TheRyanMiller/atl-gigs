@@ -33,13 +33,15 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Cache artist classifications
+      - name: Cache event tracking data
         uses: actions/cache@v4
         with:
-          path: atl-gigs/public/events/artist-cache.json
-          key: artist-cache-${{ github.run_id }}
+          path: |
+            atl-gigs/public/events/artist-cache.json
+            atl-gigs/public/events/seen-cache.json
+          key: event-cache-${{ github.run_id }}
           restore-keys: |
-            artist-cache-
+            event-cache-
 
       - name: Run scraper
         run: |
@@ -55,8 +57,8 @@ jobs:
             EVENT_COUNT=$(python3 -c "import json; print(len(json.load(open('atl-gigs/public/events/events.json'))))")
             echo "- **Upcoming events:** $EVENT_COUNT" >> $GITHUB_STEP_SUMMARY
           fi
-          if [ -f atl-gigs/public/events/archive.json ]; then
-            ARCHIVE_COUNT=$(python3 -c "import json; print(len(json.load(open('atl-gigs/public/events/archive.json'))))")
+          if [ -f atl-gigs/public/events/archive/index.json ]; then
+            ARCHIVE_COUNT=$(python3 -c "import json; print(json.load(open('atl-gigs/public/events/archive/index.json'))['total_events'])")
             echo "- **Archived events:** $ARCHIVE_COUNT" >> $GITHUB_STEP_SUMMARY
           fi
 

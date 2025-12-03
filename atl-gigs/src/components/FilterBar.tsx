@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { format } from "date-fns";
-import { Search, MapPin, Calendar, X, ChevronDown, Tag } from "lucide-react";
+import { Search, MapPin, Calendar, X, ChevronDown, Tag, History } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGuitar, faFaceLaughSquint, faMasksTheater, faFootball, faStar } from "@fortawesome/free-solid-svg-icons";
 import { EventCategory, CATEGORY_LABELS } from "../types";
@@ -27,6 +27,10 @@ interface FilterBarProps {
   onCategoryToggle: (category: EventCategory) => void;
   onSearchChange: (query: string) => void;
   onDateRangeChange: (range: DateRange) => void;
+  includePast: boolean;
+  onIncludePastChange: (include: boolean) => void;
+  archiveLoading?: boolean;
+  archiveCount?: number;
 }
 
 const FilterPill = ({
@@ -78,6 +82,10 @@ export default function FilterBar({
   onCategoryToggle,
   onSearchChange,
   onDateRangeChange,
+  includePast,
+  onIncludePastChange,
+  archiveLoading,
+  archiveCount,
 }: FilterBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
@@ -389,6 +397,31 @@ export default function FilterBar({
               </div>
             )}
           </div>
+
+          {/* Include Past Toggle */}
+          <button
+            onClick={() => onIncludePastChange(!includePast)}
+            className={`
+              flex items-center gap-1.5 px-3 py-3 rounded-xl text-sm font-medium transition-colors
+              border whitespace-nowrap h-full
+              ${
+                includePast
+                  ? "bg-amber-500/10 border-amber-500/50 text-amber-300"
+                  : "bg-neutral-900 border-neutral-800 text-neutral-400 hover:bg-neutral-800 hover:text-white"
+              }
+            `}
+          >
+            <History size={14} />
+            <span>
+              {archiveLoading
+                ? "Loading..."
+                : includePast
+                  ? archiveCount
+                    ? `Past (${archiveCount})`
+                    : "Past"
+                  : "Past"}
+            </span>
+          </button>
         </div>
       </div>
 
@@ -438,6 +471,24 @@ export default function FilterBar({
               onClear={clearDateFilter}
             />
           </div>
+          {/* Include Past Toggle (Mobile) */}
+          <button
+            onClick={() => onIncludePastChange(!includePast)}
+            className={`
+              flex items-center gap-1 px-2 py-1.5 rounded-lg text-sm font-medium transition-colors
+              border whitespace-nowrap h-full
+              ${
+                includePast
+                  ? "bg-amber-500/10 border-amber-500/50 text-amber-300"
+                  : "bg-neutral-900 border-neutral-800 text-neutral-400"
+              }
+            `}
+          >
+            <History size={12} />
+            <span className="text-[11px]">
+              {archiveLoading ? "..." : "Past"}
+            </span>
+          </button>
         </div>
 
         {/* Dropdown Content - Renders below buttons, pushes content down */}

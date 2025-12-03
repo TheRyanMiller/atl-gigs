@@ -3,8 +3,17 @@ import { format } from "date-fns";
 import { MapPin, Clock, Ticket, Share2, Check, CalendarDays, Star } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGuitar, faFaceLaughSquint, faMasksTheater, faFootball, faStar } from "@fortawesome/free-solid-svg-icons";
-import { Event, CATEGORY_LABELS } from "../types";
+import { Event, CATEGORY_LABELS, NEW_EVENT_DAYS } from "../types";
 import { useFavorites } from "../context/FavoritesContext";
+
+// Check if an event is "new" (discovered within NEW_EVENT_DAYS)
+function isNewEvent(firstSeen: string | undefined): boolean {
+  if (!firstSeen) return false;
+  const seenDate = new Date(firstSeen);
+  const now = new Date();
+  const daysSinceSeen = (now.getTime() - seenDate.getTime()) / (1000 * 60 * 60 * 24);
+  return daysSinceSeen <= NEW_EVENT_DAYS;
+}
 
 const categoryIcons = {
   concerts: faGuitar,
@@ -20,7 +29,8 @@ interface EventCardProps {
 }
 
 function EventCard({ event, onClick }: EventCardProps) {
-  const { venue, date, doors_time, artists, price, image_url, ticket_url, slug, category } = event;
+  const { venue, date, doors_time, artists, price, image_url, ticket_url, slug, category, first_seen, stage } = event;
+  const isNew = isNewEvent(first_seen);
   const [copied, setCopied] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
   const favorited = isFavorite(slug);
@@ -90,6 +100,13 @@ function EventCard({ event, onClick }: EventCardProps) {
           <span className="text-base font-bold text-white leading-none">{day}</span>
         </div>
 
+        {/* NEW Badge overlay on image */}
+        {isNew && (
+          <div className="absolute top-1.5 right-1 sm:top-1.5 sm:right-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-lg z-10 shadow-lg">
+            NEW
+          </div>
+        )}
+
         {/* Category Badge overlay on image */}
         <div className="absolute bottom-1.5 right-1 sm:bottom-1.5 sm:right-1.5 flex items-center gap-1 bg-neutral-950 border border-neutral-700 px-2 py-1.5 rounded-lg z-10">
           <FontAwesomeIcon icon={categoryIcons[category]} className="w-3 h-3 text-teal-400" />
@@ -131,7 +148,7 @@ function EventCard({ event, onClick }: EventCardProps) {
           <div className="space-y-1.5 text-sm text-neutral-300">
             <div className="flex items-center gap-2">
               <MapPin size={14} className="text-teal-500 shrink-0" />
-              <span className="truncate">{venue}</span>
+              <span className="truncate">{venue}{stage && ` (${stage})`}</span>
             </div>
             <div className="flex items-center gap-2">
               <CalendarDays size={14} className="text-teal-500 shrink-0" />

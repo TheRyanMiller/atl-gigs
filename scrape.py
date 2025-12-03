@@ -17,9 +17,10 @@ Currently supports:
 
 import requests, datetime as dt, re, itertools, json, time, os, traceback
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from dotenv import load_dotenv
+from dataclasses import dataclass, field
 
 # Load environment variables from .env file
 load_dotenv()
@@ -34,12 +35,140 @@ OUTPUT_PATH = EVENTS_DIR / "events.json"
 ARCHIVE_PATH = EVENTS_DIR / "archive.json"
 STATUS_PATH = EVENTS_DIR / "scrape-status.json"
 LOG_PATH = EVENTS_DIR / "scrape-log.txt"
+SEEN_CACHE_PATH = EVENTS_DIR / "seen-cache.json"
+ARCHIVE_DIR = EVENTS_DIR / "archive"
+ARCHIVE_INDEX_PATH = ARCHIVE_DIR / "index.json"
+
+# first_seen configuration
+NEW_EVENT_DAYS = 5  # Events are considered "new" for this many days
 
 # Event categories
 CATEGORIES = ["concerts", "comedy", "broadway", "sports", "misc"]
 DEFAULT_CATEGORY = "concerts"
 
 REQUIRED_FIELDS = ["venue", "date", "artists", "ticket_url"]
+
+# ----------------------------------------------------------------------
+# Logging and Metrics
+# ----------------------------------------------------------------------
+
+@dataclass
+class VenueMetrics:
+    """Track scraping metrics for each venue."""
+    name: str
+    event_count: int = 0
+    new_events: int = 0
+    errors: int = 0
+    error_messages: list = field(default_factory=list)
+    duration_ms: float = 0.0
+
+
+def trim_log_by_time(log_path, retention_days=14):
+    """
+    Remove log entries older than retention_days.
+    Returns list of lines to keep.
+    """
+    if not log_path.exists():
+        return []
+
+    cutoff = datetime.utcnow() - timedelta(days=retention_days)
+    cutoff_str = cutoff.strftime("%Y-%m-%d %H:%M:%S")
+
+    kept_lines = []
+    current_entry_recent = False
+
+    with open(log_path, "r") as f:
+        for line in f:
+            # Check if this is a timestamped log entry
+            match = re.match(r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\]', line)
+            if match:
+                current_entry_recent = match.group(1) >= cutoff_str
+
+            # Keep line if current entry is recent
+            if current_entry_recent:
+                kept_lines.append(line)
+
+    return kept_lines
+
+
+def load_seen_cache():
+    """Load the seen events cache."""
+    try:
+        if SEEN_CACHE_PATH.exists():
+            with open(SEEN_CACHE_PATH, "r") as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return {"events": {}, "last_updated": None}
+
+
+def save_seen_cache(cache):
+    """Save the seen events cache."""
+    cache["last_updated"] = datetime.utcnow().isoformat() + "Z"
+    with open(SEEN_CACHE_PATH, "w") as f:
+        json.dump(cache, f, indent=2)
+
+
+def update_first_seen(events, seen_cache):
+    """
+    Update events with first_seen field and update the seen cache.
+    Returns (updated_events, new_event_count).
+    """
+    now = datetime.utcnow().isoformat() + "Z"
+    new_count = 0
+
+    for event in events:
+        slug = event.get("slug")
+        if not slug:
+            continue
+
+        if slug in seen_cache["events"]:
+            event["first_seen"] = seen_cache["events"][slug]["first_seen"]
+        else:
+            event["first_seen"] = now
+            seen_cache["events"][slug] = {"first_seen": now}
+            new_count += 1
+
+    return events, new_count
+
+
+def prune_seen_cache(seen_cache, current_slugs, archive_slugs):
+    """Remove cache entries for events no longer tracked."""
+    all_known = current_slugs | archive_slugs
+    seen_cache["events"] = {
+        slug: data
+        for slug, data in seen_cache["events"].items()
+        if slug in all_known
+    }
+    return seen_cache
+
+
+def get_archive_slugs():
+    """Get all slugs from monthly archive files."""
+    slugs = set()
+
+    # Check new monthly archive directory
+    if ARCHIVE_DIR.exists():
+        for path in ARCHIVE_DIR.glob("archive-*.json"):
+            try:
+                with open(path, "r") as f:
+                    for event in json.load(f):
+                        if event.get("slug"):
+                            slugs.add(event["slug"])
+            except Exception:
+                pass
+
+    # Also check old archive.json for backwards compatibility during migration
+    if ARCHIVE_PATH.exists():
+        try:
+            with open(ARCHIVE_PATH, "r") as f:
+                for event in json.load(f):
+                    if event.get("slug"):
+                        slugs.add(event["slug"])
+        except Exception:
+            pass
+
+    return slugs
 
 # ----------------------------------------------------------------------
 # Ticketmaster Discovery API Configuration
@@ -352,22 +481,95 @@ def load_existing_status():
     return {"venues": {}}
 
 
-def load_existing_archive():
-    """Load existing archive to preserve historical events."""
-    try:
-        if ARCHIVE_PATH.exists():
-            with open(ARCHIVE_PATH, "r") as f:
-                return json.load(f)
-    except Exception:
-        pass
+def load_monthly_archive(month):
+    """Load events from a specific monthly archive file."""
+    path = ARCHIVE_DIR / f"archive-{month}.json"
+    if path.exists():
+        with open(path, "r") as f:
+            return json.load(f)
     return []
 
 
-def archive_past_events(events, existing_archive):
+def save_monthly_archive(month, events):
+    """Save events to a specific monthly archive file."""
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    path = ARCHIVE_DIR / f"archive-{month}.json"
+    with open(path, "w") as f:
+        json.dump(events, f, indent=2)
+
+
+def save_archive_index(months_data):
+    """
+    Save the archive index with month counts.
+    months_data: dict of month -> event count
+    """
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+
+    months = sorted(months_data.keys(), reverse=True)
+    index = {
+        "months": [{"month": m, "count": months_data[m]} for m in months],
+        "total_events": sum(months_data.values()),
+        "last_updated": datetime.utcnow().isoformat() + "Z"
+    }
+
+    with open(ARCHIVE_INDEX_PATH, "w") as f:
+        json.dump(index, f, indent=2)
+
+
+def migrate_archive_to_monthly():
+    """
+    One-time migration: convert existing archive.json to monthly files.
+    Renames old file to archive.json.bak after migration.
+    Returns True if migration was performed.
+    """
+    if not ARCHIVE_PATH.exists():
+        return False
+
+    # Check if already migrated (backup exists or archive dir has files)
+    backup_path = EVENTS_DIR / "archive.json.bak"
+    if backup_path.exists():
+        return False
+
+    try:
+        with open(ARCHIVE_PATH, "r") as f:
+            old_archive = json.load(f)
+    except Exception:
+        return False
+
+    if not old_archive:
+        return False
+
+    # Organize events by month
+    by_month = {}
+    for event in old_archive:
+        date = event.get("date", "")
+        if len(date) >= 7:
+            month = date[:7]  # YYYY-MM
+            if month not in by_month:
+                by_month[month] = []
+            by_month[month].append(event)
+
+    # Save monthly files
+    for month, events in by_month.items():
+        events.sort(key=lambda x: x.get("date", ""), reverse=True)
+        save_monthly_archive(month, events)
+
+    # Save index
+    save_archive_index({m: len(e) for m, e in by_month.items()})
+
+    # Rename old archive to backup
+    ARCHIVE_PATH.rename(backup_path)
+
+    return True
+
+
+def archive_past_events(events):
     """
     Separate events into upcoming and past.
-    Past events are merged into archive.
-    Returns (upcoming_events, updated_archive, newly_archived_count)
+    Past events are saved to monthly archive files.
+    Returns (upcoming_events, archive_summary, newly_archived_count)
+
+    archive_summary: dict with months and counts for logging
     """
     today = datetime.now().strftime("%Y-%m-%d")
 
@@ -380,16 +582,49 @@ def archive_past_events(events, existing_archive):
         else:
             upcoming.append(event)
 
-    # Merge newly archived events with existing archive (avoid duplicates by slug)
-    existing_slugs = {e.get("slug") for e in existing_archive}
+    # Group newly archived by month
+    by_month = {}
     for event in newly_archived:
-        if event.get("slug") not in existing_slugs:
-            existing_archive.append(event)
+        date = event.get("date", "")
+        if len(date) >= 7:
+            month = date[:7]
+            if month not in by_month:
+                by_month[month] = []
+            by_month[month].append(event)
 
-    # Sort archive by date (newest first)
-    existing_archive.sort(key=lambda x: x.get("date", ""), reverse=True)
+    # Update each monthly archive file
+    months_updated = {}
+    for month, new_events in by_month.items():
+        existing = load_monthly_archive(month)
+        existing_slugs = {e.get("slug") for e in existing}
 
-    return upcoming, existing_archive, len(newly_archived)
+        added = 0
+        for event in new_events:
+            if event.get("slug") not in existing_slugs:
+                existing.append(event)
+                added += 1
+
+        if added > 0:
+            existing.sort(key=lambda x: x.get("date", ""), reverse=True)
+            save_monthly_archive(month, existing)
+
+        months_updated[month] = len(existing)
+
+    # Update index with all months (include existing ones not modified)
+    if ARCHIVE_INDEX_PATH.exists():
+        try:
+            with open(ARCHIVE_INDEX_PATH, "r") as f:
+                old_index = json.load(f)
+                for item in old_index.get("months", []):
+                    if item["month"] not in months_updated:
+                        months_updated[item["month"]] = item["count"]
+        except Exception:
+            pass
+
+    if months_updated:
+        save_archive_index(months_updated)
+
+    return upcoming, months_updated, len(newly_archived)
 
 
 # ----------------------------------------------------------------------
@@ -461,7 +696,7 @@ def get_artist_classification(artist_name):
     return None
 
 
-def scrape_tm_venue(venue_id, venue_name, room=None):
+def scrape_tm_venue(venue_id, venue_name, stage=None):
     """
     Scrape events from a Ticketmaster venue using Discovery API.
     Returns list of events in our standard format.
@@ -549,8 +784,8 @@ def scrape_tm_venue(venue_id, venue_name, room=None):
             "category": category,
         }
 
-        if room:
-            event["room"] = room
+        if stage:
+            event["stage"] = stage
 
         events.append(event)
 
@@ -561,14 +796,15 @@ def scrape_center_stage_tm():
     """Scrape Center Stage, The Loft, and Vinyl via Ticketmaster API."""
     all_events = []
 
-    venues = [
-        ("Center Stage", TM_VENUES["Center Stage"]),
+    # Each stage maps to a TM venue ID
+    stages = [
+        ("Main", TM_VENUES["Center Stage"]),
         ("The Loft", TM_VENUES["The Loft"]),
         ("Vinyl", TM_VENUES["Vinyl"]),
     ]
 
-    for venue_name, venue_id in venues:
-        events = scrape_tm_venue(venue_id, venue_name)
+    for stage_name, venue_id in stages:
+        events = scrape_tm_venue(venue_id, "Center Stage", stage=stage_name)
         all_events.extend(events)
 
     print(f"    Center Stage complex (TM): {len(all_events)} events")
@@ -583,18 +819,18 @@ def scrape_state_farm_arena_tm():
 
 
 def scrape_masquerade_tm():
-    """Scrape The Masquerade via Ticketmaster API (all rooms)."""
+    """Scrape The Masquerade via Ticketmaster API (all stages)."""
     all_events = []
 
-    rooms = [
+    stages = [
         ("Heaven", TM_VENUES["The Masquerade - Heaven"]),
         ("Hell", TM_VENUES["The Masquerade - Hell"]),
         ("Purgatory", TM_VENUES["The Masquerade - Purgatory"]),
         ("Altar", TM_VENUES["The Masquerade - Altar"]),
     ]
 
-    for room_name, venue_id in rooms:
-        events = scrape_tm_venue(venue_id, "The Masquerade", room=room_name)
+    for stage_name, venue_id in stages:
+        events = scrape_tm_venue(venue_id, "The Masquerade", stage=stage_name)
         all_events.extend(events)
 
     print(f"    The Masquerade (TM): {len(all_events)} events")
@@ -1628,13 +1864,13 @@ MASQUERADE_HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-# Masquerade rooms (events at other venues should be filtered out)
-MASQUERADE_ROOMS = ["Heaven", "Hell", "Purgatory", "Altar"]
+# Masquerade stages (events at other venues should be filtered out)
+MASQUERADE_STAGES = ["Heaven", "Hell", "Purgatory", "Altar"]
 
 def scrape_masquerade():
     """
     Scrape events from The Masquerade using HTML parsing.
-    Only includes events at Masquerade rooms (Heaven, Hell, Purgatory, Altar).
+    Only includes events at Masquerade stages (Heaven, Hell, Purgatory, Altar).
     """
     url = MASQUERADE_BASE + "/events/"
     try:
@@ -1654,14 +1890,14 @@ def scrape_masquerade():
             continue
 
         venue_text = venue_span.get_text(strip=True)
-        room = None
-        for r in MASQUERADE_ROOMS:
-            if r in venue_text:
-                room = r
+        stage = None
+        for s in MASQUERADE_STAGES:
+            if s in venue_text:
+                stage = s
                 break
 
         # Skip events not at Masquerade
-        if not room:
+        if not stage:
             continue
 
         # Parse date from .eventStartDate content attribute or spans
@@ -1768,7 +2004,7 @@ def scrape_masquerade():
             "info_url": detail_url,
             "image_url": image_url,
             "category": "concerts",  # Default category for this venue
-            "room": room,  # Heaven, Hell, Purgatory, or Altar
+            "stage": stage,  # Heaven, Hell, Purgatory, or Altar
         })
 
     print(f"    The Masquerade: {len(events)} events")
@@ -1784,9 +2020,9 @@ CENTER_STAGE_HEADERS = {
     "Accept": "application/json",
 }
 
-# Map venue_room.value to display names
-CENTER_STAGE_VENUES = {
-    "center_stage": "Center Stage",
+# Map venue_room.value to stage names
+CENTER_STAGE_STAGES = {
+    "center_stage": "Main",
     "the_loft": "The Loft",
     "vinyl": "Vinyl",
 }
@@ -1828,14 +2064,14 @@ def scrape_center_stage():
             if external_venue:
                 continue
 
-            # Get venue from venue_room
+            # Get stage from venue_room
             venue_room = event.get("venue_room", {})
             venue_key = venue_room.get("value", "").lower()
 
-            if venue_key not in CENTER_STAGE_VENUES:
+            if venue_key not in CENTER_STAGE_STAGES:
                 continue
 
-            venue_name = CENTER_STAGE_VENUES[venue_key]
+            stage_name = CENTER_STAGE_STAGES[venue_key]
 
             # Parse date (format: YYYYMMDD)
             date_raw = event.get("event_date", "")
@@ -1871,7 +2107,7 @@ def scrape_center_stage():
             category = detect_category_from_text(title) or "concerts"
 
             events.append({
-                "venue": venue_name,
+                "venue": "Center Stage",
                 "date": event_date,
                 "doors_time": doors_time,
                 "show_time": show_time,
@@ -1880,6 +2116,7 @@ def scrape_center_stage():
                 "info_url": info_url,
                 "image_url": image_url,
                 "category": category,
+                "stage": stage_name,
             })
 
         # If we got fewer than 20 events, we've hit the last page
@@ -1943,9 +2180,13 @@ def main():
     # Load existing status to preserve last_success data
     existing_status = load_existing_status()
     venue_statuses = {}
+    venue_metrics = {}  # Track metrics for summary table
 
     for venue_name, scraper in SCRAPERS.items():
         log(f"Scraping {venue_name}...")
+        metrics = VenueMetrics(name=venue_name)
+        start_time = time.time()
+
         venue_status = {
             "last_run": run_timestamp,
             "success": False,
@@ -1962,6 +2203,8 @@ def main():
         try:
             events = scraper()
             event_count = len(events)
+            metrics.event_count = event_count
+            metrics.duration_ms = (time.time() - start_time) * 1000
             log(f"  Found {event_count} events")
             all_events.extend(events)
 
@@ -1973,6 +2216,9 @@ def main():
         except Exception as e:
             error_msg = str(e)
             error_trace = traceback.format_exc()
+            metrics.errors = 1
+            metrics.error_messages.append(error_msg)
+            metrics.duration_ms = (time.time() - start_time) * 1000
             log(f"  ERROR: Failed to scrape {venue_name}: {error_msg}", "ERROR")
             log(f"  Traceback:\n{error_trace}", "ERROR")
 
@@ -1981,6 +2227,7 @@ def main():
             venue_status["error_trace"] = error_trace
 
         venue_statuses[venue_name] = venue_status
+        venue_metrics[venue_name] = metrics
 
     # Enrich events with TM artist classifications (for non-TM venues)
     if TM_API_KEY:
@@ -2012,20 +2259,48 @@ def main():
     if invalid_count > 0:
         log(f"  Filtered out {invalid_count} invalid events", "WARNING")
 
+    # Update first_seen field for tracking new events
+    seen_cache = load_seen_cache()
+    valid_events, new_event_count = update_first_seen(valid_events, seen_cache)
+    log(f"  {new_event_count} newly discovered events")
+
     # Sort by date
     valid_events.sort(key=lambda x: x["date"])
 
-    # Load existing archive and separate past events
+    # Migrate old archive.json to monthly files if needed
     log("\nArchiving past events...")
-    existing_archive = load_existing_archive()
-    valid_events, updated_archive, archived_count = archive_past_events(valid_events, existing_archive)
+    if migrate_archive_to_monthly():
+        log("  Migrated archive.json to monthly files")
+
+    # Separate past events into monthly archive files
+    valid_events, archive_summary, archived_count = archive_past_events(valid_events)
     if archived_count > 0:
         log(f"  Archived {archived_count} past events")
-    log(f"  Archive total: {len(updated_archive)} events")
+    if archive_summary:
+        total_archived = sum(archive_summary.values())
+        log(f"  Archive total: {total_archived} events across {len(archive_summary)} months")
 
     # Determine overall status
     all_success = all(v["success"] for v in venue_statuses.values())
     any_success = any(v["success"] for v in venue_statuses.values())
+
+    # Log summary table
+    log("")
+    log("=" * 60)
+    log("VENUE SUMMARY")
+    log("=" * 60)
+    log(f"{'Venue':<24} {'Events':>7} {'Errors':>7} {'Time':>10}")
+    log("-" * 60)
+    for name in sorted(venue_metrics.keys()):
+        m = venue_metrics[name]
+        time_str = f"{m.duration_ms:.0f}ms"
+        log(f"{name:<24} {m.event_count:>7} {m.errors:>7} {time_str:>10}")
+    log("-" * 60)
+    total_events = sum(m.event_count for m in venue_metrics.values())
+    total_errors = sum(m.errors for m in venue_metrics.values())
+    total_time = sum(m.duration_ms for m in venue_metrics.values())
+    log(f"{'TOTAL':<24} {total_events:>7} {total_errors:>7} {total_time:.0f}ms")
+    log("=" * 60)
 
     log(f"\nTotal valid events: {len(valid_events)}")
 
@@ -2041,18 +2316,24 @@ def main():
         json.dump(valid_events, f, indent=2)
     log(f"Events saved to {OUTPUT_PATH}")
 
-    # Save archive
-    with open(ARCHIVE_PATH, "w") as f:
-        json.dump(updated_archive, f, indent=2)
-    log(f"Archive saved to {ARCHIVE_PATH}")
+    # Archive is now saved to monthly files by archive_past_events()
+    # No need to save single archive.json
+
+    # Prune and save seen cache
+    current_slugs = {e.get("slug") for e in valid_events if e.get("slug")}
+    archive_slugs = get_archive_slugs()
+    seen_cache = prune_seen_cache(seen_cache, current_slugs, archive_slugs)
+    save_seen_cache(seen_cache)
+    log(f"Seen cache saved ({len(seen_cache['events'])} events tracked)")
 
     # Save scrape status
+    total_archived = sum(archive_summary.values()) if archive_summary else 0
     status_data = {
         "last_run": run_timestamp,
         "all_success": all_success,
         "any_success": any_success,
         "total_events": len(valid_events),
-        "archived_events": len(updated_archive),
+        "archived_events": total_archived,
         "venues": venue_statuses,
     }
 
@@ -2060,14 +2341,11 @@ def main():
         json.dump(status_data, f, indent=2)
     log(f"Status saved to {STATUS_PATH}")
 
-    # Save log file (append to existing log, keep last 1000 lines)
-    existing_log = []
-    if LOG_PATH.exists():
-        with open(LOG_PATH, "r") as f:
-            existing_log = f.readlines()
+    # Save log file (time-based retention: 14 days)
+    existing_log = trim_log_by_time(LOG_PATH, retention_days=14)
 
     # Add separator and new log entries
-    log_content = existing_log[-900:] + ["\n--- New Run ---\n"] + [line + "\n" for line in log_lines]
+    log_content = existing_log + ["\n--- New Run ---\n"] + [line + "\n" for line in log_lines]
 
     with open(LOG_PATH, "w") as f:
         f.writelines(log_content)

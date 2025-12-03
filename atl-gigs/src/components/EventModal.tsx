@@ -25,7 +25,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
     info_url,
     image_url,
     slug,
-    room,
+    stage,
   } = event;
   
   const handleShare = async () => {
@@ -155,7 +155,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center gap-2 text-neutral-300 text-sm">
                         <MapPin size={14} className="text-teal-500" />
-                        <span>{venue}{room && ` · ${room}`}</span>
+                        <span>{venue}{stage && ` (${stage})`}</span>
                       </div>
 
                       <div className="flex items-center gap-2 text-neutral-300 text-sm">

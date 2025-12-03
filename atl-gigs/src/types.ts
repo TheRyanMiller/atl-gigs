@@ -29,8 +29,12 @@ export interface Event {
   info_url?: string;
   image_url?: string;
   category: EventCategory;
-  room?: string;  // For venues with multiple rooms (e.g., The Masquerade)
+  stage?: string;  // For venues with multiple stages (e.g., The Masquerade, Center Stage)
+  first_seen?: string;  // ISO timestamp when event was first discovered
 }
+
+// Number of days an event is considered "new"
+export const NEW_EVENT_DAYS = 5;
 
 export interface VenueStatus {
   last_run: string;
@@ -48,4 +52,10 @@ export interface ScrapeStatus {
   any_success: boolean;
   total_events: number;
   venues: Record<string, VenueStatus>;
+}
+
+export interface ArchiveIndex {
+  months: Array<{ month: string; count: number }>;
+  total_events: number;
+  last_updated: string;
 }

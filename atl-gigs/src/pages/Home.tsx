@@ -1,8 +1,9 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { Music, Loader2 } from "lucide-react";
 import { Event, EventCategory, ALL_CATEGORIES } from "../types";
 import EventCard from "../components/EventCard";
 import FilterBar from "../components/FilterBar";
+import { useArchive } from "../hooks/useArchive";
 
 interface HomeProps {
   events: Event[];
@@ -20,6 +21,26 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   const [selectedVenues, setSelectedVenues] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<EventCategory[]>([]);
   const [dateRange, setDateRange] = useState<DateRange>({ start: null, end: null });
+  const [includePast, setIncludePast] = useState(false);
+
+  // Archive hook for loading past events
+  const { archiveIndex, archiveEvents, loadAllMonths, loading: archiveLoading } = useArchive();
+
+  // Load archive events when includePast is enabled
+  useEffect(() => {
+    if (includePast && archiveIndex && archiveEvents.length === 0) {
+      loadAllMonths();
+    }
+  }, [includePast, archiveIndex, archiveEvents.length, loadAllMonths]);
+
+  // Combine events with archive when includePast is enabled
+  const allEvents = useMemo(() => {
+    if (!includePast) return events;
+    // Merge and deduplicate by slug
+    const slugs = new Set(events.map((e) => e.slug));
+    const uniqueArchive = archiveEvents.filter((e) => !slugs.has(e.slug));
+    return [...events, ...uniqueArchive];
+  }, [events, archiveEvents, includePast]);
 
   // Get unique venues
   const venues = useMemo(() => {
@@ -44,9 +65,9 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   // Filter events based on search, category, venue selection, and date range
   const filteredEvents = useMemo(() => {
     const today = getTodayString();
-    return events.filter((event) => {
-      // Filter out past events (before today)
-      if (event.date < today) {
+    return allEvents.filter((event) => {
+      // Filter out past events (before today) unless includePast is enabled
+      if (!includePast && event.date < today) {
         return false;
       }
 
@@ -82,7 +103,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       }
       return true;
     });
-  }, [events, searchQuery, selectedCategories, selectedVenues, dateRange]);
+  }, [allEvents, searchQuery, selectedCategories, selectedVenues, dateRange, includePast]);
 
   const handleSearchChange = useCallback((query: string) => {
     setSearchQuery(query);
@@ -116,6 +137,10 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
         onCategoryToggle={handleCategoryToggle}
         onSearchChange={handleSearchChange}
         onDateRangeChange={handleDateRangeChange}
+        includePast={includePast}
+        onIncludePastChange={setIncludePast}
+        archiveLoading={archiveLoading}
+        archiveCount={archiveIndex?.total_events}
       />
 
       {/* Events List */}
