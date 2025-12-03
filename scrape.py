@@ -16,6 +16,10 @@ Currently supports:
 """
 
 import requests, datetime as dt, re, itertools, json, time, os, traceback, random
+try:
+    import cloudscraper  # type: ignore
+except ImportError:  # Optional; falls back to requests
+    cloudscraper = None
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -1296,7 +1300,19 @@ def init_fox_session(max_retries=3):
     Initialize a session with Fox Theatre cookies.
     Retries cookie acquisition to handle transient failures.
     """
-    session = requests.Session()
+    # Prefer cloudscraper for anti-bot handling if available
+    if cloudscraper:
+        session = cloudscraper.create_scraper(
+            browser={
+                "browser": "chrome",
+                "platform": "windows",
+                "mobile": False,
+                "desktop": True,
+            }
+        )
+    else:
+        session = requests.Session()
+
     session.headers.update(FOX_THEATRE_AJAX_HEADERS)
 
     for attempt in range(max_retries):
@@ -1329,8 +1345,8 @@ def scrape_fox_ajax_all_events():
     events = []
     seen_urls = set()
     offset = 0
-    per_page = 100  # Request many at once to minimize requests
-    max_retries = 3  # Max retries per request
+    per_page = 60  # Request many at once to minimize requests but avoid giant payloads
+    max_retries = 5  # Max retries per request
 
     # Initialize session with cookies
     session = init_fox_session()
@@ -1488,26 +1504,40 @@ def scrape_fox_theatre():
     This gets ALL events including those behind "Load More" pagination.
     Category is determined from CSS classes on event items (broadway, comedy, concerts).
     """
-    # Use the AJAX endpoint to get ALL events
-    ajax_events = scrape_fox_ajax_all_events()
-    print(f"    Fox Theatre AJAX API: {len(ajax_events)} events")
+    try:
+        # Use the AJAX endpoint to get ALL events
+        ajax_events = scrape_fox_ajax_all_events()
+        print(f"    Fox Theatre AJAX API: {len(ajax_events)} events")
 
-    # Convert to our event format
-    events = []
-    for event in ajax_events:
-        events.append({
-            "venue": "Fox Theatre",
-            "date": event["date"],
-            "doors_time": None,  # Fox Theatre doesn't show this on list pages
-            "show_time": None,   # Would need to fetch detail page
-            "artists": [{"name": event["title"]}],
-            "ticket_url": event["ticket_url"],
-            "info_url": event["info_url"],
-            "image_url": event["image_url"],
-            "category": event["fox_category"],
-        })
+        # Convert to our event format
+        events = []
+        for event in ajax_events:
+            events.append({
+                "venue": "Fox Theatre",
+                "date": event["date"],
+                "doors_time": None,  # Fox Theatre doesn't show this on list pages
+                "show_time": None,   # Would need to fetch detail page
+                "artists": [{"name": event["title"]}],
+                "ticket_url": event["ticket_url"],
+                "info_url": event["info_url"],
+                "image_url": event["image_url"],
+                "category": event["fox_category"],
+            })
 
-    return events
+        return events
+    except Exception as e:
+        # If Fox fails completely, fall back to cached Fox events to avoid empty venue
+        try:
+            with open(OUTPUT_PATH, "r") as f:
+                cached = json.load(f)
+            fallback_events = [evt for evt in cached if evt.get("venue") == "Fox Theatre"]
+            if fallback_events:
+                print(f"    Fox Theatre: using cached events ({len(fallback_events)}) due to error: {e}")
+                return fallback_events
+        except Exception:
+            pass
+        # Re-raise if no fallback available
+        raise
 
 # ----------------------------------------------------------------------
 # State Farm Arena scraper

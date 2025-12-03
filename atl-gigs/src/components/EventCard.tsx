@@ -110,7 +110,7 @@ function EventCard({ event, onClick }: EventCardProps) {
 
       {/* Category Badge - Top right of card (desktop only) */}
       <div className="hidden sm:flex absolute top-3 right-5 z-10 items-center gap-1 bg-neutral-800/90 border border-neutral-700 px-1.5 py-0.5 rounded">
-        <FontAwesomeIcon icon={categoryIcons[category]} className="w-2.5 h-2.5 text-teal-400" />
+        <FontAwesomeIcon icon={categoryIcons[category]} className="w-2.5 h-2.5 text-neutral-400" />
         <span className="text-[10px] font-medium text-neutral-400">{CATEGORY_LABELS[category]}</span>
       </div>
 
@@ -118,7 +118,7 @@ function EventCard({ event, onClick }: EventCardProps) {
       <div className="flex flex-1 flex-col sm:flex-row sm:items-start relative z-[2] p-4 sm:px-5 sm:pt-5 pb-3 sm:pb-3 gap-4 sm:gap-6">
         {/* Category Badge - Mobile only, top right of content area */}
         <div className="flex sm:hidden absolute top-3 right-3 z-10 items-center gap-1 bg-neutral-800/90 border border-neutral-700 px-1.5 py-0.5 rounded">
-          <FontAwesomeIcon icon={categoryIcons[category]} className="w-2.5 h-2.5 text-teal-400" />
+          <FontAwesomeIcon icon={categoryIcons[category]} className="w-2.5 h-2.5 text-neutral-400" />
           <span className="text-[10px] font-medium text-neutral-400">{CATEGORY_LABELS[category]}</span>
         </div>
 

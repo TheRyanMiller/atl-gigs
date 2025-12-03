@@ -95,7 +95,7 @@ function AppContent() {
       />
 
       {/* Main Content */}
-      <main className="max-w-5xl mx-auto px-4 pb-8 sm:pb-12">
+      <main>
         <Routes>
           <Route
             path="/"

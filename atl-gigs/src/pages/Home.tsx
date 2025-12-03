@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useEffect, useRef } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef, forwardRef } from "react";
 import { VariableSizeList as List } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { Music, Loader2 } from "lucide-react";
@@ -32,6 +32,17 @@ const getItemHeight = (_event: Event, isMobile: boolean): number => {
   // Add gap of 16px between cards
   return isMobile ? 396 : 196; // card height + 16px gap
 };
+
+// Inner element wrapper to add top padding for buffer above first card
+const innerElementType = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
+  ({ style, ...rest }, ref) => (
+    <div
+      ref={ref}
+      style={{ ...style, paddingTop: 12 }}
+      {...rest}
+    />
+  )
+);
 
 export default function Home({ events, loading, onEventClick }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -160,9 +171,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   const getItemSize = useCallback(
     (index: number) => {
       const event = filteredEvents[index];
-      const baseHeight = getItemHeight(event, isMobile) + 16; // card + gap
-      // Add buffer space above first item so it doesn't touch sticky header
-      return index === 0 ? baseHeight + 12 : baseHeight;
+      return getItemHeight(event, isMobile); // Already includes gap
     },
     [filteredEvents, isMobile]
   );
@@ -172,7 +181,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
     ({ index, style }: { index: number; style: React.CSSProperties }) => {
       const event = filteredEvents[index];
       return (
-        <div style={{ ...style, paddingTop: index === 0 ? 12 : 0, paddingBottom: 16 }}>
+        <div style={style}>
           <EventCard
             key={event.slug}
             event={event}
@@ -185,9 +194,9 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   );
 
   return (
-    <div className="flex flex-col h-[calc(100vh-64px)] sm:h-[calc(100vh-96px)]">
-      {/* Search & Filters - Sticky */}
-      <div className="sticky top-14 sm:top-20 z-40 bg-neutral-950 pb-2 border-b border-white/10">
+    <div className="h-[calc(100dvh-56px)] sm:h-[calc(100dvh-80px)] flex flex-col">
+      {/* Search & Filters */}
+      <div className="shrink-0 bg-neutral-950 pb-2 border-b border-white/10">
         <div className="max-w-6xl mx-auto w-full px-4">
           <FilterBar
             venues={venues}
@@ -203,7 +212,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       </div>
 
       {/* Events List - Virtualized */}
-      <div className="flex-1 max-w-6xl mx-auto w-full px-4">
+      <div className="flex-1 min-h-0 max-w-6xl mx-auto w-full px-4">
         {loading && (
           <div className="text-center py-20">
             <Loader2 size={48} className="mx-auto text-teal-500 animate-spin" />
@@ -228,6 +237,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
                 itemCount={filteredEvents.length}
                 itemSize={getItemSize}
                 overscanCount={3}
+                innerElementType={innerElementType}
               >
                 {Row}
               </List>
