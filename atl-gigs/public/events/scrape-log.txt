@@ -941,3 +941,61 @@ Total valid events: 514
 [2025-12-03 22:46:28] [INFO] Events saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/events.json
 [2025-12-03 22:46:28] [INFO] Seen cache saved (514 events tracked)
 [2025-12-03 22:46:28] [INFO] Status saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/scrape-status.json
+
+--- New Run ---
+[2025-12-03 22:49:23] [INFO] Starting scrape run at 2025-12-03T22:49:23.276562Z
+[2025-12-03 22:49:23] [INFO] Scraping The Earl...
+[2025-12-03 22:49:35] [INFO]   Found 48 events
+[2025-12-03 22:49:35] [INFO] Scraping Tabernacle...
+[2025-12-03 22:49:36] [INFO]   Found 38 events
+[2025-12-03 22:49:36] [INFO] Scraping Terminal West...
+[2025-12-03 22:49:36] [INFO]   Found 56 events
+[2025-12-03 22:49:36] [INFO] Scraping The Eastern...
+[2025-12-03 22:49:36] [INFO]   Found 40 events
+[2025-12-03 22:49:36] [INFO] Scraping Variety Playhouse...
+[2025-12-03 22:49:37] [INFO]   Found 48 events
+[2025-12-03 22:49:37] [INFO] Scraping Coca-Cola Roxy...
+[2025-12-03 22:49:37] [INFO]   Found 24 events
+[2025-12-03 22:49:37] [INFO] Scraping Fox Theatre...
+[2025-12-03 22:49:38] [INFO]   Found 30 events
+[2025-12-03 22:49:38] [INFO] Scraping Mercedes-Benz Stadium...
+[2025-12-03 22:49:39] [INFO]   Found 11 events
+[2025-12-03 22:49:39] [INFO] Scraping State Farm Arena...
+[2025-12-03 22:49:39] [INFO]   Found 75 events
+[2025-12-03 22:49:39] [INFO] Scraping The Masquerade...
+[2025-12-03 22:49:40] [INFO]   Found 106 events
+[2025-12-03 22:49:40] [INFO] Scraping Center Stage...
+[2025-12-03 22:49:41] [INFO]   Found 69 events
+[2025-12-03 22:49:41] [INFO] 
+Enriching events with Ticketmaster artist data...
+[2025-12-03 22:49:41] [INFO] 
+Processing events...
+[2025-12-03 22:49:41] [WARNING]   Filtered out 1 invalid events
+[2025-12-03 22:49:41] [INFO]   30 newly discovered events
+[2025-12-03 22:49:41] [INFO] 
+Archiving past events...
+[2025-12-03 22:49:41] [INFO] 
+[2025-12-03 22:49:41] [INFO] ============================================================
+[2025-12-03 22:49:41] [INFO] VENUE SUMMARY
+[2025-12-03 22:49:41] [INFO] ============================================================
+[2025-12-03 22:49:41] [INFO] Venue                     Events  Errors       Time
+[2025-12-03 22:49:41] [INFO] ------------------------------------------------------------
+[2025-12-03 22:49:41] [INFO] Center Stage                  69       0      585ms
+[2025-12-03 22:49:41] [INFO] Coca-Cola Roxy                24       0      670ms
+[2025-12-03 22:49:41] [INFO] Fox Theatre                   30       0     1088ms
+[2025-12-03 22:49:41] [INFO] Mercedes-Benz Stadium         11       0      451ms
+[2025-12-03 22:49:41] [INFO] State Farm Arena              75       0      621ms
+[2025-12-03 22:49:41] [INFO] Tabernacle                    38       0     1218ms
+[2025-12-03 22:49:41] [INFO] Terminal West                 56       0      210ms
+[2025-12-03 22:49:41] [INFO] The Earl                      48       0    11882ms
+[2025-12-03 22:49:41] [INFO] The Eastern                   40       0      201ms
+[2025-12-03 22:49:41] [INFO] The Masquerade               106       0      880ms
+[2025-12-03 22:49:41] [INFO] Variety Playhouse             48       0      247ms
+[2025-12-03 22:49:41] [INFO] ------------------------------------------------------------
+[2025-12-03 22:49:41] [INFO] TOTAL                        545       0 18053ms
+[2025-12-03 22:49:41] [INFO] ============================================================
+[2025-12-03 22:49:41] [INFO] 
+Total valid events: 544
+[2025-12-03 22:49:41] [INFO] Events saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/events.json
+[2025-12-03 22:49:41] [INFO] Seen cache saved (544 events tracked)
+[2025-12-03 22:49:41] [INFO] Status saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/scrape-status.json

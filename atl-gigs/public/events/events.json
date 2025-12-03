@@ -1,5 +1,23 @@
 [
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-03",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "An Evening With David Byrne - Who is the Sky Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=BYR&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/david-byrne-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/DavidByrne_550x550-ca7c18e32c.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-03-fox-theatre-an-evening-with-david-byrne-who-is-the-sky-tour",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2025-12-03",
     "doors_time": null,
@@ -121,6 +139,24 @@
     "category": "concerts",
     "slug": "2025-12-04-variety-playhouse-bonnie-prince-billy",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2025-12-04",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Lauren Daigle - The Behold Christmas Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=LAU&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/lauren-daigle-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/Lauren-Daigle-550x550-927f65e30a.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2025-12-04-fox-theatre-lauren-daigle-the-behold-christmas-tour",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "State Farm Arena",
@@ -514,6 +550,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-06",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Amy Grant, Cece Winans, & Michael W Smith: Christmas Together"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=ACM&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/amy-grant-cece-winans-michael-w-smith",
+    "image_url": "https://www.foxtheatre.org/assets/img/AmyGrant_MichaelSmith_CeceWinans_550x550-c134756da6.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2025-12-06-fox-theatre-amy-grant-cece-winans-michael-w-smith-christmas-together",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "Mercedes-Benz Stadium",
     "date": "2025-12-06",
     "doors_time": null,
@@ -835,6 +889,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-08",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "for King + Country's A Drummer Boy Christmas: The 2025 Live Experience"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=FKC&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/for-king-country-drummer-boy-christmas",
+    "image_url": "https://www.foxtheatre.org/assets/img/For-King-Country-550-x-550-px-8ca26987c3.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-08-fox-theatre-for-king-countrys-a-drummer-boy-christmas-the-2025-live-experience",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2025-12-08",
     "doors_time": null,
@@ -1027,6 +1099,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-10",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "MERRY MIGHTY MO and MORE presented by Georgia Natural Gas"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=LCM&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/merry-mighty-mo-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/MerryMightMo_550x550-88bbb610aa.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-10-fox-theatre-merry-mighty-mo-and-more-presented-by-georgia-natural-gas",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2025-12-10",
     "doors_time": null,
@@ -1170,6 +1260,24 @@
     "price": "See website",
     "slug": "2025-12-11-coca-cola-roxy-teddy-swims",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2025-12-11",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "An Intimate Evening with David Foster & Katharine McPhee"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=KAT&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/david-foster-katharine-mcphee",
+    "image_url": "https://www.foxtheatre.org/assets/img/DavidFoster_KatharineMcphee_550x550-696c29fecf.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2025-12-11-fox-theatre-an-intimate-evening-with-david-foster-katharine-mcphee",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "The Masquerade",
@@ -1353,6 +1461,24 @@
     "category": "concerts",
     "slug": "2025-12-12-variety-playhouse-andy-frasco-the-un-growing-pains-tour",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2025-12-12",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "John Mulaney: Mister Whatever"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MUL&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/john-mulaney-mister-whatever",
+    "image_url": "https://www.foxtheatre.org/assets/img/JohnMulaney_550x550-cd6fc44b53.jpg",
+    "category": "comedy",
+    "price": "See website",
+    "slug": "2025-12-12-fox-theatre-john-mulaney-mister-whatever",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -1797,6 +1923,24 @@
     "price": "See website",
     "slug": "2025-12-15-mercedes-benz-stadium-ghsa-state-championship",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2025-12-16",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Elf"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=ELF&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/elf",
+    "image_url": "https://www.foxtheatre.org/assets/img/Elf_550x550-658eb46298.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2025-12-16-fox-theatre-elf",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2612,6 +2756,24 @@
     "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-23",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "NUTCRACKER! Magical Christmas Ballet"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=NUT&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/nutcracker-magical-christmas-ballet-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/Nutcracker_550x550-adc61b63a1.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2025-12-23-fox-theatre-nutcracker-magical-christmas-ballet",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2025-12-23",
     "doors_time": null,
@@ -2787,6 +2949,24 @@
     "category": "concerts",
     "slug": "2025-12-28-state-farm-arena-rod-wave",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2025-12-29",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Widespread Panic"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=WSP&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/widespread-panic-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/WP-NYE-ATL-2025-550X550-edc5196863.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2025-12-29-fox-theatre-widespread-panic",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "State Farm Arena",
@@ -3037,6 +3217,24 @@
     "stage": "Vinyl",
     "slug": "2026-01-03-center-stage-soup",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-01-06",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Hell's Kitchen"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=HEL&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/hells-kitchen",
+    "image_url": "https://www.foxtheatre.org/assets/img/HellsKitchen_550x550-c579b8a9d1.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-01-06-fox-theatre-hells-kitchen",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "State Farm Arena",
@@ -3376,6 +3574,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-01-16",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Ron White"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=RON&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/ron-white-2026",
+    "image_url": "https://www.foxtheatre.org/assets/img/Ron-White-550-x-550-02a66cdd55.jpg",
+    "category": "comedy",
+    "price": "See website",
+    "slug": "2026-01-16-fox-theatre-ron-white",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2026-01-16",
     "doors_time": null,
@@ -3484,6 +3700,24 @@
     "category": "concerts",
     "slug": "2026-01-17-variety-playhouse-spafford",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-01-17",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Morrissey"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MOZ&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/morrissey",
+    "image_url": "https://www.foxtheatre.org/assets/img/Morrissey_550x550-b7d05f50d9.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-01-17-fox-theatre-morrissey",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "State Farm Arena",
@@ -4066,6 +4300,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-01-24",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Blue Man Group"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BMG&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/blue-man-group-2026",
+    "image_url": "https://www.foxtheatre.org/assets/img/BMG-550-x-550-45d09a2a68.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-01-24-fox-theatre-blue-man-group",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2026-01-24",
     "doors_time": null,
@@ -4172,6 +4424,24 @@
     "price": "See website",
     "slug": "2026-01-27-tabernacle-motion-city-soundtrack-say-anything",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-01-27",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "MJ The Musical"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=MJM&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/mj-the-musical-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/MjTheMusical_550x550-99e1cae011.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-01-27-fox-theatre-mj-the-musical",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "Center Stage",
@@ -5087,6 +5357,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-02-06",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Riverdance"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=RIV&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/riverdance",
+    "image_url": "https://www.foxtheatre.org/assets/img/Riverdance_550x550-24362de122.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-02-06-fox-theatre-riverdance",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2026-02-06",
     "doors_time": null,
@@ -5357,6 +5645,24 @@
     "category": "concerts",
     "slug": "2026-02-11-terminal-west-jonah-kagen",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-02-11",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Alvin Ailey American Dance Theater"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=ALV&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/alvin-ailey-2026",
+    "image_url": "https://www.foxtheatre.org/assets/img/AAADT_2026_ATL_Digital_Web_550sq-86b236dec3.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-02-11-fox-theatre-alvin-ailey-american-dance-theater",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "The Masquerade",
@@ -6100,6 +6406,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-02-21",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "When A Woman's Fed Up"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=WWF&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/when-a-womans-fed-up",
+    "image_url": "https://www.foxtheatre.org/assets/img/Fed-Up-FOX-ATL550X550-19d5d747a2.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-02-21-fox-theatre-when-a-womans-fed-up",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2026-02-21",
     "doors_time": null,
@@ -6594,6 +6918,24 @@
     "category": "concerts",
     "slug": "2026-02-28-variety-playhouse-billy-f-gibbons-and-the-bfg-band",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-02-28",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Harry Potter and the Cursed Child"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=HAR&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/harry-potter",
+    "image_url": "https://www.foxtheatre.org/assets/img/Harry-Potter-550-x-550-b34dc555b6.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-02-28-fox-theatre-harry-potter-and-the-cursed-child",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "The Masquerade",
@@ -7764,6 +8106,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-03-20",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Dionne Warwick"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/event/0E0062D9040369B4",
+    "info_url": "https://www.foxtheatre.org/events/detail/dionne-warwick-aso",
+    "image_url": "https://www.foxtheatre.org/assets/img/Dionne-Warwick-550-x-550-a544c1e9f6.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-03-20-fox-theatre-dionne-warwick",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-03-20",
     "doors_time": null,
@@ -7885,6 +8245,24 @@
     "category": "concerts",
     "slug": "2026-03-21-the-eastern-level-up-x-zingara",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-03-21",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Josiah Queen: The Mt. Zion Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=JOS&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/josiah-queen",
+    "image_url": "https://www.foxtheatre.org/assets/img/JQ_MZ_Atlanta_550x550-d9dad13581.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2026-03-21-fox-theatre-josiah-queen-the-mt-zion-tour",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "State Farm Arena",
@@ -8180,6 +8558,24 @@
     "category": "concerts",
     "slug": "2026-03-26-variety-playhouse-cymande",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-03-26",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Anne Wilson: The STARS Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=WIL&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/anne-wilson-stars-tour",
+    "image_url": "https://www.foxtheatre.org/assets/img/AW_StarsSpring_Atlanta_550x550-a2ad836e9f.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2026-03-26-fox-theatre-anne-wilson-the-stars-tour",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "State Farm Arena",
@@ -8554,6 +8950,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-03-31",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Dancing with the Stars: Live! - 2026 Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=DAN&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/dancing-with-the-stars-2026",
+    "image_url": "https://www.foxtheatre.org/assets/img/DWTS-w-Elaine-550-x-550-78ad9327e1.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-03-31-fox-theatre-dancing-with-the-stars-live-2026-tour",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "Mercedes-Benz Stadium",
     "date": "2026-03-31",
     "doors_time": null,
@@ -8862,6 +9276,24 @@
     "category": "sports",
     "slug": "2026-04-06-state-farm-arena-atlanta-hawks",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-04-07",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "The Sound of Music"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SOU&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/the-sound-of-music",
+    "image_url": "https://www.foxtheatre.org/assets/img/TheSoundofMusic_550x550-b99b1293bc.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-04-07-fox-theatre-the-sound-of-music",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "The Eastern",
@@ -9624,6 +10056,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-04-18",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "An Evening With Yo-Yo Ma: Reflections in Words and Music"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=YYM&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/yo-yo-ma",
+    "image_url": "https://www.foxtheatre.org/assets/img/Yoyo_550x550-copy-805d5e1250.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2026-04-18-fox-theatre-an-evening-with-yo-yo-ma-reflections-in-words-and-music",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-04-18",
     "doors_time": null,
@@ -9771,6 +10221,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-04-25",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "MEL ROBBINS: LET THEM TOUR 2026"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MEL&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/mel-robbins-let-them-tour",
+    "image_url": "https://www.foxtheatre.org/assets/img/Mel-Robbins-550x550_2show-0ea2c4fd54.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-04-25-fox-theatre-mel-robbins-let-them-tour-2026",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "Coca-Cola Roxy",
     "date": "2026-04-26",
     "doors_time": "19:00",
@@ -9841,6 +10309,24 @@
     "price": "See website",
     "slug": "2026-04-28-coca-cola-roxy-raye",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-04-28",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "SIX"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SIX&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/six-the-musical",
+    "image_url": "https://www.foxtheatre.org/assets/img/Six_550x550-174b27560c.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-04-28-fox-theatre-six",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "The Masquerade",
@@ -10326,6 +10812,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-05-26",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Beauty and the Beast"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BEA&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/beauty-and-the-beast",
+    "image_url": "https://www.foxtheatre.org/assets/img/BeautyandtheBeast_550x550-2e2f908675.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-05-26-fox-theatre-beauty-and-the-beast",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
+  },
+  {
     "venue": "Tabernacle",
     "date": "2026-05-30",
     "doors_time": "20:00",
@@ -10360,6 +10864,24 @@
     "price": "See website",
     "slug": "2026-06-01-mercedes-benz-stadium-2026-fifa-world-cup",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-06-05",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Morgan Jay: The Goofy Guy Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=JAY&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/morgan-jay",
+    "image_url": "https://www.foxtheatre.org/assets/img/Morgan-Jay-550x550-7f11b208b2.jpg",
+    "category": "comedy",
+    "price": "See website",
+    "slug": "2026-06-05-fox-theatre-morgan-jay-the-goofy-guy-tour",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "The Eastern",
@@ -10526,6 +11048,24 @@
     "price": "See website",
     "slug": "2026-07-17-tabernacle-aj-ghent",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-07-21",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Monty Python's Spamalot"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SPA&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/spamalot",
+    "image_url": "https://www.foxtheatre.org/assets/img/MontyPythons_550x550-e9be5d99e2.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-07-21-fox-theatre-monty-pythons-spamalot",
+    "first_seen": "2025-12-03T22:49:41.337386Z"
   },
   {
     "venue": "State Farm Arena",
