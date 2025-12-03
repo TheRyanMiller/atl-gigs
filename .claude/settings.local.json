@@ -50,7 +50,9 @@
       "mcp__chrome-devtools__list_network_requests",
       "mcp__chrome-devtools__get_network_request",
       "mcp__chrome-devtools__wait_for",
-      "Bash(timeout 180 python3:*)"
+      "Bash(timeout 180 python3:*)",
+      "Bash(git checkout:*)",
+      "Bash(tee:*)"
     ],
     "deny": [],
     "ask": []

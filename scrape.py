@@ -48,6 +48,10 @@ REQUIRED_FIELDS = ["venue", "date", "artists", "ticket_url"]
 TM_API_KEY = os.environ.get("TM_API_KEY")
 TM_BASE_URL = "https://app.ticketmaster.com/discovery/v2"
 
+# Live Nation GraphQL API key (used for Tabernacle, Coca-Cola Roxy)
+# Can be overridden via environment variable
+LIVE_NATION_API_KEY = os.environ.get("LIVE_NATION_API_KEY", "da2-jmvb5y2gjfcrrep3wzeumqwgaq")
+
 # Venue IDs discovered from TM API
 TM_VENUES = {
     # Center Stage Complex
@@ -689,6 +693,7 @@ def scrape_earl():
                 break
             yield r.text
             n += 1
+            time.sleep(0.3)  # Rate limiting between pages
 
     def parse_page(html):
         soup = BeautifulSoup(html, "html.parser")
@@ -752,9 +757,13 @@ AEG_HEADERS = {
 
 def scrape_aeg_venue(url, venue_name):
     """Scrape events from an AEG venue's JSON API."""
-    resp = requests.get(url, headers=AEG_HEADERS, timeout=15)
-    resp.raise_for_status()
-    data = resp.json()
+    try:
+        resp = requests.get(url, headers=AEG_HEADERS, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as e:
+        print(f"    {venue_name}: ERROR - {e}")
+        return []
 
     events = []
     for event in data.get("events", []):
@@ -836,7 +845,7 @@ LIVE_NATION_HEADERS = {
     "origin": "https://www.cocacolaroxy.com",
     "referer": "https://www.cocacolaroxy.com/",
     "user-agent": "Mozilla/5.0 (X11; Linux x86_64)",
-    "x-api-key": "da2-jmvb5y2gjfcrrep3wzeumqwgaq",
+    "x-api-key": LIVE_NATION_API_KEY,
     "x-amz-user-agent": "aws-amplify/6.13.5 api/1 framework/2",
 }
 
@@ -931,42 +940,17 @@ def scrape_coca_cola_roxy():
 # ----------------------------------------------------------------------
 
 FOX_THEATRE_BASE = "https://www.foxtheatre.org"
-FOX_THEATRE_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive",
-    "Upgrade-Insecure-Requests": "1",
-    "Sec-Fetch-Dest": "document",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "none",
-    "Sec-Fetch-User": "?1",
-    "Cache-Control": "max-age=0",
-}
 
 # Headers for Fox Theatre AJAX API requests (mimics browser XHR)
 FOX_THEATRE_AJAX_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "*/*",
     "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
     "X-Requested-With": "XMLHttpRequest",
     "Referer": "https://www.foxtheatre.org/events",
     "Sec-Fetch-Dest": "empty",
     "Sec-Fetch-Mode": "cors",
     "Sec-Fetch-Site": "same-origin",
-}
-
-# Fox Theatre category pages and their mapping to our categories
-# See scrapers/fox-theatre.md for detailed mapping decisions
-FOX_CATEGORY_PAGES = {
-    "/events/upcoming-events/broadway": "broadway",
-    "/events/upcoming-events/comedy": "comedy",
-    # Note: /concerts category is JavaScript-only filter, no static URL
-    "/events/upcoming-events/holiday": "misc",      # Mixed: concerts + broadway, default to misc
-    "/events/upcoming-events/family": "misc",       # Family shows
-    "/events/upcoming-events/special-engagements": "misc",  # Dance, speakers, variety
 }
 
 def parse_fox_date_range(date_text):
@@ -1024,103 +1008,6 @@ def parse_fox_date_range(date_text):
 
     return None, None
 
-def scrape_fox_category_page(url, category):
-    """Scrape events from a Fox Theatre category page."""
-    resp = requests.get(url, headers=FOX_THEATRE_HEADERS, timeout=15)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
-
-    events = []
-    seen_urls = set()
-
-    # Fox Theatre uses div.eventItem as the event container
-    for card in soup.select("div.eventItem"):
-        # Extract title from h3.title or link title attribute
-        title_el = card.select_one("h3.title a, h3.title, .title a")
-        if title_el:
-            title = title_el.get_text(strip=True)
-        else:
-            # Fallback to link title attribute
-            link = card.select_one("a[title*='More Info']")
-            title = link.get("title", "").replace("More Info for ", "") if link else None
-
-        if not title:
-            continue
-
-        # Get detail URL
-        detail_link = card.select_one("h3.title a, a.more, a[href*='/events/detail/']")
-        if not detail_link:
-            continue
-        detail_url = detail_link.get("href", "")
-        if not detail_url.startswith("http"):
-            detail_url = FOX_THEATRE_BASE + detail_url
-
-        # Skip duplicates
-        if detail_url in seen_urls:
-            continue
-        seen_urls.add(detail_url)
-
-        # Extract date from div.date structure
-        date_div = card.select_one("div.date")
-        if date_div:
-            # Get all date text - handles ranges like "Nov 30, 2025" or "Jan 27-Feb 1, 2026"
-            month = date_div.select_one(".m-date__month")
-            day = date_div.select_one(".m-date__day")
-            year = date_div.select_one(".m-date__year")
-
-            if month and day and year:
-                # Check for range (second date)
-                range_end = date_div.select_one(".m-date__rangeLast")
-                if range_end:
-                    end_month = range_end.select_one(".m-date__month")
-                    end_day = range_end.select_one(".m-date__day")
-                    end_year = range_end.select_one(".m-date__year") or year
-
-                    start_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}{year.get_text(strip=True)}"
-                    end_text = f"{end_month.get_text(strip=True) if end_month else month.get_text(strip=True)} {end_day.get_text(strip=True)}{end_year.get_text(strip=True)}"
-
-                    date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}-{end_month.get_text(strip=True) + ' ' if end_month else ''}{end_day.get_text(strip=True)}{year.get_text(strip=True)}"
-                else:
-                    date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}{year.get_text(strip=True)}"
-            else:
-                date_text = date_div.get_text(strip=True)
-        else:
-            # Fallback: search card text for date pattern
-            card_text = card.get_text()
-            date_match = re.search(r'([A-Z][a-z]{2}\s+\d+(?:-(?:[A-Z][a-z]{2}\s+)?\d+)?,\s*\d{4})', card_text)
-            date_text = date_match.group(1) if date_match else None
-
-        if not date_text:
-            continue
-
-        start_date, end_date = parse_fox_date_range(date_text)
-        if not start_date:
-            continue
-
-        # Extract image from div.thumb img
-        img = card.select_one("div.thumb img, .thumb img, img")
-        image_url = None
-        if img:
-            image_url = img.get("src") or img.get("data-src")
-            if image_url and not image_url.startswith("http"):
-                image_url = FOX_THEATRE_BASE + image_url
-
-        # Extract ticket URL (a.tickets)
-        ticket_link = card.select_one("a.tickets, a[href*='evenue.net']")
-        ticket_url = ticket_link.get("href").strip() if ticket_link else detail_url
-
-        events.append({
-            "title": title,
-            "date": start_date,
-            "end_date": end_date if end_date != start_date else None,
-            "info_url": detail_url,
-            "ticket_url": ticket_url,
-            "image_url": image_url,
-            "fox_category": category,
-        })
-
-    return events
-
 def scrape_fox_ajax_all_events():
     """
     Scrape ALL Fox Theatre events using their AJAX pagination API.
@@ -1133,11 +1020,21 @@ def scrape_fox_ajax_all_events():
     offset = 0
     per_page = 100  # Request many at once to minimize requests
 
+    # Use a session to maintain cookies (helps avoid 406 errors)
+    session = requests.Session()
+    session.headers.update(FOX_THEATRE_AJAX_HEADERS)
+
+    # First visit the main events page to get any required cookies
+    try:
+        session.get(f"{FOX_THEATRE_BASE}/events", timeout=15)
+    except Exception:
+        pass  # Continue even if this fails
+
     while True:
         ajax_url = f"{FOX_THEATRE_BASE}/events/events_ajax/{offset}?category=0&venue=0&team=0&exclude=&per_page={per_page}&came_from_page=event-list-page"
 
         try:
-            resp = requests.get(ajax_url, headers=FOX_THEATRE_AJAX_HEADERS, timeout=15)
+            resp = session.get(ajax_url, timeout=15)
             resp.raise_for_status()
 
             # Response is JSON-encoded HTML string
@@ -1244,6 +1141,7 @@ def scrape_fox_ajax_all_events():
                 break
 
             offset += len(cards)
+            time.sleep(0.3)  # Rate limiting between pages
 
         except Exception as e:
             print(f"    Fox Theatre AJAX offset {offset}: ERROR - {e}")
@@ -1524,9 +1422,13 @@ def scrape_mercedes_benz_stadium():
     The site uses Webflow CMS with Finsweet CMS Filter.
     """
     url = MERCEDES_BENZ_STADIUM_BASE + "/events"
-    resp = requests.get(url, headers=MERCEDES_BENZ_STADIUM_HEADERS, timeout=30)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
+    try:
+        resp = requests.get(url, headers=MERCEDES_BENZ_STADIUM_HEADERS, timeout=30)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+    except Exception as e:
+        print(f"    Mercedes-Benz Stadium: ERROR - {e}")
+        return []
 
     events = []
     seen_urls = set()
@@ -1735,9 +1637,13 @@ def scrape_masquerade():
     Only includes events at Masquerade rooms (Heaven, Hell, Purgatory, Altar).
     """
     url = MASQUERADE_BASE + "/events/"
-    resp = requests.get(url, headers=MASQUERADE_HEADERS, timeout=30)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
+    try:
+        resp = requests.get(url, headers=MASQUERADE_HEADERS, timeout=30)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+    except Exception as e:
+        print(f"    The Masquerade: ERROR - {e}")
+        return []
 
     events = []
 
@@ -1900,9 +1806,13 @@ def scrape_center_stage():
 
     while page <= max_pages:
         url = f"{CENTER_STAGE_API}?page={page}"
-        resp = requests.get(url, headers=CENTER_STAGE_HEADERS, timeout=30)
-        resp.raise_for_status()
-        data = resp.json()
+        try:
+            resp = requests.get(url, headers=CENTER_STAGE_HEADERS, timeout=30)
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception as e:
+            print(f"    Center Stage page {page}: ERROR - {e}")
+            break
 
         # Empty response or error message means no more pages
         if not data or not isinstance(data, list):

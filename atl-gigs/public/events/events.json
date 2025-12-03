@@ -7227,6 +7227,23 @@
     "slug": "2026-03-12-the-masquerade-puma-blue"
   },
   {
+    "venue": "Tabernacle",
+    "date": "2026-03-13",
+    "doors_time": "20:00",
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Bridget Everett",
+        "genre": "Comedy"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/bridget-everett-big-titties-big-dreams-atlanta-georgia-03-13-2026/event/0E0063732358FA99",
+    "image_url": "https://s1.ticketm.net/dam/a/2a1/7c0f0b90-297a-4f8d-be11-3c96f88e52a1_50991_RETINA_PORTRAIT_16_9.jpg",
+    "category": "comedy",
+    "price": "See website",
+    "slug": "2026-03-13-tabernacle-bridget-everett"
+  },
+  {
     "venue": "Terminal West",
     "date": "2026-03-13",
     "doors_time": "19:00",
@@ -9687,6 +9704,24 @@
     "category": "concerts",
     "room": "Altar",
     "slug": "2026-04-28-the-masquerade-coma-cinema"
+  },
+  {
+    "venue": "The Masquerade",
+    "date": "2026-04-30",
+    "doors_time": null,
+    "show_time": "19:00",
+    "artists": [
+      {
+        "name": "Troy Doherty",
+        "genre": "Pop"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/troy-doherty-atlanta-georgia-04-30-2026/event/0E006382A8A1819F",
+    "image_url": "https://s1.ticketm.net/dam/a/165/6064ba73-0c99-4296-a971-d44c4d073165_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "room": "Hell",
+    "slug": "2026-04-30-the-masquerade-troy-doherty"
   },
   {
     "venue": "Terminal West",
