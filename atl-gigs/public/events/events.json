@@ -1,104 +1,20 @@
 [
   {
-    "venue": "State Farm Arena",
-    "date": "2025-12-01",
+    "venue": "Fox Theatre",
+    "date": "2025-12-03",
     "doors_time": null,
-    "show_time": "19:00",
+    "show_time": null,
     "artists": [
       {
-        "name": "Playboi Carti",
-        "genre": "Hip-Hop/Rap"
-      },
-      {
-        "name": "Ken Carson",
-        "genre": "Hip-Hop/Rap"
-      },
-      {
-        "name": "Destroy Lonely",
-        "genre": "Hip-Hop/Rap"
-      },
-      {
-        "name": "Homixide Gang",
-        "genre": "Hip-Hop/Rap"
-      },
-      {
-        "name": "Apollo Red",
-        "genre": "Hip-Hop/Rap"
+        "name": "An Evening With David Byrne - Who is the Sky Tour"
       }
     ],
-    "ticket_url": "https://www.ticketmaster.com/playboi-carti-antagonist-tour-atlanta-georgia-12-01-2025/event/0E00630FE39957ED",
-    "image_url": "https://s1.ticketm.net/dam/a/921/f06e45a7-0373-4d09-83e3-2b69c647d921_RETINA_PORTRAIT_16_9.jpg",
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=BYR&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/david-byrne-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/DavidByrne_550x550-ca7c18e32c.jpg",
+    "category": "misc",
     "price": "See website",
-    "category": "concerts",
-    "slug": "2025-12-01-state-farm-arena-playboi-carti"
-  },
-  {
-    "venue": "The Masquerade",
-    "date": "2025-12-01",
-    "doors_time": null,
-    "show_time": "19:00",
-    "artists": [
-      {
-        "name": "Telekinetic Yeti",
-        "genre": "Rock"
-      },
-      {
-        "name": "Thunderchief",
-        "genre": "Rock"
-      },
-      {
-        "name": "leafblower",
-        "genre": "Metal"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/telekinetic-yeti-atlanta-georgia-12-01-2025/event/0E00636502E5AF7F",
-    "image_url": "https://s1.ticketm.net/dam/c/fbc/b293c0ad-c904-4215-bc59-8d7f2414dfbc_106141_RETINA_LANDSCAPE_16_9.jpg",
-    "price": "See website",
-    "category": "concerts",
-    "room": "Purgatory",
-    "slug": "2025-12-01-the-masquerade-telekinetic-yeti"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-02",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Ryan Davis + The Roadhouse Band"
-      },
-      {
-        "name": "Arbor Labor Union"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/ryan-davis-the-earl-2",
-    "info_url": "https://badearl.com/show/ryan-davis-the-earl-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/08/RyanDavis_RollingStone_6_21_25-13-min.jpg",
-    "category": "concerts",
-    "price": "$18 ADV / $18 DOS",
-    "slug": "2025-12-02-the-earl-ryan-davis-the-roadhouse-band"
-  },
-  {
-    "venue": "The Masquerade",
-    "date": "2025-12-02",
-    "doors_time": null,
-    "show_time": "19:00",
-    "artists": [
-      {
-        "name": "Lucy Bedroque",
-        "genre": "Hip-Hop/Rap"
-      },
-      {
-        "name": "Kuru",
-        "genre": "Dance/Electronic"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/lucy-bedroque-atlanta-georgia-12-02-2025/event/0E006329CEF14DE2",
-    "image_url": "https://s1.ticketm.net/dam/a/2a4/a67ddb28-4e73-4557-8728-cd0862bf62a4_RETINA_PORTRAIT_16_9.jpg",
-    "price": "See website",
-    "category": "concerts",
-    "room": "Altar",
-    "slug": "2025-12-02-the-masquerade-lucy-bedroque"
+    "slug": "2025-12-03-fox-theatre-an-evening-with-david-byrne-who-is-the-sky-tour"
   },
   {
     "venue": "State Farm Arena",
@@ -184,7 +100,7 @@
   {
     "venue": "The Eastern",
     "date": "2025-12-04",
-    "doors_time": "18:30",
+    "doors_time": "18:45",
     "show_time": "19:00",
     "artists": [
       {
@@ -229,7 +145,7 @@
     "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=LAU&linkID=fta&shopperContext=&caller=&appCode",
     "info_url": "https://www.foxtheatre.org/events/detail/lauren-daigle-2025",
     "image_url": "https://www.foxtheatre.org/assets/img/Lauren-Daigle-550x550-927f65e30a.jpg",
-    "category": "misc",
+    "category": "concerts",
     "price": "See website",
     "slug": "2025-12-04-fox-theatre-lauren-daigle-the-behold-christmas-tour"
   },
@@ -331,6 +247,10 @@
       {
         "name": "The Weird Sisters",
         "genre": "Alternative"
+      },
+      {
+        "name": "The Relics",
+        "genre": "Rock"
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/the-weird-sisters-atlanta-georgia-12-04-2025/event/0E00635F012DAD7B",
@@ -364,21 +284,21 @@
     "show_time": "21:00",
     "artists": [
       {
+        "name": "Muelas"
+      },
+      {
         "name": "Nihilist Cheerleader"
       },
       {
         "name": "BadKill"
-      },
-      {
-        "name": "Muelas"
       }
     ],
     "ticket_url": "https://badearl.freshtix.com/events/nihilist-cheerleader-badkill-muelas-the-earl",
     "info_url": "https://badearl.com/show/nihilist-cheerleader-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/nihilist-cheerleader-1.jpg",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/D56E0C11-2152-43B4-92E7-0B28F6665D01.jpeg",
     "category": "concerts",
     "price": "$15 ADV / $20 DOS",
-    "slug": "2025-12-05-the-earl-nihilist-cheerleader"
+    "slug": "2025-12-05-the-earl-muelas"
   },
   {
     "venue": "Variety Playhouse",
@@ -615,7 +535,7 @@
     "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=ACM&linkID=fta&shopperContext=&caller=&appCode",
     "info_url": "https://www.foxtheatre.org/events/detail/amy-grant-cece-winans-michael-w-smith",
     "image_url": "https://www.foxtheatre.org/assets/img/AmyGrant_MichaelSmith_CeceWinans_550x550-c134756da6.jpg",
-    "category": "misc",
+    "category": "concerts",
     "price": "See website",
     "slug": "2025-12-06-fox-theatre-amy-grant-cece-winans-michael-w-smith-christmas-together"
   },
@@ -631,7 +551,7 @@
     ],
     "ticket_url": "https://www.ticketmaster.com/sec-football-championship-atlanta-georgia-12-06-2025/event/0E0062FCB53170C7?CAMEFROM=CFC_MBS_WEB_MBS_ONSALE",
     "info_url": "https://www.mercedesbenzstadium.com/events/sec-championship-3",
-    "image_url": "https://cdn.prod.website-files.com/5ddedd0e3047ab406ee3c37e/689e1cae553dc44f96182668_sec%20championship-%20horizontal.webp",
+    "image_url": "https://cdn.prod.website-files.com/5ddedd0e3047ab406ee3c37e/692dc79fe0a03b67b46f630d_Email_1200x800_SEC_Champ.jpg",
     "category": "sports",
     "price": "See website",
     "slug": "2025-12-06-mercedes-benz-stadium-sec-championship"
@@ -714,22 +634,6 @@
     "price": "See website",
     "category": "comedy",
     "slug": "2025-12-06-center-stage-mojo-brookzz"
-  },
-  {
-    "venue": "Vinyl",
-    "date": "2025-12-06",
-    "doors_time": null,
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Richdanfamous LIVE!"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/richdanfamous-live-atlanta-georgia-12-06-2025/event/0E00636BD2A0AAE5",
-    "image_url": "https://s1.ticketm.net/dam/e/f21/26e1cac6-cfd4-40ec-b7b5-da1fa288ff21_SOURCE",
-    "price": "See website",
-    "category": "concerts",
-    "slug": "2025-12-06-vinyl-richdanfamous-live"
   },
   {
     "venue": "Vinyl",
@@ -1301,7 +1205,7 @@
     "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=KAT&linkID=fta&shopperContext=&caller=&appCode=",
     "info_url": "https://www.foxtheatre.org/events/detail/david-foster-katharine-mcphee",
     "image_url": "https://www.foxtheatre.org/assets/img/DavidFoster_KatharineMcphee_550x550-696c29fecf.jpg",
-    "category": "misc",
+    "category": "concerts",
     "price": "See website",
     "slug": "2025-12-11-fox-theatre-an-intimate-evening-with-david-foster-katharine-mcphee"
   },
@@ -1479,13 +1383,30 @@
     "slug": "2025-12-12-variety-playhouse-andy-frasco-the-un-growing-pains-tour"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2025-12-12",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "John Mulaney: Mister Whatever"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MUL&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/john-mulaney-mister-whatever",
+    "image_url": "https://www.foxtheatre.org/assets/img/JohnMulaney_550x550-cd6fc44b53.jpg",
+    "category": "comedy",
+    "price": "See website",
+    "slug": "2025-12-12-fox-theatre-john-mulaney-mister-whatever"
+  },
+  {
     "venue": "Mercedes-Benz Stadium",
     "date": "2025-12-12",
     "doors_time": null,
     "show_time": "19:00",
     "artists": [
       {
-        "name": "Band of the Year"
+        "name": "Red Lobster Band of the Year"
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/2025-band-of-the-year-atlanta-georgia-12-12-2025/event/0E006329BC60439B?CAMEFROM=CFC_MBS_WEB_MBS_ONSALE",
@@ -1493,7 +1414,7 @@
     "image_url": "https://cdn.prod.website-files.com/5ddedd0e3047ab406ee3c37e/691de4f3ea7eec7325d6c33b_Web_16x9_Red_Lobster_Band_of_Year.jpg",
     "category": "misc",
     "price": "See website",
-    "slug": "2025-12-12-mercedes-benz-stadium-band-of-the-year"
+    "slug": "2025-12-12-mercedes-benz-stadium-red-lobster-band-of-the-year"
   },
   {
     "venue": "State Farm Arena",
@@ -1649,7 +1570,7 @@
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/holiday-hoopsgiving-2025-atlanta-georgia-12-13-2025/event/0E006319AF053DFC",
-    "image_url": "https://s1.ticketm.net/dam/a/109/9fa7fc39-cec3-4721-9aa1-dc6b1b355109_1329421_TABLET_LANDSCAPE_16_9.jpg",
+    "image_url": "https://s1.ticketm.net/dam/e/e6e/df99ead3-a11c-4205-8be9-a31451bebe6e_TABLET_LANDSCAPE_16_9.jpg",
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-13-state-farm-arena-holiday-hoopsgiving"
@@ -1748,7 +1669,7 @@
     "venue": "State Farm Arena",
     "date": "2025-12-14",
     "doors_time": null,
-    "show_time": "15:30",
+    "show_time": "18:00",
     "artists": [
       {
         "name": "Atlanta Hawks",
@@ -1907,7 +1828,7 @@
     "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=ELF&linkID=fta&shopperContext=&caller=&appCode=",
     "info_url": "https://www.foxtheatre.org/events/detail/elf",
     "image_url": "https://www.foxtheatre.org/assets/img/Elf_550x550-658eb46298.jpg",
-    "category": "misc",
+    "category": "broadway",
     "price": "See website",
     "slug": "2025-12-16-fox-theatre-elf"
   },
@@ -2669,6 +2590,23 @@
     "slug": "2025-12-21-vinyl-lil-crank"
   },
   {
+    "venue": "The Earl",
+    "date": "2025-12-23",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Home For The Holidays"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/mandal-nick-murphy-shaunak-godkhindi-the-earl",
+    "info_url": "https://badearl.com/show/home-for-the-holidays-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/HFH-IG-2-min.jpg",
+    "category": "broadway",
+    "price": "$25 ADV / $25 DOS",
+    "slug": "2025-12-23-the-earl-home-for-the-holidays"
+  },
+  {
     "venue": "Fox Theatre",
     "date": "2025-12-23",
     "doors_time": null,
@@ -2705,6 +2643,23 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-23-state-farm-arena-atlanta-hawks"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-25",
+    "doors_time": "08:00",
+    "show_time": "21:00",
+    "artists": [
+      {
+        "name": "Dedrick Flynn"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/dedrick-flynn-the-earl-3",
+    "info_url": "https://badearl.com/show/dedrick-flynn-the-earl-3-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2024/10/dedrick-flynn.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $25 DOS",
+    "slug": "2025-12-25-the-earl-dedrick-flynn"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2755,6 +2710,32 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-26-state-farm-arena-atlanta-hawks"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-27",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Drugula"
+      },
+      {
+        "name": "Widow 100s"
+      },
+      {
+        "name": "Chuck Jr"
+      },
+      {
+        "name": "Baby Bites"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/drugula-widow-100s-the-earl",
+    "info_url": "https://badearl.com/show/drugula-widow-100s-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/drugula-flyer-min.jpg",
+    "category": "concerts",
+    "price": "$15 ADV / $15 DOS",
+    "slug": "2025-12-27-the-earl-drugula"
   },
   {
     "venue": "State Farm Arena",
@@ -2809,6 +2790,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-28-state-farm-arena-rod-wave"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2025-12-29",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Widespread Panic"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=WSP&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/widespread-panic-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/WP-NYE-ATL-2025-550X550-edc5196863.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2025-12-29-fox-theatre-widespread-panic"
   },
   {
     "venue": "State Farm Arena",
@@ -2895,6 +2893,26 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-30-vinyl-underground-springhouse"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-31",
+    "doors_time": "08:00",
+    "show_time": "21:00",
+    "artists": [
+      {
+        "name": "Upchuck"
+      },
+      {
+        "name": "Possums"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/upchuck-the-earl-3",
+    "info_url": "https://badearl.com/show/upchuck-the-earl-3/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/upchuck_15_pc_michael_tyrone_delaney_300dpi.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $25 DOS",
+    "slug": "2025-12-31-the-earl-upchuck"
   },
   {
     "venue": "Tabernacle",
@@ -3026,6 +3044,23 @@
     "slug": "2026-01-03-vinyl-soup"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-01-06",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Hell's Kitchen"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=HEL&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/hells-kitchen",
+    "image_url": "https://www.foxtheatre.org/assets/img/HellsKitchen_550x550-c579b8a9d1.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-01-06-fox-theatre-hells-kitchen"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-01-07",
     "doors_time": null,
@@ -3073,6 +3108,38 @@
     "slug": "2026-01-08-the-masquerade-fleshwater"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-01-09",
+    "doors_time": "07:00",
+    "show_time": "19:30",
+    "artists": [
+      {
+        "name": "Nikki & The Phantom Callers"
+      },
+      {
+        "name": "Ben Trickey"
+      },
+      {
+        "name": "Tyler Key"
+      },
+      {
+        "name": "Heart Drugs"
+      },
+      {
+        "name": "Evan Stepp & The Piners"
+      },
+      {
+        "name": "Milkweed"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/number-stations-records-the-earl",
+    "info_url": "https://badearl.com/show/numbers-station-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2022/02/nikkiandhthephantomcallers-min_ccexpress.jpeg",
+    "category": "concerts",
+    "price": "$17 ADV / $20 DOS",
+    "slug": "2026-01-09-the-earl-nikki-the-phantom-callers"
+  },
+  {
     "venue": "Mercedes-Benz Stadium",
     "date": "2026-01-09",
     "doors_time": null,
@@ -3101,10 +3168,33 @@
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/father-figure-atlanta-georgia-01-09-2026/event/0E00637AADBD9106",
-    "image_url": "https://s1.ticketm.net/dam/c/fbc/b293c0ad-c904-4215-bc59-8d7f2414dfbc_106141_RETINA_LANDSCAPE_16_9.jpg",
+    "image_url": "https://s1.ticketm.net/dam/e/f53/d85f486c-16d4-4588-8235-f98b5aad9f53_TABLET_LANDSCAPE_16_9.jpg",
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-09-vinyl-father-figure"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-10",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Gringo Star"
+      },
+      {
+        "name": "The Sporrs"
+      },
+      {
+        "name": "Lowtown"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/gringo-star-the-earl-2",
+    "info_url": "https://badearl.com/show/gringo-star-the-earl-4/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/Gringo-Star.jpeg",
+    "category": "concerts",
+    "price": "$16 ADV / $20 DOS",
+    "slug": "2026-01-10-the-earl-gringo-star"
   },
   {
     "venue": "Variety Playhouse",
@@ -3289,6 +3379,23 @@
     "slug": "2026-01-16-variety-playhouse-magic-city-hippies-w-supertaste"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-01-16",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Ron White"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=RON&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/ron-white-2026",
+    "image_url": "https://www.foxtheatre.org/assets/img/Ron-White-550-x-550-02a66cdd55.jpg",
+    "category": "comedy",
+    "price": "See website",
+    "slug": "2026-01-16-fox-theatre-ron-white"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2026-01-16",
     "doors_time": null,
@@ -3393,6 +3500,23 @@
     "slug": "2026-01-17-variety-playhouse-spafford"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-01-17",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Morrissey"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MOZ&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/morrissey",
+    "image_url": "https://www.foxtheatre.org/assets/img/Morrissey_550x550-b7d05f50d9.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-01-17-fox-theatre-morrissey"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-01-17",
     "doors_time": null,
@@ -3430,6 +3554,24 @@
     "category": "concerts",
     "room": "Heaven",
     "slug": "2026-01-17-the-masquerade-the-funeral-portrait"
+  },
+  {
+    "venue": "The Masquerade",
+    "date": "2026-01-17",
+    "doors_time": null,
+    "show_time": "21:00",
+    "artists": [
+      {
+        "name": "Broadway Rave",
+        "genre": "Dance/Electronic"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/broadway-rave-18-atlanta-georgia-01-17-2026/event/0E006375E412C913",
+    "image_url": "https://s1.ticketm.net/dam/a/35b/608df499-b9b5-4197-9243-e0aa1227435b_RETINA_PORTRAIT_16_9.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "room": "Hell",
+    "slug": "2026-01-17-the-masquerade-broadway-rave"
   },
   {
     "venue": "Vinyl",
@@ -3472,6 +3614,9 @@
     "artists": [
       {
         "name": "Modern Nature"
+      },
+      {
+        "name": "Brigid Dawson & The Mothers Network"
       }
     ],
     "ticket_url": "https://badearl.freshtix.com/events/modern-nature-the-earl",
@@ -3871,7 +4016,7 @@
   {
     "venue": "Terminal West",
     "date": "2026-01-24",
-    "doors_time": "09:00",
+    "doors_time": "19:00",
     "show_time": "20:00",
     "artists": [
       {
@@ -3918,6 +4063,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-24-variety-playhouse-the-sundogs-present-the-tom-petty-show"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-01-24",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Blue Man Group"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BMG&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/blue-man-group-2026",
+    "image_url": "https://www.foxtheatre.org/assets/img/BMG-550-x-550-45d09a2a68.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-01-24-fox-theatre-blue-man-group"
   },
   {
     "venue": "The Masquerade",
@@ -4021,6 +4183,23 @@
     "slug": "2026-01-27-tabernacle-motion-city-soundtrack-say-anything"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-01-27",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "MJ The Musical"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=MJM&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/mj-the-musical-2025",
+    "image_url": "https://www.foxtheatre.org/assets/img/MjTheMusical_550x550-99e1cae011.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-01-27-fox-theatre-mj-the-musical"
+  },
+  {
     "venue": "Vinyl",
     "date": "2026-01-27",
     "doors_time": null,
@@ -4080,6 +4259,10 @@
       {
         "name": "Daffo",
         "genre": "Alternative"
+      },
+      {
+        "name": "Earth 2 Tiffany",
+        "genre": "Folk"
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/daffo-atlanta-georgia-01-28-2026/event/0E00635DF8DC9A52",
@@ -4877,6 +5060,23 @@
     "slug": "2026-02-06-variety-playhouse-dry-cleaning"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-02-06",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Riverdance"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=RIV&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/riverdance",
+    "image_url": "https://www.foxtheatre.org/assets/img/Riverdance_550x550-24362de122.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-02-06-fox-theatre-riverdance"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2026-02-06",
     "doors_time": null,
@@ -5097,6 +5297,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-11-terminal-west-jonah-kagen"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-02-11",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Alvin Ailey American Dance Theater"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=ALV&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/alvin-ailey-2026",
+    "image_url": "https://www.foxtheatre.org/assets/img/AAADT_2026_ATL_Digital_Web_550sq-86b236dec3.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-02-11-fox-theatre-alvin-ailey-american-dance-theater"
   },
   {
     "venue": "The Masquerade",
@@ -5799,6 +6016,23 @@
     "slug": "2026-02-21-variety-playhouse-marty-stuart-and-his-fabulous-superlatives"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-02-21",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "When A Woman's Fed Up"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=WWF&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/when-a-womans-fed-up",
+    "image_url": "https://www.foxtheatre.org/assets/img/Fed-Up-FOX-ATL550X550-19d5d747a2.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-02-21-fox-theatre-when-a-womans-fed-up"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2026-02-21",
     "doors_time": null,
@@ -5815,6 +6049,23 @@
     "category": "concerts",
     "room": "Purgatory",
     "slug": "2026-02-21-the-masquerade-aurelio-voltaire"
+  },
+  {
+    "venue": "Center Stage",
+    "date": "2026-02-21",
+    "doors_time": null,
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Aries",
+        "genre": "Alternative"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/aries-atlanta-georgia-02-21-2026/event/0E006379A946819B",
+    "image_url": "https://s1.ticketm.net/dam/a/04e/c528df0d-ff70-4ebf-afe9-7926c518e04e_SOURCE",
+    "price": "See website",
+    "category": "concerts",
+    "slug": "2026-02-21-center-stage-aries"
   },
   {
     "venue": "Terminal West",
@@ -5934,6 +6185,22 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-02-25-tabernacle-monaleo"
+  },
+  {
+    "venue": "Terminal West",
+    "date": "2026-02-25",
+    "doors_time": "19:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Petey USA"
+      }
+    ],
+    "ticket_url": "https://www.axs.com/events/1240977/petey-usa-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2025/12/uploadedimage_692dd52c20c8e.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "slug": "2026-02-25-terminal-west-petey-usa"
   },
   {
     "venue": "The Eastern",
@@ -6227,6 +6494,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-28-variety-playhouse-billy-f-gibbons-and-the-bfg-band"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-02-28",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Harry Potter and the Cursed Child"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=HAR&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/harry-potter",
+    "image_url": "https://www.foxtheatre.org/assets/img/Harry-Potter-550-x-550-b34dc555b6.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-02-28-fox-theatre-harry-potter-and-the-cursed-child"
   },
   {
     "venue": "The Masquerade",
@@ -6541,6 +6825,40 @@
     "slug": "2026-03-06-the-masquerade-dream-ivory"
   },
   {
+    "venue": "Center Stage",
+    "date": "2026-03-06",
+    "doors_time": null,
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Big Boogie",
+        "genre": "Hip-Hop/Rap"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/big-boogie-pain-on-paper-tour-atlanta-georgia-03-06-2026/event/0E00637AC9F0A55B",
+    "image_url": "https://s1.ticketm.net/dam/a/0c5/1561984f-1243-4c53-9a43-a16dc36850c5_RETINA_PORTRAIT_16_9.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "slug": "2026-03-06-center-stage-big-boogie"
+  },
+  {
+    "venue": "Tabernacle",
+    "date": "2026-03-07",
+    "doors_time": "20:00",
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Small Town Murder Podcast",
+        "genre": "Comedy"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/small-town-murder-atlanta-georgia-03-07-2026/event/0E006373A0FF8DB7",
+    "image_url": "https://s1.ticketm.net/dam/a/c7e/77b35de0-09ed-4f1b-81bd-20f22282ec7e_RETINA_PORTRAIT_16_9.jpg",
+    "category": "comedy",
+    "price": "See website",
+    "slug": "2026-03-07-tabernacle-small-town-murder-podcast"
+  },
+  {
     "venue": "Terminal West",
     "date": "2026-03-07",
     "doors_time": "19:00",
@@ -6800,6 +7118,24 @@
     "slug": "2026-03-10-the-masquerade-nobu-woods"
   },
   {
+    "venue": "The Masquerade",
+    "date": "2026-03-10",
+    "doors_time": null,
+    "show_time": "19:00",
+    "artists": [
+      {
+        "name": "Lithe",
+        "genre": "Hip-Hop/Rap"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/lithe-euphoria-tour-atlanta-georgia-03-10-2026/event/0E006378BEBA8C57",
+    "image_url": "https://s1.ticketm.net/dam/e/5e6/3898e089-0b39-4d7e-89cf-b381b24a35e6_RETINA_LANDSCAPE_16_9.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "room": "Altar",
+    "slug": "2026-03-10-the-masquerade-lithe"
+  },
+  {
     "venue": "Terminal West",
     "date": "2026-03-11",
     "doors_time": "19:00",
@@ -7036,6 +7372,27 @@
     "slug": "2026-03-16-the-earl-westerman"
   },
   {
+    "venue": "Coca-Cola Roxy",
+    "date": "2026-03-16",
+    "doors_time": "20:00",
+    "show_time": null,
+    "artists": [
+      {
+        "name": "FKA twigs",
+        "genre": "Dance/Electronic"
+      },
+      {
+        "name": "Eartheater",
+        "genre": "Dance/Electronic"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/fka-twigs-body-high-tour-a-atlanta-georgia-03-16-2026/event/0E00637ABCA49C3F",
+    "image_url": "https://s1.ticketm.net/dam/a/6ae/7e52abce-a78f-43d4-9042-9bc2f5fd36ae_RETINA_PORTRAIT_16_9.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2026-03-16-coca-cola-roxy-fka-twigs"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-03-16",
     "doors_time": null,
@@ -7175,6 +7532,32 @@
     "slug": "2026-03-18-coca-cola-roxy-sabaton"
   },
   {
+    "venue": "The Masquerade",
+    "date": "2026-03-19",
+    "doors_time": null,
+    "show_time": "19:00",
+    "artists": [
+      {
+        "name": "Kxllswxtch",
+        "genre": "Hip-Hop/Rap"
+      },
+      {
+        "name": "Warlord Colossus",
+        "genre": "R&B"
+      },
+      {
+        "name": "Druidess",
+        "genre": "Metal"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/kxllswxtch-atlanta-georgia-03-19-2026/event/0E006381A9448629",
+    "image_url": "https://s1.ticketm.net/dam/a/60d/651b1477-c718-4fce-9de9-d2ef0248260d_RETINA_LANDSCAPE_16_9.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "room": "Purgatory",
+    "slug": "2026-03-19-the-masquerade-kxllswxtch"
+  },
+  {
     "venue": "Variety Playhouse",
     "date": "2026-03-20",
     "doors_time": "19:00",
@@ -7189,6 +7572,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-20-variety-playhouse-yacht-rock-revue-performs-stop-making-sense"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-03-20",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Dionne Warwick"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/event/0E0062D9040369B4",
+    "info_url": "https://www.foxtheatre.org/events/detail/dionne-warwick-aso",
+    "image_url": "https://www.foxtheatre.org/assets/img/Dionne-Warwick-550-x-550-a544c1e9f6.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-03-20-fox-theatre-dionne-warwick"
   },
   {
     "venue": "State Farm Arena",
@@ -7288,6 +7688,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-21-the-eastern-level-up-x-zingara"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-03-21",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Josiah Queen: The Mt. Zion Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=JOS&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/josiah-queen",
+    "image_url": "https://www.foxtheatre.org/assets/img/JQ_MZ_Atlanta_550x550-d9dad13581.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2026-03-21-fox-theatre-josiah-queen-the-mt-zion-tour"
   },
   {
     "venue": "State Farm Arena",
@@ -7517,6 +7934,42 @@
     "slug": "2026-03-25-vinyl-delilah-bon"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-03-26",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Orcutt, Shelley, Miller"
+      },
+      {
+        "name": "Chris Forsyth\u2019s \"What is Now\""
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/orcutt-shelley-miller-the-earl",
+    "info_url": "https://badearl.com/show/orcutt-shelley-miller-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/orcutt-shelley-miller.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $30 DOS",
+    "slug": "2026-03-26-the-earl-orcutt-shelley-miller"
+  },
+  {
+    "venue": "Terminal West",
+    "date": "2026-03-26",
+    "doors_time": "19:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "1tbsp"
+      }
+    ],
+    "ticket_url": "https://www.axs.com/events/1219318/1tbsp-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_6920bdcf10919.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "slug": "2026-03-26-terminal-west-1tbsp"
+  },
+  {
     "venue": "Variety Playhouse",
     "date": "2026-03-26",
     "doors_time": "19:00",
@@ -7531,6 +7984,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-26-variety-playhouse-cymande"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-03-26",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Anne Wilson: The STARS Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=WIL&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/anne-wilson-stars-tour",
+    "image_url": "https://www.foxtheatre.org/assets/img/AW_StarsSpring_Atlanta_550x550-a2ad836e9f.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2026-03-26-fox-theatre-anne-wilson-the-stars-tour"
   },
   {
     "venue": "State Farm Arena",
@@ -7677,6 +8147,24 @@
     "slug": "2026-03-27-variety-playhouse-madison-cunningham"
   },
   {
+    "venue": "The Masquerade",
+    "date": "2026-03-27",
+    "doors_time": null,
+    "show_time": "19:00",
+    "artists": [
+      {
+        "name": "Die Spitz",
+        "genre": "Rock"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/die-spitz-atlanta-georgia-03-27-2026/event/0E006378D52199E6",
+    "image_url": "https://s1.ticketm.net/dam/a/1dc/a22749f2-cf2a-40c4-94a8-983e5255b1dc_SOURCE",
+    "price": "See website",
+    "category": "concerts",
+    "room": "Hell",
+    "slug": "2026-03-27-the-masquerade-die-spitz"
+  },
+  {
     "venue": "The Earl",
     "date": "2026-03-28",
     "doors_time": "07:30",
@@ -7771,6 +8259,23 @@
     "slug": "2026-03-28-coca-cola-roxy-puscifer"
   },
   {
+    "venue": "Mercedes-Benz Stadium",
+    "date": "2026-03-28",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "USMNT v Belgium"
+      }
+    ],
+    "ticket_url": "http://www.ticketmaster.com/event/0E006375AEE49CEB?CAMEFROM=CFC_MBS_WEB_MBS_ONSALE",
+    "info_url": "https://www.mercedesbenzstadium.com/events/usmnt-v-belgium",
+    "image_url": "https://cdn.prod.website-files.com/5ddedd0e3047ab406ee3c37e/692f3f80fd9c203683ef69b4_USMNT-Belgium-1920x1080_optimized_500.jpg",
+    "category": "sports",
+    "price": "See website",
+    "slug": "2026-03-28-mercedes-benz-stadium-usmnt-v-belgium"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-03-28",
     "doors_time": null,
@@ -7854,9 +8359,43 @@
     "slug": "2026-03-30-state-farm-arena-atlanta-hawks"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-03-31",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Dancing with the Stars: Live! - 2026 Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=DAN&linkID=fta&shopperContext=&caller=&appCode",
+    "info_url": "https://www.foxtheatre.org/events/detail/dancing-with-the-stars-2026",
+    "image_url": "https://www.foxtheatre.org/assets/img/DWTS-w-Elaine-550-x-550-78ad9327e1.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-03-31-fox-theatre-dancing-with-the-stars-live-2026-tour"
+  },
+  {
+    "venue": "Mercedes-Benz Stadium",
+    "date": "2026-03-31",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "USMNT v Portugal"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/usmnt-vs-portugal-presented-by-bank-atlanta-georgia-03-31-2026/event/0E006378E5D7A2D9?CAMEFROM=CFC_MBS_WEB_MBS_ONSALE",
+    "info_url": "https://www.mercedesbenzstadium.com/events/usmnt-v-portugal",
+    "image_url": "https://cdn.prod.website-files.com/5ddedd0e3047ab406ee3c37e/692f3fe54e34a64627126d6d_USMNT-Portugal-1392x800_500.jpg",
+    "category": "sports",
+    "price": "See website",
+    "slug": "2026-03-31-mercedes-benz-stadium-usmnt-v-portugal"
+  },
+  {
     "venue": "Terminal West",
     "date": "2026-04-01",
-    "doors_time": "09:00",
+    "doors_time": "19:00",
     "show_time": "20:00",
     "artists": [
       {
@@ -8133,6 +8672,23 @@
     "slug": "2026-04-06-state-farm-arena-atlanta-hawks"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-04-07",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "The Sound of Music"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SOU&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/the-sound-of-music",
+    "image_url": "https://www.foxtheatre.org/assets/img/TheSoundofMusic_550x550-b99b1293bc.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-04-07-fox-theatre-the-sound-of-music"
+  },
+  {
     "venue": "The Eastern",
     "date": "2026-04-08",
     "doors_time": "19:00",
@@ -8264,6 +8820,26 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-04-10-state-farm-arena-atlanta-hawks"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-04-11",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Field Medic"
+      },
+      {
+        "name": "Euphoria Again"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/field-medic-the-earl",
+    "info_url": "https://badearl.com/show/field-medic-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/GinaDiMaio4.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $25 DOS",
+    "slug": "2026-04-11-the-earl-field-medic"
   },
   {
     "venue": "Tabernacle",
@@ -8468,6 +9044,53 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-14-variety-playhouse-allie-x"
+  },
+  {
+    "venue": "The Masquerade",
+    "date": "2026-04-14",
+    "doors_time": null,
+    "show_time": "19:00",
+    "artists": [
+      {
+        "name": "Voxtrot",
+        "genre": "Rock"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/voxtrot-atlanta-georgia-04-14-2026/event/0E006381DFAAB147",
+    "image_url": "https://s1.ticketm.net/dam/e/50c/1fb41a7a-54d9-4f9b-b43e-98fad4e7a50c_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "room": "Hell",
+    "slug": "2026-04-14-the-masquerade-voxtrot"
+  },
+  {
+    "venue": "Tabernacle",
+    "date": "2026-04-15",
+    "doors_time": "18:30",
+    "show_time": null,
+    "artists": [
+      {
+        "name": "The Amity Affliction",
+        "genre": "Metal"
+      },
+      {
+        "name": "August Burns Red",
+        "genre": "Metal"
+      },
+      {
+        "name": "Boundaries",
+        "genre": "Rock"
+      },
+      {
+        "name": "Heavensgate",
+        "genre": "Rock"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/the-amity-affliction-august-burns-red-atlanta-georgia-04-15-2026/event/0E006373D4B5B7C7",
+    "image_url": "https://s1.ticketm.net/dam/a/52f/f40a0ff2-da21-4431-b173-3ebd0fb6952f_RETINA_PORTRAIT_16_9.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2026-04-15-tabernacle-the-amity-affliction"
   },
   {
     "venue": "Terminal West",
@@ -8786,6 +9409,23 @@
     "slug": "2026-04-18-variety-playhouse-alice-phoebe-lou"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-04-18",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "An Evening With Yo-Yo Ma: Reflections in Words and Music"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=YYM&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/yo-yo-ma",
+    "image_url": "https://www.foxtheatre.org/assets/img/Yoyo_550x550-copy-805d5e1250.jpg",
+    "category": "concerts",
+    "price": "See website",
+    "slug": "2026-04-18-fox-theatre-an-evening-with-yo-yo-ma-reflections-in-words-and-music"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-04-18",
     "doors_time": null,
@@ -8870,6 +9510,24 @@
     "slug": "2026-04-21-tabernacle-theresa-caputo"
   },
   {
+    "venue": "The Masquerade",
+    "date": "2026-04-21",
+    "doors_time": null,
+    "show_time": "19:00",
+    "artists": [
+      {
+        "name": "Black Pistol Fire",
+        "genre": "Rock"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/black-pistol-fire-flagrant-act-of-atlanta-georgia-04-21-2026/event/0E006375BA80A58D",
+    "image_url": "https://s1.ticketm.net/dam/a/538/14e21542-afba-429f-bddd-c0f0d1d29538_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "room": "Hell",
+    "slug": "2026-04-21-the-masquerade-black-pistol-fire"
+  },
+  {
     "venue": "Coca-Cola Roxy",
     "date": "2026-04-22",
     "doors_time": "19:30",
@@ -8904,6 +9562,23 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-24-the-eastern-panchiko"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-04-25",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "MEL ROBBINS: LET THEM TOUR 2026"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MEL&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/mel-robbins-let-them-tour",
+    "image_url": "https://www.foxtheatre.org/assets/img/Mel-Robbins-550x550_2show-0ea2c4fd54.jpg",
+    "category": "misc",
+    "price": "See website",
+    "slug": "2026-04-25-fox-theatre-mel-robbins-let-them-tour-2026"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -8975,6 +9650,23 @@
     "slug": "2026-04-28-coca-cola-roxy-raye"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-04-28",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "SIX"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SIX&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/six-the-musical",
+    "image_url": "https://www.foxtheatre.org/assets/img/Six_550x550-174b27560c.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-04-28-fox-theatre-six"
+  },
+  {
     "venue": "The Masquerade",
     "date": "2026-04-28",
     "doors_time": null,
@@ -9028,7 +9720,7 @@
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/florence-the-machine-everybody-scream-tour-atlanta-georgia-05-01-2026/event/0E006355BDF87F7D",
-    "image_url": "https://s1.ticketm.net/dam/a/694/190031fa-7976-4e34-9cbc-bedfe3cb3694_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "image_url": "https://s1.ticketm.net/dam/a/694/190031fa-7976-4e34-9cbc-bedfe3cb3694_TABLET_LANDSCAPE_16_9.jpg",
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-01-state-farm-arena-florence-the-machine"
@@ -9134,6 +9826,25 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-06-variety-playhouse-ty-segall"
+  },
+  {
+    "venue": "Terminal West",
+    "date": "2026-05-07",
+    "doors_time": "19:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Dance With the Dead + Magic Sword"
+      },
+      {
+        "name": "MEGAN MCDUFFEE"
+      }
+    ],
+    "ticket_url": "https://www.axs.com/events/1236462/dance-with-the-dead-magic-sword-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_691e2634e8ce7.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "slug": "2026-05-07-terminal-west-dance-with-the-dead-magic-sword"
   },
   {
     "venue": "The Eastern",
@@ -9375,6 +10086,23 @@
     "slug": "2026-05-23-coca-cola-roxy-electric-callboy"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-05-26",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Beauty and the Beast"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BEA&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/beauty-and-the-beast",
+    "image_url": "https://www.foxtheatre.org/assets/img/BeautyandtheBeast_550x550-2e2f908675.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-05-26-fox-theatre-beauty-and-the-beast"
+  },
+  {
     "venue": "Tabernacle",
     "date": "2026-05-30",
     "doors_time": "20:00",
@@ -9407,6 +10135,23 @@
     "category": "sports",
     "price": "See website",
     "slug": "2026-06-01-mercedes-benz-stadium-2026-fifa-world-cup"
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-06-05",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Morgan Jay: The Goofy Guy Tour"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=JAY&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/morgan-jay",
+    "image_url": "https://www.foxtheatre.org/assets/img/Morgan-Jay-550x550-7f11b208b2.jpg",
+    "category": "comedy",
+    "price": "See website",
+    "slug": "2026-06-05-fox-theatre-morgan-jay-the-goofy-guy-tour"
   },
   {
     "venue": "The Eastern",
@@ -9547,6 +10292,23 @@
     "slug": "2026-07-09-state-farm-arena-ariana-grande"
   },
   {
+    "venue": "Fox Theatre",
+    "date": "2026-07-21",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Monty Python's Spamalot"
+      }
+    ],
+    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SPA&linkID=fta&shopperContext=&caller=&appCode=",
+    "info_url": "https://www.foxtheatre.org/events/detail/spamalot",
+    "image_url": "https://www.foxtheatre.org/assets/img/MontyPythons_550x550-e9be5d99e2.jpg",
+    "category": "broadway",
+    "price": "See website",
+    "slug": "2026-07-21-fox-theatre-monty-pythons-spamalot"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-07-22",
     "doors_time": null,
@@ -9566,6 +10328,22 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-07-22-state-farm-arena-louis-tomlinson"
+  },
+  {
+    "venue": "Variety Playhouse",
+    "date": "2026-08-04",
+    "doors_time": "19:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Chance Pe\u00f1a"
+      }
+    ],
+    "ticket_url": "https://www.axs.com/events/1240968/chance-pena-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_6925e626b07aa.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "slug": "2026-08-04-variety-playhouse-chance-pe\u00f1a"
   },
   {
     "venue": "State Farm Arena",

@@ -932,9 +932,30 @@ def scrape_coca_cola_roxy():
 
 FOX_THEATRE_BASE = "https://www.foxtheatre.org"
 FOX_THEATRE_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Cache-Control": "max-age=0",
+}
+
+# Headers for Fox Theatre AJAX API requests (mimics browser XHR)
+FOX_THEATRE_AJAX_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "X-Requested-With": "XMLHttpRequest",
+    "Referer": "https://www.foxtheatre.org/events",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-origin",
 }
 
 # Fox Theatre category pages and their mapping to our categories
@@ -942,6 +963,7 @@ FOX_THEATRE_HEADERS = {
 FOX_CATEGORY_PAGES = {
     "/events/upcoming-events/broadway": "broadway",
     "/events/upcoming-events/comedy": "comedy",
+    # Note: /concerts category is JavaScript-only filter, no static URL
     "/events/upcoming-events/holiday": "misc",      # Mixed: concerts + broadway, default to misc
     "/events/upcoming-events/family": "misc",       # Family shows
     "/events/upcoming-events/special-engagements": "misc",  # Dance, speakers, variety
@@ -951,12 +973,24 @@ def parse_fox_date_range(date_text):
     """
     Parse Fox Theatre date formats into start and end dates.
     Handles: "Dec 12-13, 2025", "Jan 27-Feb 1, 2026", "Nov 30, 2025"
+    Also handles variations with spaces: "Jan  6 - 11, 2026", "Feb 28 - Mar 15, 2026"
     Returns: (start_date_str, end_date_str) in YYYY-MM-DD format
     """
-    date_text = date_text.strip()
+    # Normalize whitespace: collapse multiple spaces and handle " - " separator
+    date_text = ' '.join(date_text.split())  # Collapse multiple spaces
+    date_text = date_text.replace(' - ', '-').replace('- ', '-').replace(' -', '-')  # Normalize separator
+
+    # Map full month names to abbreviations for strptime
+    month_map = {
+        'january': 'Jan', 'february': 'Feb', 'march': 'Mar', 'april': 'Apr',
+        'may': 'May', 'june': 'Jun', 'july': 'Jul', 'august': 'Aug',
+        'september': 'Sep', 'october': 'Oct', 'november': 'Nov', 'december': 'Dec'
+    }
+    for full, abbrev in month_map.items():
+        date_text = re.sub(rf'\b{full}\b', abbrev, date_text, flags=re.IGNORECASE)
 
     # Single date: "Nov 30, 2025"
-    single_match = re.match(r'^([A-Za-z]+)\s+(\d+),\s+(\d{4})$', date_text)
+    single_match = re.match(r'^([A-Za-z]+)\s+(\d+),\s*(\d{4})$', date_text)
     if single_match:
         month_str, day, year = single_match.groups()
         try:
@@ -967,7 +1001,7 @@ def parse_fox_date_range(date_text):
             pass
 
     # Range within same month: "Dec 12-13, 2025"
-    same_month = re.match(r'^([A-Za-z]+)\s+(\d+)-(\d+),\s+(\d{4})$', date_text)
+    same_month = re.match(r'^([A-Za-z]+)\s+(\d+)-(\d+),\s*(\d{4})$', date_text)
     if same_month:
         month_str, start_day, end_day, year = same_month.groups()
         try:
@@ -978,7 +1012,7 @@ def parse_fox_date_range(date_text):
             pass
 
     # Range across months: "Jan 27-Feb 1, 2026"
-    cross_month = re.match(r'^([A-Za-z]+)\s+(\d+)-([A-Za-z]+)\s+(\d+),\s+(\d{4})$', date_text)
+    cross_month = re.match(r'^([A-Za-z]+)\s+(\d+)-([A-Za-z]+)\s+(\d+),\s*(\d{4})$', date_text)
     if cross_month:
         start_month, start_day, end_month, end_day, year = cross_month.groups()
         try:
@@ -1045,7 +1079,7 @@ def scrape_fox_category_page(url, category):
                     start_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}{year.get_text(strip=True)}"
                     end_text = f"{end_month.get_text(strip=True) if end_month else month.get_text(strip=True)} {end_day.get_text(strip=True)}{end_year.get_text(strip=True)}"
 
-                    date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}-{end_month.get_text(strip=True) if end_month else ''}{end_day.get_text(strip=True)}{year.get_text(strip=True)}"
+                    date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}-{end_month.get_text(strip=True) + ' ' if end_month else ''}{end_day.get_text(strip=True)}{year.get_text(strip=True)}"
                 else:
                     date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}{year.get_text(strip=True)}"
             else:
@@ -1087,116 +1121,149 @@ def scrape_fox_category_page(url, category):
 
     return events
 
-def scrape_fox_theatre():
+def scrape_fox_ajax_all_events():
     """
-    Scrape events from Fox Theatre by combining category pages.
-    Events may appear in multiple categories - we dedupe by detail URL
-    and prioritize category assignment: broadway > comedy > concerts > misc
+    Scrape ALL Fox Theatre events using their AJAX pagination API.
+    This endpoint returns HTML with the same structure as the main page,
+    allowing us to get all events including those behind "Load More" pagination.
+    Returns a list of events with fox_category set based on CSS classes.
     """
-    # Category priority for deduplication (lower = higher priority)
-    category_priority = {"broadway": 0, "comedy": 1, "concerts": 2, "sports": 3, "misc": 4}
+    events = []
+    seen_urls = set()
+    offset = 0
+    per_page = 100  # Request many at once to minimize requests
 
-    all_events = {}  # Keyed by detail_url for deduplication
+    while True:
+        ajax_url = f"{FOX_THEATRE_BASE}/events/events_ajax/{offset}?category=0&venue=0&team=0&exclude=&per_page={per_page}&came_from_page=event-list-page"
 
-    # Scrape each category page
-    for path, category in FOX_CATEGORY_PAGES.items():
-        url = FOX_THEATRE_BASE + path
         try:
-            page_events = scrape_fox_category_page(url, category)
-            print(f"    Fox Theatre {path}: {len(page_events)} events")
+            resp = requests.get(ajax_url, headers=FOX_THEATRE_AJAX_HEADERS, timeout=15)
+            resp.raise_for_status()
 
-            for event in page_events:
-                detail_url = event["info_url"]
+            # Response is JSON-encoded HTML string
+            try:
+                html = json.loads(resp.text)
+            except json.JSONDecodeError:
+                html = resp.text  # Fallback to raw text
 
-                if detail_url in all_events:
-                    # Event already exists - keep higher priority category
-                    existing = all_events[detail_url]
-                    existing_priority = category_priority.get(existing["fox_category"], 99)
-                    new_priority = category_priority.get(category, 99)
-                    if new_priority < existing_priority:
-                        existing["fox_category"] = category
+            if not html.strip() or '<div class="eventItem' not in html:
+                break  # No more events
+
+            soup = BeautifulSoup(html, "html.parser")
+            cards = soup.select("div.eventItem")
+
+            if not cards:
+                break
+
+            for card in cards:
+                title_el = card.select_one("h3.title a, h3.title, .title a")
+                if title_el:
+                    title = title_el.get_text(strip=True)
                 else:
-                    all_events[detail_url] = event
+                    link = card.select_one("a[title*='More Info']")
+                    title = link.get("title", "").replace("More Info for ", "") if link else None
+
+                if not title:
+                    continue
+
+                detail_link = card.select_one("h3.title a, a.more, a[href*='/events/detail/']")
+                if not detail_link:
+                    continue
+                detail_url = detail_link.get("href", "")
+                if not detail_url.startswith("http"):
+                    detail_url = FOX_THEATRE_BASE + detail_url
+
+                if detail_url in seen_urls:
+                    continue
+                seen_urls.add(detail_url)
+
+                # Extract date
+                date_div = card.select_one("div.date")
+                if date_div:
+                    month = date_div.select_one(".m-date__month")
+                    day = date_div.select_one(".m-date__day")
+                    year = date_div.select_one(".m-date__year")
+
+                    if month and day and year:
+                        range_end = date_div.select_one(".m-date__rangeLast")
+                        if range_end:
+                            end_month = range_end.select_one(".m-date__month")
+                            end_day = range_end.select_one(".m-date__day")
+                            date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}-{end_month.get_text(strip=True) + ' ' if end_month else ''}{end_day.get_text(strip=True)}{year.get_text(strip=True)}"
+                        else:
+                            date_text = f"{month.get_text(strip=True)} {day.get_text(strip=True)}{year.get_text(strip=True)}"
+                    else:
+                        date_text = date_div.get_text(strip=True)
+                else:
+                    card_text = card.get_text()
+                    date_match = re.search(r'([A-Z][a-z]{2,}\s+\d+(?:-(?:[A-Z][a-z]{2,}\s+)?\d+)?,\s*\d{4})', card_text)
+                    date_text = date_match.group(1) if date_match else None
+
+                if not date_text:
+                    continue
+
+                start_date, end_date = parse_fox_date_range(date_text)
+                if not start_date:
+                    continue
+
+                # Extract image
+                img = card.select_one("div.thumb img, .thumb img, img")
+                image_url = None
+                if img:
+                    image_url = img.get("src") or img.get("data-src")
+                    if image_url and not image_url.startswith("http"):
+                        image_url = FOX_THEATRE_BASE + image_url
+
+                # Extract ticket URL
+                ticket_link = card.select_one("a.tickets, a[href*='evenue.net']")
+                ticket_url = ticket_link.get("href").strip() if ticket_link else detail_url
+
+                # Determine category from CSS classes on eventItem
+                card_classes = card.get("class", [])
+                if "broadway" in card_classes:
+                    fox_category = "broadway"
+                elif "comedy" in card_classes:
+                    fox_category = "comedy"
+                elif "concerts" in card_classes:
+                    fox_category = "concerts"
+                else:
+                    fox_category = "misc"
+
+                events.append({
+                    "title": title,
+                    "date": start_date,
+                    "end_date": end_date if end_date != start_date else None,
+                    "info_url": detail_url,
+                    "ticket_url": ticket_url,
+                    "image_url": image_url,
+                    "fox_category": fox_category,
+                })
+
+            # Check if we got fewer than requested - means we're done
+            if len(cards) < per_page:
+                break
+
+            offset += len(cards)
 
         except Exception as e:
-            print(f"    Fox Theatre {path}: ERROR - {e}")
+            print(f"    Fox Theatre AJAX offset {offset}: ERROR - {e}")
+            break
 
-    # Also scrape the main events page for any uncategorized events (concerts)
-    try:
-        main_url = FOX_THEATRE_BASE + "/events"
-        resp = requests.get(main_url, headers=FOX_THEATRE_HEADERS, timeout=15)
-        resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, "html.parser")
+    return events
 
-        main_page_count = 0
-        # Use same parsing logic as category pages
-        for card in soup.select("div.eventItem"):
-            title_el = card.select_one("h3.title a, h3.title, .title a")
-            if title_el:
-                title = title_el.get_text(strip=True)
-            else:
-                link = card.select_one("a[title*='More Info']")
-                title = link.get("title", "").replace("More Info for ", "") if link else None
-
-            if not title:
-                continue
-
-            detail_link = card.select_one("h3.title a, a.more, a[href*='/events/detail/']")
-            if not detail_link:
-                continue
-            detail_url = detail_link.get("href", "")
-            if not detail_url.startswith("http"):
-                detail_url = FOX_THEATRE_BASE + detail_url
-
-            # Skip if already have this event from category pages
-            if detail_url in all_events:
-                continue
-
-            # Extract date
-            date_div = card.select_one("div.date")
-            if date_div:
-                date_text = date_div.get_text(strip=True)
-            else:
-                card_text = card.get_text()
-                date_match = re.search(r'([A-Z][a-z]{2}\s+\d+(?:-(?:[A-Z][a-z]{2}\s+)?\d+)?,\s*\d{4})', card_text)
-                date_text = date_match.group(1) if date_match else None
-
-            if not date_text:
-                continue
-
-            start_date, end_date = parse_fox_date_range(date_text)
-            if not start_date:
-                continue
-
-            img = card.select_one("div.thumb img, .thumb img, img")
-            image_url = None
-            if img:
-                image_url = img.get("src") or img.get("data-src")
-                if image_url and not image_url.startswith("http"):
-                    image_url = FOX_THEATRE_BASE + image_url
-
-            ticket_link = card.select_one("a.tickets, a[href*='evenue.net']")
-            ticket_url = ticket_link.get("href").strip() if ticket_link else detail_url
-
-            # Events not in any category page are likely concerts
-            all_events[detail_url] = {
-                "title": title,
-                "date": start_date,
-                "end_date": end_date if end_date != start_date else None,
-                "info_url": detail_url,
-                "ticket_url": ticket_url,
-                "image_url": image_url,
-                "fox_category": "concerts",  # Default for main page events
-            }
-            main_page_count += 1
-
-        print(f"    Fox Theatre main page: {main_page_count} additional events")
-    except Exception as e:
-        print(f"    Fox Theatre main page: ERROR - {e}")
+def scrape_fox_theatre():
+    """
+    Scrape events from Fox Theatre using the AJAX API endpoint.
+    This gets ALL events including those behind "Load More" pagination.
+    Category is determined from CSS classes on event items (broadway, comedy, concerts).
+    """
+    # Use the AJAX endpoint to get ALL events
+    ajax_events = scrape_fox_ajax_all_events()
+    print(f"    Fox Theatre AJAX API: {len(ajax_events)} events")
 
     # Convert to our event format
     events = []
-    for detail_url, event in all_events.items():
+    for event in ajax_events:
         events.append({
             "venue": "Fox Theatre",
             "date": event["date"],
