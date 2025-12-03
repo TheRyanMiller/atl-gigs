@@ -41,6 +41,33 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2025-12-04",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Split Diopter"
+      },
+      {
+        "name": "Disintegration"
+      },
+      {
+        "name": "Slugg"
+      },
+      {
+        "name": "Anticipation"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/split-diopter-disintegration-the-earl",
+    "info_url": "https://badearl.com/show/split-diopter-disintegration-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/DisintegrationSlugg2025TOUR-min.jpg",
+    "category": "concerts",
+    "price": "$15 ADV / $15 DOS",
+    "slug": "2025-12-04-the-earl-split-diopter",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Tabernacle",
     "date": "2025-12-04",
     "doors_time": "19:30",
@@ -228,6 +255,30 @@
     "stage": "Main",
     "slug": "2025-12-04-center-stage-the-moth-mainstage",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-05",
+    "doors_time": "08:00",
+    "show_time": "21:00",
+    "artists": [
+      {
+        "name": "Muelas"
+      },
+      {
+        "name": "Nihilist Cheerleader"
+      },
+      {
+        "name": "BadKill"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/nihilist-cheerleader-badkill-muelas-the-earl",
+    "info_url": "https://badearl.com/show/nihilist-cheerleader-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/D56E0C11-2152-43B4-92E7-0B28F6665D01.jpeg",
+    "category": "concerts",
+    "price": "$15 ADV / $20 DOS",
+    "slug": "2025-12-05-the-earl-muelas",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -422,6 +473,30 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2025-12-06",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Mini Trees"
+      },
+      {
+        "name": "Talia"
+      },
+      {
+        "name": "Jaguar Glass"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/mini-trees-the-earl",
+    "info_url": "https://badearl.com/show/mini-trees-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/08/mini-trees-min.jpg",
+    "category": "concerts",
+    "price": "$15 ADV / $20 DOS",
+    "slug": "2025-12-06-the-earl-mini-trees",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Variety Playhouse",
     "date": "2025-12-06",
     "doors_time": "19:00",
@@ -562,6 +637,27 @@
     "stage": "Vinyl",
     "slug": "2025-12-06-center-stage-black-polish",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-07",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "JD McPherson"
+      },
+      {
+        "name": "Melissa Carper"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/jd-mcpherson-socks-the-earl",
+    "info_url": "https://badearl.com/show/jd-mcpherson-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/01/JD-McPherson-main4-600x800-1.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $25 DOS",
+    "slug": "2025-12-07-the-earl-jd-mcpherson",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Terminal West",
@@ -803,6 +899,30 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2025-12-09",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Kontusion"
+      },
+      {
+        "name": "Cemetery Filth"
+      },
+      {
+        "name": "Xenobile"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/kontusion-the-earl",
+    "info_url": "https://badearl.com/show/kontusion-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Kontusion-flyer-final-cropped-2.png",
+    "category": "concerts",
+    "price": "$15 ADV / $15 DOS",
+    "slug": "2025-12-09-the-earl-kontusion",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "The Eastern",
     "date": "2025-12-09",
     "doors_time": "19:00",
@@ -848,6 +968,27 @@
     "stage": "Heaven",
     "slug": "2025-12-09-the-masquerade-danny-brown",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-10",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Lydia Lunch"
+      },
+      {
+        "name": "JT Habersaat"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/lydia-lunch-jt-habersaat-the-earl",
+    "info_url": "https://badearl.com/show/lydia-lunch-jt-habersaat-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/lydia-flyer.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $25 DOS",
+    "slug": "2025-12-10-the-earl-lydia-lunch",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -945,6 +1086,33 @@
     "stage": "Vinyl",
     "slug": "2025-12-10-center-stage-rave-jesus",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-11",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Tyler Key"
+      },
+      {
+        "name": "Cody Marlowe"
+      },
+      {
+        "name": "Reverend Hylton"
+      },
+      {
+        "name": "Milkweed"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/tyler-key-the-earl-3",
+    "info_url": "https://badearl.com/show/tyler-key-the-earl-3/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Dec11EarlPSpresents.jpg",
+    "category": "concerts",
+    "price": "$15 ADV / $15 DOS",
+    "slug": "2025-12-11-the-earl-tyler-key",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -1123,6 +1291,30 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2025-12-12",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "The Casualties"
+      },
+      {
+        "name": "Crazy & The Brains"
+      },
+      {
+        "name": "Rotten Stitches"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/the-casualties-the-earl",
+    "info_url": "https://badearl.com/show/the-casualties-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/09/The-Casualties-Press-Photo-min.jpeg",
+    "category": "concerts",
+    "price": "$20 ADV / $25 DOS",
+    "slug": "2025-12-12-the-earl-the-casualties",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Terminal West",
     "date": "2025-12-12",
     "doors_time": "19:00",
@@ -1228,6 +1420,33 @@
     "stage": "Vinyl",
     "slug": "2025-12-12-center-stage-lera-lynn",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-13",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Primitive Man"
+      },
+      {
+        "name": "Buffalo Nichols"
+      },
+      {
+        "name": "Great Falls"
+      },
+      {
+        "name": "God Is War"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/primitive-man-the-earl-2",
+    "info_url": "https://badearl.com/show/primitive-man-the-earl-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/09/primitive-man-min.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $25 DOS",
+    "slug": "2025-12-13-the-earl-primitive-man",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -1338,6 +1557,27 @@
     "stage": "Main",
     "slug": "2025-12-13-center-stage-jessica-kirson",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-14",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Robert Lester Folsom"
+      },
+      {
+        "name": "Lily Seabird"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/robert-lester-folsom-the-earl",
+    "info_url": "https://badearl.com/show/robert-lester-folsom-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/09/robert-lester-folsom.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $30 DOS",
+    "slug": "2025-12-14-the-earl-robert-lester-folsom",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -1633,6 +1873,27 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2025-12-18",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "TT Mahony & Jeffrey B\u00fctzer"
+      },
+      {
+        "name": "The Frigidaires"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/charlie-brown-christmas-the-earl-2025-1",
+    "info_url": "https://badearl.com/show/charlie-brown-the-earl-2025-1/",
+    "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
+    "category": "concerts",
+    "price": "$27.50 ADV / $30 DOS",
+    "slug": "2025-12-18-the-earl-tt-mahony-jeffrey-b\u00fctzer",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Terminal West",
     "date": "2025-12-18",
     "doors_time": "19:00",
@@ -1780,6 +2041,30 @@
     "stage": "Altar",
     "slug": "2025-12-18-the-masquerade-12eleven",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-19",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "TT Mahony & Jeffrey B\u00fctzer"
+      },
+      {
+        "name": "The Frigidaires"
+      },
+      {
+        "name": "The Home Alones"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/charlie-brown-christmas-the-earl-2025-2",
+    "info_url": "https://badearl.com/show/charlie-brown-night-2-the-earl-2025/",
+    "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
+    "category": "concerts",
+    "price": "$27.50 ADV / $30 DOS",
+    "slug": "2025-12-19-the-earl-tt-mahony-jeffrey-b\u00fctzer",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Terminal West",
@@ -1986,6 +2271,27 @@
     "stage": "Vinyl",
     "slug": "2025-12-19-center-stage-3para1-working-hour",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-20",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "TT Mahony & Jeffrey B\u00fctzer"
+      },
+      {
+        "name": "The Frigidaires"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/charlie-brown-christmas-the-earl-2025-3",
+    "info_url": "https://badearl.com/show/charlie-brown-night-3-the-earl-2025/",
+    "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
+    "category": "concerts",
+    "price": "$27.50 ADV / $30 DOS",
+    "slug": "2025-12-20-the-earl-tt-mahony-jeffrey-b\u00fctzer",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -2210,6 +2516,27 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2025-12-21",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "TT Mahony & Jeffrey B\u00fctzer"
+      },
+      {
+        "name": "The Frigidaires"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/charlie-brown-christmas-the-earl-2025-4",
+    "info_url": "https://badearl.com/show/charlie-brown-night-4-the-earl-2025/",
+    "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
+    "category": "concerts",
+    "price": "$27.50 ADV / $30 DOS",
+    "slug": "2025-12-21-the-earl-tt-mahony-jeffrey-b\u00fctzer",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Variety Playhouse",
     "date": "2025-12-21",
     "doors_time": "18:00",
@@ -2267,6 +2594,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2025-12-23",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Home For The Holidays"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/mandal-nick-murphy-shaunak-godkhindi-the-earl",
+    "info_url": "https://badearl.com/show/home-for-the-holidays-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/HFH-IG-2-min.jpg",
+    "category": "broadway",
+    "price": "$25 ADV / $25 DOS",
+    "slug": "2025-12-23-the-earl-home-for-the-holidays",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2025-12-23",
     "doors_time": null,
@@ -2287,6 +2632,24 @@
     "category": "sports",
     "slug": "2025-12-23-state-farm-arena-atlanta-hawks",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-25",
+    "doors_time": "08:00",
+    "show_time": "21:00",
+    "artists": [
+      {
+        "name": "Dedrick Flynn"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/dedrick-flynn-the-earl-3",
+    "info_url": "https://badearl.com/show/dedrick-flynn-the-earl-3-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2024/10/dedrick-flynn.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $25 DOS",
+    "slug": "2025-12-25-the-earl-dedrick-flynn",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2339,6 +2702,33 @@
     "category": "sports",
     "slug": "2025-12-26-state-farm-arena-atlanta-hawks",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-27",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Drugula"
+      },
+      {
+        "name": "Widow 100s"
+      },
+      {
+        "name": "Chuck Jr"
+      },
+      {
+        "name": "Baby Bites"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/drugula-widow-100s-the-earl",
+    "info_url": "https://badearl.com/show/drugula-widow-100s-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/drugula-flyer-min.jpg",
+    "category": "concerts",
+    "price": "$15 ADV / $15 DOS",
+    "slug": "2025-12-27-the-earl-drugula",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2489,6 +2879,27 @@
     "stage": "Vinyl",
     "slug": "2025-12-30-center-stage-underground-springhouse",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2025-12-31",
+    "doors_time": "08:00",
+    "show_time": "21:00",
+    "artists": [
+      {
+        "name": "Upchuck"
+      },
+      {
+        "name": "Possums"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/upchuck-the-earl-3",
+    "info_url": "https://badearl.com/show/upchuck-the-earl-3/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/upchuck_15_pc_michael_tyrone_delaney_300dpi.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $25 DOS",
+    "slug": "2025-12-31-the-earl-upchuck",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -2677,6 +3088,39 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-01-09",
+    "doors_time": "07:00",
+    "show_time": "19:30",
+    "artists": [
+      {
+        "name": "Nikki & The Phantom Callers"
+      },
+      {
+        "name": "Ben Trickey"
+      },
+      {
+        "name": "Tyler Key"
+      },
+      {
+        "name": "Heart Drugs"
+      },
+      {
+        "name": "Evan Stepp & The Piners"
+      },
+      {
+        "name": "Milkweed"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/number-stations-records-the-earl",
+    "info_url": "https://badearl.com/show/numbers-station-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2022/02/nikkiandhthephantomcallers-min_ccexpress.jpeg",
+    "category": "concerts",
+    "price": "$17 ADV / $20 DOS",
+    "slug": "2026-01-09-the-earl-nikki-the-phantom-callers",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Mercedes-Benz Stadium",
     "date": "2026-01-09",
     "doors_time": null,
@@ -2712,6 +3156,30 @@
     "stage": "Vinyl",
     "slug": "2026-01-09-center-stage-father-figure",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-10",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Gringo Star"
+      },
+      {
+        "name": "The Sporrs"
+      },
+      {
+        "name": "Lowtown"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/gringo-star-the-earl-2",
+    "info_url": "https://badearl.com/show/gringo-star-the-earl-4/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/12/Gringo-Star.jpeg",
+    "category": "concerts",
+    "price": "$16 ADV / $20 DOS",
+    "slug": "2026-01-10-the-earl-gringo-star",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -2764,6 +3232,24 @@
     "stage": "Hell",
     "slug": "2026-01-10-the-masquerade-silly-goose",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-11",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "The Last Revel"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/the-last-revel-the-earl",
+    "info_url": "https://badearl.com/show/the-last-revel-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/10/the-last-revel.jpg",
+    "category": "concerts",
+    "price": "$18 ADV / $20 DOS",
+    "slug": "2026-01-11-the-earl-the-last-revel",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -2827,6 +3313,30 @@
     "stage": "Heaven",
     "slug": "2026-01-15-the-masquerade-glaive",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-16",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Pissed Jeans"
+      },
+      {
+        "name": "Morgan Garrett"
+      },
+      {
+        "name": "Chaos OK"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/pissed-jeans-the-earl",
+    "info_url": "https://badearl.com/show/pissed-jeans-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/09/Pissed-Jeans-Press-Picture.jpg",
+    "category": "concerts",
+    "price": "$15 ADV / $20 DOS",
+    "slug": "2026-01-16-the-earl-pissed-jeans",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Terminal West",
@@ -3073,6 +3583,27 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-01-19",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Modern Nature"
+      },
+      {
+        "name": "Brigid Dawson & The Mothers Network"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/modern-nature-the-earl",
+    "info_url": "https://badearl.com/show/modern-nature-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/08/modern-nature.jpg",
+    "category": "concerts",
+    "price": "$18 ADV / $18 DOS",
+    "slug": "2026-01-19-the-earl-modern-nature",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "State Farm Arena",
     "date": "2026-01-19",
     "doors_time": null,
@@ -3095,6 +3626,51 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-01-20",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Friendship"
+      },
+      {
+        "name": "Little Mazarn"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/vincas-rubber-udder-the-earl",
+    "info_url": "https://badearl.com/show/friendship-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/Friendship-band.jpg",
+    "category": "concerts",
+    "price": "$16 ADV / $20 DOS",
+    "slug": "2026-01-20-the-earl-friendship",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-21",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Shiner"
+      },
+      {
+        "name": "Dropsonic"
+      },
+      {
+        "name": "Bursting"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/shiner-the-earl-3",
+    "info_url": "https://badearl.com/show/shiner-the-earl-3/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/Shiner-NEW.jpg",
+    "category": "concerts",
+    "price": "$18 ADV / $20 DOS",
+    "slug": "2026-01-21-the-earl-shiner",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Center Stage",
     "date": "2026-01-21",
     "doors_time": null,
@@ -3112,6 +3688,24 @@
     "stage": "Main",
     "slug": "2026-01-21-center-stage-jessie-j",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-22",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Off With Their Heads"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/off-with-their-heads-the-earl-3",
+    "info_url": "https://badearl.com/show/off-with-their-heads-the-earl-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/OWTH-pic.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $25 DOS",
+    "slug": "2026-01-22-the-earl-off-with-their-heads",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Terminal West",
@@ -3205,6 +3799,24 @@
     "stage": "Purgatory",
     "slug": "2026-01-22-the-masquerade-24kgoldn",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-23",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Sean Rowe"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/sean-rowe-the-earl",
+    "info_url": "https://badearl.com/show/sean-rowe-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/Sean-Rowe-main-870x580-1.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $20 DOS",
+    "slug": "2026-01-23-the-earl-sean-rowe",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Terminal West",
@@ -3352,6 +3964,30 @@
     "stage": "Vinyl",
     "slug": "2026-01-23-center-stage-carbon-leaf",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-24",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Vio-Lence"
+      },
+      {
+        "name": "Deceased"
+      },
+      {
+        "name": "Nunslaughter"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/vio-lence-the-earl",
+    "info_url": "https://badearl.com/show/vio-lence-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/08/JANAUARY-24-\u2022-THE-EARL-ATLANTA-GA-1.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $30 DOS",
+    "slug": "2026-01-24-the-earl-vio-lence",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -3751,6 +4387,30 @@
     "stage": "Vinyl",
     "slug": "2026-01-29-center-stage-the-warped-tour-band",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-01-30",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "God Bullies"
+      },
+      {
+        "name": "Vincas"
+      },
+      {
+        "name": "Rubber Udder"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/god-bullies-the-earl",
+    "info_url": "https://badearl.com/show/god-bullies-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/07/god-bullies-web.jpeg",
+    "category": "concerts",
+    "price": "$20 ADV / $25 DOS",
+    "slug": "2026-01-30-the-earl-god-bullies",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -4245,6 +4905,27 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-02-05",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Taper's Choice"
+      },
+      {
+        "name": "Rich Ruth"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/tapers-choice-the-earl",
+    "info_url": "https://badearl.com/show/tapers-choice-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/09/tapers-choice-1.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $25 DOS",
+    "slug": "2026-02-05-the-earl-tapers-choice",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Terminal West",
     "date": "2026-02-05",
     "doors_time": "19:00",
@@ -4318,6 +4999,30 @@
     "stage": "Hell",
     "slug": "2026-02-05-the-masquerade-dinosaur-pile-up",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-02-06",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Matt Pryor"
+      },
+      {
+        "name": "Small Uncle"
+      },
+      {
+        "name": "Huey"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/matt-pryor-the-earl",
+    "info_url": "https://badearl.com/show/matt-pryor-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Pryor-SaltonSea-MDubin-Full-A7R00329-min.jpg",
+    "category": "concerts",
+    "price": "$19 ADV / $24 DOS",
+    "slug": "2026-02-06-the-earl-matt-pryor",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -4430,6 +5135,27 @@
     "stage": "Altar",
     "slug": "2026-02-06-the-masquerade-meet-me-the-altar",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-02-07",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Bad Bad Hats"
+      },
+      {
+        "name": "Smut"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/bad-bad-hats-the-earl-2",
+    "info_url": "https://badearl.com/show/bad-bad-hats-the-earl-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/bad-bad-hats-min.jpeg",
+    "category": "concerts",
+    "price": "$20 ADV / $20 DOS",
+    "slug": "2026-02-07-the-earl-bad-bad-hats",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Terminal West",
@@ -4593,6 +5319,24 @@
     "stage": "Heaven",
     "slug": "2026-02-10-the-masquerade-badflower",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-02-11",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Venus & the Flytraps"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/venus-and-the-flytraps-the-earl",
+    "info_url": "https://badearl.com/show/venus-and-the-flytraps-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/venus.jpg",
+    "category": "concerts",
+    "price": "$15 ADV / $20 DOS",
+    "slug": "2026-02-11-the-earl-venus-the-flytraps",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Terminal West",
@@ -5298,6 +6042,27 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-02-21",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Nuovo Testamento"
+      },
+      {
+        "name": "Dark Chisme"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/nuovo-testamento-the-earl",
+    "info_url": "https://badearl.com/show/nuovo-testamento-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Nuovo-Testamento-min.jpg",
+    "category": "concerts",
+    "price": "$18 ADV / $20 DOS",
+    "slug": "2026-02-21-the-earl-nuovo-testamento",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Terminal West",
     "date": "2026-02-21",
     "doors_time": "19:00",
@@ -5432,6 +6197,30 @@
     "category": "sports",
     "slug": "2026-02-23-state-farm-arena-wwe",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-02-24",
+    "doors_time": "07:00",
+    "show_time": "19:30",
+    "artists": [
+      {
+        "name": "Spiritual Cramp"
+      },
+      {
+        "name": "Liberty and Justice"
+      },
+      {
+        "name": "Bad Sports"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/spiritual-cramp-the-earl",
+    "info_url": "https://badearl.com/show/spiritual-cramp-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/08/spiritual-cramp.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $20 DOS",
+    "slug": "2026-02-24-the-earl-spiritual-cramp",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "State Farm Arena",
@@ -5730,6 +6519,24 @@
     "stage": "Vinyl",
     "slug": "2026-02-27-center-stage-rebirth-brass-band",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-02-28",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Prison Affair"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/prison-affair-the-earl",
+    "info_url": "https://badearl.com/show/prison-affair-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/prison-affair.jpeg",
+    "category": "concerts",
+    "price": "$18 ADV / $20 DOS",
+    "slug": "2026-02-28-the-earl-prison-affair",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Terminal West",
@@ -6497,6 +7304,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-03-12",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Twen"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/twen-the-earl-3",
+    "info_url": "https://badearl.com/show/twen-the-earl-3/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/09/Twen-Approved-Photo-2-min.jpg",
+    "category": "concerts",
+    "price": "$18 ADV / $22 DOS",
+    "slug": "2026-03-12-the-earl-twen",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "The Eastern",
     "date": "2026-03-12",
     "doors_time": "19:00",
@@ -6706,6 +7531,27 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-03-16",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Westerman"
+      },
+      {
+        "name": "Otto Benson"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/westerman-the-earl-2",
+    "info_url": "https://badearl.com/show/westerman-the-earl-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/09/WESTERMAN_ATHENS_SEP.22_PINELOPI_GERASIMOU-19.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $27 DOS",
+    "slug": "2026-03-16-the-earl-westerman",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Coca-Cola Roxy",
     "date": "2026-03-16",
     "doors_time": "20:00",
@@ -6748,6 +7594,24 @@
     "category": "sports",
     "slug": "2026-03-16-state-farm-arena-atlanta-hawks",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-03-17",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Skullcrusher"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/skullcrusher-the-earl",
+    "info_url": "https://badearl.com/show/skullcrusher-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/10/skullcrusher.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $20 DOS",
+    "slug": "2026-03-17-the-earl-skullcrusher",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "The Eastern",
@@ -7263,6 +8127,27 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-03-26",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Orcutt, Shelley, Miller"
+      },
+      {
+        "name": "Chris Forsyth\u2019s \"What is Now\""
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/orcutt-shelley-miller-the-earl",
+    "info_url": "https://badearl.com/show/orcutt-shelley-miller-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/orcutt-shelley-miller.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $30 DOS",
+    "slug": "2026-03-26-the-earl-orcutt-shelley-miller",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Terminal West",
     "date": "2026-03-26",
     "doors_time": "19:30",
@@ -7386,6 +8271,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-03-27",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Hudson Freeman"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/hudson-freeman-the-earl",
+    "info_url": "https://badearl.com/show/hudson-freeman-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/hudson-freeman-.jpg",
+    "category": "concerts",
+    "price": "$15 ADV / $18 DOS",
+    "slug": "2026-03-27-the-earl-hudson-freeman",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Tabernacle",
     "date": "2026-03-27",
     "doors_time": "20:00",
@@ -7445,6 +8348,27 @@
     "stage": "Hell",
     "slug": "2026-03-27-the-masquerade-die-spitz",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-03-28",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Courtney Marie Andrews"
+      },
+      {
+        "name": "Taylor Zachry"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/courtney-marie-andrews-the-earl",
+    "info_url": "https://badearl.com/show/courtney-marie-andrews-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/10/CMA-Press-2026.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $30 DOS",
+    "slug": "2026-03-28-the-earl-courtney-marie-andrews",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -7666,6 +8590,27 @@
     "category": "concerts",
     "slug": "2026-04-01-terminal-west-bryant-barnes-presents-solace-tour",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-04-02",
+    "doors_time": "07:30",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "The Wedding Present"
+      },
+      {
+        "name": "Mark Robinson Sings Unrest"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/the-wedding-present-the-earl-2",
+    "info_url": "https://badearl.com/show/the-wedding-present-the-earl-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Band-Photograph-The-Wedding-Present-25-Line-up-Landscape-by-John-Evans-min.jpg",
+    "category": "concerts",
+    "price": "$28 ADV / $28 DOS",
+    "slug": "2026-04-02-the-earl-the-wedding-present",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "The Eastern",
@@ -7962,6 +8907,24 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-04-10",
+    "doors_time": "08:00",
+    "show_time": "20:30",
+    "artists": [
+      {
+        "name": "Redd Kross"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/redd-kross-the-earl-2",
+    "info_url": "https://badearl.com/show/redd-kross-the-earl-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/Redd-Kross-Press-Photo-2025-Photo-Credit-Buzz-Osborne.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $25 DOS",
+    "slug": "2026-04-10-the-earl-redd-kross",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Tabernacle",
     "date": "2026-04-10",
     "doors_time": "19:30",
@@ -8039,6 +9002,27 @@
     "category": "sports",
     "slug": "2026-04-10-state-farm-arena-atlanta-hawks",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-04-11",
+    "doors_time": "07:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Field Medic"
+      },
+      {
+        "name": "Euphoria Again"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/field-medic-the-earl",
+    "info_url": "https://badearl.com/show/field-medic-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/GinaDiMaio4.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $25 DOS",
+    "slug": "2026-04-11-the-earl-field-medic",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -8381,6 +9365,27 @@
     "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
+    "venue": "The Earl",
+    "date": "2026-04-16",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "The Belair Lip Bombs"
+      },
+      {
+        "name": "Dust"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/the-belair-lipbombs-the-earl",
+    "info_url": "https://badearl.com/show/the-belair-lipbombs-the-earl/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/10/the-belair-lipbombs.jpg",
+    "category": "concerts",
+    "price": "$18 ADV / $20 DOS",
+    "slug": "2026-04-16-the-earl-the-belair-lip-bombs",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
+  },
+  {
     "venue": "Terminal West",
     "date": "2026-04-16",
     "doors_time": "19:00",
@@ -8544,6 +9549,24 @@
     "stage": "Altar",
     "slug": "2026-04-17-the-masquerade-rec-hall",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-04-18",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "The Thing"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/the-thing-the-earl-3",
+    "info_url": "https://badearl.com/show/the-thing-the-earl-2-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/11/the-thing-2026-photo.jpeg",
+    "category": "concerts",
+    "price": "$20 ADV / $20 DOS",
+    "slug": "2026-04-18-the-earl-the-thing",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "Tabernacle",
@@ -8948,6 +9971,24 @@
     "stage": "Hell",
     "slug": "2026-05-02-the-masquerade-bleed-from-within",
     "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Earl",
+    "date": "2026-05-04",
+    "doors_time": "07:30",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Flyte"
+      }
+    ],
+    "ticket_url": "https://badearl.freshtix.com/events/flyte-the-earl",
+    "info_url": "https://badearl.com/show/flyte-the-earl-2/",
+    "image_url": "https://badearl.com/wp-content/uploads/2025/04/flyte-min.jpg",
+    "category": "concerts",
+    "price": "$25 ADV / $28 DOS",
+    "slug": "2026-05-04-the-earl-flyte",
+    "first_seen": "2025-12-03T22:46:28.583500Z"
   },
   {
     "venue": "The Masquerade",
