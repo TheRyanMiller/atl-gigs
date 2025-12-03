@@ -1,23 +1,5 @@
 [
   {
-    "venue": "Fox Theatre",
-    "date": "2025-12-03",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "An Evening With David Byrne - Who is the Sky Tour"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=BYR&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/david-byrne-2025",
-    "image_url": "https://www.foxtheatre.org/assets/img/DavidByrne_550x550-ca7c18e32c.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-03-fox-theatre-an-evening-with-david-byrne-who-is-the-sky-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
     "venue": "State Farm Arena",
     "date": "2025-12-03",
     "doors_time": null,
@@ -37,7 +19,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-03-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -56,34 +38,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-03-center-stage-ariel-posen",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-04",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Split Diopter"
-      },
-      {
-        "name": "Disintegration"
-      },
-      {
-        "name": "Slugg"
-      },
-      {
-        "name": "Anticipation"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/split-diopter-disintegration-the-earl",
-    "info_url": "https://badearl.com/show/split-diopter-disintegration-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/DisintegrationSlugg2025TOUR-min.jpg",
-    "category": "concerts",
-    "price": "$15 ADV / $15 DOS",
-    "slug": "2025-12-04-the-earl-split-diopter",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -101,7 +56,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-04-tabernacle-guns-n-hoses-charity-boxing-event",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -118,7 +73,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-04-the-eastern-bailey-zimmerman-hardy-ella-langley-nate-smith",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -138,25 +93,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-04-variety-playhouse-bonnie-prince-billy",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-04",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Lauren Daigle - The Behold Christmas Tour"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=LAU&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/lauren-daigle-2025",
-    "image_url": "https://www.foxtheatre.org/assets/img/Lauren-Daigle-550x550-927f65e30a.jpg",
-    "category": "concerts",
-    "price": "See website",
-    "slug": "2025-12-04-fox-theatre-lauren-daigle-the-behold-christmas-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -190,7 +127,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-04-state-farm-arena-brandy",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -217,7 +154,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2025-12-04-the-masquerade-the-spill-canvas",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -248,7 +185,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-04-the-masquerade-entheos",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -271,7 +208,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2025-12-04-the-masquerade-the-weird-sisters",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -290,31 +227,7 @@
     "category": "broadway",
     "stage": "Main",
     "slug": "2025-12-04-center-stage-the-moth-mainstage",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-05",
-    "doors_time": "08:00",
-    "show_time": "21:00",
-    "artists": [
-      {
-        "name": "Muelas"
-      },
-      {
-        "name": "Nihilist Cheerleader"
-      },
-      {
-        "name": "BadKill"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/nihilist-cheerleader-badkill-muelas-the-earl",
-    "info_url": "https://badearl.com/show/nihilist-cheerleader-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/12/D56E0C11-2152-43B4-92E7-0B28F6665D01.jpeg",
-    "category": "concerts",
-    "price": "$15 ADV / $20 DOS",
-    "slug": "2025-12-05-the-earl-muelas",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -331,7 +244,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-05-variety-playhouse-rumours-atl-a-fleetwood-mac-tribute",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -357,7 +270,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-05-coca-cola-roxy-chris-lake",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -379,7 +292,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-05-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -402,7 +315,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2025-12-05-the-masquerade-club-1bd",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -429,7 +342,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2025-12-05-the-masquerade-cowgirl-clue",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -456,7 +369,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-05-the-masquerade-recess-party",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -487,7 +400,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2025-12-05-the-masquerade-chokecherry",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -506,31 +419,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-05-center-stage-zae-france",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-06",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Mini Trees"
-      },
-      {
-        "name": "Talia"
-      },
-      {
-        "name": "Jaguar Glass"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/mini-trees-the-earl",
-    "info_url": "https://badearl.com/show/mini-trees-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/08/mini-trees-min.jpg",
-    "category": "concerts",
-    "price": "$15 ADV / $20 DOS",
-    "slug": "2025-12-06-the-earl-mini-trees",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -547,25 +436,7 @@
     "price": "See website",
     "category": "comedy",
     "slug": "2025-12-06-variety-playhouse-off-book-the-improvised-musical",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-06",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Amy Grant, Cece Winans, & Michael W Smith: Christmas Together"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=ACM&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/amy-grant-cece-winans-michael-w-smith",
-    "image_url": "https://www.foxtheatre.org/assets/img/AmyGrant_MichaelSmith_CeceWinans_550x550-c134756da6.jpg",
-    "category": "concerts",
-    "price": "See website",
-    "slug": "2025-12-06-fox-theatre-amy-grant-cece-winans-michael-w-smith-christmas-together",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -583,7 +454,7 @@
     "category": "sports",
     "price": "See website",
     "slug": "2025-12-06-mercedes-benz-stadium-sec-championship",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -606,7 +477,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2025-12-06-the-masquerade-xavier-omar",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -629,7 +500,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-06-the-masquerade-envilittle",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -648,7 +519,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2025-12-06-the-masquerade-kodoku",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -667,7 +538,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2025-12-06-center-stage-mojo-brookzz",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -690,28 +561,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-06-center-stage-black-polish",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-07",
-    "doors_time": "07:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "JD McPherson"
-      },
-      {
-        "name": "Melissa Carper"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/jd-mcpherson-socks-the-earl",
-    "info_url": "https://badearl.com/show/jd-mcpherson-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/01/JD-McPherson-main4-600x800-1.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $25 DOS",
-    "slug": "2025-12-07-the-earl-jd-mcpherson",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -731,7 +581,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-07-terminal-west-susto-stringband",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -751,7 +601,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-07-the-eastern-ok-go-and-the-adjacent-possible-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -769,7 +619,7 @@
     "category": "sports",
     "price": "See website",
     "slug": "2025-12-07-mercedes-benz-stadium-atlanta-falcons-vs-seattle-seahawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -787,7 +637,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-07-state-farm-arena-gunna",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -806,7 +656,7 @@
     "category": "broadway",
     "stage": "Heaven",
     "slug": "2025-12-07-the-masquerade-the-oddities-museum",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -829,7 +679,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-07-the-masquerade-pallbearer",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -848,7 +698,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2025-12-07-center-stage-mojo-brookzz",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -867,7 +717,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2025-12-07-center-stage-mojo-brookzz-1",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -886,25 +736,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-07-center-stage-adam-hawley",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-08",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "for King + Country's A Drummer Boy Christmas: The 2025 Live Experience"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=FKC&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/for-king-country-drummer-boy-christmas",
-    "image_url": "https://www.foxtheatre.org/assets/img/For-King-Country-550-x-550-px-8ca26987c3.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-08-fox-theatre-for-king-countrys-a-drummer-boy-christmas-the-2025-live-experience",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -922,7 +754,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-08-state-farm-arena-burna-boy",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -941,7 +773,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2025-12-08-the-masquerade-monaleo",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -968,31 +800,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-08-the-masquerade-young-culture",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-09",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Kontusion"
-      },
-      {
-        "name": "Cemetery Filth"
-      },
-      {
-        "name": "Xenobile"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/kontusion-the-earl",
-    "info_url": "https://badearl.com/show/kontusion-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Kontusion-flyer-final-cropped-2.png",
-    "category": "concerts",
-    "price": "$15 ADV / $15 DOS",
-    "slug": "2025-12-09-the-earl-kontusion",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -1012,7 +820,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-09-the-eastern-portugal-the-man-the-denali-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -1039,28 +847,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2025-12-09-the-masquerade-danny-brown",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-10",
-    "doors_time": "07:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Lydia Lunch"
-      },
-      {
-        "name": "JT Habersaat"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/lydia-lunch-jt-habersaat-the-earl",
-    "info_url": "https://badearl.com/show/lydia-lunch-jt-habersaat-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/lydia-flyer.jpg",
-    "category": "concerts",
-    "price": "$20 ADV / $25 DOS",
-    "slug": "2025-12-10-the-earl-lydia-lunch",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -1078,7 +865,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-10-tabernacle-guaco",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -1096,25 +883,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-10-coca-cola-roxy-xavi",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-10",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "MERRY MIGHTY MO and MORE presented by Georgia Natural Gas"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=LCM&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/merry-mighty-mo-2025",
-    "image_url": "https://www.foxtheatre.org/assets/img/MerryMightMo_550x550-88bbb610aa.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-10-fox-theatre-merry-mighty-mo-and-more-presented-by-georgia-natural-gas",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -1137,7 +906,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-10-the-masquerade-frog-mallet",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -1156,7 +925,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2025-12-10-center-stage-modi",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -1175,34 +944,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-10-center-stage-rave-jesus",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-11",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Tyler Key"
-      },
-      {
-        "name": "Cody Marlowe"
-      },
-      {
-        "name": "Reverend Hylton"
-      },
-      {
-        "name": "Milkweed"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/tyler-key-the-earl-3",
-    "info_url": "https://badearl.com/show/tyler-key-the-earl-3/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Dec11EarlPSpresents.jpg",
-    "category": "concerts",
-    "price": "$15 ADV / $15 DOS",
-    "slug": "2025-12-11-the-earl-tyler-key",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -1224,7 +966,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-11-tabernacle-raekwon",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -1241,7 +983,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-11-the-eastern-glokk40spaz",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -1259,25 +1001,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-11-coca-cola-roxy-teddy-swims",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-11",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "An Intimate Evening with David Foster & Katharine McPhee"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=KAT&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/david-foster-katharine-mcphee",
-    "image_url": "https://www.foxtheatre.org/assets/img/DavidFoster_KatharineMcphee_550x550-696c29fecf.jpg",
-    "category": "concerts",
-    "price": "See website",
-    "slug": "2025-12-11-fox-theatre-an-intimate-evening-with-david-foster-katharine-mcphee",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -1304,7 +1028,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2025-12-11-the-masquerade-agnostic-front",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -1327,7 +1051,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-11-the-masquerade-liam-st-john",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -1354,7 +1078,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2025-12-11-the-masquerade-omnium-gatherum",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -1373,7 +1097,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2025-12-11-center-stage-modi",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -1396,31 +1120,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-11-center-stage-dean-johnson",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-12",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "The Casualties"
-      },
-      {
-        "name": "Crazy & The Brains"
-      },
-      {
-        "name": "Rotten Stitches"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/the-casualties-the-earl",
-    "info_url": "https://badearl.com/show/the-casualties-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/09/The-Casualties-Press-Photo-min.jpeg",
-    "category": "concerts",
-    "price": "$20 ADV / $25 DOS",
-    "slug": "2025-12-12-the-earl-the-casualties",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -1440,7 +1140,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-12-terminal-west-pony-bradshaw",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -1460,25 +1160,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-12-variety-playhouse-andy-frasco-the-un-growing-pains-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-12",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "John Mulaney: Mister Whatever"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MUL&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/john-mulaney-mister-whatever",
-    "image_url": "https://www.foxtheatre.org/assets/img/JohnMulaney_550x550-cd6fc44b53.jpg",
-    "category": "comedy",
-    "price": "See website",
-    "slug": "2025-12-12-fox-theatre-john-mulaney-mister-whatever",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -1496,7 +1178,7 @@
     "category": "misc",
     "price": "See website",
     "slug": "2025-12-12-mercedes-benz-stadium-red-lobster-band-of-the-year",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -1526,7 +1208,7 @@
     "price": "See website",
     "category": "comedy",
     "slug": "2025-12-12-state-farm-arena-85-south",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -1545,34 +1227,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-12-center-stage-lera-lynn",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-13",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Primitive Man"
-      },
-      {
-        "name": "Buffalo Nichols"
-      },
-      {
-        "name": "Great Falls"
-      },
-      {
-        "name": "God Is War"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/primitive-man-the-earl-2",
-    "info_url": "https://badearl.com/show/primitive-man-the-earl-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/09/primitive-man-min.jpg",
-    "category": "concerts",
-    "price": "$20 ADV / $25 DOS",
-    "slug": "2025-12-13-the-earl-primitive-man",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -1594,7 +1249,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-13-tabernacle-thievery-corporation",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -1611,7 +1266,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-13-variety-playhouse-chris-mitchell-jazz",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -1629,7 +1284,7 @@
     "category": "sports",
     "price": "See website",
     "slug": "2025-12-13-mercedes-benz-stadium-cricket-celebration-bowl",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -1663,7 +1318,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-13-state-farm-arena-holiday-hoopsgiving",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -1682,28 +1337,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2025-12-13-center-stage-jessica-kirson",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-14",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Robert Lester Folsom"
-      },
-      {
-        "name": "Lily Seabird"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/robert-lester-folsom-the-earl",
-    "info_url": "https://badearl.com/show/robert-lester-folsom-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/09/robert-lester-folsom.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $30 DOS",
-    "slug": "2025-12-14-the-earl-robert-lester-folsom",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -1721,7 +1355,7 @@
     "category": "comedy",
     "price": "See website",
     "slug": "2025-12-14-tabernacle-john-mulaney",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -1741,7 +1375,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-14-the-eastern-robert-earl-keen-presents-the-greatest-christmas-on-earth",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -1759,7 +1393,7 @@
     "category": "comedy",
     "price": "See website",
     "slug": "2025-12-14-coca-cola-roxy-trey-kennedy",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -1781,7 +1415,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-14-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -1808,7 +1442,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2025-12-14-the-masquerade-xaviersobased",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -1823,6 +1457,10 @@
       {
         "name": "Okay Kenedi",
         "genre": "Rock"
+      },
+      {
+        "name": "Montage",
+        "genre": "Rock"
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/kelly-romo-atlanta-georgia-12-14-2025/event/0E006373EDE4CCD7",
@@ -1831,7 +1469,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-14-the-masquerade-kelly-romo",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -1862,7 +1500,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2025-12-14-the-masquerade-out-of-order",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -1881,7 +1519,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2025-12-14-center-stage-majah-hype",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -1900,7 +1538,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-14-center-stage-the-cool-kids",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -1918,25 +1556,7 @@
     "category": "sports",
     "price": "See website",
     "slug": "2025-12-15-mercedes-benz-stadium-ghsa-state-championship",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-16",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Elf"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=ELF&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/elf",
-    "image_url": "https://www.foxtheatre.org/assets/img/Elf_550x550-658eb46298.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2025-12-16-fox-theatre-elf",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -1954,7 +1574,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-16-state-farm-arena-young-thug",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -1974,7 +1594,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-17-the-eastern-the-front-bottoms-10-years-of-back-on-top",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -1991,7 +1611,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-17-variety-playhouse-a-john-waters-christmas-2025",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -2010,28 +1630,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2025-12-17-the-masquerade-aterciopelados",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-18",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "TT Mahony & Jeffrey B\u00fctzer"
-      },
-      {
-        "name": "The Frigidaires"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/charlie-brown-christmas-the-earl-2025-1",
-    "info_url": "https://badearl.com/show/charlie-brown-the-earl-2025-1/",
-    "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
-    "category": "concerts",
-    "price": "$27.50 ADV / $30 DOS",
-    "slug": "2025-12-18-the-earl-tt-mahony-jeffrey-b\u00fctzer",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -2051,7 +1650,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-18-terminal-west-trash-panda",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -2068,7 +1667,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-18-variety-playhouse-kevin-scotts-allstar-holiday-revival",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2126,7 +1725,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-18-state-farm-arena-961-the-beats-jingle-ball",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -2157,7 +1756,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-18-the-masquerade-psycho-frame",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -2180,31 +1779,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2025-12-18-the-masquerade-12eleven",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-19",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "TT Mahony & Jeffrey B\u00fctzer"
-      },
-      {
-        "name": "The Frigidaires"
-      },
-      {
-        "name": "The Home Alones"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/charlie-brown-christmas-the-earl-2025-2",
-    "info_url": "https://badearl.com/show/charlie-brown-night-2-the-earl-2025/",
-    "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
-    "category": "concerts",
-    "price": "$27.50 ADV / $30 DOS",
-    "slug": "2025-12-19-the-earl-tt-mahony-jeffrey-b\u00fctzer",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -2224,7 +1799,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-19-terminal-west-penelope-road",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -2244,7 +1819,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-19-the-eastern-b\u00e9la-fleck-the-flecktones",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2262,7 +1837,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-19-coca-cola-roxy-jid",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2284,7 +1859,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-19-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -2303,7 +1878,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2025-12-19-the-masquerade-lil-gotit",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -2342,7 +1917,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2025-12-19-the-masquerade-caroline-reilly",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -2361,7 +1936,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-19-the-masquerade-taylor-goes-emo",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -2392,7 +1967,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2025-12-19-the-masquerade-jones-rx",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -2410,28 +1985,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-19-center-stage-3para1-working-hour",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-20",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "TT Mahony & Jeffrey B\u00fctzer"
-      },
-      {
-        "name": "The Frigidaires"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/charlie-brown-christmas-the-earl-2025-3",
-    "info_url": "https://badearl.com/show/charlie-brown-night-3-the-earl-2025/",
-    "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
-    "category": "concerts",
-    "price": "$27.50 ADV / $30 DOS",
-    "slug": "2025-12-20-the-earl-tt-mahony-jeffrey-b\u00fctzer",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -2469,7 +2023,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-20-tabernacle-zaytoven",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -2489,7 +2043,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-20-terminal-west-improvement-movement",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -2509,7 +2063,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-20-variety-playhouse-penelope-road",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2527,7 +2081,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-20-coca-cola-roxy-yacht-rock-revue",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2561,7 +2115,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-20-state-farm-arena-cbs-sports-classic",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -2580,7 +2134,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2025-12-20-the-masquerade-sugar-the-nu-metal-party",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -2611,7 +2165,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2025-12-20-the-masquerade-michael-cera-palin",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -2630,7 +2184,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2025-12-20-center-stage-rickey-smiley",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -2653,28 +2207,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-20-center-stage-vanna",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-21",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "TT Mahony & Jeffrey B\u00fctzer"
-      },
-      {
-        "name": "The Frigidaires"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/charlie-brown-christmas-the-earl-2025-4",
-    "info_url": "https://badearl.com/show/charlie-brown-night-4-the-earl-2025/",
-    "image_url": "https://badearl.com/wp-content/uploads/2021/10/TT-Mahony-Jeffrey-Butzer_adobespark.jpeg",
-    "category": "concerts",
-    "price": "$27.50 ADV / $30 DOS",
-    "slug": "2025-12-21-the-earl-tt-mahony-jeffrey-b\u00fctzer",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -2691,7 +2224,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-21-variety-playhouse-holiday-hootenanny-14",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2713,7 +2246,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-21-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -2731,43 +2264,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-21-center-stage-lil-crank",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-23",
-    "doors_time": "07:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Home For The Holidays"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/mandal-nick-murphy-shaunak-godkhindi-the-earl",
-    "info_url": "https://badearl.com/show/home-for-the-holidays-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/12/HFH-IG-2-min.jpg",
-    "category": "broadway",
-    "price": "$25 ADV / $25 DOS",
-    "slug": "2025-12-23-the-earl-home-for-the-holidays",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-23",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "NUTCRACKER! Magical Christmas Ballet"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=NUT&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/nutcracker-magical-christmas-ballet-2025",
-    "image_url": "https://www.foxtheatre.org/assets/img/Nutcracker_550x550-adc61b63a1.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2025-12-23-fox-theatre-nutcracker-magical-christmas-ballet",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2789,25 +2286,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-23-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-25",
-    "doors_time": "08:00",
-    "show_time": "21:00",
-    "artists": [
-      {
-        "name": "Dedrick Flynn"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/dedrick-flynn-the-earl-3",
-    "info_url": "https://badearl.com/show/dedrick-flynn-the-earl-3-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2024/10/dedrick-flynn.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $25 DOS",
-    "slug": "2025-12-25-the-earl-dedrick-flynn",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -2837,7 +2316,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-26-coca-cola-roxy-tape-b",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2859,34 +2338,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-26-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-27",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Drugula"
-      },
-      {
-        "name": "Widow 100s"
-      },
-      {
-        "name": "Chuck Jr"
-      },
-      {
-        "name": "Baby Bites"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/drugula-widow-100s-the-earl",
-    "info_url": "https://badearl.com/show/drugula-widow-100s-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/12/drugula-flyer-min.jpg",
-    "category": "concerts",
-    "price": "$15 ADV / $15 DOS",
-    "slug": "2025-12-27-the-earl-drugula",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2908,7 +2360,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-27-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -2926,7 +2378,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-27-center-stage-rolling-out-music-presents-the-revival",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2944,25 +2396,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-28-state-farm-arena-rod-wave",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2025-12-29",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Widespread Panic"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=WSP&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/widespread-panic-2025",
-    "image_url": "https://www.foxtheatre.org/assets/img/WP-NYE-ATL-2025-550X550-edc5196863.jpg",
-    "category": "concerts",
-    "price": "See website",
-    "slug": "2025-12-29-fox-theatre-widespread-panic",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -2980,7 +2414,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-29-state-farm-arena-rod-wave",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -2998,7 +2432,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-30-tabernacle-umphreys-mcgee",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -3015,7 +2449,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-30-terminal-west-funk-you-late-night-show",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -3035,7 +2469,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-30-the-eastern-daily-bread",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -3054,28 +2488,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2025-12-30-center-stage-underground-springhouse",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2025-12-31",
-    "doors_time": "08:00",
-    "show_time": "21:00",
-    "artists": [
-      {
-        "name": "Upchuck"
-      },
-      {
-        "name": "Possums"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/upchuck-the-earl-3",
-    "info_url": "https://badearl.com/show/upchuck-the-earl-3/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/12/upchuck_15_pc_michael_tyrone_delaney_300dpi.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $25 DOS",
-    "slug": "2025-12-31-the-earl-upchuck",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -3093,7 +2506,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2025-12-31-tabernacle-umphreys-mcgee",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -3113,7 +2526,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-31-terminal-west-perpetual-groove-25th-anniversary-kickoff-on-new-years-eve-2025",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -3133,7 +2546,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2025-12-31-the-eastern-daily-bread",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -3155,7 +2568,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2025-12-31-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3174,7 +2587,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2025-12-31-the-masquerade-united-we-dance",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3193,7 +2606,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2025-12-31-the-masquerade-gimme-gimme-disco",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -3212,25 +2625,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-03-center-stage-soup",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-01-06",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Hell's Kitchen"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=HEL&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/hells-kitchen",
-    "image_url": "https://www.foxtheatre.org/assets/img/HellsKitchen_550x550-c579b8a9d1.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-01-06-fox-theatre-hells-kitchen",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -3252,7 +2647,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-01-07-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3279,40 +2674,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-01-08-the-masquerade-fleshwater",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-09",
-    "doors_time": "07:00",
-    "show_time": "19:30",
-    "artists": [
-      {
-        "name": "Nikki & The Phantom Callers"
-      },
-      {
-        "name": "Ben Trickey"
-      },
-      {
-        "name": "Tyler Key"
-      },
-      {
-        "name": "Heart Drugs"
-      },
-      {
-        "name": "Evan Stepp & The Piners"
-      },
-      {
-        "name": "Milkweed"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/number-stations-records-the-earl",
-    "info_url": "https://badearl.com/show/numbers-station-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2022/02/nikkiandhthephantomcallers-min_ccexpress.jpeg",
-    "category": "concerts",
-    "price": "$17 ADV / $20 DOS",
-    "slug": "2026-01-09-the-earl-nikki-the-phantom-callers",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -3330,7 +2692,7 @@
     "category": "sports",
     "price": "See website",
     "slug": "2026-01-09-mercedes-benz-stadium-chick-fil-a-peach-bowl",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -3349,31 +2711,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-09-center-stage-father-figure",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-10",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Gringo Star"
-      },
-      {
-        "name": "The Sporrs"
-      },
-      {
-        "name": "Lowtown"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/gringo-star-the-earl-2",
-    "info_url": "https://badearl.com/show/gringo-star-the-earl-4/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/12/Gringo-Star.jpeg",
-    "category": "concerts",
-    "price": "$16 ADV / $20 DOS",
-    "slug": "2026-01-10-the-earl-gringo-star",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -3390,7 +2728,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-10-variety-playhouse-big-mike-geiers-elvis-royale-featuring-the-kingsized-rock-n-roll-orchestra",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3425,25 +2763,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-01-10-the-masquerade-silly-goose",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-11",
-    "doors_time": "07:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "The Last Revel"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/the-last-revel-the-earl",
-    "info_url": "https://badearl.com/show/the-last-revel-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/the-last-revel.jpg",
-    "category": "concerts",
-    "price": "$18 ADV / $20 DOS",
-    "slug": "2026-01-11-the-earl-the-last-revel",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -3460,7 +2780,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-11-variety-playhouse-big-mike-geiers-elvis-royale-featuring-the-kingsized-rock-n-roll-orchestra",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3483,7 +2803,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-01-13-the-masquerade-leftover-crack",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3506,28 +2826,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-01-15-the-masquerade-glaive",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-16",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Pissed Jeans"
-      },
-      {
-        "name": "Morgan Garrett"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/pissed-jeans-the-earl",
-    "info_url": "https://badearl.com/show/pissed-jeans-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/09/Pissed-Jeans-Press-Picture.jpg",
-    "category": "concerts",
-    "price": "$15 ADV / $20 DOS",
-    "slug": "2026-01-16-the-earl-pissed-jeans",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -3547,7 +2846,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-16-terminal-west-ruston-kelly-pale-through-the-window-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -3564,25 +2863,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-16-variety-playhouse-magic-city-hippies-w-supertaste",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-01-16",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Ron White"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=RON&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/ron-white-2026",
-    "image_url": "https://www.foxtheatre.org/assets/img/Ron-White-550-x-550-02a66cdd55.jpg",
-    "category": "comedy",
-    "price": "See website",
-    "slug": "2026-01-16-fox-theatre-ron-white",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3617,7 +2898,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-01-16-the-masquerade-atmosphere",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -3635,7 +2916,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-16-center-stage-djayg",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -3652,7 +2933,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-17-terminal-west-koo-koo",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -3672,7 +2953,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-17-terminal-west-shlump",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -3692,25 +2973,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-17-variety-playhouse-spafford",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-01-17",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Morrissey"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MOZ&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/morrissey",
-    "image_url": "https://www.foxtheatre.org/assets/img/Morrissey_550x550-b7d05f50d9.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2026-01-17-fox-theatre-morrissey",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -3732,7 +2995,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-01-17-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3751,7 +3014,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-01-17-the-masquerade-the-funeral-portrait",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3770,7 +3033,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-01-17-the-masquerade-broadway-rave",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -3788,7 +3051,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-17-center-stage-kpop-night",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -3807,28 +3070,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-18-center-stage-nick-lavelle",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-19",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Modern Nature"
-      },
-      {
-        "name": "Brigid Dawson & The Mothers Network"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/modern-nature-the-earl",
-    "info_url": "https://badearl.com/show/modern-nature-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/08/modern-nature.jpg",
-    "category": "concerts",
-    "price": "$18 ADV / $18 DOS",
-    "slug": "2026-01-19-the-earl-modern-nature",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -3850,52 +3092,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-01-19-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-20",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Friendship"
-      },
-      {
-        "name": "Little Mazarn"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/vincas-rubber-udder-the-earl",
-    "info_url": "https://badearl.com/show/friendship-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/Friendship-band.jpg",
-    "category": "concerts",
-    "price": "$16 ADV / $20 DOS",
-    "slug": "2026-01-20-the-earl-friendship",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-21",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Shiner"
-      },
-      {
-        "name": "Dropsonic"
-      },
-      {
-        "name": "Bursting"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/shiner-the-earl-3",
-    "info_url": "https://badearl.com/show/shiner-the-earl-3/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/Shiner-NEW.jpg",
-    "category": "concerts",
-    "price": "$18 ADV / $20 DOS",
-    "slug": "2026-01-21-the-earl-shiner",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -3914,25 +3111,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-01-21-center-stage-jessie-j",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-22",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Off With Their Heads"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/off-with-their-heads-the-earl-3",
-    "info_url": "https://badearl.com/show/off-with-their-heads-the-earl-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/OWTH-pic.jpg",
-    "category": "concerts",
-    "price": "$20 ADV / $25 DOS",
-    "slug": "2026-01-22-the-earl-off-with-their-heads",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -3952,7 +3131,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-22-terminal-west-54-ultra-live-in-north-america-round-two",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -3975,7 +3154,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-01-22-the-masquerade-don-broco",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4006,7 +3185,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-01-22-the-masquerade-left-to-suffer",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4025,25 +3204,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-01-22-the-masquerade-24kgoldn",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-23",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Sean Rowe"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/sean-rowe-the-earl",
-    "info_url": "https://badearl.com/show/sean-rowe-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/Sean-Rowe-main-870x580-1.jpg",
-    "category": "concerts",
-    "price": "$20 ADV / $20 DOS",
-    "slug": "2026-01-23-the-earl-sean-rowe",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -4060,7 +3221,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-23-terminal-west-stop-light-observations",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -4080,7 +3241,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-23-the-eastern-ravenscoon",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -4102,7 +3263,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-01-23-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4121,7 +3282,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-01-23-the-masquerade-sudan-archives",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4144,7 +3305,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-01-23-the-masquerade-greg-freeman",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4171,7 +3332,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-01-23-the-masquerade-glare",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -4190,31 +3351,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-23-center-stage-carbon-leaf",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-24",
-    "doors_time": "07:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Vio-Lence"
-      },
-      {
-        "name": "Deceased"
-      },
-      {
-        "name": "Nunslaughter"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/vio-lence-the-earl",
-    "info_url": "https://badearl.com/show/vio-lence-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/08/JANAUARY-24-\u2022-THE-EARL-ATLANTA-GA-1.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $30 DOS",
-    "slug": "2026-01-24-the-earl-vio-lence",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -4236,7 +3373,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-01-24-tabernacle-zoso-the-ultimate-led-zeppelin-experience",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -4253,7 +3390,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-24-terminal-west-bayker-blankenship",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -4273,7 +3410,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-24-the-eastern-ravenscoon",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -4290,25 +3427,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-24-variety-playhouse-the-sundogs-present-the-tom-petty-show",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-01-24",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Blue Man Group"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BMG&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/blue-man-group-2026",
-    "image_url": "https://www.foxtheatre.org/assets/img/BMG-550-x-550-45d09a2a68.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-01-24-fox-theatre-blue-man-group",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4327,7 +3446,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-01-24-the-masquerade-emo-night-karaoke",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -4346,7 +3465,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-24-center-stage-smells-like-nirvana",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -4364,7 +3483,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-25-center-stage-ryan-horton",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -4386,7 +3505,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-01-26-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -4416,25 +3535,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-01-27-tabernacle-motion-city-soundtrack-say-anything",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-01-27",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "MJ The Musical"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=MJM&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/mj-the-musical-2025",
-    "image_url": "https://www.foxtheatre.org/assets/img/MjTheMusical_550x550-99e1cae011.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-01-27-fox-theatre-mj-the-musical",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -4457,7 +3558,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-27-center-stage-gavn",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4488,7 +3589,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-01-28-the-masquerade-fire-from-the-gods",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4511,7 +3612,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-01-28-the-masquerade-daffo",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -4530,7 +3631,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2026-01-28-center-stage-fabio-porchat",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -4547,7 +3648,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-29-terminal-west-redferrin",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -4564,7 +3665,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-29-the-eastern-the-wood-brothers",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -4581,7 +3682,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-29-variety-playhouse-goldford",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -4603,7 +3704,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-01-29-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4630,7 +3731,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-01-29-the-masquerade-the-koffin-kats",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -4649,31 +3750,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-01-29-center-stage-the-warped-tour-band",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-01-30",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "God Bullies"
-      },
-      {
-        "name": "Vincas"
-      },
-      {
-        "name": "Rubber Udder"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/god-bullies-the-earl",
-    "info_url": "https://badearl.com/show/god-bullies-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/07/god-bullies-web.jpeg",
-    "category": "concerts",
-    "price": "$20 ADV / $25 DOS",
-    "slug": "2026-01-30-the-earl-god-bullies",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -4707,7 +3784,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-01-30-tabernacle-snow-strippers",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -4727,7 +3804,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-30-terminal-west-tinzo-jojo",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -4744,7 +3821,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-30-variety-playhouse-nacho-redondo-en-vivo-en-espa\u00f1ol",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4762,7 +3839,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-01-30-the-masquerade-sabbath-the-re-creation-of-black-sabbath-presents-long-live-ozzy",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4781,7 +3858,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-01-30-the-masquerade-wetouchgrass",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4808,7 +3885,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-01-30-the-masquerade-millionaires",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -4827,7 +3904,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2026-01-30-center-stage-heroes-off-duty-comedy-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -4845,7 +3922,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-01-31-tabernacle-dr-fresch",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -4865,7 +3942,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-31-terminal-west-eddie-9v",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -4882,7 +3959,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-01-31-variety-playhouse-leo-kottke",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -4900,7 +3977,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-01-31-state-farm-arena-hot-wheels-monster-trucks-live-glow-n-fire",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -4918,7 +3995,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-01-31-state-farm-arena-hot-wheels-monster-trucks-live-glow-n-fire-1",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4937,7 +4014,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-01-31-the-masquerade-electric-feels",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4960,7 +4037,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-01-31-the-masquerade-enjambre",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -4979,7 +4056,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-01-31-the-masquerade-ellise",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -4999,7 +4076,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-01-terminal-west-couch-big-talk-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -5017,7 +4094,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-02-01-state-farm-arena-hot-wheels-monster-trucks-live-glow-n-fire",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -5037,7 +4114,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-02-terminal-west-drama",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -5060,7 +4137,7 @@
     "category": "broadway",
     "stage": "Heaven",
     "slug": "2026-02-02-the-masquerade-nymphia-wind",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -5087,7 +4164,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-02-02-the-masquerade-summer-salt",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -5107,7 +4184,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-03-terminal-west-night-moves",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -5127,7 +4204,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-03-variety-playhouse-james-mcmurtry",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -5146,7 +4223,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-02-04-center-stage-geoff-tate",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -5165,28 +4242,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-02-04-center-stage-berner",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-02-05",
-    "doors_time": "07:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Taper's Choice"
-      },
-      {
-        "name": "Rich Ruth"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/tapers-choice-the-earl",
-    "info_url": "https://badearl.com/show/tapers-choice-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/09/tapers-choice-1.jpg",
-    "category": "concerts",
-    "price": "$20 ADV / $25 DOS",
-    "slug": "2026-02-05-the-earl-tapers-choice",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -5203,7 +4259,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-05-terminal-west-langhorne-slim",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -5220,7 +4276,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-05-variety-playhouse-don-was-and-the-pan-detroit-ensemble",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -5242,7 +4298,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-02-05-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -5261,31 +4317,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-02-05-the-masquerade-dinosaur-pile-up",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-02-06",
-    "doors_time": "07:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Matt Pryor"
-      },
-      {
-        "name": "Small Uncle"
-      },
-      {
-        "name": "Huey"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/matt-pryor-the-earl",
-    "info_url": "https://badearl.com/show/matt-pryor-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Pryor-SaltonSea-MDubin-Full-A7R00329-min.jpg",
-    "category": "concerts",
-    "price": "$19 ADV / $24 DOS",
-    "slug": "2026-02-06-the-earl-matt-pryor",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -5307,7 +4339,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-02-06-tabernacle-112",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -5327,7 +4359,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-06-the-eastern-elevation-rhythm",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -5347,25 +4379,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-06-variety-playhouse-dry-cleaning",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-02-06",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Riverdance"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=RIV&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/riverdance",
-    "image_url": "https://www.foxtheatre.org/assets/img/Riverdance_550x550-24362de122.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-02-06-fox-theatre-riverdance",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -5392,7 +4406,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-02-06-the-masquerade-glitterer",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -5415,28 +4429,24 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-02-06-the-masquerade-meet-me-the-altar",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
-    "venue": "The Earl",
+    "venue": "Terminal West",
     "date": "2026-02-07",
-    "doors_time": "08:00",
-    "show_time": "20:30",
+    "doors_time": "19:00",
+    "show_time": "20:00",
     "artists": [
       {
-        "name": "Bad Bad Hats"
-      },
-      {
-        "name": "Smut"
+        "name": "Vincent Antone"
       }
     ],
-    "ticket_url": "https://badearl.freshtix.com/events/bad-bad-hats-the-earl-2",
-    "info_url": "https://badearl.com/show/bad-bad-hats-the-earl-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/bad-bad-hats-min.jpeg",
+    "ticket_url": "https://www.axs.com/events/1241414/vincent-antone-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2025/12/uploadedimage_692db68b86baf.jpg",
+    "price": "See website",
     "category": "concerts",
-    "price": "$20 ADV / $20 DOS",
-    "slug": "2026-02-07-the-earl-bad-bad-hats",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "slug": "2026-02-07-terminal-west-vincent-antone",
+    "first_seen": "2025-12-03T22:18:15.423597Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -5456,7 +4466,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-07-variety-playhouse-the-movement-visions-tour-2026",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -5478,7 +4488,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-02-07-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -5497,7 +4507,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-02-07-the-masquerade-fox-stevenson",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -5514,7 +4524,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-08-terminal-west-mc-davo-sabino",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -5533,7 +4543,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2026-02-08-center-stage-samay-raina",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -5555,7 +4565,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-02-10-coca-cola-roxy-miguel",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -5582,25 +4592,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-02-10-the-masquerade-badflower",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-02-11",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Venus & the Flytraps"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/venus-and-the-flytraps-the-earl",
-    "info_url": "https://badearl.com/show/venus-and-the-flytraps-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/venus.jpg",
-    "category": "concerts",
-    "price": "$15 ADV / $20 DOS",
-    "slug": "2026-02-11-the-earl-venus-the-flytraps",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -5610,6 +4602,9 @@
     "artists": [
       {
         "name": "Jonah Kagen"
+      },
+      {
+        "name": "Anna Graves"
       }
     ],
     "ticket_url": "https://www.axs.com/events/1147058/jonah-kagen-tickets",
@@ -5617,25 +4612,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-11-terminal-west-jonah-kagen",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-02-11",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Alvin Ailey American Dance Theater"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=ALV&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/alvin-ailey-2026",
-    "image_url": "https://www.foxtheatre.org/assets/img/AAADT_2026_ATL_Digital_Web_550sq-86b236dec3.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2026-02-11-fox-theatre-alvin-ailey-american-dance-theater",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -5658,7 +4635,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-02-11-the-masquerade-electric-guest",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -5675,7 +4652,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-12-terminal-west-railroad-earth",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -5697,7 +4674,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-02-13-tabernacle-lauren-spencer-smith",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -5717,7 +4694,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-13-terminal-west-clay-street-unit",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -5737,7 +4714,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-13-the-eastern-inzo",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -5754,7 +4731,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-13-variety-playhouse-smithsonian-the-remakes",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -5772,7 +4749,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-02-13-coca-cola-roxy-molotov",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -5810,7 +4787,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-13-state-farm-arena-b2k",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -5837,7 +4814,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-02-13-the-masquerade-mat-kerekes",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -5856,7 +4833,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-02-13-center-stage-the-magic-of-motown",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -5875,7 +4852,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-02-13-center-stage-alex-sampson",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -5897,7 +4874,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-02-14-tabernacle-ian-munsick",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -5917,7 +4894,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-14-terminal-west-say-she-she-cut-rewind-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -5934,7 +4911,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-14-the-eastern-joe-russos-almost-dead",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -5951,7 +4928,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-14-variety-playhouse-the-remakes-smithsonian",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -5969,7 +4946,7 @@
     "price": "See website",
     "category": "comedy",
     "slug": "2026-02-14-state-farm-arena-katt-williams",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -5989,7 +4966,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-15-terminal-west-tyler-braden-devil-and-a-prayer-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -6006,7 +4983,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-15-variety-playhouse-rory-scovel-know-your-enemy-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -6025,7 +5002,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-02-15-the-masquerade-good-terms",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -6044,7 +5021,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-02-15-center-stage-noah-rinker",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -6067,7 +5044,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-02-16-the-masquerade-redveil",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -6097,7 +5074,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-02-17-tabernacle-wooli",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -6116,7 +5093,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-02-17-the-masquerade-joey-valence-brae",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -6136,7 +5113,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-19-terminal-west-clipping",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -6153,7 +5130,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-19-the-eastern-niko-moon-the-american-palm-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -6172,7 +5149,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-02-19-center-stage-all-hours",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -6192,7 +5169,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-20-terminal-west-briscoe",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -6212,7 +5189,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-20-the-eastern-alleycvt",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -6232,7 +5209,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-20-variety-playhouse-peter-mcpoland-big-lucky-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -6258,7 +5235,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-02-20-coca-cola-roxy-maddox-batson",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -6280,7 +5257,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-02-20-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -6299,7 +5276,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-02-20-the-masquerade-kylekelly",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -6318,28 +5295,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-02-20-center-stage-so-good-the-neil-diamond-experience-starring-robert-neary",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-02-21",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Nuovo Testamento"
-      },
-      {
-        "name": "Dark Chisme"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/nuovo-testamento-the-earl",
-    "info_url": "https://badearl.com/show/nuovo-testamento-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Nuovo-Testamento-min.jpg",
-    "category": "concerts",
-    "price": "$18 ADV / $20 DOS",
-    "slug": "2026-02-21-the-earl-nuovo-testamento",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -6356,7 +5312,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-21-terminal-west-sodown",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -6376,25 +5332,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-21-variety-playhouse-marty-stuart-and-his-fabulous-superlatives",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-02-21",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "When A Woman's Fed Up"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=WWF&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/when-a-womans-fed-up",
-    "image_url": "https://www.foxtheatre.org/assets/img/Fed-Up-FOX-ATL550X550-19d5d747a2.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2026-02-21-fox-theatre-when-a-womans-fed-up",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -6413,7 +5351,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-02-21-the-masquerade-aurelio-voltaire",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -6432,7 +5370,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-02-21-center-stage-aries",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -6449,7 +5387,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-22-terminal-west-samm-henshaw-presents-it-could-be-worse",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -6471,7 +5409,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-02-22-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -6493,31 +5431,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-02-23-state-farm-arena-wwe",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-02-24",
-    "doors_time": "07:00",
-    "show_time": "19:30",
-    "artists": [
-      {
-        "name": "Spiritual Cramp"
-      },
-      {
-        "name": "Liberty and Justice"
-      },
-      {
-        "name": "Bad Sports"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/spiritual-cramp-the-earl",
-    "info_url": "https://badearl.com/show/spiritual-cramp-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/08/spiritual-cramp.jpg",
-    "category": "concerts",
-    "price": "$20 ADV / $20 DOS",
-    "slug": "2026-02-24-the-earl-spiritual-cramp",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -6539,7 +5453,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-02-24-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -6557,7 +5471,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-02-25-tabernacle-monaleo",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -6574,7 +5488,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-25-terminal-west-petey-usa",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -6584,6 +5498,9 @@
     "artists": [
       {
         "name": "Jesse Welles"
+      },
+      {
+        "name": "S.G. Goodman"
       }
     ],
     "ticket_url": "https://www.axs.com/events/1081585/jesse-welles-tickets",
@@ -6591,7 +5508,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-25-the-eastern-jesse-welles",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -6608,7 +5525,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-26-terminal-west-wax-tailor",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -6630,7 +5547,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-02-26-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -6661,7 +5578,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-02-26-the-masquerade-siamese",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -6680,7 +5597,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-02-26-center-stage-cash-cobain",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -6699,7 +5616,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-02-26-center-stage-nep",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -6719,7 +5636,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-27-terminal-west-infekt-port-zero-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -6739,7 +5656,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-27-the-eastern-sts9",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -6756,7 +5673,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-27-variety-playhouse-an-evening-with-big-head-todd-and-the-monsters",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -6774,7 +5691,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-27-state-farm-arena-twice",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -6793,7 +5710,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-02-27-center-stage-amber-mark",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -6812,25 +5729,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-02-27-center-stage-rebirth-brass-band",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-02-28",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Prison Affair"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/prison-affair-the-earl",
-    "info_url": "https://badearl.com/show/prison-affair-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/prison-affair.jpeg",
-    "category": "concerts",
-    "price": "$18 ADV / $20 DOS",
-    "slug": "2026-02-28-the-earl-prison-affair",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -6850,7 +5749,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-28-terminal-west-wonkywilla",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -6870,7 +5769,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-28-the-eastern-sts9",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -6887,25 +5786,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-02-28-variety-playhouse-billy-f-gibbons-and-the-bfg-band",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-02-28",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Harry Potter and the Cursed Child"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=HAR&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/harry-potter",
-    "image_url": "https://www.foxtheatre.org/assets/img/Harry-Potter-550-x-550-b34dc555b6.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-02-28-fox-theatre-harry-potter-and-the-cursed-child",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -6924,7 +5805,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-02-28-the-masquerade-goldie-boutilier",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -6943,7 +5824,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-02-28-the-masquerade-nik-parr",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -6965,7 +5846,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-01-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -6984,7 +5865,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-03-01-the-masquerade-john-michael-howell",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -7007,7 +5888,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-03-01-center-stage-elise-trouw",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -7024,7 +5905,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-03-terminal-west-makaya-mccraven",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -7044,7 +5925,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-03-variety-playhouse-evan-honer-its-a-long-road-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7063,7 +5944,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-03-03-the-masquerade-timecop1983",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -7082,7 +5963,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-03-03-center-stage-mae-martin",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -7099,7 +5980,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-04-the-eastern-rich-brian",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -7117,7 +5998,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-04-state-farm-arena-lady-gaga",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -7134,7 +6015,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-05-terminal-west-dirtwire",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -7152,7 +6033,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-05-state-farm-arena-lady-gaga",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7171,7 +6052,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-03-05-the-masquerade-katatonia",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -7191,7 +6072,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-06-the-eastern-trombone-shorty-orleans-avenue",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -7213,7 +6094,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-06-state-farm-arena-conan-gray",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7236,7 +6117,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-03-06-the-masquerade-dream-ivory",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -7255,7 +6136,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-03-06-center-stage-big-boogie",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -7273,7 +6154,7 @@
     "category": "comedy",
     "price": "See website",
     "slug": "2026-03-07-tabernacle-small-town-murder-podcast",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -7290,7 +6171,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-07-terminal-west-mary-droppinz",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -7307,7 +6188,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-07-the-eastern-machine-girl",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -7325,7 +6206,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-03-07-coca-cola-roxy-bbno",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -7343,7 +6224,7 @@
     "category": "sports",
     "price": "See website",
     "slug": "2026-03-07-mercedes-benz-stadium-atlanta-united-vs-real-salt-lake",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -7365,7 +6246,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-07-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7384,7 +6265,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-03-07-the-masquerade-pete-yorn",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -7403,7 +6284,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2026-03-07-center-stage-sindhu-vee",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -7420,7 +6301,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-08-the-eastern-pink-martini",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -7438,7 +6319,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-03-08-coca-cola-roxy-bryce-crawford",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -7456,7 +6337,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-03-09-tabernacle-blood-orange",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7479,7 +6360,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-03-09-the-masquerade-the-nude-party",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -7501,7 +6382,34 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-10-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "The Masquerade",
+    "date": "2026-03-10",
+    "doors_time": null,
+    "show_time": "19:00",
+    "artists": [
+      {
+        "name": "The Wonder Years",
+        "genre": "Rock"
+      },
+      {
+        "name": "Knuckle Puck",
+        "genre": "Rock"
+      },
+      {
+        "name": "Equipment",
+        "genre": "Pop"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/the-wonder-years-atlanta-georgia-03-10-2026/event/0E006378E12BA0DA",
+    "image_url": "https://s1.ticketm.net/dam/a/555/18994c57-f1f8-496c-b6f1-e175e12e1555_RETINA_LANDSCAPE_16_9.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "stage": "Heaven",
+    "slug": "2026-03-10-the-masquerade-the-wonder-years",
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7528,7 +6436,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-03-10-the-masquerade-eidola",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7547,7 +6455,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-03-10-the-masquerade-nobu-woods",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7566,7 +6474,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-03-10-the-masquerade-lithe",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -7586,25 +6494,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-11-terminal-west-ratboys",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-03-12",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Twen"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/twen-the-earl-3",
-    "info_url": "https://badearl.com/show/twen-the-earl-3/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/09/Twen-Approved-Photo-2-min.jpg",
-    "category": "concerts",
-    "price": "$18 ADV / $22 DOS",
-    "slug": "2026-03-12-the-earl-twen",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -7621,7 +6511,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-12-the-eastern-cat-power",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -7643,7 +6533,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-12-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7662,7 +6552,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-03-12-the-masquerade-puma-blue",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -7680,7 +6570,7 @@
     "category": "comedy",
     "price": "See website",
     "slug": "2026-03-13-tabernacle-bridget-everett",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -7697,7 +6587,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-13-terminal-west-eggy-something-in-the-air-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -7714,7 +6604,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-13-the-eastern-levity-presents-lasership",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -7734,7 +6624,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-13-variety-playhouse-drivin-n-cryin",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -7757,7 +6647,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-03-13-center-stage-landon-conrath",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -7774,7 +6664,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-14-the-eastern-levity-presents-lasership",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -7791,7 +6681,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-14-variety-playhouse-wednesday",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -7813,28 +6703,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-14-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-03-16",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Westerman"
-      },
-      {
-        "name": "Otto Benson"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/westerman-the-earl-2",
-    "info_url": "https://badearl.com/show/westerman-the-earl-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/09/WESTERMAN_ATHENS_SEP.22_PINELOPI_GERASIMOU-19.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $27 DOS",
-    "slug": "2026-03-16-the-earl-westerman",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -7856,7 +6725,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-03-16-coca-cola-roxy-fka-twigs",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -7878,25 +6747,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-16-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-03-17",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Skullcrusher"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/skullcrusher-the-earl",
-    "info_url": "https://badearl.com/show/skullcrusher-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/skullcrusher.jpg",
-    "category": "concerts",
-    "price": "$20 ADV / $20 DOS",
-    "slug": "2026-03-17-the-earl-skullcrusher",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -7916,7 +6767,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-17-the-eastern-rainbow-kitten-surprise",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -7939,7 +6790,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-03-17-the-masquerade-burning-witches",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -7956,7 +6807,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-18-terminal-west-mind-enterprises",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -7976,7 +6827,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-18-the-eastern-rainbow-kitten-surprise",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -8002,7 +6853,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-03-18-coca-cola-roxy-sabaton",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -8029,7 +6880,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-03-19-the-masquerade-kxllswxtch",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -8046,25 +6897,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-20-variety-playhouse-yacht-rock-revue-performs-stop-making-sense",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-03-20",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Dionne Warwick"
-      }
-    ],
-    "ticket_url": "https://www.ticketmaster.com/event/0E0062D9040369B4",
-    "info_url": "https://www.foxtheatre.org/events/detail/dionne-warwick-aso",
-    "image_url": "https://www.foxtheatre.org/assets/img/Dionne-Warwick-550-x-550-a544c1e9f6.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2026-03-20-fox-theatre-dionne-warwick",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -8086,7 +6919,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-20-state-farm-arena-eric-church",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -8113,7 +6946,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-03-20-the-masquerade-capstan",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -8132,7 +6965,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-03-20-center-stage-the-pink-floyd-laser-spectacular",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -8150,7 +6983,24 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-03-20-center-stage-jed-harrelson",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
+  },
+  {
+    "venue": "Terminal West",
+    "date": "2026-03-21",
+    "doors_time": "19:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "LIVE ! ON STAGE: JONATHAN RICHMAN "
+      }
+    ],
+    "ticket_url": "https://www.axs.com/events/1240799/live-on-stage-jonathan-richman-tickets",
+    "image_url": "https://images.discovery-prod.axs.com/2025/11/uploadedimage_6924b66f09dea.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "slug": "2026-03-21-terminal-west-live-on-stage-jonathan-richman",
+    "first_seen": "2025-12-03T22:18:15.423597Z"
   },
   {
     "venue": "The Eastern",
@@ -8170,25 +7020,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-21-the-eastern-level-up-x-zingara",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-03-21",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Josiah Queen: The Mt. Zion Tour"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=JOS&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/josiah-queen",
-    "image_url": "https://www.foxtheatre.org/assets/img/JQ_MZ_Atlanta_550x550-d9dad13581.jpg",
-    "category": "concerts",
-    "price": "See website",
-    "slug": "2026-03-21-fox-theatre-josiah-queen-the-mt-zion-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -8210,7 +7042,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-21-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -8233,7 +7065,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-03-21-the-masquerade-flyingfish",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -8252,7 +7084,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-03-22-center-stage-the-phil-collins-story",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -8274,7 +7106,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-23-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -8305,7 +7137,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-03-23-the-masquerade-drain",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -8325,7 +7157,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-24-terminal-west-benee",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -8352,7 +7184,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-03-24-the-masquerade-orbit-culture",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -8371,7 +7203,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-03-24-the-masquerade-pryvt",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -8389,7 +7221,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-03-25-tabernacle-kwn",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -8409,7 +7241,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-25-terminal-west-mindchatter-giving-up-on-words-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -8428,28 +7260,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-03-25-center-stage-delilah-bon",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-03-26",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Orcutt, Shelley, Miller"
-      },
-      {
-        "name": "Chris Forsyth\u2019s \"What is Now\""
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/orcutt-shelley-miller-the-earl",
-    "info_url": "https://badearl.com/show/orcutt-shelley-miller-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/orcutt-shelley-miller.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $30 DOS",
-    "slug": "2026-03-26-the-earl-orcutt-shelley-miller",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -8466,7 +7277,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-26-terminal-west-1tbsp",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -8483,25 +7294,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-26-variety-playhouse-cymande",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-03-26",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Anne Wilson: The STARS Tour"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=WIL&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/anne-wilson-stars-tour",
-    "image_url": "https://www.foxtheatre.org/assets/img/AW_StarsSpring_Atlanta_550x550-a2ad836e9f.jpg",
-    "category": "concerts",
-    "price": "See website",
-    "slug": "2026-03-26-fox-theatre-anne-wilson-the-stars-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -8571,7 +7364,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-26-state-farm-arena-jill-scott",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -8590,25 +7383,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-03-26-the-masquerade-witchz",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-03-27",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Hudson Freeman"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/hudson-freeman-the-earl",
-    "info_url": "https://badearl.com/show/hudson-freeman-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/hudson-freeman-.jpg",
-    "category": "concerts",
-    "price": "$15 ADV / $18 DOS",
-    "slug": "2026-03-27-the-earl-hudson-freeman",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -8630,7 +7405,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-03-27-tabernacle-hayley-williams",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -8650,7 +7425,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-27-variety-playhouse-madison-cunningham",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -8669,28 +7444,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-03-27-the-masquerade-die-spitz",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-03-28",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Courtney Marie Andrews"
-      },
-      {
-        "name": "Taylor Zachry"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/courtney-marie-andrews-the-earl",
-    "info_url": "https://badearl.com/show/courtney-marie-andrews-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/CMA-Press-2026.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $30 DOS",
-    "slug": "2026-03-28-the-earl-courtney-marie-andrews",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -8712,7 +7466,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-03-28-tabernacle-hayley-williams",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -8729,7 +7483,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-28-terminal-west-dirty-three",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -8746,7 +7500,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-28-variety-playhouse-the-brook-the-bluff-the-werewolf-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -8768,7 +7522,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-03-28-coca-cola-roxy-puscifer",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -8777,7 +7531,7 @@
     "show_time": null,
     "artists": [
       {
-        "name": "USMNT v Belgium"
+        "name": "USMNT vs. Belgium"
       }
     ],
     "ticket_url": "http://www.ticketmaster.com/event/0E006375AEE49CEB?CAMEFROM=CFC_MBS_WEB_MBS_ONSALE",
@@ -8785,8 +7539,8 @@
     "image_url": "https://cdn.prod.website-files.com/5ddedd0e3047ab406ee3c37e/692f3f80fd9c203683ef69b4_USMNT-Belgium-1920x1080_optimized_500.jpg",
     "category": "sports",
     "price": "See website",
-    "slug": "2026-03-28-mercedes-benz-stadium-usmnt-v-belgium",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "slug": "2026-03-28-mercedes-benz-stadium-usmnt-vs-belgium",
+    "first_seen": "2025-12-03T22:18:15.423597Z"
   },
   {
     "venue": "State Farm Arena",
@@ -8808,7 +7562,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-28-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -8825,7 +7579,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-29-variety-playhouse-on-cinema-the-certified-five-bags-of-popcorn-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -8851,7 +7605,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-03-29-state-farm-arena-new-edition",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -8873,25 +7627,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-03-30-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-03-31",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Dancing with the Stars: Live! - 2026 Tour"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=DAN&linkID=fta&shopperContext=&caller=&appCode",
-    "info_url": "https://www.foxtheatre.org/events/detail/dancing-with-the-stars-2026",
-    "image_url": "https://www.foxtheatre.org/assets/img/DWTS-w-Elaine-550-x-550-78ad9327e1.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2026-03-31-fox-theatre-dancing-with-the-stars-live-2026-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -8900,7 +7636,7 @@
     "show_time": null,
     "artists": [
       {
-        "name": "USMNT v Portugal"
+        "name": "USMNT vs. Portugal"
       }
     ],
     "ticket_url": "https://www.ticketmaster.com/usmnt-vs-portugal-presented-by-bank-atlanta-georgia-03-31-2026/event/0E006378E5D7A2D9?CAMEFROM=CFC_MBS_WEB_MBS_ONSALE",
@@ -8908,8 +7644,8 @@
     "image_url": "https://cdn.prod.website-files.com/5ddedd0e3047ab406ee3c37e/692f3fe54e34a64627126d6d_USMNT-Portugal-1392x800_500.jpg",
     "category": "sports",
     "price": "See website",
-    "slug": "2026-03-31-mercedes-benz-stadium-usmnt-v-portugal",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "slug": "2026-03-31-mercedes-benz-stadium-usmnt-vs-portugal",
+    "first_seen": "2025-12-03T22:18:15.423597Z"
   },
   {
     "venue": "Terminal West",
@@ -8929,28 +7665,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-01-terminal-west-bryant-barnes-presents-solace-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-04-02",
-    "doors_time": "07:30",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "The Wedding Present"
-      },
-      {
-        "name": "Mark Robinson Sings Unrest"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/the-wedding-present-the-earl-2",
-    "info_url": "https://badearl.com/show/the-wedding-present-the-earl-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/Band-Photograph-The-Wedding-Present-25-Line-up-Landscape-by-John-Evans-min.jpg",
-    "category": "concerts",
-    "price": "$28 ADV / $28 DOS",
-    "slug": "2026-04-02-the-earl-the-wedding-present",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -8967,7 +7682,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-03-the-eastern-william-black",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -8984,7 +7699,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-03-variety-playhouse-indigo-de-souza",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -9002,7 +7717,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-03-state-farm-arena-man\u00e1",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -9020,7 +7735,7 @@
     "category": "comedy",
     "price": "See website",
     "slug": "2026-04-04-tabernacle-stavros-halkias",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -9040,7 +7755,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-04-the-eastern-the-format",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -9058,7 +7773,7 @@
     "price": "See website",
     "category": "comedy",
     "slug": "2026-04-04-state-farm-arena-gabriel-iglesias",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -9085,7 +7800,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-04-04-the-masquerade-natewantstobattle",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -9107,7 +7822,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-05-tabernacle-zara-larsson",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -9157,7 +7872,7 @@
     "price": "See website",
     "category": "comedy",
     "slug": "2026-04-05-state-farm-arena-we-them-ones-comedy-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -9179,7 +7894,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-06-coca-cola-roxy-bob-moses",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -9201,25 +7916,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-04-06-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-04-07",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "The Sound of Music"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SOU&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/the-sound-of-music",
-    "image_url": "https://www.foxtheatre.org/assets/img/TheSoundofMusic_550x550-b99b1293bc.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-04-07-fox-theatre-the-sound-of-music",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -9236,7 +7933,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-08-the-eastern-snarky-puppy",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -9262,25 +7959,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-09-tabernacle-black-label-society",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-04-10",
-    "doors_time": "08:00",
-    "show_time": "20:30",
-    "artists": [
-      {
-        "name": "Redd Kross"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/redd-kross-the-earl-2",
-    "info_url": "https://badearl.com/show/redd-kross-the-earl-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/Redd-Kross-Press-Photo-2025-Photo-Credit-Buzz-Osborne.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $25 DOS",
-    "slug": "2026-04-10-the-earl-redd-kross",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -9302,7 +7981,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-10-tabernacle-helloween",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -9319,7 +7998,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-10-terminal-west-the-band-of-heathens",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -9337,7 +8016,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-10-coca-cola-roxy-mariah-the-scientist",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -9359,28 +8038,7 @@
     "price": "See website",
     "category": "sports",
     "slug": "2026-04-10-state-farm-arena-atlanta-hawks",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-04-11",
-    "doors_time": "07:00",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Field Medic"
-      },
-      {
-        "name": "Euphoria Again"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/field-medic-the-earl",
-    "info_url": "https://badearl.com/show/field-medic-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/GinaDiMaio4.jpg",
-    "category": "concerts",
-    "price": "$20 ADV / $25 DOS",
-    "slug": "2026-04-11-the-earl-field-medic",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -9398,7 +8056,7 @@
     "category": "comedy",
     "price": "See website",
     "slug": "2026-04-11-tabernacle-ali-wong",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -9416,7 +8074,7 @@
     "category": "comedy",
     "price": "See website",
     "slug": "2026-04-11-tabernacle-ali-wong-1",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -9434,7 +8092,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-11-coca-cola-roxy-mariah-the-scientist",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -9452,7 +8110,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-11-state-farm-arena-ricardo-arjona",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -9483,7 +8141,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-04-11-the-masquerade-the-devil-wears-prada",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -9502,7 +8160,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2026-04-11-center-stage-felipe-esparza",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -9521,7 +8179,7 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2026-04-11-center-stage-rumgold",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -9538,7 +8196,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-12-variety-playhouse-the-growlers",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -9560,7 +8218,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-12-state-farm-arena-demi-lovato",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -9580,7 +8238,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-13-terminal-west-quarters",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -9597,7 +8255,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-14-variety-playhouse-allie-x",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -9616,7 +8274,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-04-14-the-masquerade-voxtrot",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -9646,7 +8304,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-15-tabernacle-the-amity-affliction",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -9663,7 +8321,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-15-terminal-west-sports",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -9693,7 +8351,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-15-coca-cola-roxy-lamb-of-god",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -9720,28 +8378,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-04-15-the-masquerade-melrose-avenue",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-04-16",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "The Belair Lip Bombs"
-      },
-      {
-        "name": "Dust"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/the-belair-lipbombs-the-earl",
-    "info_url": "https://badearl.com/show/the-belair-lipbombs-the-earl/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/10/the-belair-lipbombs.jpg",
-    "category": "concerts",
-    "price": "$18 ADV / $20 DOS",
-    "slug": "2026-04-16-the-earl-the-belair-lip-bombs",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -9761,7 +8398,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-16-terminal-west-kishi-bashi-sonderlust-10th-anniversary-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -9778,7 +8415,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-16-variety-playhouse-taj-mahal-the-phantom-blues-band",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -9796,7 +8433,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-17-tabernacle-calum-scott",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -9813,7 +8450,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-17-terminal-west-eliza-mclamb",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -9833,7 +8470,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-17-the-eastern-acid-bath",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -9850,7 +8487,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-17-variety-playhouse-leonid-friends",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -9868,7 +8505,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-17-state-farm-arena-cardi-b",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -9887,7 +8524,7 @@
     "category": "concerts",
     "stage": "Purgatory",
     "slug": "2026-04-17-the-masquerade-six-sex",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -9906,25 +8543,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-04-17-the-masquerade-rec-hall",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-04-18",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "The Thing"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/the-thing-the-earl-3",
-    "info_url": "https://badearl.com/show/the-thing-the-earl-2-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/11/the-thing-2026-photo.jpeg",
-    "category": "concerts",
-    "price": "$20 ADV / $20 DOS",
-    "slug": "2026-04-18-the-earl-the-thing",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -9942,7 +8561,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-18-tabernacle-natalia-lafourcade",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -9959,7 +8578,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-18-the-eastern-the-midnight-time-machines",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -9979,25 +8598,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-18-variety-playhouse-alice-phoebe-lou",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-04-18",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "An Evening With Yo-Yo Ma: Reflections in Words and Music"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=YYM&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/yo-yo-ma",
-    "image_url": "https://www.foxtheatre.org/assets/img/Yoyo_550x550-copy-805d5e1250.jpg",
-    "category": "concerts",
-    "price": "See website",
-    "slug": "2026-04-18-fox-theatre-an-evening-with-yo-yo-ma-reflections-in-words-and-music",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -10015,7 +8616,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-18-state-farm-arena-cardi-b",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -10034,7 +8635,7 @@
     "category": "misc",
     "stage": "Main",
     "slug": "2026-04-18-center-stage-andrew-callaghan",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -10052,7 +8653,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-19-tabernacle-natalia-lafourcade",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -10069,7 +8670,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-19-variety-playhouse-vnv-nation-an-evening-with",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -10087,7 +8688,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-21-tabernacle-theresa-caputo",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -10106,7 +8707,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-04-21-the-masquerade-black-pistol-fire",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -10124,7 +8725,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-22-coca-cola-roxy-lany",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -10144,25 +8745,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-24-the-eastern-panchiko",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-04-25",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "MEL ROBBINS: LET THEM TOUR 2026"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=MEL&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/mel-robbins-let-them-tour",
-    "image_url": "https://www.foxtheatre.org/assets/img/Mel-Robbins-550x550_2show-0ea2c4fd54.jpg",
-    "category": "misc",
-    "price": "See website",
-    "slug": "2026-04-25-fox-theatre-mel-robbins-let-them-tour-2026",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -10188,7 +8771,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-26-coca-cola-roxy-alter-bridge",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -10208,7 +8791,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-04-27-terminal-west-newdad",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -10234,25 +8817,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-04-28-coca-cola-roxy-raye",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-04-28",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "SIX"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SIX&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/six-the-musical",
-    "image_url": "https://www.foxtheatre.org/assets/img/Six_550x550-174b27560c.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-04-28-fox-theatre-six",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -10275,7 +8840,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-04-28-the-masquerade-coma-cinema",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -10294,7 +8859,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-04-30-the-masquerade-troy-doherty",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -10311,7 +8876,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-01-terminal-west-supertask",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -10333,7 +8898,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-01-state-farm-arena-florence-the-machine",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -10351,7 +8916,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-05-02-coca-cola-roxy-ashnikko",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -10382,25 +8947,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-05-02-the-masquerade-bleed-from-within",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "The Earl",
-    "date": "2026-05-04",
-    "doors_time": "07:30",
-    "show_time": "20:00",
-    "artists": [
-      {
-        "name": "Flyte"
-      }
-    ],
-    "ticket_url": "https://badearl.freshtix.com/events/flyte-the-earl",
-    "info_url": "https://badearl.com/show/flyte-the-earl-2/",
-    "image_url": "https://badearl.com/wp-content/uploads/2025/04/flyte-min.jpg",
-    "category": "concerts",
-    "price": "$25 ADV / $28 DOS",
-    "slug": "2026-05-04-the-earl-flyte",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -10423,7 +8970,7 @@
     "category": "concerts",
     "stage": "Altar",
     "slug": "2026-05-05-the-masquerade-sessa",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -10440,7 +8987,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-06-variety-playhouse-ty-segall",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -10460,7 +9007,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-07-terminal-west-dance-with-the-dead-magic-sword",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Terminal West",
@@ -10480,7 +9027,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-08-terminal-west-bahamas",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -10500,7 +9047,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-08-the-eastern-st-paul-the-broken-bones",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -10519,7 +9066,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-05-08-center-stage-kings-kaleidoscope",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -10536,7 +9083,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-09-the-eastern-moe",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -10563,7 +9110,7 @@
     "category": "concerts",
     "stage": "Hell",
     "slug": "2026-05-09-the-masquerade-unprocessed",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -10580,7 +9127,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-13-the-eastern-mac-demarco",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -10598,7 +9145,7 @@
     "category": "comedy",
     "price": "See website",
     "slug": "2026-05-15-tabernacle-michelle-buteau",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -10617,7 +9164,7 @@
     "category": "comedy",
     "stage": "Main",
     "slug": "2026-05-15-center-stage-zoltan-kaszas",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -10635,7 +9182,7 @@
     "category": "comedy",
     "price": "See website",
     "slug": "2026-05-16-tabernacle-akaash-singh",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -10653,7 +9200,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-05-16-center-stage-ruslan-kd",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -10670,7 +9217,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-18-variety-playhouse-andr\u00e9s-cepeda-nuestra-vida-en-canciones",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Masquerade",
@@ -10689,7 +9236,7 @@
     "category": "concerts",
     "stage": "Heaven",
     "slug": "2026-05-18-the-masquerade-chet-faker",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -10709,7 +9256,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-05-19-variety-playhouse-the-new-pornographers",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Coca-Cola Roxy",
@@ -10735,25 +9282,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-05-23-coca-cola-roxy-electric-callboy",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-05-26",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Beauty and the Beast"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=BEA&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/beauty-and-the-beast",
-    "image_url": "https://www.foxtheatre.org/assets/img/BeautyandtheBeast_550x550-2e2f908675.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-05-26-fox-theatre-beauty-and-the-beast",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -10771,7 +9300,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-05-30-tabernacle-echo-the-bunnymen",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -10789,25 +9318,7 @@
     "category": "sports",
     "price": "See website",
     "slug": "2026-06-01-mercedes-benz-stadium-2026-fifa-world-cup",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-06-05",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Morgan Jay: The Goofy Guy Tour"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetEventList?groupCode=JAY&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/morgan-jay",
-    "image_url": "https://www.foxtheatre.org/assets/img/Morgan-Jay-550x550-7f11b208b2.jpg",
-    "category": "comedy",
-    "price": "See website",
-    "slug": "2026-06-05-fox-theatre-morgan-jay-the-goofy-guy-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "The Eastern",
@@ -10827,7 +9338,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-06-13-the-eastern-the-last-dinner-party",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -10845,7 +9356,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-06-16-state-farm-arena-5-seconds-of-summer",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -10864,7 +9375,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-06-19-center-stage-the-church",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -10882,7 +9393,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-06-25-state-farm-arena-alex-warren",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -10901,7 +9412,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-06-26-center-stage-joe-jackson",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -10919,7 +9430,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-07-06-state-farm-arena-ariana-grande",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -10937,7 +9448,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-07-08-state-farm-arena-ariana-grande",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -10955,7 +9466,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-07-09-state-farm-arena-ariana-grande",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Tabernacle",
@@ -10973,25 +9484,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-07-17-tabernacle-aj-ghent",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
-  },
-  {
-    "venue": "Fox Theatre",
-    "date": "2026-07-21",
-    "doors_time": null,
-    "show_time": null,
-    "artists": [
-      {
-        "name": "Monty Python's Spamalot"
-      }
-    ],
-    "ticket_url": "https://foxtheatre.evenue.net/cgi-bin/ncommerce3/SEGetGroupList?groupCode=SPA&linkID=fta&shopperContext=&caller=&appCode=",
-    "info_url": "https://www.foxtheatre.org/events/detail/spamalot",
-    "image_url": "https://www.foxtheatre.org/assets/img/MontyPythons_550x550-e9be5d99e2.jpg",
-    "category": "broadway",
-    "price": "See website",
-    "slug": "2026-07-21-fox-theatre-monty-pythons-spamalot",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -11013,7 +9506,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-07-22-state-farm-arena-louis-tomlinson",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -11030,7 +9523,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-08-04-variety-playhouse-chance-pe\u00f1a",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -11048,7 +9541,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-08-22-state-farm-arena-olivia-dean",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Mercedes-Benz Stadium",
@@ -11066,7 +9559,7 @@
     "category": "concerts",
     "price": "See website",
     "slug": "2026-08-27-mercedes-benz-stadium-acdc-power-up-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -11085,7 +9578,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-09-09-center-stage-progpower-usa",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -11104,7 +9597,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-09-10-center-stage-progpower-usa",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -11123,7 +9616,7 @@
     "category": "concerts",
     "stage": "Main",
     "slug": "2026-09-11-center-stage-progpower-usa",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Variety Playhouse",
@@ -11140,7 +9633,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-10-22-variety-playhouse-benjamin-tod-and-the-inline-six-2026-tour",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -11158,7 +9651,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-11-17-state-farm-arena-doja-cat",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -11176,7 +9669,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-11-25-state-farm-arena-rush",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "State Farm Arena",
@@ -11194,7 +9687,7 @@
     "price": "See website",
     "category": "concerts",
     "slug": "2026-11-27-state-farm-arena-rush",
-    "first_seen": "2025-12-03T15:11:19.825991Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   },
   {
     "venue": "Center Stage",
@@ -11217,6 +9710,6 @@
     "category": "concerts",
     "stage": "Vinyl",
     "slug": "2027-03-10-center-stage-bren-joy",
-    "first_seen": "2025-12-03T15:28:20.429537Z"
+    "first_seen": "2025-12-03T15:53:02.125264Z"
   }
 ]

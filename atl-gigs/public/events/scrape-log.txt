@@ -724,3 +724,149 @@ Total valid events: 541
 [2025-12-03 15:28:20] [INFO] Events saved to /Users/wavey/code/atl-music/atl-gigs/public/events/events.json
 [2025-12-03 15:28:20] [INFO] Seen cache saved (541 events tracked)
 [2025-12-03 15:28:20] [INFO] Status saved to /Users/wavey/code/atl-music/atl-gigs/public/events/scrape-status.json
+
+--- New Run ---
+[2025-12-03 22:34:08] [INFO] Starting scrape run at 2025-12-03T22:34:08.941989Z
+[2025-12-03 22:34:08] [INFO] Scraping The Earl...
+[2025-12-03 22:34:24] [ERROR]   ERROR: Failed to scrape The Earl: HTTPSConnectionPool(host='badearl.com', port=443): Max retries exceeded with url: /show-calendar/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f729c90d110>, 'Connection to badearl.com timed out. (connect timeout=15)'))
+[2025-12-03 22:34:24] [ERROR]   Traceback:
+Traceback (most recent call last):
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f729c90d110>, 'Connection to badearl.com timed out. (connect timeout=15)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='badearl.com', port=443): Max retries exceeded with url: /show-calendar/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f729c90d110>, 'Connection to badearl.com timed out. (connect timeout=15)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 2264, in main
+    events = scraper()
+             ^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 983, in scrape_earl
+    return list(itertools.chain.from_iterable(parse_page(p) for p in pages()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 983, in <genexpr>
+    return list(itertools.chain.from_iterable(parse_page(p) for p in pages()))
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 927, in pages
+    r = requests.get(url, headers=EARL_HEADERS, timeout=15)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/venv/lib/python3.11/site-packages/requests/adapters.py", line 665, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='badearl.com', port=443): Max retries exceeded with url: /show-calendar/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f729c90d110>, 'Connection to badearl.com timed out. (connect timeout=15)'))
+
+[2025-12-03 22:34:24] [INFO] Scraping Tabernacle...
+[2025-12-03 22:34:27] [INFO]   Found 38 events
+[2025-12-03 22:34:27] [INFO] Scraping Terminal West...
+[2025-12-03 22:34:28] [INFO]   Found 56 events
+[2025-12-03 22:34:28] [INFO] Scraping The Eastern...
+[2025-12-03 22:34:28] [INFO]   Found 40 events
+[2025-12-03 22:34:28] [INFO] Scraping Variety Playhouse...
+[2025-12-03 22:34:28] [INFO]   Found 48 events
+[2025-12-03 22:34:28] [INFO] Scraping Coca-Cola Roxy...
+[2025-12-03 22:34:30] [INFO]   Found 24 events
+[2025-12-03 22:34:30] [INFO] Scraping Fox Theatre...
+[2025-12-03 22:34:49] [ERROR]   ERROR: Failed to scrape Fox Theatre: 406 Client Error after 3 retries
+[2025-12-03 22:34:49] [ERROR]   Traceback:
+Traceback (most recent call last):
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 2264, in main
+    events = scraper()
+             ^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 1455, in scrape_fox_theatre
+    ajax_events = scrape_fox_ajax_all_events()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 1321, in scrape_fox_ajax_all_events
+    raise requests.exceptions.HTTPError(f"406 Client Error after {max_retries} retries")
+requests.exceptions.HTTPError: 406 Client Error after 3 retries
+
+[2025-12-03 22:34:49] [INFO] Scraping Mercedes-Benz Stadium...
+[2025-12-03 22:34:50] [INFO]   Found 11 events
+[2025-12-03 22:34:50] [INFO] Scraping State Farm Arena...
+[2025-12-03 22:34:50] [INFO]   Found 75 events
+[2025-12-03 22:34:50] [INFO] Scraping The Masquerade...
+[2025-12-03 22:34:51] [INFO]   Found 106 events
+[2025-12-03 22:34:51] [INFO] Scraping Center Stage...
+[2025-12-03 22:34:52] [INFO]   Found 69 events
+[2025-12-03 22:34:52] [INFO] 
+Enriching events with Ticketmaster artist data...
+[2025-12-03 22:34:52] [INFO] 
+Processing events...
+[2025-12-03 22:34:52] [WARNING]   Filtered out 1 invalid events
+[2025-12-03 22:34:52] [INFO]   0 newly discovered events
+[2025-12-03 22:34:52] [INFO] 
+Archiving past events...
+[2025-12-03 22:34:52] [INFO] 
+[2025-12-03 22:34:52] [INFO] ============================================================
+[2025-12-03 22:34:52] [INFO] VENUE SUMMARY
+[2025-12-03 22:34:52] [INFO] ============================================================
+[2025-12-03 22:34:52] [INFO] Venue                     Events  Errors       Time
+[2025-12-03 22:34:52] [INFO] ------------------------------------------------------------
+[2025-12-03 22:34:52] [INFO] Center Stage                  69       0      696ms
+[2025-12-03 22:34:52] [INFO] Coca-Cola Roxy                24       0     1958ms
+[2025-12-03 22:34:52] [INFO] Fox Theatre                    0       1    18613ms
+[2025-12-03 22:34:52] [INFO] Mercedes-Benz Stadium         11       0      551ms
+[2025-12-03 22:34:52] [INFO] State Farm Arena              75       0      633ms
+[2025-12-03 22:34:52] [INFO] Tabernacle                    38       0     3438ms
+[2025-12-03 22:34:52] [INFO] Terminal West                 56       0      504ms
+[2025-12-03 22:34:52] [INFO] The Earl                       0       1    15165ms
+[2025-12-03 22:34:52] [INFO] The Eastern                   40       0      482ms
+[2025-12-03 22:34:52] [INFO] The Masquerade               106       0      867ms
+[2025-12-03 22:34:52] [INFO] Variety Playhouse             48       0      464ms
+[2025-12-03 22:34:52] [INFO] ------------------------------------------------------------
+[2025-12-03 22:34:52] [INFO] TOTAL                        467       2 43371ms
+[2025-12-03 22:34:52] [INFO] ============================================================
+[2025-12-03 22:34:52] [INFO] 
+Total valid events: 466
+[2025-12-03 22:34:52] [ERROR] WARNING: Failed to scrape: The Earl, Fox Theatre
+[2025-12-03 22:34:52] [INFO] Events saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/events.json
+[2025-12-03 22:34:52] [INFO] Seen cache saved (466 events tracked)
+[2025-12-03 22:34:52] [INFO] Status saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/scrape-status.json
