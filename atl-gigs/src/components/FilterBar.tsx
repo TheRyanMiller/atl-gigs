@@ -344,8 +344,8 @@ export default function FilterBar({
               onClear={clearDateFilter}
             />
             {dateDropdownOpen && (
-              <div 
-                className="absolute mt-2 w-64 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-4"
+              <div
+                className="absolute mt-2 w-64 right-0 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl z-20 p-4"
                 onMouseDown={(e) => e.stopPropagation()}
                 onClick={(e) => e.stopPropagation()}
               >

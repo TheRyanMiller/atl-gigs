@@ -100,7 +100,7 @@ function EventCard({ event, onClick }: EventCardProps) {
       {/* Favorite Star Button - Top right of card (desktop only) */}
       <button
         onClick={handleFavorite}
-        className="hidden sm:flex absolute top-3 right-5 z-20 w-8 h-8 items-center justify-center rounded-full bg-neutral-800 border border-neutral-700 transition-colors hover:bg-neutral-700"
+        className="hidden sm:flex absolute top-3 right-5 z-10 w-8 h-8 items-center justify-center rounded-full bg-neutral-800 border border-neutral-700 transition-colors hover:bg-neutral-700"
       >
         <Star
           size={16}
