@@ -1178,18 +1178,24 @@ def scrape_coca_cola_roxy():
 FOX_THEATRE_BASE = "https://www.foxtheatre.org"
 
 # Headers for Fox Theatre AJAX API requests (mimics browser XHR)
+# Updated Dec 2025: Chrome 131, Client Hints to avoid 406 bot detection
 FOX_THEATRE_AJAX_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
     "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
     "X-Requested-With": "XMLHttpRequest",
     "Referer": "https://www.foxtheatre.org/events",
     "Origin": "https://www.foxtheatre.org",
     "Sec-Fetch-Dest": "empty",
     "Sec-Fetch-Mode": "cors",
     "Sec-Fetch-Site": "same-origin",
+    "Sec-CH-UA": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+    "Sec-CH-UA-Mobile": "?0",
+    "Sec-CH-UA-Platform": '"Windows"',
     "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
 }
 
 def parse_fox_date_range(date_text):
@@ -1258,15 +1264,17 @@ def init_fox_session(max_retries=3):
 
     for attempt in range(max_retries):
         try:
-            resp = session.get(f"{FOX_THEATRE_BASE}/events", timeout=15)
+            resp = session.get(f"{FOX_THEATRE_BASE}/events", timeout=20)
             if resp.status_code == 200:
                 # Successfully got the page, session should have cookies
+                # Small delay after cookie acquisition to appear more human
+                time.sleep(random.uniform(0.5, 1.5))
                 return session
         except Exception:
             pass
 
         if attempt < max_retries - 1:
-            time.sleep(1 + random.uniform(0, 1))
+            time.sleep(random.uniform(2, 4))
 
     # Return session anyway - might work without cookies
     return session
@@ -1298,12 +1306,13 @@ def scrape_fox_ajax_all_events():
         last_error = None
         for attempt in range(max_retries):
             try:
-                resp = session.get(ajax_url, timeout=15)
+                resp = session.get(ajax_url, timeout=20)
 
-                # Handle 406 specifically - refresh session and retry
+                # Handle 406 specifically - refresh session and retry with longer delays
                 if resp.status_code == 406:
                     if attempt < max_retries - 1:
-                        wait = (2 ** attempt) + random.uniform(0, 1)
+                        # Longer, more human-like delays to avoid bot detection
+                        wait = (3 ** attempt) * 2 + random.uniform(2, 5)
                         print(f"    Fox Theatre: 406 error, refreshing session (attempt {attempt + 1}/{max_retries})...")
                         time.sleep(wait)
                         session = init_fox_session()
@@ -1317,7 +1326,7 @@ def scrape_fox_ajax_all_events():
             except requests.exceptions.RequestException as e:
                 last_error = e
                 if attempt < max_retries - 1:
-                    wait = (2 ** attempt) + random.uniform(0, 1)
+                    wait = (3 ** attempt) * 2 + random.uniform(2, 5)
                     time.sleep(wait)
                     # Refresh session on any error
                     session = init_fox_session()
@@ -1431,8 +1440,8 @@ def scrape_fox_ajax_all_events():
             break
 
         offset += len(cards)
-        # Random delay to avoid rate limiting / bot detection
-        time.sleep(0.5 + random.uniform(0, 1))
+        # Longer random delay to avoid rate limiting / bot detection
+        time.sleep(random.uniform(2.0, 4.0))
 
     return events
 
