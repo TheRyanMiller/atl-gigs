@@ -14,13 +14,12 @@ interface FavoritesProps {
 export default function Favorites({ events, loading, onEventClick }: FavoritesProps) {
   const { favorites, favoriteCount, clearFavorites } = useFavorites();
 
-  // Get today's date in YYYY-MM-DD format for comparison (local timezone)
+  // Get today's date in YYYY-MM-DD format for comparison (US Eastern timezone)
   const getTodayString = () => {
     const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, "0");
-    const day = String(now.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
+    // Format in Eastern time to get the current date in Atlanta
+    const eastern = now.toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+    return eastern; // Returns YYYY-MM-DD format
   };
 
   // Filter events to only show favorited ones that haven't passed
