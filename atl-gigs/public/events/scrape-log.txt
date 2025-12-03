@@ -999,3 +999,74 @@ Total valid events: 544
 [2025-12-03 22:49:41] [INFO] Events saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/events.json
 [2025-12-03 22:49:41] [INFO] Seen cache saved (544 events tracked)
 [2025-12-03 22:49:41] [INFO] Status saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/scrape-status.json
+
+--- New Run ---
+[2025-12-03 23:08:13] [INFO] Starting scrape run at 2025-12-03T23:08:13.280247Z
+[2025-12-03 23:08:13] [INFO] Scraping The Earl...
+[2025-12-03 23:08:25] [INFO]   Found 48 events
+[2025-12-03 23:08:25] [INFO] Scraping Tabernacle...
+[2025-12-03 23:08:29] [INFO]   Found 38 events
+[2025-12-03 23:08:29] [INFO] Scraping Terminal West...
+[2025-12-03 23:08:29] [INFO]   Found 56 events
+[2025-12-03 23:08:29] [INFO] Scraping The Eastern...
+[2025-12-03 23:08:30] [INFO]   Found 40 events
+[2025-12-03 23:08:30] [INFO] Scraping Variety Playhouse...
+[2025-12-03 23:08:31] [INFO]   Found 48 events
+[2025-12-03 23:08:31] [INFO] Scraping Coca-Cola Roxy...
+[2025-12-03 23:08:33] [INFO]   Found 24 events
+[2025-12-03 23:08:33] [INFO] Scraping Fox Theatre...
+[2025-12-03 23:08:50] [ERROR]   ERROR: Failed to scrape Fox Theatre: 406 Client Error after 3 retries
+[2025-12-03 23:08:50] [ERROR]   Traceback:
+Traceback (most recent call last):
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 2301, in main
+    events = scraper()
+             ^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 1492, in scrape_fox_theatre
+    ajax_events = scrape_fox_ajax_all_events()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/atl-gigs/atl-gigs/scrape.py", line 1358, in scrape_fox_ajax_all_events
+    raise requests.exceptions.HTTPError(f"406 Client Error after {max_retries} retries")
+requests.exceptions.HTTPError: 406 Client Error after 3 retries
+
+[2025-12-03 23:08:50] [INFO] Scraping Mercedes-Benz Stadium...
+[2025-12-03 23:08:50] [INFO]   Found 11 events
+[2025-12-03 23:08:50] [INFO] Scraping State Farm Arena...
+[2025-12-03 23:08:51] [INFO]   Found 75 events
+[2025-12-03 23:08:51] [INFO] Scraping The Masquerade...
+[2025-12-03 23:08:52] [INFO]   Found 106 events
+[2025-12-03 23:08:52] [INFO] Scraping Center Stage...
+[2025-12-03 23:08:52] [INFO]   Found 69 events
+[2025-12-03 23:08:52] [INFO] 
+Enriching events with Ticketmaster artist data...
+[2025-12-03 23:08:52] [INFO] 
+Processing events...
+[2025-12-03 23:08:52] [WARNING]   Filtered out 1 invalid events
+[2025-12-03 23:08:52] [INFO]   0 newly discovered events
+[2025-12-03 23:08:52] [INFO] 
+Archiving past events...
+[2025-12-03 23:08:52] [INFO] 
+[2025-12-03 23:08:52] [INFO] ============================================================
+[2025-12-03 23:08:52] [INFO] VENUE SUMMARY
+[2025-12-03 23:08:52] [INFO] ============================================================
+[2025-12-03 23:08:52] [INFO] Venue                     Events  Errors       Time
+[2025-12-03 23:08:52] [INFO] ------------------------------------------------------------
+[2025-12-03 23:08:52] [INFO] Center Stage                  69       0      537ms
+[2025-12-03 23:08:52] [INFO] Coca-Cola Roxy                24       0     1949ms
+[2025-12-03 23:08:52] [INFO] Fox Theatre                    0       1    17435ms
+[2025-12-03 23:08:52] [INFO] Mercedes-Benz Stadium         11       0      177ms
+[2025-12-03 23:08:52] [INFO] State Farm Arena              75       0      597ms
+[2025-12-03 23:08:52] [INFO] Tabernacle                    38       0     3261ms
+[2025-12-03 23:08:52] [INFO] Terminal West                 56       0      685ms
+[2025-12-03 23:08:52] [INFO] The Earl                      48       0    12472ms
+[2025-12-03 23:08:52] [INFO] The Eastern                   40       0      713ms
+[2025-12-03 23:08:52] [INFO] The Masquerade               106       0      737ms
+[2025-12-03 23:08:52] [INFO] Variety Playhouse             48       0      732ms
+[2025-12-03 23:08:52] [INFO] ------------------------------------------------------------
+[2025-12-03 23:08:52] [INFO] TOTAL                        515       1 39294ms
+[2025-12-03 23:08:52] [INFO] ============================================================
+[2025-12-03 23:08:52] [INFO] 
+Total valid events: 514
+[2025-12-03 23:08:52] [ERROR] WARNING: Failed to scrape: Fox Theatre
+[2025-12-03 23:08:52] [INFO] Events saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/events.json
+[2025-12-03 23:08:52] [INFO] Seen cache saved (514 events tracked)
+[2025-12-03 23:08:52] [INFO] Status saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/scrape-status.json
