@@ -22,8 +22,6 @@ export interface Event {
   doors_time: string | null;
   show_time: string | null;
   artists: Artist[];
-  adv_price?: string;
-  dos_price?: string;
   price?: string;
   ticket_url: string;
   info_url?: string;

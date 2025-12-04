@@ -253,14 +253,19 @@ def update_first_seen(events, seen_cache):
             new_count += 1
 
         # Calculate is_new based on first_seen and NEW_EVENT_DAYS
-        try:
-            first_seen_dt = datetime.fromisoformat(event["first_seen"].replace("Z", "+00:00"))
-            # Remove timezone info for comparison
-            first_seen_dt = first_seen_dt.replace(tzinfo=None)
-            days_since_seen = (now - first_seen_dt).total_seconds() / (60 * 60 * 24)
-            event["is_new"] = days_since_seen <= NEW_EVENT_DAYS
-        except Exception:
-            event["is_new"] = False
+        # But never set is_new=True if it's already False (allows manual override)
+        if event.get("is_new") is False:
+            # Preserve is_new=False (was manually set or aged out)
+            pass
+        else:
+            try:
+                first_seen_dt = datetime.fromisoformat(event["first_seen"].replace("Z", "+00:00"))
+                # Remove timezone info for comparison
+                first_seen_dt = first_seen_dt.replace(tzinfo=None)
+                days_since_seen = (now - first_seen_dt).total_seconds() / (60 * 60 * 24)
+                event["is_new"] = days_since_seen <= NEW_EVENT_DAYS
+            except Exception:
+                event["is_new"] = False
 
     return events, new_count
 

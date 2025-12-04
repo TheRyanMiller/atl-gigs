@@ -48,16 +48,29 @@ jobs:
             ALL_SUCCESS=$(python3 -c "import json; print(json.load(open('atl-gigs/public/events/scrape-status.json'))['all_success'])")
             if [ "$ALL_SUCCESS" = "False" ]; then
               echo "has_errors=true" >> $GITHUB_OUTPUT
-              # Extract failed venues
+
+              # Extract failed venues summary
               python3 -c "
           import json
           status = json.load(open('atl-gigs/public/events/scrape-status.json'))
           failed = [name for name, v in status['venues'].items() if not v['success']]
-          print('Failed venues: ' + ', '.join(failed))
+          print('FAILED VENUES: ' + ', '.join(failed))
+          print()
           for name in failed:
               err = status['venues'][name].get('error', 'Unknown error')
               print(f'  {name}: {err}')
           " > /tmp/error_summary.txt
+
+              # Extract latest run logs (after last "--- New Run ---")
+              if [ -f atl-gigs/public/events/scrape-log.txt ]; then
+                echo "" >> /tmp/error_summary.txt
+                echo "============================================================" >> /tmp/error_summary.txt
+                echo "FULL SCRAPE LOG" >> /tmp/error_summary.txt
+                echo "============================================================" >> /tmp/error_summary.txt
+                # Get content after the last "--- New Run ---" marker
+                tac atl-gigs/public/events/scrape-log.txt | sed '/--- New Run ---/q' | tac >> /tmp/error_summary.txt
+              fi
+
               cat /tmp/error_summary.txt
               echo "error_summary<<EOF" >> $GITHUB_OUTPUT
               cat /tmp/error_summary.txt >> $GITHUB_OUTPUT
