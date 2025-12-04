@@ -5,7 +5,6 @@ import { Music, Loader2 } from "lucide-react";
 import { Event, EventCategory, ALL_CATEGORIES } from "../types";
 import EventCard from "../components/EventCard";
 import FilterBar from "../components/FilterBar";
-import { useArchive } from "../hooks/useArchive";
 
 interface HomeProps {
   events: Event[];
@@ -60,30 +59,6 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Archive hook for loading past events
-  const { archiveEvents, loadMonthsForRange } = useArchive();
-
-  // Load archive events when date range includes past dates
-  useEffect(() => {
-    const today = getTodayString();
-    if (dateRange.start && dateRange.start < today) {
-      loadMonthsForRange(dateRange.start, dateRange.end);
-    }
-  }, [dateRange.start, dateRange.end, loadMonthsForRange]);
-
-  // Combine events with archive when date range includes past dates
-  const allEvents = useMemo(() => {
-    const today = getTodayString();
-    // Only merge archives if user selected a past start date
-    if (!dateRange.start || dateRange.start >= today) {
-      return events;
-    }
-    // Merge and deduplicate by slug
-    const slugs = new Set(events.map((e) => e.slug));
-    const uniqueArchive = archiveEvents.filter((e) => !slugs.has(e.slug));
-    return [...events, ...uniqueArchive];
-  }, [events, archiveEvents, dateRange.start]);
-
   // Get unique venues
   const venues = useMemo(() => {
     const uniqueVenues = new Set(events.map((event) => event.venue));
@@ -99,7 +74,19 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   // Filter events based on search, category, venue selection, and date range
   const filteredEvents = useMemo(() => {
     const today = getTodayString();
-    return allEvents.filter((event) => {
+    const now = new Date();
+    const staleThresholdMs = 3 * 24 * 60 * 60 * 1000; // 3 days in milliseconds
+
+    return events.filter((event) => {
+      // Hide stale events (not seen by scraper in > 3 days) - likely cancelled
+      if (event.last_seen) {
+        const lastSeenDate = new Date(event.last_seen);
+        const daysSinceLastSeen = now.getTime() - lastSeenDate.getTime();
+        if (daysSinceLastSeen > staleThresholdMs) {
+          return false;
+        }
+      }
+
       // Default to today onwards when no start date is set
       // (Past events require explicit start date selection)
       if (!dateRange.start && event.date < today) {
@@ -135,7 +122,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       }
       return true;
     });
-  }, [allEvents, searchQuery, selectedCategories, selectedVenues, dateRange]);
+  }, [events, searchQuery, selectedCategories, selectedVenues, dateRange]);
 
   // Reset list scroll when filters change
   useEffect(() => {

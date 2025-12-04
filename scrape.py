@@ -20,6 +20,10 @@ try:
     import cloudscraper  # type: ignore
 except ImportError:  # Optional; falls back to requests
     cloudscraper = None
+try:
+    import boto3  # type: ignore
+except ImportError:  # Optional; only needed for R2 upload
+    boto3 = None
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -36,15 +40,19 @@ load_dotenv()
 SCRIPT_DIR = Path(__file__).parent
 EVENTS_DIR = SCRIPT_DIR / "atl-gigs" / "public" / "events"
 OUTPUT_PATH = EVENTS_DIR / "events.json"
-ARCHIVE_PATH = EVENTS_DIR / "archive.json"
 STATUS_PATH = EVENTS_DIR / "scrape-status.json"
 LOG_PATH = EVENTS_DIR / "scrape-log.txt"
 SEEN_CACHE_PATH = EVENTS_DIR / "seen-cache.json"
-ARCHIVE_DIR = EVENTS_DIR / "archive"
-ARCHIVE_INDEX_PATH = ARCHIVE_DIR / "index.json"
 
 # first_seen configuration
 NEW_EVENT_DAYS = 5  # Events are considered "new" for this many days
+
+# R2 Configuration (Cloudflare object storage)
+R2_ACCOUNT_ID = os.environ.get("R2_ACCOUNT_ID")
+R2_ACCESS_KEY_ID = os.environ.get("R2_ACCESS_KEY_ID")
+R2_SECRET_ACCESS_KEY = os.environ.get("R2_SECRET_ACCESS_KEY")
+R2_BUCKET_NAME = "atl-gigs-data"
+R2_PUBLIC_URL = "https://pub-756023fa49674586a44105ba7bf52137.r2.dev"
 
 # Event categories
 CATEGORIES = ["concerts", "comedy", "broadway", "sports", "misc"]
@@ -95,8 +103,39 @@ def trim_log_by_time(log_path, retention_days=14):
     return kept_lines
 
 
+def download_from_r2(key, local_path):
+    """
+    Download a file from R2 if it exists.
+    Returns True if downloaded, False if not found or error.
+    """
+    if not boto3:
+        return False
+
+    if not all([R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY]):
+        return False
+
+    try:
+        s3 = boto3.client(
+            "s3",
+            endpoint_url=f"https://{R2_ACCOUNT_ID}.r2.cloudflarestorage.com",
+            aws_access_key_id=R2_ACCESS_KEY_ID,
+            aws_secret_access_key=R2_SECRET_ACCESS_KEY,
+        )
+
+        response = s3.get_object(Bucket=R2_BUCKET_NAME, Key=key)
+        local_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(local_path, "wb") as f:
+            f.write(response["Body"].read())
+        return True
+    except Exception:
+        return False
+
+
 def load_seen_cache():
-    """Load the seen events cache."""
+    """Load the seen events cache (download from R2 first if available)."""
+    # Try to download from R2 first
+    download_from_r2("seen-cache.json", SEEN_CACHE_PATH)
+
     try:
         if SEEN_CACHE_PATH.exists():
             with open(SEEN_CACHE_PATH, "r") as f:
@@ -113,12 +152,92 @@ def save_seen_cache(cache):
         json.dump(cache, f, indent=2)
 
 
+def upload_to_r2(log_func=None):
+    """
+    Upload all event data files to Cloudflare R2.
+    Returns True if successful, False otherwise.
+    log_func: optional logging function (defaults to print)
+    """
+    log = log_func or print
+
+    if not boto3:
+        log("R2 upload skipped: boto3 not installed")
+        return False
+
+    if not all([R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY]):
+        log("R2 upload skipped: missing R2 credentials")
+        return False
+
+    try:
+        # Create S3 client for R2
+        s3 = boto3.client(
+            "s3",
+            endpoint_url=f"https://{R2_ACCOUNT_ID}.r2.cloudflarestorage.com",
+            aws_access_key_id=R2_ACCESS_KEY_ID,
+            aws_secret_access_key=R2_SECRET_ACCESS_KEY,
+        )
+
+        uploaded = []
+
+        # Upload events.json
+        if OUTPUT_PATH.exists():
+            with open(OUTPUT_PATH, "rb") as f:
+                s3.put_object(
+                    Bucket=R2_BUCKET_NAME,
+                    Key="events.json",
+                    Body=f.read(),
+                    ContentType="application/json",
+                )
+            uploaded.append("events.json")
+
+        # Upload scrape-status.json
+        if STATUS_PATH.exists():
+            with open(STATUS_PATH, "rb") as f:
+                s3.put_object(
+                    Bucket=R2_BUCKET_NAME,
+                    Key="scrape-status.json",
+                    Body=f.read(),
+                    ContentType="application/json",
+                )
+            uploaded.append("scrape-status.json")
+
+        # Upload seen-cache.json (for first_seen tracking)
+        if SEEN_CACHE_PATH.exists():
+            with open(SEEN_CACHE_PATH, "rb") as f:
+                s3.put_object(
+                    Bucket=R2_BUCKET_NAME,
+                    Key="seen-cache.json",
+                    Body=f.read(),
+                    ContentType="application/json",
+                )
+            uploaded.append("seen-cache.json")
+
+        # Upload artist-cache.json (for TM artist classifications)
+        if ARTIST_CACHE_PATH.exists():
+            with open(ARTIST_CACHE_PATH, "rb") as f:
+                s3.put_object(
+                    Bucket=R2_BUCKET_NAME,
+                    Key="artist-cache.json",
+                    Body=f.read(),
+                    ContentType="application/json",
+                )
+            uploaded.append("artist-cache.json")
+
+        log(f"Uploaded to R2: {', '.join(uploaded)}")
+        return True
+
+    except Exception as e:
+        log(f"R2 upload failed: {e}")
+        return False
+
+
 def update_first_seen(events, seen_cache):
     """
-    Update events with first_seen field and update the seen cache.
+    Update events with first_seen field, calculate is_new, and update the seen cache.
     Returns (updated_events, new_event_count).
     """
-    now = datetime.utcnow().isoformat() + "Z"
+    now = datetime.utcnow()
+    now_str = now.isoformat() + "Z"
     new_count = 0
 
     for event in events:
@@ -129,50 +248,69 @@ def update_first_seen(events, seen_cache):
         if slug in seen_cache["events"]:
             event["first_seen"] = seen_cache["events"][slug]["first_seen"]
         else:
-            event["first_seen"] = now
-            seen_cache["events"][slug] = {"first_seen": now}
+            event["first_seen"] = now_str
+            seen_cache["events"][slug] = {"first_seen": now_str}
             new_count += 1
+
+        # Calculate is_new based on first_seen and NEW_EVENT_DAYS
+        try:
+            first_seen_dt = datetime.fromisoformat(event["first_seen"].replace("Z", "+00:00"))
+            # Remove timezone info for comparison
+            first_seen_dt = first_seen_dt.replace(tzinfo=None)
+            days_since_seen = (now - first_seen_dt).total_seconds() / (60 * 60 * 24)
+            event["is_new"] = days_since_seen <= NEW_EVENT_DAYS
+        except Exception:
+            event["is_new"] = False
 
     return events, new_count
 
 
-def prune_seen_cache(seen_cache, current_slugs, archive_slugs):
+def prune_seen_cache(seen_cache, current_slugs):
     """Remove cache entries for events no longer tracked."""
-    all_known = current_slugs | archive_slugs
     seen_cache["events"] = {
         slug: data
         for slug, data in seen_cache["events"].items()
-        if slug in all_known
+        if slug in current_slugs
     }
     return seen_cache
 
 
-def get_archive_slugs():
-    """Get all slugs from monthly archive files."""
-    slugs = set()
+def load_existing_events():
+    """
+    Load existing events from R2 (or local file).
+    This preserves past events that we've already scraped.
+    Returns list of events.
+    """
+    # Try to download from R2 first
+    download_from_r2("events.json", OUTPUT_PATH)
 
-    # Check new monthly archive directory
-    if ARCHIVE_DIR.exists():
-        for path in ARCHIVE_DIR.glob("archive-*.json"):
-            try:
-                with open(path, "r") as f:
-                    for event in json.load(f):
-                        if event.get("slug"):
-                            slugs.add(event["slug"])
-            except Exception:
-                pass
+    try:
+        if OUTPUT_PATH.exists():
+            with open(OUTPUT_PATH, "r") as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return []
 
-    # Also check old archive.json for backwards compatibility during migration
-    if ARCHIVE_PATH.exists():
-        try:
-            with open(ARCHIVE_PATH, "r") as f:
-                for event in json.load(f):
-                    if event.get("slug"):
-                        slugs.add(event["slug"])
-        except Exception:
-            pass
 
-    return slugs
+def merge_events(existing_events, new_events):
+    """
+    Merge new events with existing events.
+    - New events update existing ones by slug
+    - Past events (not in new scrape) are preserved
+    Returns merged list.
+    """
+    # Build a dict of existing events by slug
+    events_by_slug = {e.get("slug"): e for e in existing_events if e.get("slug")}
+
+    # Update/add new events
+    for event in new_events:
+        slug = event.get("slug")
+        if slug:
+            events_by_slug[slug] = event
+
+    return list(events_by_slug.values())
+
 
 # ----------------------------------------------------------------------
 # Ticketmaster Discovery API Configuration
@@ -226,8 +364,11 @@ _artist_classification_cache = {}
 ARTIST_CACHE_PATH = Path(__file__).parent / "atl-gigs" / "public" / "events" / "artist-cache.json"
 
 def load_artist_cache():
-    """Load artist classification cache from disk."""
+    """Load artist classification cache (download from R2 first if available)."""
     global _artist_classification_cache
+    # Try to download from R2 first
+    download_from_r2("artist-cache.json", ARTIST_CACHE_PATH)
+
     try:
         if ARTIST_CACHE_PATH.exists():
             with open(ARTIST_CACHE_PATH, "r") as f:
@@ -255,13 +396,15 @@ USE_TM_API = os.environ.get("USE_TM_API", "true").lower() == "true"
 
 def generate_slug(event):
     """
-    Generate a unique slug for an event based on date, venue, and artist.
-    Format: YYYY-MM-DD-venue-name-artist-name
+    Generate a unique slug for an event based on date, venue, stage, and artist.
+    Format: YYYY-MM-DD-venue-name-stage-artist-name
+    Stage is included for multi-room venues (e.g., The Masquerade).
     """
     date = event.get("date", "")
     venue = event.get("venue", "")
+    stage = event.get("stage", "")  # Include stage for multi-room venues
     artist = event.get("artists", [{}])[0].get("name", "unknown")
-    
+
     # Slugify: lowercase, replace spaces with hyphens, remove special chars
     def slugify(text):
         text = text.lower().strip()
@@ -269,8 +412,9 @@ def generate_slug(event):
         text = re.sub(r'[\s_]+', '-', text)   # Replace spaces/underscores with hyphens
         text = re.sub(r'-+', '-', text)       # Remove duplicate hyphens
         return text.strip('-')
-    
-    slug_parts = [date, slugify(venue), slugify(artist)]
+
+    # Include stage if present (filter(None, ...) removes empty strings)
+    slug_parts = [date, slugify(venue), slugify(stage), slugify(artist)]
     return "-".join(filter(None, slug_parts))
 
 
@@ -483,152 +627,6 @@ def load_existing_status():
     except Exception:
         pass
     return {"venues": {}}
-
-
-def load_monthly_archive(month):
-    """Load events from a specific monthly archive file."""
-    path = ARCHIVE_DIR / f"archive-{month}.json"
-    if path.exists():
-        with open(path, "r") as f:
-            return json.load(f)
-    return []
-
-
-def save_monthly_archive(month, events):
-    """Save events to a specific monthly archive file."""
-    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
-    path = ARCHIVE_DIR / f"archive-{month}.json"
-    with open(path, "w") as f:
-        json.dump(events, f, indent=2)
-
-
-def save_archive_index(months_data):
-    """
-    Save the archive index with month counts.
-    months_data: dict of month -> event count
-    """
-    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
-
-    months = sorted(months_data.keys(), reverse=True)
-    index = {
-        "months": [{"month": m, "count": months_data[m]} for m in months],
-        "total_events": sum(months_data.values()),
-        "last_updated": datetime.utcnow().isoformat() + "Z"
-    }
-
-    with open(ARCHIVE_INDEX_PATH, "w") as f:
-        json.dump(index, f, indent=2)
-
-
-def migrate_archive_to_monthly():
-    """
-    One-time migration: convert existing archive.json to monthly files.
-    Renames old file to archive.json.bak after migration.
-    Returns True if migration was performed.
-    """
-    if not ARCHIVE_PATH.exists():
-        return False
-
-    # Check if already migrated (backup exists or archive dir has files)
-    backup_path = EVENTS_DIR / "archive.json.bak"
-    if backup_path.exists():
-        return False
-
-    try:
-        with open(ARCHIVE_PATH, "r") as f:
-            old_archive = json.load(f)
-    except Exception:
-        return False
-
-    if not old_archive:
-        return False
-
-    # Organize events by month
-    by_month = {}
-    for event in old_archive:
-        date = event.get("date", "")
-        if len(date) >= 7:
-            month = date[:7]  # YYYY-MM
-            if month not in by_month:
-                by_month[month] = []
-            by_month[month].append(event)
-
-    # Save monthly files
-    for month, events in by_month.items():
-        events.sort(key=lambda x: x.get("date", ""), reverse=True)
-        save_monthly_archive(month, events)
-
-    # Save index
-    save_archive_index({m: len(e) for m, e in by_month.items()})
-
-    # Rename old archive to backup
-    ARCHIVE_PATH.rename(backup_path)
-
-    return True
-
-
-def archive_past_events(events):
-    """
-    Separate events into upcoming and past.
-    Past events are saved to monthly archive files.
-    Returns (upcoming_events, archive_summary, newly_archived_count)
-
-    archive_summary: dict with months and counts for logging
-    """
-    today = datetime.now().strftime("%Y-%m-%d")
-
-    upcoming = []
-    newly_archived = []
-
-    for event in events:
-        if event.get("date", "") < today:
-            newly_archived.append(event)
-        else:
-            upcoming.append(event)
-
-    # Group newly archived by month
-    by_month = {}
-    for event in newly_archived:
-        date = event.get("date", "")
-        if len(date) >= 7:
-            month = date[:7]
-            if month not in by_month:
-                by_month[month] = []
-            by_month[month].append(event)
-
-    # Update each monthly archive file
-    months_updated = {}
-    for month, new_events in by_month.items():
-        existing = load_monthly_archive(month)
-        existing_slugs = {e.get("slug") for e in existing}
-
-        added = 0
-        for event in new_events:
-            if event.get("slug") not in existing_slugs:
-                existing.append(event)
-                added += 1
-
-        if added > 0:
-            existing.sort(key=lambda x: x.get("date", ""), reverse=True)
-            save_monthly_archive(month, existing)
-
-        months_updated[month] = len(existing)
-
-    # Update index with all months (include existing ones not modified)
-    if ARCHIVE_INDEX_PATH.exists():
-        try:
-            with open(ARCHIVE_INDEX_PATH, "r") as f:
-                old_index = json.load(f)
-                for item in old_index.get("months", []):
-                    if item["month"] not in months_updated:
-                        months_updated[item["month"]] = item["count"]
-        except Exception:
-            pass
-
-    if months_updated:
-        save_archive_index(months_updated)
-
-    return upcoming, months_updated, len(newly_archived)
 
 
 # ----------------------------------------------------------------------
@@ -2386,26 +2384,28 @@ def main():
     if invalid_count > 0:
         log(f"  Filtered out {invalid_count} invalid events", "WARNING")
 
+    # Set last_seen timestamp on newly scraped events (before merge)
+    # Old events from R2 will keep their old last_seen (enables stale event detection)
+    for event in valid_events:
+        event["last_seen"] = run_timestamp
+
+    # Load existing events from R2 and merge with new events
+    log("\nMerging with existing events from R2...")
+    existing_events = load_existing_events()
+    log(f"  Loaded {len(existing_events)} existing events from R2")
+    merged_events = merge_events(existing_events, valid_events)
+    log(f"  Merged total: {len(merged_events)} events")
+
     # Update first_seen field for tracking new events
     seen_cache = load_seen_cache()
-    valid_events, new_event_count = update_first_seen(valid_events, seen_cache)
+    merged_events, new_event_count = update_first_seen(merged_events, seen_cache)
     log(f"  {new_event_count} newly discovered events")
 
     # Sort by date
-    valid_events.sort(key=lambda x: x["date"])
+    merged_events.sort(key=lambda x: x["date"])
 
-    # Migrate old archive.json to monthly files if needed
-    log("\nArchiving past events...")
-    if migrate_archive_to_monthly():
-        log("  Migrated archive.json to monthly files")
-
-    # Separate past events into monthly archive files
-    valid_events, archive_summary, archived_count = archive_past_events(valid_events)
-    if archived_count > 0:
-        log(f"  Archived {archived_count} past events")
-    if archive_summary:
-        total_archived = sum(archive_summary.values())
-        log(f"  Archive total: {total_archived} events across {len(archive_summary)} months")
+    # Use merged_events as our final list
+    valid_events = merged_events
 
     # Determine overall status
     all_success = all(v["success"] for v in venue_statuses.values())
@@ -2438,35 +2438,36 @@ def main():
     # Ensure events directory exists
     EVENTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Save upcoming events
+    # Save all events (past and future - no more archive separation)
     with open(OUTPUT_PATH, "w") as f:
         json.dump(valid_events, f, indent=2)
     log(f"Events saved to {OUTPUT_PATH}")
 
-    # Archive is now saved to monthly files by archive_past_events()
-    # No need to save single archive.json
-
     # Prune and save seen cache
     current_slugs = {e.get("slug") for e in valid_events if e.get("slug")}
-    archive_slugs = get_archive_slugs()
-    seen_cache = prune_seen_cache(seen_cache, current_slugs, archive_slugs)
+    seen_cache = prune_seen_cache(seen_cache, current_slugs)
     save_seen_cache(seen_cache)
     log(f"Seen cache saved ({len(seen_cache['events'])} events tracked)")
 
     # Save scrape status
-    total_archived = sum(archive_summary.values()) if archive_summary else 0
     status_data = {
         "last_run": run_timestamp,
         "all_success": all_success,
         "any_success": any_success,
         "total_events": len(valid_events),
-        "archived_events": total_archived,
         "venues": venue_statuses,
     }
 
     with open(STATUS_PATH, "w") as f:
         json.dump(status_data, f, indent=2)
     log(f"Status saved to {STATUS_PATH}")
+
+    # Upload to R2 (Cloudflare object storage)
+    log("\nUploading to R2...")
+    if upload_to_r2(log_func=log):
+        log(f"Data available at: {R2_PUBLIC_URL}/events.json")
+    else:
+        log("R2 upload failed or skipped - files only saved locally", "WARNING")
 
     # Save log file (time-based retention: 14 days)
     existing_log = trim_log_by_time(LOG_PATH, retention_days=14)

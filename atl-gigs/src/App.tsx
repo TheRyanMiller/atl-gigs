@@ -33,10 +33,9 @@ function AppContent() {
   }, [setSearchParams]);
 
   useEffect(() => {
-    // Fetch events from GitHub raw to avoid stale data after code deploys
-    const EVENTS_URL = import.meta.env.DEV
-      ? "/events/events.json"
-      : "https://raw.githubusercontent.com/TheRyanMiller/atl-gigs/refs/heads/master/atl-gigs/public/events/events.json";
+    // R2 public URL for event data (used in both dev and prod)
+    const R2_BASE_URL = "https://pub-756023fa49674586a44105ba7bf52137.r2.dev";
+    const EVENTS_URL = `${R2_BASE_URL}/events.json`;
 
     fetch(EVENTS_URL)
       .then((response) => {
@@ -67,10 +66,7 @@ function AppContent() {
         setLoading(false);
       });
 
-    // Fetch scrape status from GitHub raw
-    const STATUS_URL = import.meta.env.DEV
-      ? "/events/scrape-status.json"
-      : "https://raw.githubusercontent.com/TheRyanMiller/atl-gigs/refs/heads/master/atl-gigs/public/events/scrape-status.json";
+    const STATUS_URL = `${R2_BASE_URL}/scrape-status.json`;
 
     fetch(STATUS_URL)
       .then((response) => {

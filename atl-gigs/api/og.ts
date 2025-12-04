@@ -93,9 +93,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    // Fetch events data from GitHub raw to avoid stale data after code deploys
+    // Fetch events data from R2
     const eventsResponse = await fetch(
-      "https://raw.githubusercontent.com/TheRyanMiller/atl-gigs/refs/heads/master/atl-gigs/public/events/events.json"
+      "https://pub-756023fa49674586a44105ba7bf52137.r2.dev/events.json"
     );
     if (!eventsResponse.ok) {
       return res.redirect(302, `/?event=${eventSlug}`);

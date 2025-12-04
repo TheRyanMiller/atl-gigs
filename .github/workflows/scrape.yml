@@ -9,9 +9,6 @@ on:
     - cron: '0 6 * * *'
   workflow_dispatch:  # Allow manual trigger
 
-permissions:
-  contents: write
-
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -33,44 +30,69 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Cache event tracking data
-        uses: actions/cache@v4
-        with:
-          path: |
-            atl-gigs/public/events/artist-cache.json
-            atl-gigs/public/events/seen-cache.json
-          key: event-cache-${{ github.run_id }}
-          restore-keys: |
-            event-cache-
-
-      - name: Run scraper
+      - name: Run scraper (uploads to R2)
+        id: scraper
         run: |
           source venv/bin/activate
           python scrape.py
         env:
           TM_API_KEY: ${{ secrets.TM_API_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+
+      - name: Check for scraper errors
+        id: check_errors
+        run: |
+          if [ -f atl-gigs/public/events/scrape-status.json ]; then
+            ALL_SUCCESS=$(python3 -c "import json; print(json.load(open('atl-gigs/public/events/scrape-status.json'))['all_success'])")
+            if [ "$ALL_SUCCESS" = "False" ]; then
+              echo "has_errors=true" >> $GITHUB_OUTPUT
+              # Extract failed venues
+              python3 -c "
+          import json
+          status = json.load(open('atl-gigs/public/events/scrape-status.json'))
+          failed = [name for name, v in status['venues'].items() if not v['success']]
+          print('Failed venues: ' + ', '.join(failed))
+          for name in failed:
+              err = status['venues'][name].get('error', 'Unknown error')
+              print(f'  {name}: {err}')
+          " > /tmp/error_summary.txt
+              cat /tmp/error_summary.txt
+              echo "error_summary<<EOF" >> $GITHUB_OUTPUT
+              cat /tmp/error_summary.txt >> $GITHUB_OUTPUT
+              echo "EOF" >> $GITHUB_OUTPUT
+            else
+              echo "has_errors=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Send error notification email
+        if: steps.check_errors.outputs.has_errors == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "⚠️ ATL Gigs Scraper Errors - ${{ github.run_id }}"
+          to: ${{ secrets.ALERT_EMAIL }}
+          from: ATL Gigs Scraper <${{ secrets.SMTP_USERNAME }}>
+          body: |
+            The ATL Gigs scraper encountered errors during the latest run.
+
+            ${{ steps.check_errors.outputs.error_summary }}
+
+            View the full run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Show scrape summary
         run: |
           echo "## Scrape Results" >> $GITHUB_STEP_SUMMARY
           if [ -f atl-gigs/public/events/events.json ]; then
             EVENT_COUNT=$(python3 -c "import json; print(len(json.load(open('atl-gigs/public/events/events.json'))))")
-            echo "- **Upcoming events:** $EVENT_COUNT" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total events:** $EVENT_COUNT" >> $GITHUB_STEP_SUMMARY
           fi
-          if [ -f atl-gigs/public/events/archive/index.json ]; then
-            ARCHIVE_COUNT=$(python3 -c "import json; print(json.load(open('atl-gigs/public/events/archive/index.json'))['total_events'])")
-            echo "- **Archived events:** $ARCHIVE_COUNT" >> $GITHUB_STEP_SUMMARY
-          fi
-
-      - name: Commit events data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f atl-gigs/public/events/
-          git diff --staged --quiet || git commit -m "Update events data [skip ci]"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          echo "- **Data uploaded to:** Cloudflare R2" >> $GITHUB_STEP_SUMMARY
 
       - name: Install Vercel CLI
         run: npm install -g vercel

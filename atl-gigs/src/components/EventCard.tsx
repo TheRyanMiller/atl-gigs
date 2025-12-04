@@ -3,17 +3,8 @@ import { format } from "date-fns";
 import { MapPin, Clock, Ticket, Share2, Check, CalendarDays, Star } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGuitar, faFaceLaughSquint, faMasksTheater, faFootball, faStar } from "@fortawesome/free-solid-svg-icons";
-import { Event, CATEGORY_LABELS, NEW_EVENT_DAYS } from "../types";
+import { Event, CATEGORY_LABELS } from "../types";
 import { useFavorites } from "../context/FavoritesContext";
-
-// Check if an event is "new" (discovered within NEW_EVENT_DAYS)
-function isNewEvent(firstSeen: string | undefined): boolean {
-  if (!firstSeen) return false;
-  const seenDate = new Date(firstSeen);
-  const now = new Date();
-  const daysSinceSeen = (now.getTime() - seenDate.getTime()) / (1000 * 60 * 60 * 24);
-  return daysSinceSeen <= NEW_EVENT_DAYS;
-}
 
 const categoryIcons = {
   concerts: faGuitar,
@@ -29,8 +20,7 @@ interface EventCardProps {
 }
 
 function EventCard({ event, onClick }: EventCardProps) {
-  const { venue, date, doors_time, artists, price, image_url, ticket_url, slug, category, first_seen, stage } = event;
-  const isNew = isNewEvent(first_seen);
+  const { venue, date, doors_time, artists, price, image_url, ticket_url, slug, category, is_new, stage } = event;
   const [copied, setCopied] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
   const favorited = isFavorite(slug);
@@ -101,7 +91,7 @@ function EventCard({ event, onClick }: EventCardProps) {
         </div>
 
         {/* New Badge overlay on image (bottom right) */}
-        {isNew && (
+        {is_new && (
           <div className="absolute bottom-1.5 right-1 sm:bottom-1.5 sm:right-1.5 bg-teal-400 text-neutral-900 text-[9px] font-bold uppercase tracking-tight px-1.5 py-0.5 rounded z-10 shadow-md shadow-black/50 border border-black/30">
             Just Added!
           </div>
