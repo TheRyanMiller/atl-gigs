@@ -35,7 +35,7 @@ function AppContent() {
   useEffect(() => {
     // R2 public URL for event data (used in both dev and prod)
     const R2_BASE_URL = "https://pub-756023fa49674586a44105ba7bf52137.r2.dev";
-    const EVENTS_URL = `${R2_BASE_URL}/events.json`;
+    const EVENTS_URL = `${R2_BASE_URL}/events.json?v=${Date.now()}`;
 
     fetch(EVENTS_URL)
       .then((response) => {
