@@ -125,7 +125,7 @@ function EventCard({ event, onClick }: EventCardProps) {
         {/* Text block */}
         <div className="flex-1 sm:w-[70%]">
           <div className="mb-2.5">
-            <h3 className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors leading-snug pr-20 sm:pr-0">
+            <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-teal-300 transition-colors leading-snug pr-20 sm:pr-0 line-clamp-2">
               {mainArtist}
             </h3>
 

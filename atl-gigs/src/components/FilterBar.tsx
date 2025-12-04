@@ -215,9 +215,9 @@ export default function FilterBar({
   const hasCategoryFilter = selectedCategories.length > 0;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2 md:space-y-4">
       {/* Search and Filter Row */}
-      <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-4">
         {/* Search Input */}
         <div className="relative flex-1 group">
           <Search

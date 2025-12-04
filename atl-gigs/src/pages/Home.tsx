@@ -38,7 +38,7 @@ const innerElementType = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivEleme
   ({ style, ...rest }, ref) => (
     <div
       ref={ref}
-      style={{ ...style, paddingTop: 12 }}
+      style={{ ...style, paddingTop: 16 }}
       {...rest}
     />
   )
