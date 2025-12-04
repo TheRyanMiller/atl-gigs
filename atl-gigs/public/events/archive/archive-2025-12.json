@@ -1,0 +1,21 @@
+[
+  {
+    "venue": "Center Stage",
+    "date": "2025-12-03",
+    "doors_time": null,
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Ariel Posen",
+        "genre": "Rock"
+      }
+    ],
+    "ticket_url": "https://www.ticketmaster.com/ariel-posen-future-present-tense-tour-atlanta-georgia-12-03-2025/event/0E0062D0CF866246",
+    "image_url": "https://s1.ticketm.net/dam/a/120/9492c8c0-2178-48bf-ab55-b58a3cd13120_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "price": "See website",
+    "category": "concerts",
+    "stage": "Vinyl",
+    "slug": "2025-12-03-center-stage-ariel-posen",
+    "first_seen": "2025-12-03T15:53:02.125264Z"
+  }
+]

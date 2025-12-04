@@ -1,5 +1,3 @@
-
---- New Run ---
 [2025-12-03 23:43:12] [INFO] Starting scrape run at 2025-12-03T23:43:12.045442Z
 [2025-12-03 23:43:12] [INFO] Scraping The Earl...
 [2025-12-03 23:43:25] [INFO]   Found 48 events
@@ -56,3 +54,63 @@ Total valid events: 544
 [2025-12-03 23:43:32] [INFO] Events saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/events.json
 [2025-12-03 23:43:32] [INFO] Seen cache saved (544 events tracked)
 [2025-12-03 23:43:32] [INFO] Status saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/scrape-status.json
+
+--- New Run ---
+[2025-12-04 06:19:36] [INFO] Starting scrape run at 2025-12-04T06:19:36.058506Z
+[2025-12-04 06:19:36] [INFO] Scraping The Earl...
+[2025-12-04 06:19:47] [INFO]   Found 48 events
+[2025-12-04 06:19:47] [INFO] Scraping Tabernacle...
+[2025-12-04 06:19:51] [INFO]   Found 38 events
+[2025-12-04 06:19:51] [INFO] Scraping Terminal West...
+[2025-12-04 06:19:51] [INFO]   Found 56 events
+[2025-12-04 06:19:51] [INFO] Scraping The Eastern...
+[2025-12-04 06:19:51] [INFO]   Found 40 events
+[2025-12-04 06:19:51] [INFO] Scraping Variety Playhouse...
+[2025-12-04 06:19:51] [INFO]   Found 48 events
+[2025-12-04 06:19:51] [INFO] Scraping Coca-Cola Roxy...
+[2025-12-04 06:19:53] [INFO]   Found 24 events
+[2025-12-04 06:19:53] [INFO] Scraping Fox Theatre...
+[2025-12-04 06:19:54] [INFO]   Found 29 events
+[2025-12-04 06:19:54] [INFO] Scraping Mercedes-Benz Stadium...
+[2025-12-04 06:19:55] [INFO]   Found 11 events
+[2025-12-04 06:19:55] [INFO] Scraping State Farm Arena...
+[2025-12-04 06:19:55] [INFO]   Found 74 events
+[2025-12-04 06:19:55] [INFO] Scraping The Masquerade...
+[2025-12-04 06:19:57] [INFO]   Found 106 events
+[2025-12-04 06:19:57] [INFO] Scraping Center Stage...
+[2025-12-04 06:19:57] [INFO]   Found 69 events
+[2025-12-04 06:19:57] [INFO] 
+Enriching events with Ticketmaster artist data...
+[2025-12-04 06:19:57] [INFO] 
+Processing events...
+[2025-12-04 06:19:57] [WARNING]   Filtered out 1 invalid events
+[2025-12-04 06:19:57] [INFO]   0 newly discovered events
+[2025-12-04 06:19:57] [INFO] 
+Archiving past events...
+[2025-12-04 06:19:57] [INFO]   Archived 1 past events
+[2025-12-04 06:19:57] [INFO]   Archive total: 1 events across 1 months
+[2025-12-04 06:19:57] [INFO] 
+[2025-12-04 06:19:57] [INFO] ============================================================
+[2025-12-04 06:19:57] [INFO] VENUE SUMMARY
+[2025-12-04 06:19:57] [INFO] ============================================================
+[2025-12-04 06:19:57] [INFO] Venue                     Events  Errors       Time
+[2025-12-04 06:19:57] [INFO] ------------------------------------------------------------
+[2025-12-04 06:19:57] [INFO] Center Stage                  69       0      704ms
+[2025-12-04 06:19:57] [INFO] Coca-Cola Roxy                24       0     2079ms
+[2025-12-04 06:19:57] [INFO] Fox Theatre                   29       0     1610ms
+[2025-12-04 06:19:57] [INFO] Mercedes-Benz Stadium         11       0      281ms
+[2025-12-04 06:19:57] [INFO] State Farm Arena              74       0      559ms
+[2025-12-04 06:19:57] [INFO] Tabernacle                    38       0     3340ms
+[2025-12-04 06:19:57] [INFO] Terminal West                 56       0       81ms
+[2025-12-04 06:19:57] [INFO] The Earl                      48       0    11628ms
+[2025-12-04 06:19:57] [INFO] The Eastern                   40       0       56ms
+[2025-12-04 06:19:57] [INFO] The Masquerade               106       0     1381ms
+[2025-12-04 06:19:57] [INFO] Variety Playhouse             48       0       83ms
+[2025-12-04 06:19:57] [INFO] ------------------------------------------------------------
+[2025-12-04 06:19:57] [INFO] TOTAL                        543       0 21802ms
+[2025-12-04 06:19:57] [INFO] ============================================================
+[2025-12-04 06:19:57] [INFO] 
+Total valid events: 541
+[2025-12-04 06:19:57] [INFO] Events saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/events.json
+[2025-12-04 06:19:57] [INFO] Seen cache saved (542 events tracked)
+[2025-12-04 06:19:57] [INFO] Status saved to /home/runner/work/atl-gigs/atl-gigs/atl-gigs/public/events/scrape-status.json
