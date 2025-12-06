@@ -35,12 +35,27 @@ function AppContent() {
   useEffect(() => {
     // R2 public URL for event data (used in both dev and prod)
     const R2_BASE_URL = "https://pub-756023fa49674586a44105ba7bf52137.r2.dev";
-    const EVENTS_URL = `${R2_BASE_URL}/events.json?v=${Date.now()}`;
 
-    fetch(EVENTS_URL)
+    // Fetch status first to get last_run timestamp for cache-busting events
+    const STATUS_URL = `${R2_BASE_URL}/scrape-status.json?v=${Date.now()}`;
+
+    fetch(STATUS_URL)
       .then((response) => {
         if (!response.ok) {
-          // No events file yet - treat as empty
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((statusData) => {
+        setScrapeStatus(statusData);
+        // Use last_run as cache key so events refresh after each scrape
+        const cacheKey = statusData?.last_run || Date.now();
+        const EVENTS_URL = `${R2_BASE_URL}/events.json?v=${cacheKey}`;
+
+        return fetch(EVENTS_URL);
+      })
+      .then((response) => {
+        if (!response || !response.ok) {
           return [];
         }
         return response.json();
@@ -60,26 +75,9 @@ function AppContent() {
         }
       })
       .catch((error) => {
-        console.error("Error fetching events:", error);
-        // Treat fetch errors as empty events, not a blocking error
+        console.error("Error fetching data:", error);
         setEvents([]);
         setLoading(false);
-      });
-
-    const STATUS_URL = `${R2_BASE_URL}/scrape-status.json`;
-
-    fetch(STATUS_URL)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setScrapeStatus(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching scrape status:", error);
       });
   }, []);
 

@@ -17,9 +17,10 @@ const categoryIcons = {
 interface EventCardProps {
   event: Event;
   onClick: () => void;
+  mobileHeight?: number;
 }
 
-function EventCard({ event, onClick }: EventCardProps) {
+function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
   const { venue, date, doors_time, artists, price, image_url, ticket_url, slug, category, is_new, stage } = event;
   const [copied, setCopied] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
@@ -66,11 +67,12 @@ function EventCard({ event, onClick }: EventCardProps) {
 
   return (
     <div
-      className="group relative bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-teal-500/30 rounded-2xl overflow-hidden transition-colors duration-200 flex flex-col sm:flex-row sm:items-stretch cursor-pointer h-[380px] sm:h-[180px]"
+      className="group relative bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-teal-500/30 rounded-2xl overflow-hidden transition-colors duration-200 flex flex-col sm:flex-row sm:items-stretch cursor-pointer sm:h-[195px]"
+      style={mobileHeight ? { height: mobileHeight } : undefined}
       onClick={onClick}
     >
       {/* Image Section */}
-      <div className="relative w-full h-32 sm:h-auto sm:min-h-[160px] sm:w-52 sm:self-stretch shrink-0 overflow-hidden">
+      <div className="relative w-full h-[147px] sm:h-auto sm:min-h-[160px] sm:w-52 sm:self-stretch shrink-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent sm:hidden z-[1]" />
         {image_url ? (
           <img

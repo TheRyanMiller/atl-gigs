@@ -25,11 +25,56 @@ const getTodayString = () => {
   return eastern; // Returns YYYY-MM-DD format
 };
 
-// Fixed row heights for consistent spacing
-const getItemHeight = (_event: Event, isMobile: boolean): number => {
-  // Card heights: mobile 380px, desktop 180px
-  // Add gap of 16px between cards
-  return isMobile ? 396 : 196; // card height + 16px gap
+// Calculate mobile card height based on content
+const getMobileCardHeight = (event: Event): number => {
+  // Image section: h-[147px]
+  let height = 147;
+
+  // Content container padding: p-4 (16px) top, pb-3 (12px) bottom
+  height += 16 + 12;
+
+  // Title: text-lg leading-snug, assume 2 lines max (~50px)
+  height += 50;
+
+  // Title container margin bottom: mb-2.5 = 10px
+  height += 10;
+
+  // Support artists (if present): mt-2 (8px) + text-sm (~20px) = 28px
+  if (event.artists.length > 1) {
+    height += 28;
+  }
+
+  // Details section with space-y-1.5 (6px gaps between items)
+  // Venue: always present (~20px)
+  height += 20;
+  // Date: always present (6px gap + 20px)
+  height += 6 + 20;
+  // Doors (if present): 6px gap + 20px
+  if (event.doors_time) {
+    height += 6 + 20;
+  }
+  // Price (if present): 6px gap + 20px
+  if (event.price) {
+    height += 6 + 20;
+  }
+
+  // Gap between text block and action area: gap-4 = 16px
+  height += 16;
+
+  // Action buttons: h-10 = 40px
+  height += 40;
+
+  // Safety buffer for rounding/browser differences
+  height += 4;
+
+  return height;
+};
+
+// Row heights for virtualized list
+const getItemHeight = (event: Event, isMobile: boolean): number => {
+  // Desktop: fixed 195px + 16px gap
+  // Mobile: dynamic based on content + 16px gap
+  return isMobile ? getMobileCardHeight(event) + 16 : 211;
 };
 
 // Inner element wrapper to add top padding for buffer above first card
@@ -167,24 +212,27 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   const Row = useCallback(
     ({ index, style }: { index: number; style: React.CSSProperties }) => {
       const event = filteredEvents[index];
+      // Calculate the card height (row height minus gap)
+      const cardHeight = isMobile ? getMobileCardHeight(event) : 195;
       return (
-        <div style={style}>
+        <div style={{ ...style, paddingBottom: 16 }}>
           <EventCard
             key={event.slug}
             event={event}
             onClick={() => onEventClick(event)}
+            mobileHeight={isMobile ? cardHeight : undefined}
           />
         </div>
       );
     },
-    [filteredEvents, onEventClick]
+    [filteredEvents, onEventClick, isMobile]
   );
 
   return (
     <div className="h-[calc(100dvh-56px)] sm:h-[calc(100dvh-80px)] flex flex-col">
       {/* Search & Filters */}
       <div className="shrink-0 bg-neutral-950 pb-2 border-b border-white/10">
-        <div className="max-w-6xl mx-auto w-full px-4">
+        <div className="max-w-5xl mx-auto w-full px-4">
           <FilterBar
             venues={venues}
             selectedVenues={selectedVenues}
@@ -199,7 +247,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       </div>
 
       {/* Events List - Virtualized */}
-      <div className="flex-1 min-h-0 max-w-6xl mx-auto w-full px-4">
+      <div className="flex-1 min-h-0 max-w-5xl mx-auto w-full px-4">
         {loading && (
           <div className="text-center py-20">
             <Loader2 size={48} className="mx-auto text-teal-500 animate-spin" />

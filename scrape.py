@@ -303,10 +303,19 @@ def merge_events(existing_events, new_events):
     Merge new events with existing events.
     - New events update existing ones by ticket_url (primary key)
     - Past events (not in new scrape) are preserved
+    - is_new=False is also preserved by slug (in case ticket_url changes)
     Returns merged list.
     """
     # Build a dict of existing events by ticket_url (most stable unique identifier)
     events_by_url = {e.get("ticket_url"): e for e in existing_events if e.get("ticket_url")}
+
+    # Also build a slug-based lookup for is_new=False preservation
+    # This handles cases where ticket_url changes but the event is the same
+    is_new_false_by_slug = {
+        e.get("slug"): True
+        for e in existing_events
+        if e.get("slug") and e.get("is_new") is False
+    }
 
     # Update/add new events
     for event in new_events:
@@ -319,6 +328,12 @@ def merge_events(existing_events, new_events):
                     event["first_seen"] = existing["first_seen"]
                 if existing.get("is_new") is False:
                     event["is_new"] = False
+
+            # Also check by slug - if an existing event with same slug had is_new=False,
+            # preserve that (handles ticket_url changes between scrapes)
+            if event.get("slug") in is_new_false_by_slug:
+                event["is_new"] = False
+
             events_by_url[url] = event
 
     return list(events_by_url.values())
