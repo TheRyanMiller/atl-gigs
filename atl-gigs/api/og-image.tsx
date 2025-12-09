@@ -6,7 +6,7 @@ export default async function handler(request: Request) {
   const { searchParams } = new URL(request.url);
   const imageUrl = searchParams.get("image");
 
-  const fallbackUrl = "https://atl-gigs.info/atlgigs.png";
+  const fallbackUrl = "https://atl-gigs.info/atlgigs.jpg";
   const target = imageUrl || fallbackUrl;
 
   try {

@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const SITE_URL = "https://atl-gigs.info";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/atlgigs.png`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/atlgigs.jpg`;
 
 // User agent patterns for social media crawlers
 const CRAWLER_PATTERNS = [
