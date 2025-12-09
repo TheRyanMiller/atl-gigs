@@ -106,12 +106,3 @@ jobs:
             echo "- **Total events:** $EVENT_COUNT" >> $GITHUB_STEP_SUMMARY
           fi
           echo "- **Data uploaded to:** Cloudflare R2" >> $GITHUB_STEP_SUMMARY
-
-      - name: Install Vercel CLI
-        run: npm install -g vercel
-
-      - name: Deploy to Vercel
-        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
