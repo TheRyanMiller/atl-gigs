@@ -93,6 +93,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   const [selectedVenues, setSelectedVenues] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<EventCategory[]>([]);
   const [dateRange, setDateRange] = useState<DateRange>({ start: null, end: null });
+  const [showOnlyNew, setShowOnlyNew] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const listRef = useRef<List>(null);
 
@@ -156,6 +157,11 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
         return false;
       }
 
+      // New filter - show only newly added events
+      if (showOnlyNew && !event.is_new) {
+        return false;
+      }
+
       // Search filter
       if (searchQuery.length >= 3) {
         const query = searchQuery.toLowerCase();
@@ -167,12 +173,12 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       }
       return true;
     });
-  }, [events, searchQuery, selectedCategories, selectedVenues, dateRange]);
+  }, [events, searchQuery, selectedCategories, selectedVenues, dateRange, showOnlyNew]);
 
   // Reset list scroll when filters change
   useEffect(() => {
     listRef.current?.scrollTo(0);
-  }, [searchQuery, selectedCategories, selectedVenues, dateRange]);
+  }, [searchQuery, selectedCategories, selectedVenues, dateRange, showOnlyNew]);
 
   // Reset list cache when filtered events or mobile state changes
   useEffect(() => {
@@ -197,6 +203,10 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
 
   const handleDateRangeChange = useCallback((range: DateRange) => {
     setDateRange(range);
+  }, []);
+
+  const handleShowOnlyNewToggle = useCallback(() => {
+    setShowOnlyNew((prev) => !prev);
   }, []);
 
   // Get item size for virtualized list
@@ -231,8 +241,8 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   return (
     <div className="h-[calc(100dvh-56px)] sm:h-[calc(100dvh-80px)] flex flex-col">
       {/* Search & Filters */}
-      <div className="shrink-0 bg-neutral-950 pb-2 border-b border-white/10">
-        <div className="max-w-5xl mx-auto w-full px-4">
+      <div className="shrink-0 bg-neutral-950 pb-2 border-b border-white/10 overflow-visible">
+        <div className="max-w-5xl mx-auto w-full px-4 overflow-visible">
           <FilterBar
             venues={venues}
             selectedVenues={selectedVenues}
@@ -242,6 +252,8 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
             onCategoryToggle={handleCategoryToggle}
             onSearchChange={handleSearchChange}
             onDateRangeChange={handleDateRangeChange}
+            showOnlyNew={showOnlyNew}
+            onShowOnlyNewToggle={handleShowOnlyNewToggle}
           />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { format } from "date-fns";
-import { Search, MapPin, Calendar, X, ChevronDown, Tag } from "lucide-react";
+import { Search, MapPin, Calendar, X, ChevronDown, Tag, Sparkles } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGuitar, faFaceLaughSquint, faMasksTheater, faFootball, faStar } from "@fortawesome/free-solid-svg-icons";
 import { EventCategory, CATEGORY_LABELS } from "../types";
@@ -27,6 +27,8 @@ interface FilterBarProps {
   onCategoryToggle: (category: EventCategory) => void;
   onSearchChange: (query: string) => void;
   onDateRangeChange: (range: DateRange) => void;
+  showOnlyNew: boolean;
+  onShowOnlyNewToggle: () => void;
 }
 
 const FilterPill = ({
@@ -45,7 +47,7 @@ const FilterPill = ({
   <button
     onClick={onClick}
     className={`
-      flex items-center gap-1 md:gap-1.5 px-2 py-1.5 md:px-3 md:py-2 rounded-lg md:rounded-xl text-sm font-medium transition-colors
+      flex items-center gap-0.5 md:gap-1.5 px-1.5 py-1.5 md:px-3 md:py-2 rounded-lg md:rounded-xl text-sm font-medium transition-colors
       border whitespace-nowrap h-full
       ${
         active
@@ -59,15 +61,61 @@ const FilterPill = ({
     {active && onClear ? (
       <span
         onClick={onClear}
-        className="p-0.5 rounded-full hover:bg-neutral-700 transition-colors"
+        className="rounded-full hover:bg-neutral-700 transition-colors"
       >
-        <X size={12} />
+        <X size={10} className="md:w-3 md:h-3" />
       </span>
     ) : (
-      <ChevronDown size={12} className="opacity-50" />
+      <ChevronDown size={10} className="opacity-50 md:w-3 md:h-3" />
     )}
   </button>
 );
+
+const TogglePill = ({
+  label,
+  active = false,
+  icon: Icon,
+  onClick,
+  tooltip,
+}: {
+  label: string;
+  active?: boolean;
+  icon: React.ElementType;
+  onClick: (e: React.MouseEvent) => void;
+  tooltip?: string;
+}) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <div className="relative h-full overflow-visible">
+      <button
+        onClick={onClick}
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+        onFocus={() => setShowTooltip(true)}
+        onBlur={() => setShowTooltip(false)}
+        className={`
+          flex items-center gap-0.5 md:gap-1 px-1.5 py-1.5 md:px-2 md:py-2 rounded-lg md:rounded-xl text-sm font-medium transition-colors
+          border whitespace-nowrap h-full
+          ${
+            active
+              ? "bg-teal-500/10 border-teal-500/50 text-teal-300"
+              : "bg-neutral-900 border-neutral-800 text-neutral-400 hover:bg-neutral-800 hover:text-white"
+          }
+        `}
+      >
+        <Icon size={12} className="md:w-3.5 md:h-3.5" />
+        <span className="text-[11px] md:text-sm">{label}</span>
+      </button>
+      {tooltip && showTooltip && (
+        <div className="absolute left-0 bottom-full mb-2 px-2 py-1 bg-neutral-800 border border-neutral-700 text-neutral-300 text-xs rounded-lg whitespace-nowrap pointer-events-none z-50">
+          {tooltip}
+          <div className="absolute left-2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-neutral-700" />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default function FilterBar({
   venues,
@@ -78,6 +126,8 @@ export default function FilterBar({
   onCategoryToggle,
   onSearchChange,
   onDateRangeChange,
+  showOnlyNew,
+  onShowOnlyNewToggle,
 }: FilterBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
@@ -215,9 +265,9 @@ export default function FilterBar({
   const hasCategoryFilter = selectedCategories.length > 0;
 
   return (
-    <div className="space-y-2 md:space-y-4">
+    <div className="space-y-2 md:space-y-4 overflow-visible">
       {/* Search and Filter Row */}
-      <div className="flex flex-col md:flex-row gap-2 md:gap-4">
+      <div className="flex flex-col md:flex-row gap-2 md:gap-4 overflow-visible">
         {/* Search Input */}
         <div className="relative flex-1 group">
           <Search
@@ -242,7 +292,19 @@ export default function FilterBar({
         </div>
 
         {/* Desktop Filter Pills */}
-        <div className="hidden md:flex items-stretch gap-3">
+        <div className="hidden md:flex items-stretch gap-3 overflow-visible">
+          {/* New Toggle */}
+          <TogglePill
+            label="New"
+            active={showOnlyNew}
+            icon={Sparkles}
+            onClick={(e) => {
+              e.stopPropagation();
+              onShowOnlyNewToggle();
+            }}
+            tooltip="Added in the last 5 days"
+          />
+
           {/* Category Filter */}
           <div className="relative" ref={categoryDropdownRef}>
             <FilterPill
@@ -398,9 +460,19 @@ export default function FilterBar({
       </div>
 
       {/* Mobile Filter Pills */}
-      <div className="md:hidden space-y-3">
+      <div className="md:hidden space-y-3 overflow-visible">
         {/* Filter Buttons Row */}
-        <div className="flex justify-center gap-2 pb-2">
+        <div className="flex justify-center gap-1.5 pb-2 overflow-visible">
+          <TogglePill
+            label="New"
+            active={showOnlyNew}
+            icon={Sparkles}
+            onClick={(e) => {
+              e.stopPropagation();
+              onShowOnlyNewToggle();
+            }}
+            tooltip="Added in the last 5 days"
+          />
           <div ref={mobileCategoryDropdownRef}>
             <FilterPill
               label={getCategoryLabel()}
