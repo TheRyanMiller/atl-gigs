@@ -259,7 +259,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       </div>
 
       {/* Events List - Virtualized */}
-      <div className="flex-1 min-h-0 max-w-5xl mx-auto w-full px-4">
+      <div className="flex-1 min-h-0 max-w-5xl mx-auto w-full px-4 mt-[2px]">
         {loading && (
           <div className="text-center py-20">
             <Loader2 size={48} className="mx-auto text-teal-500 animate-spin" />
