@@ -1,0 +1,40 @@
+[
+  {
+    "venue": "The Earl",
+    "date": "2026-02-10",
+    "doors_time": "19:00",
+    "show_time": "20:00",
+    "artists": [
+      {
+        "name": "Headliner"
+      }
+    ],
+    "ticket_url": "https://tickets.example.com/1",
+    "info_url": "https://info.example.com/1",
+    "image_url": "https://example.com/img1.jpg",
+    "category": "concerts",
+    "price": "$20 ADV / $25 DOS",
+    "slug": "2026-02-10-the-earl-headliner",
+    "first_seen": "2026-02-03T12:00:00Z",
+    "is_new": true
+  },
+  {
+    "venue": "Fox Theatre",
+    "date": "2026-02-11",
+    "doors_time": null,
+    "show_time": null,
+    "artists": [
+      {
+        "name": "Comedy Night"
+      }
+    ],
+    "ticket_url": "https://tickets.example.com/2",
+    "info_url": null,
+    "image_url": null,
+    "category": "comedy",
+    "price": "See website",
+    "slug": "2026-02-11-fox-theatre-comedy-night",
+    "first_seen": "2026-02-03T12:00:00Z",
+    "is_new": true
+  }
+]
