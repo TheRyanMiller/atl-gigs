@@ -1,6 +1,7 @@
 export interface Artist {
   name: string;
   genre?: string;
+  spotify_url?: string;
 }
 
 export type EventCategory = "concerts" | "comedy" | "broadway" | "sports" | "misc";

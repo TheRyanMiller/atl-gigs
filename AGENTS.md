@@ -11,6 +11,11 @@ ATL Gigs is an Atlanta event aggregator. The system has two main parts:
 
 Events flow: `Venue APIs/Websites → scrape.py → events.json → React app → Vercel`
 
+## Git Workflow
+
+- Make a commit for each meaningful change.
+- Use a clean, imperative commit message that describes the change (e.g., "Add Spotify artist link enrichment").
+
 ## Event Schema
 
 Every scraper must return events matching this structure:
