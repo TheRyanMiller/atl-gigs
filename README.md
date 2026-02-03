@@ -30,11 +30,11 @@ cd atl-gigs && npm install && npm run dev
 ## Architecture
 
 ```
-scrape.py → events.json → React Frontend → Vercel
+scraper/ → scrape.py → events.json → React Frontend → Vercel
 ```
 
 - **Scraper**: Python script fetches from 11 venues (Ticketmaster API + HTML/JSON scraping)
-- **Spotify enrichment**: Adds artist Spotify URLs during scrape (future events only); can be run standalone via `spotify_enrichment.py`
+- **Spotify enrichment**: Adds artist Spotify URLs during scrape (future events only); source lives in `scraper/spotify_enrichment.py` and can be run via `spotify_enrichment.py`
 - **Frontend**: React + Vite + Tailwind, client-side filtering
 - **Deployment**: GitHub Actions runs daily, deploys to Vercel
 - **Share links**: `/e/{slug}` routes serve dynamic OG tags for social previews
@@ -44,6 +44,7 @@ scrape.py → events.json → React Frontend → Vercel
 ```
 atl-music/
 ├── scrape.py                     # Main scraper entrypoint
+├── scraper/                      # Scraper package (venues, pipeline, utils)
 ├── spotify_enrichment.py         # Standalone Spotify enrichment runner
 ├── requirements.txt              # Python deps (requests, beautifulsoup4)
 ├── AGENTS.md                     # Instructions for adding new scrapers
