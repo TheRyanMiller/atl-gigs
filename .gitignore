@@ -30,3 +30,10 @@ atl-gigs/public/events/
 .vercel
 .wrangler/
 .env*.local
+
+# Playwright
+atl-gigs/test-results/
+atl-gigs/playwright-report/
+
+# Pytest
+.pytest_cache/
