@@ -129,27 +129,25 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                       as="h3"
                       className="text-2xl font-bold text-white mb-1 pr-12"
                     >
-                      <span className="inline-flex items-center gap-1">
-                        {artists[0]?.name}
-                        {artists[0]?.spotify_url && (
-                          <a
-                            href={artists[0].spotify_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-teal-400 hover:text-teal-300 ml-2"
-                            aria-label="Open Spotify artist"
-                          >
-                            <FontAwesomeIcon icon={faSpotify} className="w-[1.1rem] h-[1.1rem] relative -top-0.5" />
-                          </a>
-                        )}
-                      </span>
+                      {artists[0]?.name}
+                      {artists[0]?.spotify_url && (
+                        <a
+                          href={artists[0].spotify_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline text-teal-400 hover:text-teal-300 ml-2"
+                          aria-label="Open Spotify artist"
+                        >
+                          <FontAwesomeIcon icon={faSpotify} className="inline-block w-[1.1rem] h-[1.1rem] -translate-y-0.5" />
+                        </a>
+                      )}
                     </Dialog.Title>
 
                     {artists.length > 1 && (
                       <p className="text-neutral-400 text-sm mb-4">
                         <span className="text-neutral-500">with</span>{" "}
                         {artists.slice(1).map((artist, index) => (
-                          <span key={`${artist.name}-${index}`} className="inline-flex items-center gap-1">
+                          <span key={`${artist.name}-${index}`} className="inline">
                             {index > 0 && ", "}
                             {artist.name}
                             {artist.spotify_url && (
@@ -157,10 +155,10 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                                 href={artist.spotify_url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-teal-400 hover:text-teal-300 ml-1"
+                                className="inline text-teal-400 hover:text-teal-300 ml-1"
                                 aria-label="Open Spotify artist"
                               >
-                                <FontAwesomeIcon icon={faSpotify} className="w-[0.66rem] h-[0.66rem] relative -top-0.5" />
+                                <FontAwesomeIcon icon={faSpotify} className="inline-block w-[0.66rem] h-[0.66rem] -translate-y-0.5" />
                               </a>
                             )}
                           </span>

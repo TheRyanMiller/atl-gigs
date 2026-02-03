@@ -119,28 +119,26 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
         <div className="flex-1 sm:w-[70%]">
           <div className="mb-2.5">
             <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-teal-300 transition-colors leading-snug pr-20 sm:pr-0 line-clamp-2">
-              <span className="inline-flex items-center gap-1">
-                {mainArtist}
-                {artists[0]?.spotify_url && (
-                  <a
-                    href={artists[0].spotify_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-teal-400 hover:text-teal-300 ml-2"
-                    onClick={(e) => e.stopPropagation()}
-                    aria-label="Open Spotify artist"
-                  >
-                    <FontAwesomeIcon icon={faSpotify} className="w-[1.1rem] h-[1.1rem] relative -top-0.5" />
-                  </a>
-                )}
-              </span>
+              {mainArtist}
+              {artists[0]?.spotify_url && (
+                <a
+                  href={artists[0].spotify_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline text-teal-400 hover:text-teal-300 ml-2"
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label="Open Spotify artist"
+                >
+                  <FontAwesomeIcon icon={faSpotify} className="inline-block w-[1.1rem] h-[1.1rem] -translate-y-0.5" />
+                </a>
+              )}
             </h3>
 
             {supportArtists.length > 0 && (
               <p className="text-neutral-400 text-sm mt-2 line-clamp-1">
                 <span className="text-neutral-500">with</span>{" "}
                 {supportArtists.map((artist, index) => (
-                  <span key={`${artist.name}-${index}`} className="inline-flex items-center gap-1">
+                  <span key={`${artist.name}-${index}`} className="inline">
                     {index > 0 && ", "}
                     {artist.name}
                     {artist.spotify_url && (
@@ -148,11 +146,11 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
                         href={artist.spotify_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-teal-400 hover:text-teal-300 ml-1"
+                        className="inline text-teal-400 hover:text-teal-300 ml-1"
                         onClick={(e) => e.stopPropagation()}
                         aria-label="Open Spotify artist"
                       >
-                        <FontAwesomeIcon icon={faSpotify} className="w-[0.66rem] h-[0.66rem] relative -top-0.5" />
+                        <FontAwesomeIcon icon={faSpotify} className="inline-block w-[0.66rem] h-[0.66rem] -translate-y-0.5" />
                       </a>
                     )}
                   </span>
