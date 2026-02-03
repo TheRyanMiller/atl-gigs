@@ -139,7 +139,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                             className="text-teal-400 hover:text-teal-300"
                             aria-label="Open Spotify artist"
                           >
-                            <FontAwesomeIcon icon={faSpotify} className="w-4 h-4 ml-2 relative -top-1" />
+                            <FontAwesomeIcon icon={faSpotify} className="w-[1.3rem] h-[1.3rem] ml-2 relative -top-1" />
                           </a>
                         )}
                       </span>
