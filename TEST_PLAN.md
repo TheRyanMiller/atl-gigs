@@ -159,6 +159,14 @@ atl-gigs/
   /e2e
 ```
 
+## Test Organization & Naming
+- **Unit vs integration**: keep pure function tests in `/tests/unit` and any IO/mocking in `/tests/integration`.
+- **Per-module files**: `tests/unit/test_<module>.py` and `tests/integration/test_<feature>.py`.
+- **Fixture naming**: `venue_<name>_page.html`, `tm_events_<venue>.json`, `spotify_search_<artist>.json`.
+- **Golden files**: store in `/tests/golden/` with versioned filenames (e.g., `events_v1.json`).
+- **Frontend**: colocate React tests under `atl-gigs/tests` mirroring component structure.
+- **E2E**: place Playwright specs in `atl-gigs/e2e/` and use `*.spec.ts`.
+
 ---
 
 ## Coverage Targets (suggested)
