@@ -28,4 +28,5 @@ atl-gigs/public/events/
 # Keep directory in repo
 !atl-gigs/public/events/.gitkeep
 .vercel
+.wrangler/
 .env*.local
