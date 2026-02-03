@@ -29,6 +29,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from dotenv import load_dotenv
 from dataclasses import dataclass, field
+import spotify_enrichment
 
 # Load environment variables from .env file
 load_dotenv()
@@ -1012,7 +1013,7 @@ def get_artist_classification(artist_name):
             elif isinstance(spotify_links, str):
                 spotify_url = spotify_links
             if spotify_url:
-                cache_spotify_result(artist_name, spotify_url, source="tm-attraction")
+                spotify_enrichment.cache_spotify_result(artist_name, spotify_url, source="tm-attraction")
 
             # Rate limiting - avoid hitting TM API too fast
             time.sleep(0.2)
@@ -1081,10 +1082,10 @@ def scrape_tm_venue(venue_id, venue_name, stage=None):
                 spotify_url = spotify_links.get("url")
             elif isinstance(spotify_links, str):
                 spotify_url = spotify_links
-            spotify_url = normalize_spotify_url(spotify_url) if spotify_url else None
+            spotify_url = spotify_enrichment.normalize_spotify_url(spotify_url) if spotify_url else None
             if spotify_url:
                 artist["spotify_url"] = spotify_url
-                cache_spotify_result(artist.get("name", ""), spotify_url, source="tm-event")
+                spotify_enrichment.cache_spotify_result(artist.get("name", ""), spotify_url, source="tm-event")
             artists.append(artist)
 
         # Fallback to event name if no attractions
@@ -2912,8 +2913,12 @@ def main():
 
     # Enrich events with Spotify links (after merge to preserve existing links)
     log("\nEnriching events with Spotify links...")
-    merged_events = enrich_events_with_spotify(merged_events, run_timestamp=run_timestamp, log_func=log)
-    save_spotify_cache()
+    merged_events = spotify_enrichment.enrich_events_with_spotify(
+        merged_events,
+        run_timestamp=run_timestamp,
+        log_func=log,
+    )
+    spotify_enrichment.save_spotify_cache()
 
     # Sort by date
     merged_events.sort(key=lambda x: x["date"])
