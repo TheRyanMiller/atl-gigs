@@ -108,7 +108,7 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
       </div>
 
       {/* Content + Actions */}
-      <div className="flex flex-1 flex-col sm:flex-row sm:items-stretch relative z-[2] p-4 sm:pl-5 sm:pr-3 sm:pt-5 pb-3 sm:pb-3 gap-4 sm:gap-6">
+      <div className="flex flex-1 flex-col sm:flex-row sm:items-start relative z-[2] p-4 sm:pl-5 sm:pr-2 sm:pt-5 pb-3 sm:pb-2 gap-4 sm:gap-6">
         {/* Category Badge - Mobile only, top right of content area */}
         <div className="flex sm:hidden absolute top-3 right-3 z-10 items-center gap-1 bg-neutral-800/90 border border-neutral-700 px-1.5 py-0.5 rounded">
           <FontAwesomeIcon icon={categoryIcons[category]} className="w-2.5 h-2.5 text-neutral-400" />
@@ -190,7 +190,7 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
         </div>
 
         {/* Action Area */}
-        <div className="flex items-center justify-center sm:justify-end gap-2 sm:w-[30%] sm:ml-auto sm:self-stretch sm:flex-row sm:items-end sm:gap-3">
+        <div className="flex items-center justify-center sm:justify-end gap-2 sm:w-[30%] sm:ml-auto sm:self-end sm:flex-row sm:items-center sm:gap-3">
           {/* Share Button */}
           <button
             onClick={handleShare}
