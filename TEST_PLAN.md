@@ -166,6 +166,12 @@ atl-gigs/
 - **Golden files**: store in `/tests/golden/` with versioned filenames (e.g., `events_v1.json`).
 - **Frontend**: colocate React tests under `atl-gigs/tests` mirroring component structure.
 - **E2E**: place Playwright specs in `atl-gigs/e2e/` and use `*.spec.ts`.
+- **Strict conventions**:
+  - **Python tests** must use `test_*.py` and functions named `test_*`.
+  - **React tests** must use `*.test.tsx` and sit next to the component or in `atl-gigs/tests` with mirrored paths.
+  - **Playwright tests** must use `*.spec.ts` and avoid external network calls.
+  - **Fixtures are immutable**: update via explicit scripts or documented manual steps only.
+  - **Golden file updates** require a diff note in PR/commit message.
 
 ---
 
