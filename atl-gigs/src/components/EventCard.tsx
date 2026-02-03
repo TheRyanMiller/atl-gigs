@@ -130,7 +130,7 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
                     onClick={(e) => e.stopPropagation()}
                     aria-label="Open Spotify artist"
                   >
-                    <FontAwesomeIcon icon={faSpotify} className="w-3 h-3" />
+                    <FontAwesomeIcon icon={faSpotify} className="w-[1.3rem] h-[1.3rem] ml-2 relative -top-1" />
                   </a>
                 )}
               </span>
@@ -152,7 +152,7 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
                         onClick={(e) => e.stopPropagation()}
                         aria-label="Open Spotify artist"
                       >
-                        <FontAwesomeIcon icon={faSpotify} className="w-3 h-3" />
+                        <FontAwesomeIcon icon={faSpotify} className="w-[1.3rem] h-[1.3rem] ml-2 relative -top-1" />
                       </a>
                     )}
                   </span>
