@@ -2,6 +2,7 @@ import { useState, memo } from "react";
 import { format } from "date-fns";
 import { MapPin, Clock, Ticket, Share2, Check, CalendarDays, Star } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { faGuitar, faFaceLaughSquint, faMasksTheater, faFootball, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Event, CATEGORY_LABELS } from "../types";
 import { useFavorites } from "../context/FavoritesContext";
@@ -38,6 +39,7 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
   const formattedDate = format(eventDate, "EEE, MMM d");
   const mainArtist = artists[0]?.name || "TBA";
   const supportArtists = artists.slice(1).map(a => a.name);
+  const headlinerSpotify = artists[0]?.spotify_url;
 
   // Format doors time for display
   const formatTime = (time: string | null) => {
@@ -194,6 +196,19 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
             <Ticket size={14} />
             Get Tickets
           </a>
+
+          {headlinerSpotify && (
+            <a
+              href={headlinerSpotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 shrink-0 rounded-lg transition-colors bg-neutral-800 hover:bg-neutral-700 border border-neutral-700"
+              onClick={(e) => e.stopPropagation()}
+              aria-label="Open Spotify artist"
+            >
+              <FontAwesomeIcon icon={faSpotify} className="w-4 h-4 text-[#1DB954]" />
+            </a>
+          )}
         </div>
       </div>
     </div>
