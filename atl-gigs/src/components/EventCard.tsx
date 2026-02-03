@@ -126,7 +126,7 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
                     href={artists[0].spotify_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-200 hover:text-white ml-2"
+                    className="text-teal-400 hover:text-teal-300 ml-2"
                     onClick={(e) => e.stopPropagation()}
                     aria-label="Open Spotify artist"
                   >
@@ -148,7 +148,7 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
                         href={artist.spotify_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-neutral-200 hover:text-white ml-1"
+                        className="text-teal-400 hover:text-teal-300 ml-1"
                         onClick={(e) => e.stopPropagation()}
                         aria-label="Open Spotify artist"
                       >
