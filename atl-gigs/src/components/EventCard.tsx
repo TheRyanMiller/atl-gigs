@@ -190,7 +190,7 @@ function EventCard({ event, onClick, mobileHeight }: EventCardProps) {
         </div>
 
         {/* Action Area */}
-        <div className="flex items-center justify-center sm:justify-end gap-2 sm:w-[30%] sm:ml-auto sm:self-stretch sm:flex-row sm:items-center sm:gap-3 sm:mt-auto sm:mb-1">
+        <div className="flex items-center justify-center sm:justify-end gap-2 sm:w-[30%] sm:ml-auto sm:flex-row sm:items-center sm:gap-3 sm:self-center">
           {/* Share Button */}
           <button
             onClick={handleShare}
