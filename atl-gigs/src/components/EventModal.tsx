@@ -1,7 +1,9 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { format } from "date-fns";
-import { MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays, Star, Music } from "lucide-react";
+import { MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays, Star } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { Event } from "../types";
 import { useFavorites } from "../context/FavoritesContext";
 
@@ -27,7 +29,6 @@ export default function EventModal({ event, onClose }: EventModalProps) {
     slug,
     stage,
   } = event;
-  const headlinerSpotify = artists[0]?.spotify_url;
   
   const handleShare = async () => {
     // Use /e/slug format for sharing - this route serves OG tags to crawlers
@@ -128,16 +129,42 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                       as="h3"
                       className="text-2xl font-bold text-white mb-1 pr-12"
                     >
-                      {artists[0]?.name}
+                      <span className="inline-flex items-center gap-1">
+                        {artists[0]?.name}
+                        {artists[0]?.spotify_url && (
+                          <a
+                            href={artists[0].spotify_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-teal-400 hover:text-teal-300"
+                            aria-label="Open Spotify artist"
+                          >
+                            <FontAwesomeIcon icon={faSpotify} className="w-3 h-3" />
+                          </a>
+                        )}
+                      </span>
                     </Dialog.Title>
 
                     {artists.length > 1 && (
                       <p className="text-neutral-400 text-sm mb-4">
                         <span className="text-neutral-500">with</span>{" "}
-                        {artists
-                          .slice(1)
-                          .map((a) => a.name)
-                          .join(", ")}
+                        {artists.slice(1).map((artist, index) => (
+                          <span key={`${artist.name}-${index}`} className="inline-flex items-center gap-1">
+                            {index > 0 && ", "}
+                            {artist.name}
+                            {artist.spotify_url && (
+                              <a
+                                href={artist.spotify_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-teal-400 hover:text-teal-300"
+                                aria-label="Open Spotify artist"
+                              >
+                                <FontAwesomeIcon icon={faSpotify} className="w-3 h-3" />
+                              </a>
+                            )}
+                          </span>
+                        ))}
                       </p>
                     )}
 
@@ -190,17 +217,6 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                         <Ticket size={16} />
                         Tickets
                       </a>
-                      {headlinerSpotify && (
-                        <a
-                          href={headlinerSpotify}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white border border-neutral-700 transition-colors"
-                        >
-                          <Music size={16} />
-                          Spotify
-                        </a>
-                      )}
                       {info_url && (
                         <a
                           href={info_url}
