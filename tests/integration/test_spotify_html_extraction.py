@@ -1,4 +1,4 @@
-from spotify_enrichment import extract_spotify_links_from_html
+from scraper.spotify_enrichment import extract_spotify_links_from_html
 
 
 def test_extract_spotify_links_from_html_dedupes():

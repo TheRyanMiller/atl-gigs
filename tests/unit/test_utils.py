@@ -1,16 +1,15 @@
 import pytest
 
-from scrape import (
-    normalize_time,
-    normalize_price,
-    generate_slug,
-    validate_event,
+from scraper.pipeline.validate import validate_event
+from scraper.tm import TM_CATEGORY_MAP
+from scraper.utils.categories import (
     detect_category_from_text,
     detect_category_from_ticket_url,
     map_tm_classification,
-    is_zero_price,
 )
-from spotify_enrichment import (
+from scraper.utils.dates import normalize_time
+from scraper.utils.events import generate_slug, is_zero_price, normalize_price
+from scraper.spotify_enrichment import (
     normalize_artist_name,
     normalize_spotify_url,
     extract_spotify_artist_id,
@@ -87,8 +86,8 @@ def test_map_tm_classification_priority():
     classifications = [
         {"segment": {"name": "Music"}, "genre": {"name": "Comedy"}}
     ]
-    assert map_tm_classification(classifications) == "comedy"
-    assert map_tm_classification([]) == "concerts"
+    assert map_tm_classification(classifications, TM_CATEGORY_MAP) == "comedy"
+    assert map_tm_classification([], TM_CATEGORY_MAP) == "concerts"
 
 
 def test_spotify_helpers():

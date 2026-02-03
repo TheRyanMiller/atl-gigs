@@ -1,4 +1,4 @@
-from spotify_enrichment import _pick_spotify_candidate
+from scraper.spotify_enrichment import _pick_spotify_candidate
 
 
 def test_pick_spotify_candidate_exact_match():

@@ -6,10 +6,10 @@ This document provides instructions for AI coding agents working on this codebas
 
 ATL Gigs is an Atlanta event aggregator. The system has two main parts:
 
-1. **Python scraper** (`scrape.py`): Fetches events from venue websites/APIs
+1. **Python scraper** (`scrape.py` entrypoint, logic in `scraper/`): Fetches events from venue websites/APIs
 2. **React frontend** (`atl-gigs/`): Displays events with filtering
 
-Events flow: `Venue APIs/Websites → scrape.py → events.json → React app → Vercel`
+Events flow: `Venue APIs/Websites → scraper/ → scrape.py → events.json → React app → Vercel`
 
 ## Git Workflow
 
@@ -88,7 +88,7 @@ Before scraping the venue's website, check if tickets are sold through a major t
 ```
 
 **Current TM API Integration:**
-This project already uses TM Discovery API for State Farm Arena, The Masquerade, and Center Stage complex. See `TM_VENUES` dict in `scrape.py` for venue IDs. Set `TM_API_KEY` env var to enable.
+This project already uses TM Discovery API for State Farm Arena, The Masquerade, and Center Stage complex. See `TM_VENUES` dict in `scraper/tm.py` for venue IDs. Set `TM_API_KEY` env var to enable.
 
 **When to skip upstream APIs:**
 - Venue uses in-house ticketing (no external platform)
@@ -155,7 +155,7 @@ The homepage carousel might show 3 events while the full calendar has 80+.
 
 ### Step 2: Write the Scraper Function
 
-Add your scraper function to `scrape.py`. Follow these patterns:
+Add your scraper function to `scraper/venues/{venue}.py`. Follow these patterns:
 
 #### Pattern: JSON API Scraper
 
@@ -326,17 +326,18 @@ def scrape_paginated_venue():
 
 ### Step 3: Register the Scraper
 
-Add your scraper to the `SCRAPERS` dictionary in `scrape.py`:
+Add your scraper to the `get_scrapers()` registry in `scraper/registry.py`:
 
 ```python
-SCRAPERS = {
-    "The Earl": scrape_earl,
-    "Tabernacle": scrape_tabernacle,
-    "Terminal West": scrape_terminal_west,
-    "The Eastern": scrape_the_eastern,
-    "Coca-Cola Roxy": scrape_coca_cola_roxy,
-    "Your New Venue": scrape_your_new_venue,  # Add here
-}
+def get_scrapers():
+    return {
+        "The Earl": scrape_earl,
+        "Tabernacle": scrape_tabernacle,
+        "Terminal West": scrape_terminal_west,
+        "The Eastern": scrape_the_eastern,
+        "Coca-Cola Roxy": scrape_coca_cola_roxy,
+        "Your New Venue": scrape_your_new_venue,  # Add here
+    }
 ```
 
 ---
@@ -348,7 +349,7 @@ SCRAPERS = {
 python scrape.py
 
 # Or test just your function in Python REPL
-python -c "from scrape import scrape_your_new_venue; print(scrape_your_new_venue())"
+python -c "from scraper.venues.your_new_venue import scrape_your_new_venue; print(scrape_your_new_venue())"
 ```
 
 Verify:
@@ -377,9 +378,9 @@ Example: See `scrapers/fox-theatre.md` for a complete reference.
 
 ## Utility Functions
 
-The scraper provides these helpers:
+The scraper provides these helpers (now under `scraper/utils/` and `scraper/tm.py`):
 
-### `normalize_time(time_str)`
+### `normalize_time(time_str)` (`scraper/utils/dates.py`)
 Converts various time formats to `HH:MM` 24-hour format:
 ```python
 normalize_time("8:30pm")    # → "20:30"
@@ -387,19 +388,19 @@ normalize_time("20:00:00")  # → "20:00"
 normalize_time("8:00")      # → "08:00"
 ```
 
-### `normalize_price(event)`
+### `normalize_price(event)` (`scraper/utils/events.py`)
 Consolidates `adv_price`/`dos_price` fields into single `price` field.
 
-### `generate_slug(event)`
+### `generate_slug(event)` (`scraper/utils/events.py`)
 Creates URL-safe identifier from date + venue + artist.
 
-### `validate_event(event)`
+### `validate_event(event)` (`scraper/pipeline/validate.py`)
 Checks that required fields are present.
 
-### `get_artist_classification(artist_name)`
+### `get_artist_classification(artist_name)` (`scraper/tm.py`)
 Looks up artist in Ticketmaster Attractions API to get genre/category. Results are cached to `artist-cache.json` to minimize API calls between runs.
 
-### `enrich_events_with_tm(events)`
+### `enrich_events_with_tm(events)` (`scraper/tm.py`)
 Enriches events from non-TM venues with artist classifications. Only looks up artists not already in cache.
 
 ---
@@ -678,7 +679,7 @@ Example: `scrapers/fox-theatre.md`
 - [ ] Times use `normalize_time()` helper
 - [ ] Category is valid: `concerts`, `comedy`, `broadway`, `sports`, or `misc`
 - [ ] Venue categories mapped to our preset list
-- [ ] Scraper registered in `SCRAPERS` dict (or `get_scrapers()` for TM venues)
+- [ ] Scraper registered in `scraper/registry.py` (or `scraper/tm.py` for TM venues)
 - [ ] Tested with `python scrape.py`
 - [ ] Handles errors gracefully (try/except with logging)
 - [ ] Created `scrapers/{venue}.md` documentation

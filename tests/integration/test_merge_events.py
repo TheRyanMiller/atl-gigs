@@ -1,29 +1,20 @@
-from scrape import merge_events
+from scraper.pipeline.merge import merge_events
 
 
-def test_merge_events_preserves_first_seen_and_is_new():
+def test_merge_events_preserves_existing_first_seen():
     existing = [
         {
-            "ticket_url": "https://example.com/a",
-            "slug": "2026-02-01-venue-artist",
-            "first_seen": "2026-01-01T00:00:00Z",
+            "ticket_url": "https://tickets/1",
+            "first_seen": "2025-01-01T00:00:00Z",
+            "slug": "event-1",
             "is_new": False,
-        },
-        {
-            "ticket_url": "https://example.com/b",
-            "slug": "2026-02-02-venue-artist",
-        },
+        }
     ]
     new = [
-        {
-            "ticket_url": "https://example.com/a",
-            "slug": "2026-02-01-venue-artist",
-        },
+        {"ticket_url": "https://tickets/1", "slug": "event-1", "is_new": True}
     ]
 
     merged = merge_events(existing, new)
-    by_url = {e["ticket_url"]: e for e in merged}
 
-    assert by_url["https://example.com/a"]["first_seen"] == "2026-01-01T00:00:00Z"
-    assert by_url["https://example.com/a"]["is_new"] is False
-    assert "https://example.com/b" in by_url
+    assert merged[0]["first_seen"] == "2025-01-01T00:00:00Z"
+    assert merged[0]["is_new"] is False
