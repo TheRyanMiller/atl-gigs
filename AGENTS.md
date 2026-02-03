@@ -27,13 +27,13 @@ Every scraper must return events matching this structure:
     "doors_time": str | None,  # "HH:MM" 24-hour format
     "show_time": str | None,   # "HH:MM" 24-hour format
     "artists": [               # List of performers
-        {"name": str, "genre": str | None}
+        {"name": str, "genre": str | None, "spotify_url": str | None}
     ],
     "ticket_url": str,         # Link to buy tickets
     "info_url": str | None,    # Optional detail page
     "image_url": str | None,   # Event/artist image
     "price": str | None,       # e.g., "$25" or "$20 ADV / $25 DOS"
-    "category": str,           # One of: "concerts", "comedy", "broadway", "misc"
+    "category": str,           # One of: "concerts", "comedy", "broadway", "sports", "misc"
 }
 ```
 
@@ -423,11 +423,17 @@ Artist classifications are cached in `artist-cache.json` to minimize API calls:
 - Both positive results (`"concerts"`) and negative results (`null`) are cached
 - Typical daily usage: <20 API calls (only new artists)
 
+Spotify artist links are cached in `artist-spotify-cache.json` to avoid repeated Spotify lookups:
+- Cache persists between runs (locally and via R2)
+- Positive and negative results are stored
+
 ### Environment Variables
 | Variable | Description |
 |----------|-------------|
 | `TM_API_KEY` | Ticketmaster Discovery API key (get free at developer.ticketmaster.com) |
 | `USE_TM_API` | Set to `false` to disable TM API and use HTML scrapers instead |
+| `SPOTIFY_CLIENT_ID` | Spotify API client id (Client Credentials flow for artist link enrichment) |
+| `SPOTIFY_CLIENT_SECRET` | Spotify API client secret |
 
 ---
 
@@ -475,18 +481,19 @@ image_url = f"https://cdn.venue.com/images/{event['image_id']}?width=600"
 If you add a new category, update `atl-gigs/src/types.ts`:
 
 ```typescript
-export type EventCategory = "concerts" | "comedy" | "broadway" | "misc" | "newcategory";
+export type EventCategory = "concerts" | "comedy" | "broadway" | "sports" | "misc" | "newcategory";
 
 export const CATEGORY_LABELS: Record<EventCategory, string> = {
   concerts: "Concerts",
   comedy: "Comedy",
   broadway: "Broadway",
+  sports: "Sports",
   misc: "Other",
   newcategory: "New Category",  // Add label
 };
 
 export const ALL_CATEGORIES: EventCategory[] = [
-  "concerts", "comedy", "broadway", "misc", "newcategory"
+  "concerts", "comedy", "broadway", "sports", "misc", "newcategory"
 ];
 ```
 
