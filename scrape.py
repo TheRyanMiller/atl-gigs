@@ -59,6 +59,7 @@ SPOTIFY_CLIENT_ID = os.environ.get("SPOTIFY_CLIENT_ID")
 SPOTIFY_CLIENT_SECRET = os.environ.get("SPOTIFY_CLIENT_SECRET")
 SPOTIFY_TOKEN_URL = "https://accounts.spotify.com/api/token"
 SPOTIFY_SEARCH_URL = "https://api.spotify.com/v1/search"
+SPOTIFY_SEARCH_LIMIT = int(os.environ.get("SPOTIFY_SEARCH_LIMIT", "50"))
 SPOTIFY_HTML_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -1272,8 +1273,10 @@ def enrich_events_with_spotify(events, run_timestamp=None, log_func=None):
         "search": 0,
         "search_miss": 0,
         "search_skipped_negative": 0,
+        "search_skipped_limit": 0,
         "skipped_non_artist": 0,
         "skipped_ambiguous": 0,
+        "skipped_past_event": 0,
     }
 
     # Seed cache from any existing spotify_url fields
@@ -1282,10 +1285,23 @@ def enrich_events_with_spotify(events, run_timestamp=None, log_func=None):
             if artist.get("spotify_url"):
                 cache_spotify_result(artist.get("name", ""), artist["spotify_url"], source="event", updated_at=run_timestamp)
 
+    today = datetime.utcnow().date()
+    future_events = []
+    for event in events:
+        date_str = event.get("date")
+        try:
+            event_date = datetime.strptime(date_str, "%Y-%m-%d").date() if date_str else None
+        except Exception:
+            event_date = None
+        if event_date and event_date >= today:
+            future_events.append(event)
+        else:
+            counts["skipped_past_event"] += 1
+
     info_url_cache = {}
 
     # Apply cache and HTML extraction
-    for event in events:
+    for event in future_events:
         artists = event.get("artists") or []
         if not artists:
             continue
@@ -1349,7 +1365,8 @@ def enrich_events_with_spotify(events, run_timestamp=None, log_func=None):
 
     # Spotify Search fallback
     if SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET:
-        for event in events:
+        search_attempts = 0
+        for event in future_events:
             for artist in event.get("artists", []):
                 if artist.get("spotify_url"):
                     continue
@@ -1367,7 +1384,12 @@ def enrich_events_with_spotify(events, run_timestamp=None, log_func=None):
                         counts["search_skipped_negative"] += 1
                     continue
 
+                if search_attempts >= SPOTIFY_SEARCH_LIMIT:
+                    counts["search_skipped_limit"] += 1
+                    break
+
                 url, _, reason = spotify_search_artist(name, genre_hint=artist.get("genre"))
+                search_attempts += 1
                 if url:
                     artist["spotify_url"] = url
                     cache_spotify_result(name, url, source=f"search:{reason}", updated_at=run_timestamp)
@@ -1377,13 +1399,20 @@ def enrich_events_with_spotify(events, run_timestamp=None, log_func=None):
                     if reason == "ambiguous":
                         counts["skipped_ambiguous"] += 1
                     counts["search_miss"] += 1
+
+            if search_attempts >= SPOTIFY_SEARCH_LIMIT:
+                break
+
+        if search_attempts >= SPOTIFY_SEARCH_LIMIT:
+            log(f"  Spotify Search capped at {SPOTIFY_SEARCH_LIMIT} artists per run")
     else:
         log("  Spotify Search skipped: missing SPOTIFY_CLIENT_ID/SECRET")
 
     log(
         f"  Spotify links: html={counts['html']} search={counts['search']} "
         f"cache_hit={counts['cache_hit']} cache_negative={counts['cache_negative']} "
-        f"search_miss={counts['search_miss']} skipped_ambiguous={counts['skipped_ambiguous']}"
+        f"search_miss={counts['search_miss']} skipped_ambiguous={counts['skipped_ambiguous']} "
+        f"skipped_past_events={counts['skipped_past_event']} search_skipped_limit={counts['search_skipped_limit']}"
     )
 
     return events
