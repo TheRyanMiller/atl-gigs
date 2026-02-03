@@ -89,7 +89,7 @@ function AppContent() {
       />
 
       {/* Main Content */}
-      <main>
+      <main className="pt-[2px]">
         <Routes>
           <Route
             path="/"
