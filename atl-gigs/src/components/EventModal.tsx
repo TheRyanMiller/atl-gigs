@@ -136,10 +136,10 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                             href={artists[0].spotify_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-teal-400 hover:text-teal-300"
+                            className="inline-flex items-center justify-center bg-white/90 hover:bg-white text-neutral-900 rounded-full p-[2px] ml-2"
                             aria-label="Open Spotify artist"
                           >
-                            <FontAwesomeIcon icon={faSpotify} className="w-[1.1rem] h-[1.1rem] ml-2 relative -top-0.5" />
+                            <FontAwesomeIcon icon={faSpotify} className="w-[1.1rem] h-[1.1rem] relative -top-0.5" />
                           </a>
                         )}
                       </span>
@@ -157,10 +157,10 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                                 href={artist.spotify_url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-teal-400 hover:text-teal-300"
+                                className="inline-flex items-center justify-center bg-white/90 hover:bg-white text-neutral-900 rounded-full p-[2px] ml-1"
                                 aria-label="Open Spotify artist"
                               >
-                                <FontAwesomeIcon icon={faSpotify} className="w-[0.66rem] h-[0.66rem] ml-1 relative -top-0.5" />
+                                <FontAwesomeIcon icon={faSpotify} className="w-[0.66rem] h-[0.66rem] relative -top-0.5" />
                               </a>
                             )}
                           </span>
