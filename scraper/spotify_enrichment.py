@@ -7,6 +7,7 @@ import json
 import os
 import re
 import time
+import unicodedata
 from datetime import datetime
 from pathlib import Path
 
@@ -26,6 +27,7 @@ _artist_spotify_cache = {"by_name": {}}
 _spotify_cache_loaded = False
 _spotify_token = None
 _spotify_token_expires_at = 0
+SPOTIFY_SEARCH_SOURCE_VERSION = "v2"
 
 
 def load_spotify_cache():
@@ -63,8 +65,10 @@ def normalize_artist_name(name):
     """Normalize artist names for cache keys and matching."""
     if not name:
         return ""
+    name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
     normalized = name.lower().strip()
     normalized = re.sub(r"\([^)]*\)", " ", normalized)
+    normalized = re.sub(r"^(?:with\s+support\s+from|support\s+from|special guests?:?)\s+", "", normalized)
     normalized = re.sub(r"(.+?)\s+\b(feat|ft|featuring|with)\b.*", r"\1", normalized)
     normalized = normalized.replace("&", " ").replace("+", " ")
     normalized = re.sub(r"[^a-z0-9\s]", " ", normalized)
@@ -120,6 +124,16 @@ def get_spotify_cache_entry(normalized_name):
     """Return cached Spotify entry for normalized name, if any."""
     ensure_spotify_cache_loaded()
     return _artist_spotify_cache.get("by_name", {}).get(normalized_name)
+
+
+def should_retry_negative_cache(entry):
+    """Return True for old negative cache entries created before the current matcher."""
+    if not entry or entry.get("spotify_url"):
+        return False
+    source = entry.get("source", "")
+    return source.startswith("search-none:") and not source.startswith(
+        f"search-none-{SPOTIFY_SEARCH_SOURCE_VERSION}:"
+    )
 
 
 def cache_spotify_result(artist_name, spotify_url, source, updated_at=None):
@@ -198,11 +212,52 @@ def _genres_overlap(genre_hint, candidate_genres):
     return False
 
 
-def _pick_spotify_candidate(artist_name, candidates, genre_hint=None):
+def _pick_spotify_candidate(artist_name, candidates, genre_hint=None, allow_loose=False):
     target = normalize_artist_name(artist_name)
     exact = [c for c in candidates if normalize_artist_name(c.get("name", "")) == target]
     if not exact:
-        return None, "no-exact"
+        if not allow_loose:
+            return None, "no-exact"
+
+        loose = []
+        for candidate in candidates:
+            candidate_name = normalize_artist_name(candidate.get("name", ""))
+            if not candidate_name or len(candidate_name) < 4:
+                continue
+            if target.startswith(f"{candidate_name} "):
+                loose.append((candidate, "prefix"))
+            elif re.search(rf"\b{re.escape(candidate_name)}\b", target):
+                loose.append((candidate, "contained"))
+
+        if not loose:
+            return None, "no-loose"
+
+        by_candidate = {}
+        for candidate, reason in loose:
+            key = candidate.get("id") or normalize_artist_name(candidate.get("name", ""))
+            by_candidate.setdefault(key, (candidate, reason))
+        loose = list(by_candidate.values())
+
+        if genre_hint:
+            genre_matches = [
+                (candidate, reason)
+                for candidate, reason in loose
+                if _genres_overlap(genre_hint, candidate.get("genres", []))
+            ]
+            if len(genre_matches) == 1:
+                return genre_matches[0][0], f"loose-{genre_matches[0][1]}-genre"
+            if len(genre_matches) > 1:
+                loose = genre_matches
+
+        sorted_loose = sorted(loose, key=lambda item: item[0].get("popularity", 0), reverse=True)
+        if len(sorted_loose) == 1:
+            return sorted_loose[0][0], f"loose-{sorted_loose[0][1]}"
+
+        lead = sorted_loose[0][0].get("popularity", 0) - sorted_loose[1][0].get("popularity", 0)
+        if lead >= 15:
+            return sorted_loose[0][0], f"loose-{sorted_loose[0][1]}-popularity"
+
+        return None, "ambiguous"
     if len(exact) == 1:
         return exact[0], "exact"
 
@@ -222,6 +277,61 @@ def _pick_spotify_candidate(artist_name, candidates, genre_hint=None):
     return None, "ambiguous"
 
 
+def spotify_search_names(artist_name):
+    """Generate conservative Spotify search-name variants for decorated event titles."""
+    if not artist_name:
+        return []
+
+    variants = []
+
+    def add(value):
+        value = " ".join((value or "").split()).strip(" -:|/")
+        normalized = normalize_artist_name(value)
+        existing_names = {normalize_artist_name(existing) for existing in variants}
+        if (
+            value
+            and normalized
+            and normalized not in {"a", "an", "the", "presents", "present"}
+            and not normalized.endswith(" presents")
+            and normalized not in existing_names
+        ):
+            variants.append(value)
+
+    add(artist_name)
+
+    pending = [artist_name]
+    leading_patterns = [
+        r"^(?:.+?\b(?:presents?|presenta)\b:)\s*(.+)$",
+        r"^(?:with\s+support\s+from|support\s+from|special guests?:?)\s+(.+)$",
+    ]
+    for value in list(pending):
+        for pattern in leading_patterns:
+            match = re.match(pattern, value, flags=re.IGNORECASE)
+            if match:
+                add(match.group(1))
+                pending.append(match.group(1))
+
+    for value in list(variants):
+        colon_parts = [part.strip() for part in value.split(":") if part.strip()]
+        if len(colon_parts) > 1:
+            add(colon_parts[0])
+
+        dash_parts = [part.strip() for part in re.split(r"\s+[–—-]\s+", value) if part.strip()]
+        if len(dash_parts) > 1:
+            add(dash_parts[0])
+
+        separator_parts = [
+            part.strip()
+            for part in re.split(r"\s+(?:x|with)\s+|,\s*|\s*\|\s*", value, flags=re.IGNORECASE)
+            if part.strip()
+        ]
+        if 1 < len(separator_parts) <= 4:
+            for part in separator_parts:
+                add(part)
+
+    return variants
+
+
 def spotify_search_artist(artist_name, genre_hint=None):
     """Search Spotify for an artist and return (url, id, reason) or (None, None, reason)."""
     global _spotify_token
@@ -229,49 +339,65 @@ def spotify_search_artist(artist_name, genre_hint=None):
     if not token:
         return None, None, "no-token"
 
-    params = {
-        "type": "artist",
-        "market": "US",
-        "limit": 5,
-        "q": f'artist:"{artist_name}"',
-    }
-
     headers = {"Authorization": f"Bearer {token}"}
+    last_reason = "no-results"
 
-    for attempt in range(2):
-        resp = requests.get(config.SPOTIFY_SEARCH_URL, headers=headers, params=params, timeout=10)
-        if resp.status_code == 401 and attempt == 0:
-            _spotify_token = None
-            token = get_spotify_token()
-            if not token:
+    for search_name in spotify_search_names(artist_name):
+        for mode, query in [
+            ("exact", f'artist:"{search_name}"'),
+            ("loose", search_name),
+        ]:
+            params = {
+                "type": "artist",
+                "market": "US",
+                "limit": 10,
+                "q": query,
+            }
+
+            for attempt in range(2):
+                resp = requests.get(config.SPOTIFY_SEARCH_URL, headers=headers, params=params, timeout=10)
+                if resp.status_code == 401 and attempt == 0:
+                    _spotify_token = None
+                    token = get_spotify_token()
+                    if not token:
+                        break
+                    headers["Authorization"] = f"Bearer {token}"
+                    continue
+                if resp.status_code == 429:
+                    retry_after = int(resp.headers.get("Retry-After", "1"))
+                    time.sleep(retry_after)
+                    continue
+                try:
+                    resp.raise_for_status()
+                except Exception:
+                    return None, None, f"error-{resp.status_code}"
                 break
-            headers["Authorization"] = f"Bearer {token}"
-            continue
-        if resp.status_code == 429:
-            retry_after = int(resp.headers.get("Retry-After", "1"))
-            time.sleep(retry_after)
-            continue
-        try:
-            resp.raise_for_status()
-        except Exception:
-            return None, None, f"error-{resp.status_code}"
-        break
 
-    if resp.status_code != 200:
-        return None, None, f"error-{resp.status_code}"
+            if resp.status_code != 200:
+                return None, None, f"error-{resp.status_code}"
 
-    data = resp.json()
-    candidates = data.get("artists", {}).get("items", [])
-    if not candidates:
-        return None, None, "no-results"
+            data = resp.json()
+            candidates = data.get("artists", {}).get("items", [])
+            if not candidates:
+                last_reason = "no-results"
+                continue
 
-    candidate, reason = _pick_spotify_candidate(artist_name, candidates, genre_hint=genre_hint)
-    if not candidate:
-        return None, None, reason
+            candidate, reason = _pick_spotify_candidate(
+                search_name,
+                candidates,
+                genre_hint=genre_hint,
+                allow_loose=(mode == "loose"),
+            )
+            if not candidate:
+                last_reason = reason
+                continue
 
-    url = candidate.get("external_urls", {}).get("spotify")
-    normalized_url = normalize_spotify_url(url)
-    return normalized_url, candidate.get("id"), reason
+            url = candidate.get("external_urls", {}).get("spotify")
+            normalized_url = normalize_spotify_url(url)
+            source_reason = reason if normalize_artist_name(search_name) == normalize_artist_name(artist_name) else f"{reason}:variant"
+            return normalized_url, candidate.get("id"), source_reason
+
+    return None, None, last_reason
 
 
 def _parse_event_date(date_str):
@@ -409,9 +535,12 @@ def enrich_events_with_spotify(events, run_timestamp=None, log_func=None, search
                 if entry.get("spotify_url"):
                     artist["spotify_url"] = entry["spotify_url"]
                     counts["cache_hit"] += 1
-                else:
+                    continue
+                elif not should_retry_negative_cache(entry):
                     counts["search_skipped_negative"] += 1
-                continue
+                    continue
+                else:
+                    counts["cache_miss"] += 1
 
             if search_attempts >= search_limit:
                 counts["search_skipped_limit"] += 1
@@ -421,10 +550,20 @@ def enrich_events_with_spotify(events, run_timestamp=None, log_func=None, search
             search_attempts += 1
             if url:
                 artist["spotify_url"] = url
-                cache_spotify_result(name, url, source=f"search:{reason}", updated_at=run_timestamp)
+                cache_spotify_result(
+                    name,
+                    url,
+                    source=f"search-{SPOTIFY_SEARCH_SOURCE_VERSION}:{reason}",
+                    updated_at=run_timestamp,
+                )
                 counts["search"] += 1
             else:
-                cache_spotify_result(name, None, source=f"search-none:{reason}", updated_at=run_timestamp)
+                cache_spotify_result(
+                    name,
+                    None,
+                    source=f"search-none-{SPOTIFY_SEARCH_SOURCE_VERSION}:{reason}",
+                    updated_at=run_timestamp,
+                )
                 if reason == "ambiguous":
                     counts["skipped_ambiguous"] += 1
                 counts["search_miss"] += 1
