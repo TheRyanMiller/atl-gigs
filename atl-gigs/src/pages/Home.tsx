@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useEffect, useRef, forwardRef } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { VariableSizeList as List } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { Music, Loader2 } from "lucide-react";
@@ -16,6 +16,10 @@ interface DateRange {
   start: string | null;
   end: string | null;
 }
+
+const CARD_GAP = 16;
+const LIST_TOP_BUFFER = 8;
+const DESKTOP_CARD_HEIGHT = 195;
 
 // Get today's date in YYYY-MM-DD format for comparison (US Eastern timezone)
 const getTodayString = () => {
@@ -71,22 +75,13 @@ const getMobileCardHeight = (event: Event): number => {
 };
 
 // Row heights for virtualized list
-const getItemHeight = (event: Event, isMobile: boolean): number => {
+const getItemHeight = (event: Event, isMobile: boolean, index: number): number => {
   // Desktop: fixed 195px + 16px gap
   // Mobile: dynamic based on content + 16px gap
-  return isMobile ? getMobileCardHeight(event) + 16 : 211;
+  const cardHeight = isMobile ? getMobileCardHeight(event) : DESKTOP_CARD_HEIGHT;
+  const topBuffer = index === 0 ? LIST_TOP_BUFFER : 0;
+  return cardHeight + CARD_GAP + topBuffer;
 };
-
-// Inner element wrapper to add top padding for buffer above first card
-const innerElementType = forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
-  ({ style, ...rest }, ref) => (
-    <div
-      ref={ref}
-      style={{ ...style, paddingTop: 16 }}
-      {...rest}
-    />
-  )
-);
 
 export default function Home({ events, loading, onEventClick }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -213,7 +208,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   const getItemSize = useCallback(
     (index: number) => {
       const event = filteredEvents[index];
-      return getItemHeight(event, isMobile); // Already includes gap
+      return getItemHeight(event, isMobile, index); // Already includes gap
     },
     [filteredEvents, isMobile]
   );
@@ -222,16 +217,26 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   const Row = useCallback(
     ({ index, style }: { index: number; style: React.CSSProperties }) => {
       const event = filteredEvents[index];
-      // Calculate the card height (row height minus gap)
-      const cardHeight = isMobile ? getMobileCardHeight(event) : 195;
+      // Card height stays fixed; row height includes the gap and optional first-item buffer.
+      const cardHeight = isMobile ? getMobileCardHeight(event) : DESKTOP_CARD_HEIGHT;
+      const topBuffer = index === 0 ? LIST_TOP_BUFFER : 0;
       return (
-        <div style={{ ...style, paddingBottom: 16 }}>
-          <EventCard
-            key={event.slug}
-            event={event}
-            onClick={() => onEventClick(event)}
-            mobileHeight={isMobile ? cardHeight : undefined}
-          />
+        <div style={style}>
+          <div
+            style={{
+              height: "100%",
+              paddingTop: topBuffer,
+              paddingBottom: CARD_GAP,
+              boxSizing: "border-box",
+            }}
+          >
+            <EventCard
+              key={event.slug}
+              event={event}
+              onClick={() => onEventClick(event)}
+              mobileHeight={isMobile ? cardHeight : undefined}
+            />
+          </div>
         </div>
       );
     },
@@ -259,7 +264,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       </div>
 
       {/* Events List - Virtualized */}
-      <div className="flex-1 min-h-0 max-w-5xl mx-auto w-full px-4 mt-[2px]">
+      <div className="flex-1 min-h-0 max-w-5xl mx-auto w-full px-4">
         {loading && (
           <div className="text-center py-20">
             <Loader2 size={48} className="mx-auto text-teal-500 animate-spin" />
@@ -284,7 +289,6 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
                 itemCount={filteredEvents.length}
                 itemSize={getItemSize}
                 overscanCount={3}
-                innerElementType={innerElementType}
               >
                 {Row}
               </List>
