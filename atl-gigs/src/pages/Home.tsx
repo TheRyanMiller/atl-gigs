@@ -223,6 +223,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       return (
         <div style={style}>
           <div
+            className="max-w-5xl mx-auto w-full px-4"
             style={{
               height: "100%",
               paddingTop: topBuffer,
@@ -246,7 +247,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   return (
     <div className="h-[calc(100dvh-56px)] sm:h-[calc(100dvh-80px)] flex flex-col">
       {/* Search & Filters */}
-      <div className="shrink-0 bg-neutral-950 border-b border-white/10 overflow-visible">
+      <div className="shrink-0 bg-neutral-950 border-b border-white/10 overflow-visible pb-2">
         <div className="max-w-5xl mx-auto w-full px-4 overflow-visible">
           <FilterBar
             venues={venues}
@@ -264,7 +265,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
       </div>
 
       {/* Events List - Virtualized */}
-      <div className="flex-1 min-h-0 max-w-5xl mx-auto w-full px-4">
+      <div className="flex-1 min-h-0 w-full">
         {loading && (
           <div className="text-center py-20">
             <Loader2 size={48} className="mx-auto text-teal-500 animate-spin" />
@@ -272,7 +273,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
         )}
 
         {!loading && filteredEvents.length === 0 && (
-          <div className="text-center py-20 bg-neutral-900/30 rounded-3xl border border-neutral-800 border-dashed">
+          <div className="max-w-5xl mx-auto w-full px-4 text-center py-20 bg-neutral-900/30 rounded-3xl border border-neutral-800 border-dashed">
             <Music size={48} className="mx-auto text-neutral-700 mb-4" />
             <h3 className="text-xl font-bold text-white">No gigs found</h3>
             <p className="text-neutral-500 mt-2">Try adjusting your search terms</p>
