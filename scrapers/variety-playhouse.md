@@ -30,6 +30,7 @@ This JSON API:
 - Has no authentication required
 - Returns complete event data
 - Is the same format used by other AEG venues
+- Is parsed through the shared `transform_aeg_event()` helper, which skips malformed event records without aborting the whole venue
 
 ## Data Structure
 
