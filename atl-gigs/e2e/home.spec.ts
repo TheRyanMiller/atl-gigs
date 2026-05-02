@@ -77,3 +77,29 @@ test("expanding long descriptions does not resize modal image", async ({ page })
   expect(before?.height).toBeGreaterThan(0);
   expect(after?.height).toBe(before?.height);
 });
+
+test("long description expansion is reachable on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+
+  await page.getByText("Scott Ivey").click();
+  const scrollArea = page.getByTestId("event-modal-scroll-area");
+  const showMore = page.getByRole("button", { name: "Show more" });
+  await expect(scrollArea).toBeVisible();
+
+  await scrollArea.evaluate((element) => {
+    element.scrollTop = element.scrollHeight;
+  });
+
+  await expect(showMore).toBeVisible();
+  const buttonBox = await showMore.boundingBox();
+  const viewport = page.viewportSize();
+
+  expect(buttonBox).not.toBeNull();
+  expect(viewport).not.toBeNull();
+  expect(buttonBox!.y).toBeGreaterThanOrEqual(0);
+  expect(buttonBox!.y + buttonBox!.height).toBeLessThanOrEqual(viewport!.height);
+
+  await showMore.click();
+  await expect(page.getByRole("button", { name: "Show less" })).toBeVisible();
+});

@@ -12,6 +12,8 @@ interface EventModalProps {
   onClose: () => void;
 }
 
+const DESCRIPTION_PREVIEW_LENGTH = 420;
+
 export default function EventModal({ event, onClose }: EventModalProps) {
   const [copied, setCopied] = useState(false);
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
@@ -61,10 +63,10 @@ export default function EventModal({ event, onClose }: EventModalProps) {
   };
 
   const descriptionText = description?.trim() || "";
-  const isLongDescription = descriptionText.length > 520;
+  const isLongDescription = descriptionText.length > DESCRIPTION_PREVIEW_LENGTH;
   const visibleDescription =
     isLongDescription && !descriptionExpanded
-      ? `${descriptionText.slice(0, 520).replace(/\s+\S*$/, "")}...`
+      ? `${descriptionText.slice(0, DESCRIPTION_PREVIEW_LENGTH).replace(/\s+\S*$/, "")}...`
       : descriptionText;
   const descriptionParagraphs = visibleDescription
     .split(/\n{2,}/)
@@ -86,8 +88,8 @@ export default function EventModal({ event, onClose }: EventModalProps) {
           <div className="fixed inset-0 bg-neutral-950/95" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-10 overflow-y-auto">
-          <div className="flex min-h-full items-start sm:items-center justify-center p-4 pt-16 sm:pt-4 text-center">
+        <div className="fixed inset-0 z-10 overflow-hidden">
+          <div className="flex min-h-full items-start justify-center p-4 pt-12 text-center sm:items-center sm:pt-4">
             <Transition.Child
               as={Fragment}
               enter="duration-0"
@@ -97,7 +99,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border-2 border-teal-500/40 text-left shadow-xl sm:my-8 sm:w-full sm:max-w-3xl">
+              <Dialog.Panel className="relative w-full max-h-[calc(100dvh-4rem)] transform overflow-hidden rounded-2xl bg-neutral-900 border-2 border-teal-500/40 text-left shadow-xl sm:my-8 sm:max-h-[calc(100vh-2rem)] sm:max-w-3xl">
                 {/* Favorite button - top right */}
                 <button
                   type="button"
@@ -111,7 +113,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                   />
                 </button>
 
-                <div className="sm:flex sm:h-[36rem] sm:max-h-[calc(100vh-2rem)]">
+                <div className="flex max-h-[calc(100dvh-4rem)] flex-col sm:h-[36rem] sm:max-h-[calc(100vh-2rem)] sm:flex-row">
                   {/* Image */}
                   <div className="relative w-full h-48 shrink-0 bg-neutral-950 sm:h-full sm:w-72">
                     {image_url ? (
@@ -137,8 +139,11 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 p-6 sm:flex sm:min-h-0 sm:flex-col sm:overflow-hidden">
-                    <div className="sm:min-h-0 sm:flex-1 sm:overflow-y-auto sm:pr-2">
+                  <div className="flex min-h-0 flex-1 flex-col overflow-hidden p-6">
+                    <div
+                      className="min-h-0 flex-1 overflow-y-auto pr-1 sm:pr-2"
+                      data-testid="event-modal-scroll-area"
+                    >
                       <Dialog.Title
                         as="h3"
                         className="text-2xl font-bold text-white mb-1 pr-12"
@@ -233,7 +238,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                       )}
                     </div>
 
-                    <div className="flex flex-wrap gap-3 sm:mt-4 sm:shrink-0 sm:border-t sm:border-neutral-800 sm:pt-4">
+                    <div className="mt-4 flex shrink-0 flex-wrap gap-3 border-t border-neutral-800 pt-4">
                       <button
                         onClick={handleShare}
                         className="flex items-center justify-center w-12 h-12 rounded-xl transition-colors bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
