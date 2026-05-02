@@ -33,6 +33,7 @@ FOX_THEATRE_AJAX_HEADERS = {
     "Cache-Control": "no-cache",
     "Pragma": "no-cache",
 }
+FOX_THEATRE_TIMEOUT = (8, 20)
 
 
 def parse_fox_date_range(date_text):
@@ -93,7 +94,7 @@ def init_fox_session(max_retries=3):
 
     for attempt in range(max_retries):
         try:
-            resp = session.get(f"{FOX_THEATRE_BASE}/events", timeout=20)
+            resp = session.get(f"{FOX_THEATRE_BASE}/events", timeout=FOX_THEATRE_TIMEOUT)
             if resp.status_code == 200:
                 time.sleep(random.uniform(0.5, 1.5))
                 return session
@@ -122,7 +123,7 @@ def scrape_fox_ajax_all_events():
         last_error = None
         for attempt in range(max_retries):
             try:
-                resp = session.get(ajax_url, timeout=20)
+                resp = session.get(ajax_url, timeout=FOX_THEATRE_TIMEOUT)
 
                 if resp.status_code == 406:
                     if attempt < max_retries - 1:

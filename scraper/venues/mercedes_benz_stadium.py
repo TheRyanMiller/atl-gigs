@@ -12,6 +12,7 @@ MERCEDES_BENZ_STADIUM_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
+MERCEDES_BENZ_STADIUM_TIMEOUT = (8, 20)
 
 MBS_CATEGORY_MAP = {
     "sports": "sports",
@@ -25,7 +26,7 @@ MBS_CATEGORY_MAP = {
 def scrape_mercedes_benz_stadium():
     url = MERCEDES_BENZ_STADIUM_BASE + "/events"
     try:
-        resp = requests.get(url, headers=MERCEDES_BENZ_STADIUM_HEADERS, timeout=30)
+        resp = requests.get(url, headers=MERCEDES_BENZ_STADIUM_HEADERS, timeout=MERCEDES_BENZ_STADIUM_TIMEOUT)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
     except Exception as e:

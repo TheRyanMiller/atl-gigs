@@ -12,6 +12,7 @@ MASQUERADE_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
+MASQUERADE_TIMEOUT = (8, 20)
 
 # Masquerade stages (events at other venues should be filtered out)
 MASQUERADE_STAGES = ["Heaven", "Hell", "Purgatory", "Altar"]
@@ -37,7 +38,7 @@ def scrape_masquerade():
     """
     url = MASQUERADE_BASE + "/events/"
     try:
-        resp = requests.get(url, headers=MASQUERADE_HEADERS, timeout=30)
+        resp = requests.get(url, headers=MASQUERADE_HEADERS, timeout=MASQUERADE_TIMEOUT)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
     except Exception as e:

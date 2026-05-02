@@ -9,7 +9,7 @@
 
 ## Venue Details
 
-The Masquerade is a multi-room music venue in Atlanta with 4 rooms:
+The Masquerade is a multi-stage music venue in Atlanta with 4 stages:
 - **Heaven** - Largest room
 - **Hell** - Medium room
 - **Purgatory** - Smaller room
@@ -21,7 +21,7 @@ The Masquerade is a multi-room music venue in Atlanta with 4 rooms:
 
 The Masquerade website renders events in static HTML with well-structured `article.event` elements. No JavaScript loading or API authentication required.
 
-### Important: Room Filtering
+### Important: Stage Filtering
 
 The Masquerade's events page lists events at both their own venue AND other Atlanta venues (Tabernacle, Eastern, etc.) since they're part of the same promotion network.
 
@@ -50,30 +50,30 @@ Events are parsed from `article.event` elements:
 def scrape_masquerade():
     """
     Scrape events from The Masquerade using HTML parsing.
-    Only includes events at Masquerade rooms (Heaven, Hell, Purgatory, Altar).
+    Only includes events at Masquerade stages (Heaven, Hell, Purgatory, Altar).
     """
     url = MASQUERADE_BASE + "/events/"
-    resp = requests.get(url, headers=MASQUERADE_HEADERS, timeout=30)
+    resp = requests.get(url, headers=MASQUERADE_HEADERS, timeout=MASQUERADE_TIMEOUT)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
     events = []
     for article in soup.select("article.event"):
-        # Check venue - skip events not at Masquerade rooms
+        # Check venue - skip events not at Masquerade stages
         venue_span = article.select_one(".js-listVenue")
         venue_text = venue_span.get_text(strip=True)
-        room = None
-        for r in MASQUERADE_ROOMS:
-            if r in venue_text:
-                room = r
+        stage = None
+        for s in MASQUERADE_STAGES:
+            if s in venue_text:
+                stage = s
                 break
-        if not room:
+        if not stage:
             continue  # Skip external venue events
 
         # Parse event details...
         events.append({
             "venue": "The Masquerade",
-        "stage": stage,  # Heaven, Hell, Purgatory, or Altar
+            "stage": stage,  # Heaven, Hell, Purgatory, or Altar
             # ... other fields
             "category": "concerts",  # Default for music venue
         })
@@ -99,6 +99,6 @@ All events default to `concerts` since The Masquerade is primarily a music venue
 
 1. Inspected events page HTML structure
 2. Found `article.event` elements with consistent CSS classes
-3. Discovered venue listing includes external venues - added room filtering
-4. Identified 4 rooms: Heaven, Hell, Purgatory, Altar
+3. Discovered venue listing includes external venues - added stage filtering
+4. Identified 4 stages: Heaven, Hell, Purgatory, Altar
 5. Tested date parsing from `content` attribute and door time spans

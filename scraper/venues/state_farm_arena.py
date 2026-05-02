@@ -17,6 +17,7 @@ STATE_FARM_ARENA_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
+STATE_FARM_ARENA_TIMEOUT = (8, 20)
 
 STATE_FARM_ARENA_CATEGORIES = {
     "/events/category/concerts": "concerts",
@@ -89,7 +90,7 @@ def scrape_state_farm_arena():
         return None
 
     def scrape_page(url, category):
-        resp = requests.get(url, headers=STATE_FARM_ARENA_HEADERS, timeout=15)
+        resp = requests.get(url, headers=STATE_FARM_ARENA_HEADERS, timeout=STATE_FARM_ARENA_TIMEOUT)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
         events = []
