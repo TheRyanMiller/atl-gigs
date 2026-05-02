@@ -65,8 +65,6 @@ Family entertainment like Monster Truck shows. Mapped to `misc`.
 Catch-all page containing mixed event types. For events on this page, the scraper uses `detect_category_from_text()` to infer the correct category from:
 1. **Title keywords** - "sports", "hoops", "comedy", "tour", "jam", etc.
 2. **Ticketmaster URL paths** - When URLs contain descriptive names like `/cbs-sports-classic-2025/`
-3. **Known entity fallback** - Popular comedy acts like "Katt Williams", "85 South"
-
 This allows events like "Holiday Hoopsgiving" (sports) and "Winter Jam" (concerts) to be properly categorized even though they appear on the catch-all "other" page.
 
 ## Edge Cases
@@ -89,7 +87,7 @@ The site has a "Load More Events" link for pagination.
 ### Deduplication
 Events may appear in multiple categories. Deduplication strategy:
 - Use `detail_url` as unique key
-- Apply category priority: `concerts > misc`
+- Apply shared category priority: `broadway > comedy > sports > concerts > misc`
 
 ## Notes
 

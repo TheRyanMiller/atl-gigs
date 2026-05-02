@@ -5,7 +5,11 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 
-from scraper.utils.categories import detect_category_from_text, detect_category_from_ticket_url
+from scraper.utils.categories import (
+    detect_category_from_text,
+    detect_category_from_ticket_url,
+    should_override_category,
+)
 from scraper.utils.dates import normalize_time
 
 STATE_FARM_ARENA_BASE = "https://www.statefarmarena.com"
@@ -25,7 +29,6 @@ STATE_FARM_ARENA_CATEGORIES = {
 def scrape_state_farm_arena():
     """Scrape events from State Farm Arena using HTML parsing."""
     all_events = {}
-    category_priority = {"concerts": 0, "comedy": 1, "broadway": 2, "sports": 3, "misc": 4}
 
     def parse_date(date_div):
         if not date_div:
@@ -170,10 +173,8 @@ def scrape_state_farm_arena():
 
                     if key in all_events:
                         existing = all_events[key]
-                        existing_priority = category_priority.get(existing["category"], 99)
-                        new_priority = category_priority.get(category, 99)
-                        if new_priority < existing_priority:
-                            all_events[key]["category"] = category
+                        if should_override_category(existing["category"], event["category"]):
+                            all_events[key]["category"] = event["category"]
                     else:
                         all_events[key] = event
                         page_count += 1

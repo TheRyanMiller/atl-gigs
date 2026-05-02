@@ -6,6 +6,11 @@ def validate_event(event):
     for field in config.REQUIRED_FIELDS:
         if not event.get(field):
             return False
-    if not event.get("artists") or len(event["artists"]) == 0:
+
+    artists = event.get("artists") or []
+    if not artists or not any(artist.get("name") for artist in artists):
+        return False
+
+    if event.get("category") not in config.CATEGORIES:
         return False
     return True

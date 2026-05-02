@@ -1,5 +1,13 @@
 import re
 
+CATEGORY_PRIORITY = {
+    "broadway": 0,
+    "comedy": 1,
+    "sports": 2,
+    "concerts": 3,
+    "misc": 4,
+}
+
 
 def detect_category_from_text(text):
     """
@@ -7,6 +15,9 @@ def detect_category_from_text(text):
     Returns detected category or None if uncertain.
     Priority order: sports > comedy > concerts.
     """
+    if not text:
+        return None
+
     text_lower = text.lower()
 
     sports_patterns = [
@@ -19,10 +30,9 @@ def detect_category_from_text(text):
         "wrestling", "wwe", "aew", "raw", "smackdown",
         "boxing", "ufc", "mma", "fight night",
         "championship", "tournament", "playoffs",
-        "vs",
     ]
 
-    if any(pattern in text_lower for pattern in sports_patterns):
+    if any(pattern in text_lower for pattern in sports_patterns) or re.search(r"\bvs\.?\b", text_lower):
         return "sports"
 
     comedy_patterns = [
@@ -52,6 +62,11 @@ def detect_category_from_text(text):
         return "concerts"
 
     return None
+
+
+def should_override_category(existing_category, new_category):
+    """Return True if new_category is more specific than existing_category."""
+    return CATEGORY_PRIORITY.get(new_category, 99) < CATEGORY_PRIORITY.get(existing_category, 99)
 
 
 def detect_category_from_ticket_url(ticket_url):

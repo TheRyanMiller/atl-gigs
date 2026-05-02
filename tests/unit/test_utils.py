@@ -6,6 +6,7 @@ from scraper.utils.categories import (
     detect_category_from_text,
     detect_category_from_ticket_url,
     map_tm_classification,
+    should_override_category,
 )
 from scraper.utils.dates import normalize_time
 from scraper.utils.events import generate_slug, is_zero_price, normalize_price
@@ -71,11 +72,40 @@ def test_validate_event_required_fields():
     }
     assert validate_event(invalid) is False
 
+    missing_category = {
+        "venue": "The Earl",
+        "date": "2026-02-01",
+        "artists": [{"name": "Artist"}],
+        "ticket_url": "https://example.com",
+    }
+    assert validate_event(missing_category) is False
+
+    invalid_category = {
+        "venue": "The Earl",
+        "date": "2026-02-01",
+        "artists": [{"name": "Artist"}],
+        "ticket_url": "https://example.com",
+        "category": "lecture",
+    }
+    assert validate_event(invalid_category) is False
+
+    missing_artist_name = {
+        "venue": "The Earl",
+        "date": "2026-02-01",
+        "artists": [{}],
+        "ticket_url": "https://example.com",
+        "category": "concerts",
+    }
+    assert validate_event(missing_artist_name) is False
+
 
 def test_detect_category_from_text():
     assert detect_category_from_text("NBA Finals") == "sports"
     assert detect_category_from_text("Stand-up Comedy Night") == "comedy"
     assert detect_category_from_text("Summer Jam Festival") == "concerts"
+    assert detect_category_from_text(None) is None
+    assert detect_category_from_text("Harvest Festival") == "concerts"
+    assert detect_category_from_text("Team A vs Team B") == "sports"
 
 
 def test_detect_category_from_ticket_url():
@@ -90,6 +120,12 @@ def test_map_tm_classification_priority():
     ]
     assert map_tm_classification(classifications, TM_CATEGORY_MAP) == "comedy"
     assert map_tm_classification([], TM_CATEGORY_MAP) == "concerts"
+
+
+def test_should_override_category_priority():
+    assert should_override_category("misc", "sports") is True
+    assert should_override_category("sports", "misc") is False
+    assert should_override_category("concerts", "comedy") is True
 
 
 def test_spotify_helpers():

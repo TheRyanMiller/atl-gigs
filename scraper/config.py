@@ -36,7 +36,7 @@ SPOTIFY_HTML_DELAY = 0.35
 
 CATEGORIES = ["concerts", "comedy", "broadway", "sports", "misc"]
 DEFAULT_CATEGORY = "concerts"
-REQUIRED_FIELDS = ["venue", "date", "artists", "ticket_url"]
+REQUIRED_FIELDS = ["venue", "date", "artists", "ticket_url", "category"]
 
 USE_TM_API = os.environ.get("USE_TM_API", "true").lower() == "true"
 TM_API_KEY = os.environ.get("TM_API_KEY")
