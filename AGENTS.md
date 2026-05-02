@@ -32,6 +32,7 @@ Every scraper must return events matching this structure:
     "ticket_url": str,         # Link to buy tickets
     "info_url": str | None,    # Optional detail page
     "image_url": str | None,   # Event/artist image
+    "description": str | None, # Optional artist/event blurb
     "price": str | None,       # e.g., "$25" or "$20 ADV / $25 DOS"
     "category": str,           # One of: "concerts", "comedy", "broadway", "sports", "misc"
 }

@@ -78,8 +78,9 @@ interface Event {
   ticket_url: string;
   info_url?: string;
   image_url?: string;
+  description?: string | null;     // Optional artist/event blurb when available
   category: "concerts" | "comedy" | "broadway" | "sports" | "misc";
-  room?: string;                 // For multi-room venues (e.g., Masquerade)
+  stage?: string;                  // For multi-room venues (e.g., Masquerade)
 }
 ```
 

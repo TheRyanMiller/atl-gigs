@@ -6,6 +6,7 @@
 - AJAX responses may be JSON-encoded HTML or raw HTML; both forms are handled.
 - Event cards are selected with `div.eventItem`.
 - Detail URL, ticket URL, image, date block, title, and category classes are parsed from each card.
+- Optional descriptions are fetched from detail pages using non-empty meta description tags.
 
 ## Category Mapping
 - Card class `broadway` -> `broadway`
@@ -19,6 +20,7 @@
 - The parser handles single dates, same-month ranges, cross-month ranges, and Fox markup with spaced commas such as `May 2 - 3 , 2026`.
 - Duplicate detail URLs are skipped while walking AJAX pages.
 - Fox does not expose consistent doors, show time, price, or genre fields on listing cards.
+- Detail-page description failures are non-fatal; affected events are still published without `description`.
 
 ## Fallback
 - If the Fox AJAX scrape fails, the venue scraper tries to preserve previously saved Fox Theatre events from `events.json`.

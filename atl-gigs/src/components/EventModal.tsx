@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { format } from "date-fns";
-import { MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays, Star } from "lucide-react";
+import { MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays, Star, Info } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { Event } from "../types";
@@ -14,6 +14,7 @@ interface EventModalProps {
 
 export default function EventModal({ event, onClose }: EventModalProps) {
   const [copied, setCopied] = useState(false);
+  const [descriptionExpanded, setDescriptionExpanded] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
 
   const {
@@ -28,6 +29,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
     image_url,
     slug,
     stage,
+    description,
   } = event;
   
   const handleShare = async () => {
@@ -57,6 +59,17 @@ export default function EventModal({ event, onClose }: EventModalProps) {
     const hour12 = h % 12 || 12;
     return `${hour12.toString().padStart(2, "0")}:${minutes} ${ampm}`;
   };
+
+  const descriptionText = description?.trim() || "";
+  const isLongDescription = descriptionText.length > 520;
+  const visibleDescription =
+    isLongDescription && !descriptionExpanded
+      ? `${descriptionText.slice(0, 520).replace(/\s+\S*$/, "")}...`
+      : descriptionText;
+  const descriptionParagraphs = visibleDescription
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
 
   return (
     <Transition.Root show={true} as={Fragment}>
@@ -194,6 +207,29 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                         </div>
                       )}
                     </div>
+
+                    {descriptionText && (
+                      <div className="mb-6 border-t border-neutral-800 pt-5">
+                        <div className="flex items-center gap-2 text-sm font-semibold text-neutral-100 mb-2">
+                          <Info size={14} className="text-teal-500" />
+                          <span>About</span>
+                        </div>
+                        <div className="space-y-3 text-sm leading-6 text-neutral-300">
+                          {descriptionParagraphs.map((paragraph, index) => (
+                            <p key={index}>{paragraph}</p>
+                          ))}
+                        </div>
+                        {isLongDescription && (
+                          <button
+                            type="button"
+                            onClick={() => setDescriptionExpanded((expanded) => !expanded)}
+                            className="mt-3 text-sm font-medium text-teal-400 hover:text-teal-300 transition-colors"
+                          >
+                            {descriptionExpanded ? "Show less" : "Show more"}
+                          </button>
+                        )}
+                      </div>
+                    )}
 
                     <div className="flex flex-wrap gap-3">
                       <button

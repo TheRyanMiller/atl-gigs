@@ -44,6 +44,8 @@ Events are parsed from `article.event` elements:
 </article>
 ```
 
+Optional descriptions are fetched from each detail page by matching the headliner against `.attractions .attraction-bio`. Support-act bios are not used as event descriptions when the headliner has no usable copy.
+
 ## Implementation
 
 ```python
@@ -94,6 +96,7 @@ All events default to `concerts` since The Masquerade is primarily a music venue
 - Ticket links go to various providers (AXS, Eventbrite, etc.)
 - Events at external venues (Tabernacle, Eastern) are filtered out
 - Stage stored in separate `stage` field (displayed in modal as "The Masquerade · Heaven")
+- Detail-page description failures are non-fatal; affected events are still published without `description`.
 
 ## Discovery Process
 

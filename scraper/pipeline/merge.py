@@ -28,6 +28,8 @@ def merge_events(existing_events, new_events):
                     event["first_seen"] = existing["first_seen"]
                 if existing.get("is_new") is False:
                     event["is_new"] = False
+                if existing.get("description") and not event.get("description"):
+                    event["description"] = existing["description"]
 
             if event.get("slug") in is_new_false_by_slug:
                 event["is_new"] = False

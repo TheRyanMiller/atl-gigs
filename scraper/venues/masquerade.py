@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 from scraper import config
 from scraper.utils.dates import normalize_time
+from scraper.utils.descriptions import clean_description
 
 MASQUERADE_BASE = "https://www.masqueradeatlanta.com"
 MASQUERADE_HEADERS = {
@@ -16,6 +17,16 @@ MASQUERADE_TIMEOUT = (8, 20)
 
 # Masquerade stages (events at other venues should be filtered out)
 MASQUERADE_STAGES = ["Heaven", "Hell", "Purgatory", "Altar"]
+
+
+def _normalize_artist_name(value):
+    return re.sub(r"[^a-z0-9]+", " ", value.lower()).strip()
+
+
+def _same_artist_name(a, b):
+    normalized_a = _normalize_artist_name(a or "")
+    normalized_b = _normalize_artist_name(b or "")
+    return bool(normalized_a and normalized_b and (normalized_a == normalized_b or normalized_a in normalized_b or normalized_b in normalized_a))
 
 
 def split_masquerade_support_acts(support_text):
@@ -46,6 +57,36 @@ def scrape_masquerade():
         return []
 
     events = []
+    description_cache = {}
+
+    def fetch_description(url, headliner):
+        if not url:
+            return None
+
+        if url not in description_cache:
+            try:
+                detail_resp = requests.get(url, headers=MASQUERADE_HEADERS, timeout=MASQUERADE_TIMEOUT)
+                detail_resp.raise_for_status()
+                description_cache[url] = detail_resp.text
+            except Exception as e:
+                print(f"    The Masquerade description: ERROR - {e}")
+                description_cache[url] = ""
+
+        if not description_cache[url]:
+            return None
+
+        detail_soup = BeautifulSoup(description_cache[url], "html.parser")
+        for bio in detail_soup.select(".attractions .attraction-bio"):
+            title_el = bio.select_one(".attraction_title")
+            title = title_el.get_text(" ", strip=True) if title_el else headliner
+            if not _same_artist_name(title, headliner):
+                continue
+
+            description = clean_description(str(bio), heading=title)
+            if description:
+                return description
+
+        return None
 
     for article in soup.select("article.event"):
         # Check if this is at The Masquerade (not an external venue)
@@ -155,7 +196,7 @@ def scrape_masquerade():
             if img_match:
                 image_url = img_match.group(1)
 
-        events.append({
+        event = {
             "venue": "The Masquerade",
             "date": event_date,
             "doors_time": doors_time,
@@ -166,6 +207,12 @@ def scrape_masquerade():
             "image_url": image_url,
             "category": config.DEFAULT_CATEGORY,
             "stage": stage,  # Heaven, Hell, Purgatory, or Altar
-        })
+        }
+
+        description = fetch_description(detail_url, headliner)
+        if description:
+            event["description"] = description
+
+        events.append(event)
 
     return events

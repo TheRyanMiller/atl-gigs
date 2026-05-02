@@ -37,3 +37,20 @@ test("hides Spotify icons in modal when spotify_url is missing", () => {
   renderWithProviders(event);
   expect(screen.queryByLabelText("Open Spotify artist")).toBeNull();
 });
+
+test("shows event description in modal when present", () => {
+  const event = {
+    ...baseEvent,
+    description: "A detailed artist biography for this show.",
+  };
+
+  renderWithProviders(event);
+
+  expect(screen.getByText("About")).toBeInTheDocument();
+  expect(screen.getByText("A detailed artist biography for this show.")).toBeInTheDocument();
+});
+
+test("hides event description section when absent", () => {
+  renderWithProviders(baseEvent);
+  expect(screen.queryByText("About")).toBeNull();
+});

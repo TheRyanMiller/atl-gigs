@@ -13,6 +13,7 @@ except ImportError:
     cloudscraper = None
 
 from scraper import config
+from scraper.utils.descriptions import extract_first_description
 
 FOX_THEATRE_BASE = "https://www.foxtheatre.org"
 FOX_THEATRE_AJAX_HEADERS = {
@@ -110,11 +111,36 @@ def init_fox_session(max_retries=3):
 def scrape_fox_ajax_all_events():
     events = []
     seen_urls = set()
+    description_cache = {}
     offset = 0
     per_page = 60
     max_retries = 5
 
     session = init_fox_session()
+
+    def fetch_description(url, heading):
+        if not url:
+            return None
+
+        if url not in description_cache:
+            try:
+                resp = session.get(url, timeout=FOX_THEATRE_TIMEOUT)
+                resp.raise_for_status()
+                description_cache[url] = resp.text
+                time.sleep(random.uniform(0.2, 0.5))
+            except Exception as e:
+                print(f"    Fox Theatre description: ERROR - {e}")
+                description_cache[url] = ""
+
+        if not description_cache[url]:
+            return None
+
+        detail_soup = BeautifulSoup(description_cache[url], "html.parser")
+        return extract_first_description(
+            detail_soup,
+            ['meta[name="description"]', 'meta[property="og:description"]'],
+            heading=heading,
+        )
 
     while True:
         ajax_url = f"{FOX_THEATRE_BASE}/events/events_ajax/{offset}?category=0&venue=0&team=0&exclude=&per_page={per_page}&came_from_page=event-list-page"
@@ -234,7 +260,7 @@ def scrape_fox_ajax_all_events():
             else:
                 fox_category = "misc"
 
-            events.append({
+            event = {
                 "title": title,
                 "date": start_date,
                 "end_date": end_date if end_date != start_date else None,
@@ -242,7 +268,13 @@ def scrape_fox_ajax_all_events():
                 "ticket_url": ticket_url,
                 "image_url": image_url,
                 "fox_category": fox_category,
-            })
+            }
+
+            description = fetch_description(detail_url, title)
+            if description:
+                event["description"] = description
+
+            events.append(event)
 
         if len(cards) < per_page:
             break
@@ -272,6 +304,8 @@ def scrape_fox_theatre():
                 "image_url": event["image_url"],
                 "category": event["fox_category"],
             })
+            if event.get("description"):
+                events[-1]["description"] = event["description"]
 
         return events
     except Exception as e:

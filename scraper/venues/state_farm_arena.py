@@ -11,6 +11,7 @@ from scraper.utils.categories import (
     should_override_category,
 )
 from scraper.utils.dates import normalize_time
+from scraper.utils.descriptions import extract_first_description
 
 STATE_FARM_ARENA_BASE = "https://www.statefarmarena.com"
 STATE_FARM_ARENA_HEADERS = {
@@ -30,6 +31,7 @@ STATE_FARM_ARENA_CATEGORIES = {
 def scrape_state_farm_arena():
     """Scrape events from State Farm Arena using HTML parsing."""
     all_events = {}
+    description_cache = {}
 
     def parse_date(date_div):
         if not date_div:
@@ -89,6 +91,26 @@ def scrape_state_farm_arena():
                 return normalize_time(f"{match.group(1)}{match.group(2)}")
         return None
 
+    def fetch_description(url, heading):
+        if not url:
+            return None
+
+        if url not in description_cache:
+            try:
+                resp = requests.get(url, headers=STATE_FARM_ARENA_HEADERS, timeout=STATE_FARM_ARENA_TIMEOUT)
+                resp.raise_for_status()
+                description_cache[url] = resp.text
+                time.sleep(0.2)
+            except Exception as e:
+                print(f"    State Farm Arena description: ERROR - {e}")
+                description_cache[url] = ""
+
+        if not description_cache[url]:
+            return None
+
+        detail_soup = BeautifulSoup(description_cache[url], "html.parser")
+        return extract_first_description(detail_soup, [".event_description"], heading=heading)
+
     def scrape_page(url, category):
         resp = requests.get(url, headers=STATE_FARM_ARENA_HEADERS, timeout=STATE_FARM_ARENA_TIMEOUT)
         resp.raise_for_status()
@@ -138,7 +160,7 @@ def scrape_state_farm_arena():
                 if detected:
                     final_category = detected
 
-            events.append({
+            event = {
                 "name": title,
                 "date": start_date,
                 "end_date": end_date if end_date != start_date else None,
@@ -147,7 +169,13 @@ def scrape_state_farm_arena():
                 "ticket_url": ticket_url,
                 "image_url": image_url,
                 "category": final_category,
-            })
+            }
+
+            description = fetch_description(detail_url, title)
+            if description:
+                event["description"] = description
+
+            events.append(event)
 
         load_more = soup.select_one("a.loadMore, a[href*='/events/index/']")
         next_url = None
@@ -189,18 +217,21 @@ def scrape_state_farm_arena():
             print(f"    State Farm Arena {path}: ERROR - {e}")
 
     events = []
-    for event in all_events.values():
-        events.append({
+    for source_event in all_events.values():
+        event = {
             "venue": "State Farm Arena",
-            "date": event["date"],
+            "date": source_event["date"],
             "doors_time": None,
-            "show_time": event["show_time"],
-            "artists": [{"name": event["name"]}],
-            "ticket_url": event["ticket_url"],
-            "info_url": event["detail_url"],
-            "image_url": event["image_url"],
-            "category": event["category"],
-        })
+            "show_time": source_event["show_time"],
+            "artists": [{"name": source_event["name"]}],
+            "ticket_url": source_event["ticket_url"],
+            "info_url": source_event["detail_url"],
+            "image_url": source_event["image_url"],
+            "category": source_event["category"],
+        }
+        if source_event.get("description"):
+            event["description"] = source_event["description"]
+        events.append(event)
 
     print(f"    State Farm Arena total: {len(events)} events")
     return events

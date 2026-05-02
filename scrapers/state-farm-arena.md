@@ -50,6 +50,8 @@ State Farm Arena uses server-rendered HTML with category pages. Each category pa
 </div>
 ```
 
+Optional descriptions are fetched from detail pages via `.event_description`, then cleaned. Generic ticketing, parking, ADA, and venue-policy text is rejected so it does not appear as an event blurb.
+
 ## Category Mapping Decisions
 
 ### Concerts → `concerts`
@@ -95,3 +97,4 @@ Events may appear in multiple categories. Deduplication strategy:
 - Ticket URLs link directly to Ticketmaster
 - Site also has JSON-LD structured data, but it only contains a subset of events
 - No doors_time available - only show_time
+- Detail-page description failures are non-fatal; affected events are still published without `description`.

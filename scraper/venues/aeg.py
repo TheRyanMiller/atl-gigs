@@ -4,6 +4,7 @@ import requests
 
 from scraper import config
 from scraper.utils.dates import normalize_time
+from scraper.utils.descriptions import clean_description
 
 AEG_HEADERS = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64)",
@@ -80,7 +81,7 @@ def transform_aeg_event(event, venue_name):
     if door_date:
         doors_time = door_date.strftime("%H:%M")
 
-    return {
+    transformed = {
         "venue": venue_name,
         "date": event_date.strftime("%Y-%m-%d"),
         "doors_time": normalize_time(doors_time),
@@ -91,6 +92,12 @@ def transform_aeg_event(event, venue_name):
         "price": _format_aeg_price(event),
         "category": config.DEFAULT_CATEGORY,
     }
+
+    description = clean_description(event.get("bio") or event.get("description"), heading=artists[0]["name"])
+    if description:
+        transformed["description"] = description
+
+    return transformed
 
 
 def scrape_aeg_venue(url, venue_name):

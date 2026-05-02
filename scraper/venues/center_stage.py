@@ -2,9 +2,11 @@ import time
 from datetime import datetime
 
 import requests
+from bs4 import BeautifulSoup
 
 from scraper.utils.dates import normalize_time
 from scraper.utils.categories import detect_category_from_text
+from scraper.utils.descriptions import extract_first_description
 
 CENTER_STAGE_API = "https://www.centerstage-atlanta.com/wp-json/centerstage/v2/events/"
 CENTER_STAGE_HEADERS = {
@@ -68,8 +70,33 @@ def scrape_center_stage():
     Note: Ticketmaster Discovery API is preferable when available.
     """
     events = []
+    description_cache = {}
     page = 1
     max_pages = 20  # Safety limit
+
+    def fetch_description(url, heading):
+        if not url:
+            return None
+
+        if url not in description_cache:
+            try:
+                resp = requests.get(url, headers=CENTER_STAGE_HEADERS, timeout=CENTER_STAGE_TIMEOUT)
+                resp.raise_for_status()
+                description_cache[url] = resp.text
+                time.sleep(0.2)
+            except Exception as e:
+                print(f"    Center Stage description: ERROR - {e}")
+                description_cache[url] = ""
+
+        if not description_cache[url]:
+            return None
+
+        soup = BeautifulSoup(description_cache[url], "html.parser")
+        return extract_first_description(
+            soup,
+            [".event-artist .description", ".description-section .description"],
+            heading=heading,
+        )
 
     while page <= max_pages:
         url = f"{CENTER_STAGE_API}?page={page}"
@@ -92,6 +119,12 @@ def scrape_center_stage():
         for event in data:
             transformed = transform_center_stage_event(event)
             if transformed:
+                description = fetch_description(
+                    transformed.get("info_url"),
+                    transformed["artists"][0]["name"],
+                )
+                if description:
+                    transformed["description"] = description
                 events.append(transformed)
 
         # If we got fewer than 20 events, we've hit the last page

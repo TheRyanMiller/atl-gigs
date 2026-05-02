@@ -8,6 +8,7 @@ def test_merge_events_preserves_existing_first_seen():
             "first_seen": "2025-01-01T00:00:00Z",
             "slug": "event-1",
             "is_new": False,
+            "description": "Existing artist biography.",
         }
     ]
     new = [
@@ -18,3 +19,4 @@ def test_merge_events_preserves_existing_first_seen():
 
     assert merged[0]["first_seen"] == "2025-01-01T00:00:00Z"
     assert merged[0]["is_new"] is False
+    assert merged[0]["description"] == "Existing artist biography."

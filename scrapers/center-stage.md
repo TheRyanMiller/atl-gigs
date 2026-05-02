@@ -39,6 +39,8 @@ All ticket sales go through Ticketmaster, which has a public Discovery API. This
 }
 ```
 
+Artist/event descriptions are not reliably present in the list API, so the scraper fetches each event `permalink` and parses `.event-artist .description` when available.
+
 ## Venue Filtering
 
 The `venue_room.value` field maps to our venues:
@@ -70,6 +72,8 @@ API returns 20 events per page. Use `?page=N` parameter to fetch all pages. Stop
 3. **Time format**: Times are "7:00 pm" format, converted via `normalize_time()`.
 
 4. **Malformed events**: Individual events missing room, date, title, or ticket URL are skipped without aborting the page.
+
+5. **Optional descriptions**: Detail-page failures or missing description blocks do not drop the event; `description` is omitted.
 
 ## Key Learnings
 

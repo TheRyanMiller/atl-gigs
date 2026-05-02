@@ -6,6 +6,7 @@ from scraper import config
 from scraper import spotify_enrichment
 from scraper.utils.categories import map_tm_classification
 from scraper.utils.dates import normalize_time
+from scraper.utils.descriptions import clean_description
 
 TM_VENUES = {
     "Center Stage": "KovZpa2gA5",
@@ -210,6 +211,10 @@ def scrape_tm_venue(venue_id, venue_name, stage=None):
             "price": price,
             "category": category,
         }
+
+        description = clean_description(tm_event.get("info"), heading=tm_event.get("name"))
+        if description:
+            event["description"] = description
 
         if stage:
             event["stage"] = stage

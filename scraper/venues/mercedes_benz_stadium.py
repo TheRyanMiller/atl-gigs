@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 from scraper.utils.categories import detect_category_from_text, detect_category_from_ticket_url
 from scraper.utils.dates import normalize_time
+from scraper.utils.descriptions import extract_first_description
 
 MERCEDES_BENZ_STADIUM_BASE = "https://www.mercedesbenzstadium.com"
 MERCEDES_BENZ_STADIUM_HEADERS = {
@@ -35,6 +36,30 @@ def scrape_mercedes_benz_stadium():
 
     events = []
     seen_urls = set()
+    description_cache = {}
+
+    def fetch_description(url, heading):
+        if not url:
+            return None
+
+        if url not in description_cache:
+            try:
+                detail_resp = requests.get(url, headers=MERCEDES_BENZ_STADIUM_HEADERS, timeout=MERCEDES_BENZ_STADIUM_TIMEOUT)
+                detail_resp.raise_for_status()
+                description_cache[url] = detail_resp.text
+            except Exception as e:
+                print(f"    Mercedes-Benz Stadium description: ERROR - {e}")
+                description_cache[url] = ""
+
+        if not description_cache[url]:
+            return None
+
+        detail_soup = BeautifulSoup(description_cache[url], "html.parser")
+        return extract_first_description(
+            detail_soup,
+            [".event-details-desc.w-richtext", ".event-details-desc"],
+            heading=heading,
+        )
 
     for card in soup.select("div.events--item.w-dyn-item"):
         title_el = card.select_one("h3")
@@ -103,7 +128,7 @@ def scrape_mercedes_benz_stadium():
             if detected:
                 final_category = detected
 
-        events.append({
+        event = {
             "venue": "Mercedes-Benz Stadium",
             "date": event_date,
             "doors_time": None,
@@ -113,7 +138,13 @@ def scrape_mercedes_benz_stadium():
             "info_url": detail_url,
             "image_url": image_url,
             "category": final_category,
-        })
+        }
+
+        description = fetch_description(detail_url, title)
+        if description:
+            event["description"] = description
+
+        events.append(event)
 
     team_configs = [
         ("falcons", "Atlanta Falcons vs. ", "falcons"),

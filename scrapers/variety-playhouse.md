@@ -52,6 +52,7 @@ The API returns the standard AEG event format:
       },
       "ticketPriceLow": "$25.00",
       "ticketPriceHigh": "$30.00",
+      "bio": "Optional artist/event description",
       "media": { ... }
     }
   ]
@@ -81,6 +82,7 @@ All events default to `concerts` (music venue). This is appropriate since Variet
 - All events have images available
 - Doors time and show time both available
 - Price range available for all events
+- Optional `description`/`bio` fields are cleaned and published as `description` when they contain artist/event copy
 - Venue capacity: ~1,000 (intimate music venue)
 
 ## Discovery Process

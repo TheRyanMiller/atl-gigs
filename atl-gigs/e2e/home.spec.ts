@@ -23,6 +23,7 @@ test.beforeEach(async ({ page }) => {
       ticket_url: "https://example.com/tickets",
       info_url: "https://example.com/info",
       image_url: null,
+      description: "A detailed artist biography for this show.",
       category: "concerts",
       first_seen: now,
       last_seen: now,
@@ -54,5 +55,6 @@ test("loads events and opens modal", async ({ page }) => {
 
   await page.getByText("Scott Ivey").click();
   await expect(page).toHaveURL(/\\?event=/);
+  await expect(page.getByText("A detailed artist biography for this show.")).toBeVisible();
   await expect(page.getByRole("link", { name: "Tickets" })).toBeVisible();
 });

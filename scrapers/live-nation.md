@@ -48,6 +48,9 @@ Some artists may not have genre data in the API. These events default to `concer
 ### Shared Infrastructure
 Both Tabernacle and Coca-Cola Roxy use the same scraper logic. Changes to category mapping affect both venues.
 
+### Descriptions
+The GraphQL API exposes `important_info`, but that field is mostly venue logistics, age rules, seating notes, ADA text, or phone policies. It is intentionally not mapped to the public `description` field.
+
 ## Notes
 
 - API requires specific headers including `x-api-key`

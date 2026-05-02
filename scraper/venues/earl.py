@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 from scraper import config
 from scraper.utils.dates import normalize_time
+from scraper.utils.descriptions import extract_first_description
 
 EARL_BASE = "https://badearl.com/"
 EARL_PAGE_Q = "?sf_paged={}"
@@ -34,6 +35,7 @@ def scrape_earl():
     max_retries = 3
     session = requests.Session()
     session.headers.update(EARL_HEADERS)
+    description_cache = {}
 
     def fetch_with_retry(url):
         last_error = None
@@ -59,6 +61,24 @@ def scrape_earl():
                         f"The Earl request failed after {max_retries} attempts: {url}"
                     ) from last_error
         return None
+
+    def fetch_description(url, heading):
+        if not url:
+            return None
+
+        if url not in description_cache:
+            try:
+                description_cache[url] = fetch_with_retry(url) or ""
+                time.sleep(random.uniform(0.2, 0.5))
+            except Exception as e:
+                print(f"    The Earl description: ERROR - {e}")
+                description_cache[url] = ""
+
+        if not description_cache[url]:
+            return None
+
+        soup = BeautifulSoup(description_cache[url], "html.parser")
+        return extract_first_description(soup, [".band-details .band-info"], heading=heading)
 
     def pages():
         n = 1
@@ -96,8 +116,9 @@ def scrape_earl():
 
             tix = card.find("a", string="TIX", href=True)
             info = card.find("a", string="More Info", href=True)
+            info_url = info["href"] if info else None
 
-            yield {
+            event = {
                 "venue": "The Earl",
                 "date": str(date),
                 "doors_time": normalize_time(doors),
@@ -106,9 +127,15 @@ def scrape_earl():
                 "adv_price": adv,
                 "dos_price": dos,
                 "ticket_url": tix["href"] if tix else None,
-                "info_url": info["href"] if info else None,
+                "info_url": info_url,
                 "image_url": image_url,
                 "category": config.DEFAULT_CATEGORY,
             }
+
+            description = fetch_description(info_url, artists[0] if artists else None)
+            if description:
+                event["description"] = description
+
+            yield event
 
     return list(itertools.chain.from_iterable(parse_page(p) for p in pages()))

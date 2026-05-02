@@ -79,3 +79,44 @@ def test_scrape_center_stage_skips_bad_events_without_aborting(monkeypatch):
     assert len(events) == 1
     assert events[0]["artists"] == [{"name": "Good Event"}]
     assert events[0]["stage"] == "Vinyl"
+
+
+def test_scrape_center_stage_adds_description_from_detail_page(monkeypatch):
+    monkeypatch.setattr("scraper.venues.center_stage.time.sleep", lambda *_: None)
+
+    detail_url = "https://centerstage.example.com/events/good-event"
+
+    with responses.RequestsMock() as rsps:
+        rsps.add(
+            rsps.GET,
+            f"{CENTER_STAGE_API}?page=1",
+            json=[
+                {
+                    "external_venue": "",
+                    "venue_room": {"value": "vinyl"},
+                    "event_date": "20260503",
+                    "title": "Good Event",
+                    "event_url": "https://tickets.example.com/good",
+                    "permalink": detail_url,
+                },
+            ],
+            status=200,
+        )
+        rsps.add(
+            rsps.GET,
+            detail_url,
+            body="""
+            <div class="event-artist">
+              <div class="description">
+                <h3 class="artist-name">Good Event</h3>
+                <p>A detailed artist biography for the event.</p>
+              </div>
+            </div>
+            """,
+            status=200,
+        )
+
+        events = scrape_center_stage()
+
+    assert len(events) == 1
+    assert events[0]["description"] == "A detailed artist biography for the event."

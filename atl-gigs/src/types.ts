@@ -27,6 +27,7 @@ export interface Event {
   ticket_url: string;
   info_url?: string;
   image_url?: string;
+  description?: string | null;
   category: EventCategory;
   stage?: string;  // For venues with multiple stages (e.g., The Masquerade, Center Stage)
   first_seen?: string;  // ISO timestamp when event was first discovered

@@ -16,6 +16,7 @@ def test_transform_aeg_event_parses_valid_event():
         "ticketing": {"url": "https://tickets.example.com/headliner"},
         "ticketPriceLow": "$20.00",
         "ticketPriceHigh": "$25.00",
+        "bio": "<p>A vivid biography for the headlining act.</p>",
         "media": {
             "small": {"width": 300, "file_name": "https://images.example.com/small.jpg"},
             "preferred": {"width": 678, "file_name": "https://images.example.com/preferred.jpg"},
@@ -32,6 +33,7 @@ def test_transform_aeg_event_parses_valid_event():
         "image_url": "https://images.example.com/preferred.jpg",
         "price": "$20.00 - $25.00",
         "category": "concerts",
+        "description": "A vivid biography for the headlining act.",
     }
 
 

@@ -60,6 +60,7 @@ Events are displayed in a filtered grid with the following structure:
 | Ticket URL | `a.btn--1` |
 | Detail URL | `a.btn--3[href*='/events/']` |
 | Image | `img.event_image` |
+| Description | Detail page `.event-details-desc.w-richtext` |
 
 ## Category Mapping
 
@@ -111,3 +112,4 @@ Team widgets without ticket URLs are skipped because `ticket_url` is a required 
 - Ticket URLs typically link to Ticketmaster
 - Some events (Super Bowl, FIFA World Cup) may not have ticket URLs yet
 - Deduplication by detail URL handles any edge cases
+- Detail-page description failures are non-fatal; affected events are still published without `description`.
