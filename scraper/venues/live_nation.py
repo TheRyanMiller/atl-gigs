@@ -40,6 +40,8 @@ query EVENTS_PAGE($offset: Int!, $venue_id: String!) {
   }
 }
 """
+LIVE_NATION_PAGE_SIZE = 36
+LIVE_NATION_TIMEOUT = (8, 20)
 
 
 def get_category_from_genres(artists):
@@ -59,6 +61,9 @@ def get_category_from_genres(artists):
 
 def scrape_live_nation_venue(venue_id, venue_name):
     """Scrape events from a Live Nation venue's GraphQL API."""
+    session = requests.Session()
+    session.headers.update(LIVE_NATION_HEADERS)
+
     def pages():
         offset = 0
         while True:
@@ -66,31 +71,53 @@ def scrape_live_nation_venue(venue_id, venue_name):
                 "query": LIVE_NATION_QUERY,
                 "variables": {"offset": offset, "venue_id": venue_id},
             }
-            resp = requests.post(LIVE_NATION_GRAPHQL_URL, json=payload, headers=LIVE_NATION_HEADERS, timeout=20)
+            resp = session.post(LIVE_NATION_GRAPHQL_URL, json=payload, timeout=LIVE_NATION_TIMEOUT)
             resp.raise_for_status()
             data = resp.json()
+            if data.get("errors"):
+                raise RuntimeError(f"Live Nation GraphQL errors for {venue_name}: {data['errors']}")
 
             events = data.get("data", {}).get("getEvents", [])
             if not events:
                 break
 
             yield events
-            offset += 36
+            if len(events) < LIVE_NATION_PAGE_SIZE:
+                break
+
+            offset += LIVE_NATION_PAGE_SIZE
             time.sleep(0.4)
 
     def transform_event(event):
+        event_date = event.get("event_date")
+        ticket_url = event.get("url")
+        artists = [
+            {"name": a.get("name"), "genre": a.get("genre")}
+            for a in event.get("artists", [])
+            if a.get("name")
+        ]
+        if not artists and event.get("name"):
+            artists = [{"name": event["name"]}]
+
         return {
             "venue": venue_name,
-            "date": event["event_date"],
-            "doors_time": normalize_time(event["event_time"]),
-            "show_time": normalize_time(event["event_end_time"]),
-            "artists": [{"name": a["name"], "genre": a.get("genre")} for a in event["artists"]],
-            "ticket_url": event["url"],
-            "image_url": event["images"][0]["image_url"] if event["images"] else None,
+            "date": event_date,
+            "doors_time": None,
+            "show_time": normalize_time(event.get("event_time")),
+            "artists": artists,
+            "ticket_url": ticket_url,
+            "image_url": next(
+                (img.get("image_url") for img in event.get("images", []) if img.get("image_url")),
+                None,
+            ),
             "category": get_category_from_genres(event.get("artists", [])),
         }
 
-    return [transform_event(e) for e in itertools.chain.from_iterable(pages())]
+    return [
+        event
+        for event in (transform_event(e) for e in itertools.chain.from_iterable(pages()))
+        if event["date"] and event["ticket_url"] and event["artists"]
+    ]
 
 
 def scrape_tabernacle():
