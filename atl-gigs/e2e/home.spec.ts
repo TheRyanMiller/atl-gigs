@@ -3,6 +3,9 @@ import { test, expect } from "@playwright/test";
 const getTodayET = () =>
   new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
 
+const longDescription = "A detailed artist biography for this show. ".repeat(30);
+const testImage =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%230f766e'/%3E%3C/svg%3E";
 
 test.beforeEach(async ({ page }) => {
   const now = new Date().toISOString();
@@ -22,8 +25,8 @@ test.beforeEach(async ({ page }) => {
       price: "$20",
       ticket_url: "https://example.com/tickets",
       info_url: "https://example.com/info",
-      image_url: null,
-      description: "A detailed artist biography for this show.",
+      image_url: testImage,
+      description: longDescription,
       category: "concerts",
       first_seen: now,
       last_seen: now,
@@ -57,4 +60,20 @@ test("loads events and opens modal", async ({ page }) => {
   await expect(page).toHaveURL(/\\?event=/);
   await expect(page.getByText("A detailed artist biography for this show.")).toBeVisible();
   await expect(page.getByRole("link", { name: "Tickets" })).toBeVisible();
+});
+
+test("expanding long descriptions does not resize modal image", async ({ page }) => {
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.goto("/");
+
+  await page.getByText("Scott Ivey").click();
+  const modalImage = page.getByRole("img", { name: "Scott Ivey" }).last();
+  await expect(page.getByText("Show more")).toBeVisible();
+
+  const before = await modalImage.boundingBox();
+  await page.getByText("Show more").click();
+  const after = await modalImage.boundingBox();
+
+  expect(before?.height).toBeGreaterThan(0);
+  expect(after?.height).toBe(before?.height);
 });

@@ -97,7 +97,7 @@ export default function EventModal({ event, onClose }: EventModalProps) {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border-2 border-teal-500/40 text-left shadow-xl sm:my-8 sm:w-full sm:max-w-2xl">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-2xl bg-neutral-900 border-2 border-teal-500/40 text-left shadow-xl sm:my-8 sm:w-full sm:max-w-3xl">
                 {/* Favorite button - top right */}
                 <button
                   type="button"
@@ -111,9 +111,9 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                   />
                 </button>
 
-                <div className="sm:flex">
+                <div className="sm:flex sm:h-[36rem] sm:max-h-[calc(100vh-2rem)]">
                   {/* Image */}
-                  <div className="relative w-full sm:w-72 h-48 sm:h-auto shrink-0">
+                  <div className="relative w-full h-48 shrink-0 bg-neutral-950 sm:h-full sm:w-72">
                     {image_url ? (
                       <img
                         src={image_url}
@@ -137,101 +137,103 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex-1">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-2xl font-bold text-white mb-1 pr-12"
-                    >
-                      {artists[0]?.name}
-                      {artists[0]?.spotify_url && (
-                        <a
-                          href={artists[0].spotify_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline text-teal-400 hover:text-teal-300 ml-2"
-                          aria-label="Open Spotify artist"
-                        >
-                          <FontAwesomeIcon icon={faSpotify} className="inline-block w-[1.1rem] h-[1.1rem] -translate-y-0.5" />
-                        </a>
+                  <div className="flex-1 p-6 sm:flex sm:min-h-0 sm:flex-col sm:overflow-hidden">
+                    <div className="sm:min-h-0 sm:flex-1 sm:overflow-y-auto sm:pr-2">
+                      <Dialog.Title
+                        as="h3"
+                        className="text-2xl font-bold text-white mb-1 pr-12"
+                      >
+                        {artists[0]?.name}
+                        {artists[0]?.spotify_url && (
+                          <a
+                            href={artists[0].spotify_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline text-teal-400 hover:text-teal-300 ml-2"
+                            aria-label="Open Spotify artist"
+                          >
+                            <FontAwesomeIcon icon={faSpotify} className="inline-block w-[1.1rem] h-[1.1rem] -translate-y-0.5" />
+                          </a>
+                        )}
+                      </Dialog.Title>
+
+                      {artists.length > 1 && (
+                        <p className="text-neutral-400 text-sm mb-4">
+                          <span className="text-neutral-500">with</span>{" "}
+                          {artists.slice(1).map((artist, index) => (
+                            <span key={`${artist.name}-${index}`} className="inline">
+                              {index > 0 && ", "}
+                              {artist.name}
+                              {artist.spotify_url && (
+                                <a
+                                  href={artist.spotify_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline text-teal-400 hover:text-teal-300 ml-1"
+                                  aria-label="Open Spotify artist"
+                                >
+                                  <FontAwesomeIcon icon={faSpotify} className="inline-block w-[0.66rem] h-[0.66rem] -translate-y-0.5" />
+                                </a>
+                              )}
+                            </span>
+                          ))}
+                        </p>
                       )}
-                    </Dialog.Title>
 
-                    {artists.length > 1 && (
-                      <p className="text-neutral-400 text-sm mb-4">
-                        <span className="text-neutral-500">with</span>{" "}
-                        {artists.slice(1).map((artist, index) => (
-                          <span key={`${artist.name}-${index}`} className="inline">
-                            {index > 0 && ", "}
-                            {artist.name}
-                            {artist.spotify_url && (
-                              <a
-                                href={artist.spotify_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline text-teal-400 hover:text-teal-300 ml-1"
-                                aria-label="Open Spotify artist"
-                              >
-                                <FontAwesomeIcon icon={faSpotify} className="inline-block w-[0.66rem] h-[0.66rem] -translate-y-0.5" />
-                              </a>
-                            )}
-                          </span>
-                        ))}
-                      </p>
-                    )}
-
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-center gap-2 text-neutral-300 text-sm">
-                        <MapPin size={14} className="text-teal-500" />
-                        <span>{venue}{stage && ` (${stage})`}</span>
-                      </div>
-
-                      <div className="flex items-center gap-2 text-neutral-300 text-sm">
-                        <CalendarDays size={14} className="text-teal-500" />
-                        <span>{formattedDate}</span>
-                      </div>
-
-                      {doors_time && (
+                      <div className="space-y-3 mb-6">
                         <div className="flex items-center gap-2 text-neutral-300 text-sm">
-                          <Clock size={14} className="text-teal-500" />
-                          <span>
-                            Doors {formatTime(doors_time)}
-                            {show_time && ` · Show ${formatTime(show_time)}`}
-                          </span>
+                          <MapPin size={14} className="text-teal-500" />
+                          <span>{venue}{stage && ` (${stage})`}</span>
                         </div>
-                      )}
 
-                      {price && (
                         <div className="flex items-center gap-2 text-neutral-300 text-sm">
-                          <Ticket size={14} className="text-teal-500" />
-                          <span>{price}</span>
+                          <CalendarDays size={14} className="text-teal-500" />
+                          <span>{formattedDate}</span>
+                        </div>
+
+                        {doors_time && (
+                          <div className="flex items-center gap-2 text-neutral-300 text-sm">
+                            <Clock size={14} className="text-teal-500" />
+                            <span>
+                              Doors {formatTime(doors_time)}
+                              {show_time && ` · Show ${formatTime(show_time)}`}
+                            </span>
+                          </div>
+                        )}
+
+                        {price && (
+                          <div className="flex items-center gap-2 text-neutral-300 text-sm">
+                            <Ticket size={14} className="text-teal-500" />
+                            <span>{price}</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {descriptionText && (
+                        <div className="mb-6 border-t border-neutral-800 pt-5 sm:mb-4">
+                          <div className="flex items-center gap-2 text-sm font-semibold text-neutral-100 mb-2">
+                            <Info size={14} className="text-teal-500" />
+                            <span>About</span>
+                          </div>
+                          <div className="space-y-3 text-sm leading-6 text-neutral-300">
+                            {descriptionParagraphs.map((paragraph, index) => (
+                              <p key={index}>{paragraph}</p>
+                            ))}
+                          </div>
+                          {isLongDescription && (
+                            <button
+                              type="button"
+                              onClick={() => setDescriptionExpanded((expanded) => !expanded)}
+                              className="mt-3 text-sm font-medium text-teal-400 hover:text-teal-300 transition-colors"
+                            >
+                              {descriptionExpanded ? "Show less" : "Show more"}
+                            </button>
+                          )}
                         </div>
                       )}
                     </div>
 
-                    {descriptionText && (
-                      <div className="mb-6 border-t border-neutral-800 pt-5">
-                        <div className="flex items-center gap-2 text-sm font-semibold text-neutral-100 mb-2">
-                          <Info size={14} className="text-teal-500" />
-                          <span>About</span>
-                        </div>
-                        <div className="space-y-3 text-sm leading-6 text-neutral-300">
-                          {descriptionParagraphs.map((paragraph, index) => (
-                            <p key={index}>{paragraph}</p>
-                          ))}
-                        </div>
-                        {isLongDescription && (
-                          <button
-                            type="button"
-                            onClick={() => setDescriptionExpanded((expanded) => !expanded)}
-                            className="mt-3 text-sm font-medium text-teal-400 hover:text-teal-300 transition-colors"
-                          >
-                            {descriptionExpanded ? "Show less" : "Show more"}
-                          </button>
-                        )}
-                      </div>
-                    )}
-
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-3 sm:mt-4 sm:shrink-0 sm:border-t sm:border-neutral-800 sm:pt-4">
                       <button
                         onClick={handleShare}
                         className="flex items-center justify-center w-12 h-12 rounded-xl transition-colors bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white border border-neutral-700"
