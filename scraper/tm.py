@@ -1,12 +1,11 @@
 import json
 import time
 import requests
-from pathlib import Path
 
 from scraper import config
+from scraper import spotify_enrichment
 from scraper.utils.categories import map_tm_classification
 from scraper.utils.dates import normalize_time
-from scraper import spotify_enrichment
 
 TM_VENUES = {
     "Center Stage": "KovZpa2gA5",
@@ -37,6 +36,20 @@ TM_CATEGORY_MAP = {
 }
 
 _artist_classification_cache = {}
+TM_ARTIST_TIMEOUT = (5, 10)
+TM_EVENTS_TIMEOUT = (8, 20)
+
+
+def _extract_tm_spotify_url(external_links):
+    spotify_links = external_links.get("spotify") if isinstance(external_links, dict) else None
+    spotify_url = None
+    if isinstance(spotify_links, list) and spotify_links:
+        spotify_url = spotify_links[0].get("url")
+    elif isinstance(spotify_links, dict):
+        spotify_url = spotify_links.get("url")
+    elif isinstance(spotify_links, str):
+        spotify_url = spotify_links
+    return spotify_enrichment.normalize_spotify_url(spotify_url) if spotify_url else None
 
 
 def load_artist_cache():
@@ -86,7 +99,7 @@ def get_artist_classification(artist_name):
             "size": 1,
             "apikey": config.TM_API_KEY,
         }
-        resp = requests.get(f"{config.TM_BASE_URL}/attractions.json", params=params, timeout=10)
+        resp = requests.get(f"{config.TM_BASE_URL}/attractions.json", params=params, timeout=TM_ARTIST_TIMEOUT)
         resp.raise_for_status()
         data = resp.json()
 
@@ -97,15 +110,7 @@ def get_artist_classification(artist_name):
             category = map_tm_classification(classifications, TM_CATEGORY_MAP)
             _artist_classification_cache[cache_key] = category
 
-            external_links = attraction.get("externalLinks", {})
-            spotify_links = external_links.get("spotify") if isinstance(external_links, dict) else None
-            spotify_url = None
-            if isinstance(spotify_links, list) and spotify_links:
-                spotify_url = spotify_links[0].get("url")
-            elif isinstance(spotify_links, dict):
-                spotify_url = spotify_links.get("url")
-            elif isinstance(spotify_links, str):
-                spotify_url = spotify_links
+            spotify_url = _extract_tm_spotify_url(attraction.get("externalLinks", {}))
             if spotify_url:
                 spotify_enrichment.cache_spotify_result(artist_name, spotify_url, source="tm-attraction")
 
@@ -134,7 +139,7 @@ def scrape_tm_venue(venue_id, venue_name, stage=None):
     }
 
     try:
-        resp = requests.get(f"{config.TM_BASE_URL}/events.json", params=params, timeout=30)
+        resp = requests.get(f"{config.TM_BASE_URL}/events.json", params=params, timeout=TM_EVENTS_TIMEOUT)
         resp.raise_for_status()
         data = resp.json()
     except Exception as e:
@@ -153,25 +158,20 @@ def scrape_tm_venue(venue_id, venue_name, stage=None):
         attractions = tm_event.get("_embedded", {}).get("attractions", [])
         artists = []
         for attr in attractions:
-            artist = {"name": attr.get("name", "")}
+            artist_name = attr.get("name")
+            if not artist_name:
+                continue
+
+            artist = {"name": artist_name}
             if attr.get("classifications"):
                 genre = attr["classifications"][0].get("genre", {}).get("name")
                 if genre:
                     artist["genre"] = genre
 
-            external_links = attr.get("externalLinks", {})
-            spotify_links = external_links.get("spotify") if isinstance(external_links, dict) else None
-            spotify_url = None
-            if isinstance(spotify_links, list) and spotify_links:
-                spotify_url = spotify_links[0].get("url")
-            elif isinstance(spotify_links, dict):
-                spotify_url = spotify_links.get("url")
-            elif isinstance(spotify_links, str):
-                spotify_url = spotify_links
-            spotify_url = spotify_enrichment.normalize_spotify_url(spotify_url) if spotify_url else None
+            spotify_url = _extract_tm_spotify_url(attr.get("externalLinks", {}))
             if spotify_url:
                 artist["spotify_url"] = spotify_url
-                spotify_enrichment.cache_spotify_result(artist.get("name", ""), spotify_url, source="tm-event")
+                spotify_enrichment.cache_spotify_result(artist_name, spotify_url, source="tm-event")
 
             artists.append(artist)
 
@@ -183,7 +183,7 @@ def scrape_tm_venue(venue_id, venue_name, stage=None):
         if price_ranges:
             pr = price_ranges[0]
             min_p, max_p = pr.get("min"), pr.get("max")
-            if min_p and max_p:
+            if min_p is not None and max_p is not None:
                 if min_p == max_p:
                     price = f"${min_p:.0f}"
                 else:
@@ -214,7 +214,8 @@ def scrape_tm_venue(venue_id, venue_name, stage=None):
         if stage:
             event["stage"] = stage
 
-        events.append(event)
+        if event["ticket_url"] and event["artists"]:
+            events.append(event)
 
     return events
 
