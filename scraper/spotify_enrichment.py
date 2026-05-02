@@ -27,7 +27,7 @@ _artist_spotify_cache = {"by_name": {}}
 _spotify_cache_loaded = False
 _spotify_token = None
 _spotify_token_expires_at = 0
-SPOTIFY_SEARCH_SOURCE_VERSION = "v2"
+SPOTIFY_SEARCH_SOURCE_VERSION = "v3"
 
 
 def load_spotify_cache():
@@ -67,12 +67,14 @@ def normalize_artist_name(name):
         return ""
     name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
     normalized = name.lower().strip()
+    normalized = re.sub(r"^(?:rescheduled|postponed|cancelled|canceled)\s*:\s*", "", normalized)
     normalized = re.sub(r"\([^)]*\)", " ", normalized)
     normalized = re.sub(r"^(?:with\s+support\s+from|support\s+from|special guests?:?)\s+", "", normalized)
     normalized = re.sub(r"(.+?)\s+\b(feat|ft|featuring|with)\b.*", r"\1", normalized)
     normalized = normalized.replace("&", " ").replace("+", " ")
     normalized = re.sub(r"[^a-z0-9\s]", " ", normalized)
     normalized = re.sub(r"\s+", " ", normalized).strip()
+    normalized = re.sub(r"\s+(?:plus\s+)?special guests?$", "", normalized).strip()
     return normalized
 
 
@@ -226,6 +228,11 @@ def _pick_spotify_candidate(artist_name, candidates, genre_hint=None, allow_loos
                 loose.append((candidate, "prefix"))
             elif re.search(rf"\b{re.escape(candidate_name)}\b", target):
                 loose.append((candidate, "contained"))
+            elif (
+                re.search(rf"\b{re.escape(target)}\b", candidate_name)
+                and (len(target.split()) > 1 or candidate_name.endswith(f" {target}"))
+            ):
+                loose.append((candidate, "reverse-contained"))
 
         if not loose:
             return None, "no-loose"
@@ -281,26 +288,33 @@ def spotify_search_names(artist_name):
         return []
 
     variants = []
+    variant_index_by_norm = {}
 
     def add(value):
         value = " ".join((value or "").split()).strip(" -:|/")
         normalized = normalize_artist_name(value)
-        existing_names = {normalize_artist_name(existing) for existing in variants}
         if (
             value
             and normalized
             and normalized not in {"a", "an", "the", "presents", "present"}
             and not normalized.endswith(" presents")
-            and normalized not in existing_names
         ):
+            if normalized in variant_index_by_norm:
+                index = variant_index_by_norm[normalized]
+                if len(value) < len(variants[index]):
+                    variants[index] = value
+                return
+            variant_index_by_norm[normalized] = len(variants)
             variants.append(value)
 
     add(artist_name)
+    add(re.sub(r"\([^)]*\)", " ", artist_name))
 
     pending = [artist_name]
     leading_patterns = [
         r"^(?:.+?\b(?:presents?|presenta)\b:)\s*(.+)$",
         r"^(?:with\s+support\s+from|support\s+from|special guests?:?)\s+(.+)$",
+        r"^(?:rescheduled|postponed|cancelled|canceled)\s*:\s*(.+)$",
     ]
     for value in list(pending):
         for pattern in leading_patterns:
@@ -318,9 +332,13 @@ def spotify_search_names(artist_name):
         if len(dash_parts) > 1:
             add(dash_parts[0])
 
+        suffix_match = re.match(r"(.+?)\s+(?:plus\s+)?special guests?$", value, flags=re.IGNORECASE)
+        if suffix_match:
+            add(suffix_match.group(1))
+
         separator_parts = [
             part.strip()
-            for part in re.split(r"\s+(?:x|with)\s+|,\s*|\s*\|\s*", value, flags=re.IGNORECASE)
+            for part in re.split(r"\s+(?:x|with)\s+|,\s*|\s*&\s*|\s*\|\s*", value, flags=re.IGNORECASE)
             if part.strip()
         ]
         if 1 < len(separator_parts) <= 4:

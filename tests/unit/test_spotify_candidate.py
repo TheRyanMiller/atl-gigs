@@ -1,4 +1,5 @@
 from scraper.spotify_enrichment import (
+    SPOTIFY_SEARCH_SOURCE_VERSION,
     _pick_spotify_candidate,
     enrich_events_with_spotify,
     normalize_artist_name,
@@ -79,6 +80,16 @@ def test_pick_spotify_candidate_loose_contained():
     assert reason.startswith("loose-contained")
 
 
+def test_pick_spotify_candidate_loose_reverse_contained():
+    candidates = [
+        {"name": "Metalocalypse: Dethklok", "popularity": 55, "genres": ["metal"]},
+    ]
+    candidate, reason = _pick_spotify_candidate("Dethklok", candidates, allow_loose=True)
+
+    assert candidate["name"] == "Metalocalypse: Dethklok"
+    assert reason == "loose-reverse-contained"
+
+
 def test_spotify_search_names_adds_conservative_variants():
     assert spotify_search_names("REVOLVER PRESENTS: THORNHILL: The Mercia Tour") == [
         "REVOLVER PRESENTS: THORNHILL: The Mercia Tour",
@@ -88,6 +99,9 @@ def test_spotify_search_names_adds_conservative_variants():
     assert "Le Youth" in spotify_search_names("Le Youth - who are you really? - Atlanta")
     assert "MitiS" in spotify_search_names("MitiS, zensei")
     assert "zensei" in spotify_search_names("MitiS, zensei")
+    assert spotify_search_names("The Strike plus special guest")[0] == "The Strike"
+    assert spotify_search_names("The Hypos (Greg from Reigning Sound & Scott from Dr. Dog)") == ["The Hypos"]
+    assert "Romeo Santos" in spotify_search_names("RESCHEDULED: Romeo Santos & Prince Royce")
 
 
 def test_normalize_artist_name_handles_accents_and_leading_support_text():
@@ -95,13 +109,18 @@ def test_normalize_artist_name_handles_accents_and_leading_support_text():
         "andres cepeda nuestra vida en canciones"
     )
     assert normalize_artist_name("with support from Will Sheff (of Okkervil River)") == "will sheff"
+    assert normalize_artist_name("The Strike plus special guest") == "the strike"
+    assert normalize_artist_name("RESCHEDULED: Romeo Santos & Prince Royce") == "romeo santos prince royce"
 
 
 def test_should_retry_negative_cache_versions():
     assert should_retry_negative_cache({"spotify_url": None, "source": "search-none:no-results"}) is True
+    assert should_retry_negative_cache({"spotify_url": None, "source": "search-none-v2:no-results"}) is True
     assert should_retry_negative_cache({"spotify_url": None, "source": "tm-attraction"}) is True
     assert should_retry_negative_cache({"spotify_url": None, "source": ""}) is True
-    assert should_retry_negative_cache({"spotify_url": None, "source": "search-none-v2:no-results"}) is False
+    assert should_retry_negative_cache(
+        {"spotify_url": None, "source": f"search-none-{SPOTIFY_SEARCH_SOURCE_VERSION}:no-results"}
+    ) is False
     assert should_retry_negative_cache({"spotify_url": "https://open.spotify.com/artist/ABC"}) is False
 
 
@@ -140,7 +159,14 @@ def test_enrichment_skips_current_negative_cache(monkeypatch):
     monkeypatch.setattr(
         spotify_enrichment,
         "_artist_spotify_cache",
-        {"by_name": {"missing artist": {"spotify_url": None, "source": "search-none-v2:no-results"}}},
+        {
+            "by_name": {
+                "missing artist": {
+                    "spotify_url": None,
+                    "source": f"search-none-{SPOTIFY_SEARCH_SOURCE_VERSION}:no-results",
+                }
+            }
+        },
     )
     monkeypatch.setattr(
         spotify_enrichment,
