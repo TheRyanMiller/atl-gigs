@@ -131,9 +131,7 @@ def should_retry_negative_cache(entry):
     if not entry or entry.get("spotify_url"):
         return False
     source = entry.get("source", "")
-    return source.startswith("search-none:") and not source.startswith(
-        f"search-none-{SPOTIFY_SEARCH_SOURCE_VERSION}:"
-    )
+    return not source.startswith(f"search-none-{SPOTIFY_SEARCH_SOURCE_VERSION}:")
 
 
 def cache_spotify_result(artist_name, spotify_url, source, updated_at=None):

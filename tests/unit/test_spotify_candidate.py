@@ -99,6 +99,8 @@ def test_normalize_artist_name_handles_accents_and_leading_support_text():
 
 def test_should_retry_negative_cache_versions():
     assert should_retry_negative_cache({"spotify_url": None, "source": "search-none:no-results"}) is True
+    assert should_retry_negative_cache({"spotify_url": None, "source": "tm-attraction"}) is True
+    assert should_retry_negative_cache({"spotify_url": None, "source": ""}) is True
     assert should_retry_negative_cache({"spotify_url": None, "source": "search-none-v2:no-results"}) is False
     assert should_retry_negative_cache({"spotify_url": "https://open.spotify.com/artist/ABC"}) is False
 
