@@ -247,7 +247,7 @@ export default function Home({ events, loading, onEventClick }: HomeProps) {
   return (
     <div className="h-[calc(100dvh-56px)] sm:h-[calc(100dvh-80px)] flex flex-col">
       {/* Search & Filters */}
-      <div className="shrink-0 bg-neutral-950 border-b border-white/10 overflow-visible pb-2">
+      <div className="shrink-0 bg-neutral-950 border-b border-white/10 overflow-visible pb-1 sm:pb-2">
         <div className="max-w-5xl mx-auto w-full px-4 overflow-visible">
           <FilterBar
             venues={venues}

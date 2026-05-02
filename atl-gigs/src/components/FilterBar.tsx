@@ -462,7 +462,7 @@ export default function FilterBar({
       {/* Mobile Filter Pills */}
       <div className="md:hidden space-y-3 overflow-visible">
         {/* Filter Buttons Row */}
-        <div className="flex justify-center gap-1.5 pb-2 overflow-visible">
+        <div className="flex justify-center gap-1.5 pb-1 overflow-visible">
           <TogglePill
             label="New"
             active={showOnlyNew}
