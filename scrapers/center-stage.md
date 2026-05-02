@@ -59,6 +59,7 @@ The API doesn't provide category information. We use `detect_category_from_text(
 API returns 20 events per page. Use `?page=N` parameter to fetch all pages. Stop when:
 - Response is empty
 - Response has fewer than 20 events
+- A safety cap of 20 pages is reached
 
 ## Edge Cases
 
@@ -67,6 +68,8 @@ API returns 20 events per page. Use `?page=N` parameter to fetch all pages. Stop
 2. **External venues**: Some events have `external_venue` set (e.g., "Kenny Wayne Shepherd Band" at an external location). These are filtered out.
 
 3. **Time format**: Times are "7:00 pm" format, converted via `normalize_time()`.
+
+4. **Malformed events**: Individual events missing room, date, title, or ticket URL are skipped without aborting the page.
 
 ## Key Learnings
 
