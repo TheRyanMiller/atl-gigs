@@ -170,6 +170,8 @@ def scrape_mercedes_benz_stadium():
 
         ticket_link = team_item.select_one("a[href*='ticketmaster'], a[href*='tickets']")
         team_ticket_url = ticket_link.get("href") if ticket_link else None
+        if not team_ticket_url:
+            continue
 
         events.append({
             "venue": "Mercedes-Benz Stadium",

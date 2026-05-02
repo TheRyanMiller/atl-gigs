@@ -93,7 +93,16 @@ All events appear on a single page with client-side filtering. No pagination han
 
 ### Game Items
 
-The site also has separate game items for Atlanta Falcons and Atlanta United with class `events_game--item`. These use different HTML structure and link to team-specific pages. Currently not scraped as they have incomplete data in the listing view.
+The site also has separate game items for Atlanta Falcons and Atlanta United with class `events_game--item`.
+
+These use a different HTML structure from normal event cards. The scraper creates sports events from them only when it can extract:
+- Opponent
+- Date
+- Optional show time
+- Team logo
+- Ticket URL
+
+Team widgets without ticket URLs are skipped because `ticket_url` is a required event field.
 
 ## Notes
 
