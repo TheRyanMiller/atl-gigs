@@ -230,7 +230,7 @@ def _pick_spotify_candidate(artist_name, candidates, genre_hint=None, allow_loos
                 loose.append((candidate, "contained"))
             elif (
                 re.search(rf"\b{re.escape(target)}\b", candidate_name)
-                and (len(target.split()) > 1 or candidate_name.endswith(f" {target}"))
+                and (len(target.split()) > 1 or (len(target) >= 7 and candidate_name.endswith(f" {target}")))
             ):
                 loose.append((candidate, "reverse-contained"))
 

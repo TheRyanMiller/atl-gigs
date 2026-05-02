@@ -90,6 +90,16 @@ def test_pick_spotify_candidate_loose_reverse_contained():
     assert reason == "loose-reverse-contained"
 
 
+def test_pick_spotify_candidate_rejects_short_reverse_contained_name():
+    candidates = [
+        {"name": "Static Major", "popularity": 64, "genres": []},
+    ]
+    candidate, reason = _pick_spotify_candidate("major", candidates, allow_loose=True)
+
+    assert candidate is None
+    assert reason == "no-loose"
+
+
 def test_spotify_search_names_adds_conservative_variants():
     assert spotify_search_names("REVOLVER PRESENTS: THORNHILL: The Mercia Tour") == [
         "REVOLVER PRESENTS: THORNHILL: The Mercia Tour",
