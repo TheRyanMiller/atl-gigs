@@ -3,10 +3,12 @@ from scraper.spotify_enrichment import (
     enrich_events_with_spotify,
     normalize_artist_name,
     should_retry_negative_cache,
+    spotify_search_artist,
     spotify_search_names,
 )
 from scraper import config
 from scraper import spotify_enrichment
+import requests
 
 
 def test_pick_spotify_candidate_exact_match():
@@ -155,3 +157,14 @@ def test_enrichment_skips_current_negative_cache(monkeypatch):
 
     assert calls == []
     assert "spotify_url" not in events[0]["artists"][0]
+
+
+def test_spotify_search_artist_handles_request_timeout(monkeypatch):
+    monkeypatch.setattr(spotify_enrichment, "get_spotify_token", lambda: "token")
+    monkeypatch.setattr(
+        spotify_enrichment.requests,
+        "get",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(requests.exceptions.ReadTimeout()),
+    )
+
+    assert spotify_search_artist("Mac DeMarco") == (None, None, "error-request")

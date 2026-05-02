@@ -355,7 +355,12 @@ def spotify_search_artist(artist_name, genre_hint=None):
             }
 
             for attempt in range(2):
-                resp = requests.get(config.SPOTIFY_SEARCH_URL, headers=headers, params=params, timeout=10)
+                try:
+                    resp = requests.get(config.SPOTIFY_SEARCH_URL, headers=headers, params=params, timeout=10)
+                except requests.exceptions.RequestException:
+                    if attempt == 0:
+                        continue
+                    return None, None, "error-request"
                 if resp.status_code == 401 and attempt == 0:
                     _spotify_token = None
                     token = get_spotify_token()
