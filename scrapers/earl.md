@@ -13,7 +13,7 @@
 - Ticketmaster artist enrichment may refine artist metadata later in the pipeline, but the venue scraper itself does not assign non-concert categories.
 
 ## Edge Cases
-- `https://badearl.com/show-calendar/` redirects to the home page, so the scraper uses the canonical home URL directly.
+- `https://badearl.com/show-calendar/` redirects to the home page, so the scraper uses the canonical home URL directly and normalizes accidental calendar-path requests before fetching.
 - Door times can appear as `8:00 pm doors`; the parser preserves the meridiem before calling `normalize_time()`.
 - The scraper retries transient timeouts and connection failures, then raises a venue-specific error so the pipeline records The Earl as failed while preserving existing events during merge.
 - Pagination stops when a page contains `No results found.`.

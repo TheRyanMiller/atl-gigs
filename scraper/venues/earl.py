@@ -2,6 +2,7 @@ import datetime as dt
 import itertools
 import random
 import time
+from urllib.parse import urlparse, urlunparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -30,6 +31,14 @@ EARL_HEADERS = {
 }
 
 
+def _canonicalize_earl_url(url):
+    """Avoid The Earl's redirecting calendar path while preserving pagination."""
+    parsed = urlparse(url)
+    if parsed.netloc == "badearl.com" and parsed.path == "/show-calendar/":
+        return urlunparse(parsed._replace(path="/"))
+    return url
+
+
 def scrape_earl():
     """Scrape events from The Earl's website."""
     max_retries = 3
@@ -38,6 +47,7 @@ def scrape_earl():
     description_cache = {}
 
     def fetch_with_retry(url):
+        url = _canonicalize_earl_url(url)
         last_error = None
         for attempt in range(max_retries):
             try:
