@@ -23,6 +23,8 @@ def test_normalize_time():
     assert normalize_time("20:00:00") == "20:00"
     assert normalize_time("12:00am") == "00:00"
     assert normalize_time("12:00pm") == "12:00"
+    assert normalize_time("8:00 pm doors") == "20:00"
+    assert normalize_time("8:30pm show") == "20:30"
     assert normalize_time("bad") is None
 
 

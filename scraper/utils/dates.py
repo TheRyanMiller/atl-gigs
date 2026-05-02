@@ -1,20 +1,25 @@
+import re
+
 
 def normalize_time(time_str):
     """
     Normalize time strings to consistent HH:MM 24-hour format.
-    Handles: "8:00", "8:30pm", "20:00:00", "19:00", "8:00pm"
+    Handles: "8:00", "8:30pm", "20:00:00", "19:00", "8:00pm",
+    "8:00 pm doors"
     """
     if not time_str:
         return None
 
     time_str = time_str.strip().lower()
+    match = re.search(r"(\d{1,2}:\d{2})(?::\d{2})?\s*([ap]\.?m\.?)?", time_str)
+    if not match:
+        return None
 
-    if time_str.count(":") == 2:
-        time_str = ":".join(time_str.split(":")[:2])
+    time_str = match.group(1)
+    meridiem = (match.group(2) or "").replace(".", "")
 
-    is_pm = "pm" in time_str
-    is_am = "am" in time_str
-    time_str = time_str.replace("pm", "").replace("am", "").strip()
+    is_pm = meridiem == "pm"
+    is_am = meridiem == "am"
 
     parts = time_str.split(":")
     if len(parts) != 2:

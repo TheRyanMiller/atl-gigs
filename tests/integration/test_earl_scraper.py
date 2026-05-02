@@ -10,7 +10,7 @@ from scraper.venues.earl import scrape_earl
 def test_scrape_earl_parses_fixture(monkeypatch):
     monkeypatch.setattr("scraper.venues.earl.time.sleep", lambda *_: None)
 
-    base = "https://badearl.com/show-calendar/"
+    base = "https://badearl.com/"
     fixture = Path("tests/fixtures/earl_page.html").read_text()
     empty_fixture = Path("tests/fixtures/earl_empty.html").read_text()
 

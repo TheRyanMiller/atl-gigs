@@ -9,8 +9,9 @@ from bs4 import BeautifulSoup
 from scraper import config
 from scraper.utils.dates import normalize_time
 
-EARL_BASE = "https://badearl.com/show-calendar/"
+EARL_BASE = "https://badearl.com/"
 EARL_PAGE_Q = "?sf_paged={}"
+EARL_TIMEOUT = (8, 20)
 EARL_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
@@ -31,11 +32,14 @@ EARL_HEADERS = {
 def scrape_earl():
     """Scrape events from The Earl's website."""
     max_retries = 3
+    session = requests.Session()
+    session.headers.update(EARL_HEADERS)
 
     def fetch_with_retry(url):
+        last_error = None
         for attempt in range(max_retries):
             try:
-                r = requests.get(url, headers=EARL_HEADERS, timeout=30)
+                r = session.get(url, timeout=EARL_TIMEOUT)
                 if r.status_code == 200:
                     return r.text
                 elif r.status_code >= 500:
@@ -45,12 +49,15 @@ def scrape_earl():
                         continue
                 return None
             except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+                last_error = e
                 if attempt < max_retries - 1:
                     wait = (2 ** attempt) * 2 + random.uniform(1, 3)
                     print(f"    The Earl: Retry {attempt + 1}/{max_retries} after {type(e).__name__}...")
                     time.sleep(wait)
                 else:
-                    raise
+                    raise RuntimeError(
+                        f"The Earl request failed after {max_retries} attempts: {url}"
+                    ) from last_error
         return None
 
     def pages():
@@ -76,8 +83,8 @@ def scrape_earl():
             date = dt.datetime.strptime(date_tag.text.strip(), "%A, %b. %d, %Y").date()
 
             times = [t.text.strip() for t in card.select("p.show-listing-time")]
-            doors = times[0].split()[0] if times else None
-            show = times[1].split()[0] if len(times) > 1 else None
+            doors = times[0] if times else None
+            show = times[1] if len(times) > 1 else None
 
             prices = [p.text.strip() for p in card.select("p.show-listing-price")]
             adv = next((p for p in prices if "ADV" in p), None)
