@@ -168,3 +168,26 @@ def test_spotify_search_artist_handles_request_timeout(monkeypatch):
     )
 
     assert spotify_search_artist("Mac DeMarco") == (None, None, "error-request")
+
+
+def test_enrichment_does_not_cache_transient_search_errors(monkeypatch):
+    monkeypatch.setattr(config, "SPOTIFY_CLIENT_ID", "client")
+    monkeypatch.setattr(config, "SPOTIFY_CLIENT_SECRET", "secret")
+    monkeypatch.setattr(spotify_enrichment, "_spotify_cache_loaded", True)
+    monkeypatch.setattr(spotify_enrichment, "_artist_spotify_cache", {"by_name": {}})
+    monkeypatch.setattr(
+        spotify_enrichment,
+        "spotify_search_artist",
+        lambda *_args, **_kwargs: (None, None, "error-request"),
+    )
+
+    events = [
+        {
+            "date": "2099-05-13",
+            "artists": [{"name": "Mac DeMarco"}],
+        }
+    ]
+
+    enrich_events_with_spotify(events, search_limit=10, log_func=lambda *_: None)
+
+    assert spotify_enrichment._artist_spotify_cache == {"by_name": {}}

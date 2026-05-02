@@ -563,12 +563,13 @@ def enrich_events_with_spotify(events, run_timestamp=None, log_func=None, search
                 )
                 counts["search"] += 1
             else:
-                cache_spotify_result(
-                    name,
-                    None,
-                    source=f"search-none-{SPOTIFY_SEARCH_SOURCE_VERSION}:{reason}",
-                    updated_at=run_timestamp,
-                )
+                if not reason.startswith("error-"):
+                    cache_spotify_result(
+                        name,
+                        None,
+                        source=f"search-none-{SPOTIFY_SEARCH_SOURCE_VERSION}:{reason}",
+                        updated_at=run_timestamp,
+                    )
                 if reason == "ambiguous":
                     counts["skipped_ambiguous"] += 1
                 counts["search_miss"] += 1
