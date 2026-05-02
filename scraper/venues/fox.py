@@ -38,6 +38,7 @@ FOX_THEATRE_AJAX_HEADERS = {
 def parse_fox_date_range(date_text):
     date_text = " ".join(date_text.split())
     date_text = date_text.replace(" - ", "-").replace("- ", "-").replace(" -", "-")
+    date_text = re.sub(r"\s+,", ",", date_text)
 
     month_map = {
         "january": "Jan", "february": "Feb", "march": "Mar", "april": "Apr",
