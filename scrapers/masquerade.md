@@ -25,7 +25,7 @@ The Masquerade website renders events in static HTML with well-structured `artic
 
 The Masquerade's events page lists events at both their own venue AND other Atlanta venues (Tabernacle, Eastern, etc.) since they're part of the same promotion network.
 
-The scraper filters to only include events at actual Masquerade rooms by checking the venue text for room names (Heaven, Hell, Purgatory, Altar).
+The scraper filters to only include events at actual Masquerade stages by checking the venue text for stage names (Heaven, Hell, Purgatory, Altar).
 
 ## Data Structure
 
@@ -34,13 +34,13 @@ Events are parsed from `article.event` elements:
 ```html
 <article class="event">
   <span class="eventStartDate" content="2025-01-17T00:00:00">...</span>
-  <span class="eventDoorStartDate">7:00 PM</span>
+  <span class="time-show">Doors 7:00 pm / All Ages</span>
   <h3 class="eventHeader__title">Artist Name</h3>
   <p class="eventHeader__support">Support Act 1, Support Act 2</p>
   <span class="js-listVenue">The Masquerade - Heaven</span>
-  <a class="eventBuyLink" href="...">Tickets</a>
-  <a class="eventDetailsLink" href="...">Details</a>
-  <img class="eventImage" src="...">
+  <a class="btn-purple" href="...">Tickets</a>
+  <a class="wrapperLink" href="...">Details</a>
+  <div class="event--featuredImage" style="background-image: url(...)"></div>
 </article>
 ```
 
@@ -73,7 +73,7 @@ def scrape_masquerade():
         # Parse event details...
         events.append({
             "venue": "The Masquerade",
-            "room": room,  # Heaven, Hell, Purgatory, or Altar
+        "stage": stage,  # Heaven, Hell, Purgatory, or Altar
             # ... other fields
             "category": "concerts",  # Default for music venue
         })
@@ -89,10 +89,11 @@ All events default to `concerts` since The Masquerade is primarily a music venue
 
 - Door times available for most events
 - Support acts listed separately from headliners
+- Support acts are split on common delimiters and leading `&`/`and` fragments are removed
 - Images available for all events
 - Ticket links go to various providers (AXS, Eventbrite, etc.)
 - Events at external venues (Tabernacle, Eastern) are filtered out
-- Room stored in separate `room` field (displayed in modal as "The Masquerade · Heaven")
+- Stage stored in separate `stage` field (displayed in modal as "The Masquerade · Heaven")
 
 ## Discovery Process
 

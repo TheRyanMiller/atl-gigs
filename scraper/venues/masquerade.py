@@ -17,6 +17,19 @@ MASQUERADE_HEADERS = {
 MASQUERADE_STAGES = ["Heaven", "Hell", "Purgatory", "Altar"]
 
 
+def split_masquerade_support_acts(support_text):
+    """Split support text into clean artist names."""
+    if not support_text:
+        return []
+
+    support_acts = []
+    for act in re.split(r",\s*|\s+&\s+|\s+and\s+", support_text):
+        act = re.sub(r"^(?:&|and)\s+", "", act.strip(), flags=re.IGNORECASE)
+        if act:
+            support_acts.append(act)
+    return support_acts
+
+
 def scrape_masquerade():
     """
     Scrape events from The Masquerade using HTML parsing.
@@ -110,10 +123,7 @@ def scrape_masquerade():
         # Build artists list
         artists = [{"name": headliner}]
         if support_text:
-            # Split by common delimiters: ", ", " & ", " and "
-            support_acts = re.split(r",\s*|\s+&\s+|\s+and\s+", support_text)
-            for act in support_acts:
-                act = act.strip()
+            for act in split_masquerade_support_acts(support_text):
                 if act and act != headliner:
                     artists.append({"name": act})
 
