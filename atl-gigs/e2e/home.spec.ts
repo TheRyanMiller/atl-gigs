@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Locator } from "@playwright/test";
 
 const getTodayET = () =>
   new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
@@ -6,6 +6,18 @@ const getTodayET = () =>
 const longDescription = "A detailed artist biography for this show. ".repeat(30);
 const testImage =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%230f766e'/%3E%3C/svg%3E";
+
+const expectWithinVisibleArea = async (element: Locator, container: Locator) => {
+  const elementBox = await element.boundingBox();
+  const containerBox = await container.boundingBox();
+
+  expect(elementBox).not.toBeNull();
+  expect(containerBox).not.toBeNull();
+  expect(elementBox!.y).toBeGreaterThanOrEqual(containerBox!.y);
+  expect(elementBox!.y + elementBox!.height).toBeLessThanOrEqual(
+    containerBox!.y + containerBox!.height + 1
+  );
+};
 
 test.beforeEach(async ({ page }) => {
   const now = new Date().toISOString();
@@ -68,10 +80,13 @@ test("expanding long descriptions does not resize modal image", async ({ page })
 
   await page.getByText("Scott Ivey").click();
   const modalImage = page.getByRole("img", { name: "Scott Ivey" }).last();
-  await expect(page.getByText("Show more")).toBeVisible();
+  const scrollArea = page.getByTestId("event-modal-scroll-area");
+  const showMore = page.getByRole("button", { name: "Show more" });
+  await expect(showMore).toBeVisible();
+  await expectWithinVisibleArea(showMore, scrollArea);
 
   const before = await modalImage.boundingBox();
-  await page.getByText("Show more").click();
+  await showMore.click();
   const after = await modalImage.boundingBox();
 
   expect(before?.height).toBeGreaterThan(0);
@@ -87,19 +102,11 @@ test("long description expansion is reachable on mobile", async ({ page }) => {
   const showMore = page.getByRole("button", { name: "Show more" });
   await expect(scrollArea).toBeVisible();
 
-  await scrollArea.evaluate((element) => {
-    element.scrollTop = element.scrollHeight;
-  });
-
   await expect(showMore).toBeVisible();
-  const buttonBox = await showMore.boundingBox();
-  const viewport = page.viewportSize();
-
-  expect(buttonBox).not.toBeNull();
-  expect(viewport).not.toBeNull();
-  expect(buttonBox!.y).toBeGreaterThanOrEqual(0);
-  expect(buttonBox!.y + buttonBox!.height).toBeLessThanOrEqual(viewport!.height);
+  await expectWithinVisibleArea(showMore, scrollArea);
 
   await showMore.click();
-  await expect(page.getByRole("button", { name: "Show less" })).toBeVisible();
+  const showLess = page.getByRole("button", { name: "Show less" });
+  await expect(showLess).toBeVisible();
+  await expectWithinVisibleArea(showLess, scrollArea);
 });

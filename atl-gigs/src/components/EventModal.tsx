@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { format } from "date-fns";
-import { MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays, Star, Info } from "lucide-react";
+import { MapPin, Clock, Ticket, ExternalLink, Share2, Check, CalendarDays, Star, Info, ChevronDown, ChevronUp } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { Event } from "../types";
@@ -12,7 +12,7 @@ interface EventModalProps {
   onClose: () => void;
 }
 
-const DESCRIPTION_PREVIEW_LENGTH = 420;
+const DESCRIPTION_COLLAPSE_THRESHOLD = 420;
 
 export default function EventModal({ event, onClose }: EventModalProps) {
   const [copied, setCopied] = useState(false);
@@ -63,12 +63,8 @@ export default function EventModal({ event, onClose }: EventModalProps) {
   };
 
   const descriptionText = description?.trim() || "";
-  const isLongDescription = descriptionText.length > DESCRIPTION_PREVIEW_LENGTH;
-  const visibleDescription =
-    isLongDescription && !descriptionExpanded
-      ? `${descriptionText.slice(0, DESCRIPTION_PREVIEW_LENGTH).replace(/\s+\S*$/, "")}...`
-      : descriptionText;
-  const descriptionParagraphs = visibleDescription
+  const isLongDescription = descriptionText.length > DESCRIPTION_COLLAPSE_THRESHOLD;
+  const descriptionParagraphs = descriptionText
     .split(/\n{2,}/)
     .map((paragraph) => paragraph.trim())
     .filter(Boolean);
@@ -216,24 +212,43 @@ export default function EventModal({ event, onClose }: EventModalProps) {
 
                       {descriptionText && (
                         <div className="mb-6 border-t border-neutral-800 pt-5 sm:mb-4">
-                          <div className="flex items-center gap-2 text-sm font-semibold text-neutral-100 mb-2">
-                            <Info size={14} className="text-teal-500" />
-                            <span>About</span>
+                          <div className="mb-2 flex items-center justify-between gap-4">
+                            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-100">
+                              <Info size={14} className="text-teal-500" />
+                              <span>About</span>
+                            </div>
+                            {isLongDescription && (
+                              <button
+                                type="button"
+                                onClick={() => setDescriptionExpanded((expanded) => !expanded)}
+                                aria-expanded={descriptionExpanded}
+                                className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-teal-400 transition-colors hover:text-teal-300"
+                              >
+                                {descriptionExpanded ? (
+                                  <>
+                                    Show less
+                                    <ChevronUp size={14} />
+                                  </>
+                                ) : (
+                                  <>
+                                    Show more
+                                    <ChevronDown size={14} />
+                                  </>
+                                )}
+                              </button>
+                            )}
                           </div>
-                          <div className="space-y-3 text-sm leading-6 text-neutral-300">
+                          <div
+                            className={`space-y-3 text-sm leading-6 text-neutral-300 ${
+                              isLongDescription && !descriptionExpanded
+                                ? "relative max-h-52 overflow-hidden after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-16 after:bg-gradient-to-t after:from-neutral-900 after:to-transparent"
+                                : ""
+                            }`}
+                          >
                             {descriptionParagraphs.map((paragraph, index) => (
                               <p key={index}>{paragraph}</p>
                             ))}
                           </div>
-                          {isLongDescription && (
-                            <button
-                              type="button"
-                              onClick={() => setDescriptionExpanded((expanded) => !expanded)}
-                              className="mt-3 text-sm font-medium text-teal-400 hover:text-teal-300 transition-colors"
-                            >
-                              {descriptionExpanded ? "Show less" : "Show more"}
-                            </button>
-                          )}
                         </div>
                       )}
                     </div>
