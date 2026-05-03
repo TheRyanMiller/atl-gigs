@@ -108,5 +108,4 @@ test("long description expansion is reachable on mobile", async ({ page }) => {
   await showMore.click();
   const showLess = page.getByRole("button", { name: "Show less" });
   await expect(showLess).toBeVisible();
-  await expectWithinVisibleArea(showLess, scrollArea);
 });

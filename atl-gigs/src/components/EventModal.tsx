@@ -212,36 +212,14 @@ export default function EventModal({ event, onClose }: EventModalProps) {
 
                       {descriptionText && (
                         <div className="mb-6 border-t border-neutral-800 pt-5 sm:mb-4">
-                          <div className="mb-2 flex items-center justify-between gap-4">
-                            <div className="flex items-center gap-2 text-sm font-semibold text-neutral-100">
-                              <Info size={14} className="text-teal-500" />
-                              <span>About</span>
-                            </div>
-                            {isLongDescription && (
-                              <button
-                                type="button"
-                                onClick={() => setDescriptionExpanded((expanded) => !expanded)}
-                                aria-expanded={descriptionExpanded}
-                                className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-teal-400 transition-colors hover:text-teal-300"
-                              >
-                                {descriptionExpanded ? (
-                                  <>
-                                    Show less
-                                    <ChevronUp size={14} />
-                                  </>
-                                ) : (
-                                  <>
-                                    Show more
-                                    <ChevronDown size={14} />
-                                  </>
-                                )}
-                              </button>
-                            )}
+                          <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-neutral-100">
+                            <Info size={14} className="text-teal-500" />
+                            <span>About</span>
                           </div>
                           <div
                             className={`space-y-3 text-sm leading-6 text-neutral-300 ${
                               isLongDescription && !descriptionExpanded
-                                ? "relative max-h-52 overflow-hidden after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-16 after:bg-gradient-to-t after:from-neutral-900 after:to-transparent"
+                                ? "relative max-h-28 overflow-hidden after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-14 after:bg-gradient-to-t after:from-neutral-900 after:to-transparent sm:max-h-32"
                                 : ""
                             }`}
                           >
@@ -249,6 +227,26 @@ export default function EventModal({ event, onClose }: EventModalProps) {
                               <p key={index}>{paragraph}</p>
                             ))}
                           </div>
+                          {isLongDescription && (
+                            <button
+                              type="button"
+                              onClick={() => setDescriptionExpanded((expanded) => !expanded)}
+                              aria-expanded={descriptionExpanded}
+                              className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-teal-400 transition-colors hover:text-teal-300"
+                            >
+                              {descriptionExpanded ? (
+                                <>
+                                  Show less
+                                  <ChevronUp size={14} />
+                                </>
+                              ) : (
+                                <>
+                                  Show more
+                                  <ChevronDown size={14} />
+                                </>
+                              )}
+                            </button>
+                          )}
                         </div>
                       )}
                     </div>
