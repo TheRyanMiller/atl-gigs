@@ -8,9 +8,11 @@ from scraper.venues.aeg import scrape_terminal_west, scrape_the_eastern, scrape_
 from scraper.venues.center_stage import scrape_center_stage
 from scraper.venues.earl import scrape_earl
 from scraper.venues.fox import scrape_fox_theatre
+from scraper.venues.helium import scrape_helium_comedy
 from scraper.venues.live_nation import scrape_tabernacle, scrape_coca_cola_roxy
 from scraper.venues.masquerade import scrape_masquerade
 from scraper.venues.mercedes_benz_stadium import scrape_mercedes_benz_stadium
+from scraper.venues.punchline import scrape_punchline
 from scraper.venues.state_farm_arena import scrape_state_farm_arena
 
 
@@ -38,6 +40,8 @@ def get_scrapers():
         "Coca-Cola Roxy": scrape_coca_cola_roxy,
         "Fox Theatre": scrape_fox_theatre,
         "Mercedes-Benz Stadium": scrape_mercedes_benz_stadium,
+        "The Punchline": scrape_punchline,
+        "Helium Comedy Club": scrape_helium_comedy,
     }
 
     # Use TM API for venues that use Ticketmaster, if API key is available
